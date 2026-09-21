@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediDesk Flat Component Reference Sheet</title>
+  <!-- Google Fonts: Plus Jakarta Sans / Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            teal: {
+              DEFAULT: '#0F6E6A',
+              hover: '#0C5A57',
+              light: '#E6F4F3',
+            },
+            coral: {
+              DEFAULT: '#FF8A65',
+              hover: '#FA7850',
+              light: '#FFF0EB',
+            },
+            charcoal: {
+              DEFAULT: '#1F2937',
+              muted: '#64748B',
+              light: '#94A3B8',
+            },
+            canvas: '#FFFFFF',
+            borderGray: '#E2E5E9',
+            surfaceGray: '#F7F9FA',
+            status: {
+              greenBg: '#ECFDF5',
+              greenText: '#065F46',
+              greenIcon: '#10B981',
+              amberBg: '#FFFBEB',
+              amberText: '#92400E',
+              amberIcon: '#F59E0B',
+              redBg: '#FEF2F2',
+              redText: '#991B1B',
+              redIcon: '#EF4444',
+              grayBg: '#F0F4F8',
+              grayText: '#1E293B',
+              grayIcon: '#64748B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#FFFFFF] text-[#1F2937] font-sans antialiased p-8 md:p-14 min-h-screen">
+
+  <div class="max-w-[1240px] mx-auto space-y-12">
+
+    <!-- Document Header: Clean & minimal, like a Figma UI kit sheet -->
+    <header class="border-b border-[#E2E5E9] pb-6">
+      <div class="text-xs font-semibold tracking-wider text-[#64748B] uppercase mb-1">MediDesk Design System • Reference Sheet</div>
+      <h1 class="text-3xl font-bold tracking-tight text-[#1F2937]">Components</h1>
+      <p class="text-sm text-[#64748B] mt-1">Isolated component states and base tokens. No application chrome or contextual data.</p>
+    </header>
+
+    <!-- Component Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+
+      <!-- 1. BUTTONS -->
+      <section class="bg-white border border-[#E2E5E9] rounded-xl p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between border-b border-[#E2E5E9] pb-3 mb-5">
+            <h2 class="text-base font-bold text-[#1F2937] tracking-tight">1. Buttons</h2>
+            <span class="text-xs text-[#64748B] font-mono">4 States</span>
+          </div>
+          <p class="text-xs text-[#64748B] mb-5">Primary action, secondary wireframe, destructive alert, and inactive state with 44px touch compliance.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3.5 pt-2">
+          <!-- Primary -->
+          <div class="flex flex-col items-center gap-1.5">
+            <button type="button" class="h-11 px-5 rounded-lg bg-[#0F6E6A] text-white text-sm font-semibold hover:bg-[#0C5A57] transition shadow-sm inline-flex items-center justify-center">
+              Primary
+            </button>
+            <span class="text-[11px] text-[#64748B]">Primary</span>
+          </div>
+
+          <!-- Secondary -->
+          <div class="flex flex-col items-center gap-1.5">
+            <button type="button" class="h-11 px-5 rounded-lg border border-[#E2E5E9] bg-white text-[#1F2937] text-sm font-semibold hover:bg-[#F7F9FA] transition shadow-sm inline-flex items-center justify-center">
+              Secondary
+            </button>
+            <span class="text-[11px] text-[#64748B]">Secondary</span>
+          </div>
+
+          <!-- Destructive -->
+          <div class="flex flex-col items-center gap-1.5">
+            <button type="button" class="h-11 px-5 rounded-lg bg-[#EF4444] text-white text-sm font-semibold hover:bg-[#DC2626] transition shadow-sm inline-flex items-center justify-center">
+              Destructive
+            </button>
+            <span class="text-[11px] text-[#64748B]">Destructive</span>
+          </div>
+
+          <!-- Disabled -->
+          <div class="flex flex-col items-center gap-1.5">
+            <button type="button" disabled class="h-11 px-5 rounded-lg bg-[#F0F4F8] text-[#94A3B8] border border-[#E2E5E9] text-sm font-semibold cursor-not-allowed inline-flex items-center justify-center">
+              Disabled
+            </button>
+            <span class="text-[11px] text-[#64748B]">Disabled</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. INPUTS -->
+      <section class="bg-white border border-[#E2E5E9] rounded-xl p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between border-b border-[#E2E5E9] pb-3 mb-5">
+            <h2 class="text-base font-bold text-[#1F2937] tracking-tight">2. Inputs</h2>
+            <span class="text-xs text-[#64748B] font-mono">3 States</span>
+          </div>
+          <p class="text-xs text-[#64748B] mb-5">Floating label form fields in default, focused, and validation error states.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-1">
+          <!-- Default State -->
+          <div class="relative border border-[#E2E5E9] rounded-lg px-3 pt-4 pb-2 bg-white transition hover:border-[#CBD5E1]">
+            <label class="absolute top-1.5 left-3 text-[10px] font-semibold text-[#64748B] uppercase tracking-wider">
+              Label
+            </label>
+            <input type="text" readonly value="Value text" class="w-full bg-transparent text-sm text-[#1F2937] focus:outline-none cursor-default font-normal">
+            <span class="block text-[10px] text-[#94A3B8] mt-1">Default</span>
+          </div>
+
+          <!-- Focused State -->
+          <div class="relative border-2 border-[#0F6E6A] rounded-lg px-3 pt-4 pb-2 bg-white shadow-sm ring-2 ring-[#0F6E6A]/10">
+            <label class="absolute top-1.5 left-3 text-[10px] font-bold text-[#0F6E6A] uppercase tracking-wider">
+              Label
+            </label>
+            <input type="text" readonly value="Value text" class="w-full bg-transparent text-sm text-[#1F2937] focus:outline-none cursor-default font-medium">
+            <span class="block text-[10px] text-[#0F6E6A] font-semibold mt-1">Focused</span>
+          </div>
+
+          <!-- Error State -->
+          <div class="relative border-2 border-[#EF4444] rounded-lg px-3 pt-4 pb-2 bg-[#FEF2F2]/30 shadow-sm ring-2 ring-[#EF4444]/10">
+            <label class="absolute top-1.5 left-3 text-[10px] font-bold text-[#EF4444] uppercase tracking-wider">
+              Label
+            </label>
+            <input type="text" readonly value="Value text" class="w-full bg-transparent text-sm text-[#991B1B] focus:outline-none cursor-default font-normal">
+            <span class="block text-[10px] text-[#EF4444] font-medium mt-1">Error message</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. STATUS PILLS -->
+      <section class="bg-white border border-[#E2E5E9] rounded-xl p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between border-b border-[#E2E5E9] pb-3 mb-5">
+            <h2 class="text-base font-bold text-[#1F2937] tracking-tight">3. Status pills</h2>
+            <span class="text-xs text-[#64748B] font-mono">4 Semantic Types</span>
+          </div>
+          <p class="text-xs text-[#64748B] mb-5">Accessible colorblind-safe badges with mandatory icon and single-word label.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <!-- Confirmed -->
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]">
+              <svg class="w-3.5 h-3.5 text-[#10B981]" viewBox="0 0 16 16" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd" />
+              </svg>
+              Confirmed
+            </span>
+            <span class="text-[10px] text-[#64748B]">Green</span>
+          </div>
+
+          <!-- Pending -->
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A]">
+              <svg class="w-3.5 h-3.5 text-[#F59E0B]" viewBox="0 0 16 16" fill="currentColor">
+                <path fill-rule="evenodd" d="M8 1.75a6.25 6.25 0 1 0 0 12.5 6.25 6.25 0 0 0 0-12.5ZM7.25 4.5a.75.75 0 0 1 1.5 0v3.25h2a.75.75 0 0 1 0 1.5H8a.75.75 0 0 1-.75-.75V4.5Z" clip-rule="evenodd" />
+              </svg>
+              Pending
+            </span>
+            <span class="text-[10px] text-[#64748B]">Amber</span>
+          </div>
+
+          <!-- Cancelled -->
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#FEF2F2] text-[#991B1B] border border-[#FECACA]">
+              <svg class="w-3.5 h-3.5 text-[#EF4444]" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
+              </svg>
+              Cancelled
+            </span>
+            <span class="text-[10px] text-[#64748B]">Red</span>
+          </div>
+
+          <!-- Info -->
+          <div class="flex flex-col items-center gap-1.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#F0F4F8] text-[#1E293B] border border-[#CBD5E1]">
+              <svg class="w-3.5 h-3.5 text-[#64748B]" viewBox="0 0 16 16" fill="currentColor">
+                <path fill-rule="evenodd" d="M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0ZM9 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6.75 8a.75.75 0 0 0 0 1.5h.75v2.25a.75.75 0 0 0 1.5 0V8.75A.75.75 0 0 0 8.25 8h-1.5Z" clip-rule="evenodd" />
+              </svg>
+              Info
+            </span>
+            <span class="text-[10px] text-[#64748B]">Gray</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. CARDS -->
+      <section class="bg-white border border-[#E2E5E9] rounded-xl p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between border-b border-[#E2E5E9] pb-3 mb-5">
+            <h2 class="text-base font-bold text-[#1F2937] tracking-tight">4. Cards</h2>
+            <span class="text-xs text-[#64748B] font-mono">1 Instance</span>
+          </div>
+          <p class="text-xs text-[#64748B] mb-5">Generic surface card with title, body line, and isolated action button.</p>
+        </div>
+
+        <div class="pt-1">
+          <!-- Generic Card Container -->
+          <div class="border border-[#E2E5E9] rounded-xl p-5 bg-[#F7F9FA]/60 hover:bg-[#F7F9FA] transition flex flex-col gap-4">
+            <div>
+              <h3 class="text-base font-bold text-[#1F2937]">Card Title</h3>
+              <p class="text-sm text-[#64748B] mt-1">Single line of placeholder body text for card layout validation.</p>
+            </div>
+            <div>
+              <button type="button" class="h-10 px-4 rounded-lg bg-[#0F6E6A] text-white text-xs font-semibold hover:bg-[#0C5A57] transition shadow-sm inline-flex items-center justify-center">
+                Button Action
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. TABLE ROW -->
+      <section class="bg-white border border-[#E2E5E9] rounded-xl p-6 shadow-sm flex flex-col justify-between md:col-span-2">
+        <div>
+          <div class="flex items-center justify-between border-b border-[#E2E5E9] pb-3 mb-4">
+            <h2 class="text-base font-bold text-[#1F2937] tracking-tight">5. Table row</h2>
+            <span class="text-xs text-[#64748B] font-mono">Header + 2 Rows</span>
+          </div>
+          <p class="text-xs text-[#64748B] mb-4">Generic data table structure with uppercase column headers and placeholder values.</p>
+        </div>
+
+        <div class="border border-[#E2E5E9] rounded-lg overflow-hidden">
+          <table class="w-full text-left text-sm border-collapse">
+            <thead>
+              <tr class="bg-[#F7F9FA] border-b border-[#E2E5E9] text-[11px] font-bold text-[#64748B] uppercase tracking-wider">
+                <th class="py-3 px-4">Column A</th>
+                <th class="py-3 px-4">Column B</th>
+                <th class="py-3 px-4">Column C</th>
+                <th class="py-3 px-4 text-right">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[#E2E5E9] bg-white text-xs text-[#1F2937]">
+              <!-- Data Row 1 -->
+              <tr class="hover:bg-[#F7F9FA]/70 transition">
+                <td class="py-3.5 px-4 font-semibold text-[#1F2937]">Label 01</td>
+                <td class="py-3.5 px-4 text-[#64748B]">Value Alpha</td>
+                <td class="py-3.5 px-4 text-[#64748B]">Value Description</td>
+                <td class="py-3.5 px-4 text-right">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#ECFDF5] text-[#065F46]">Confirmed</span>
+                </td>
+              </tr>
+              <!-- Data Row 2 -->
+              <tr class="hover:bg-[#F7F9FA]/70 transition">
+                <td class="py-3.5 px-4 font-semibold text-[#1F2937]">Label 02</td>
+                <td class="py-3.5 px-4 text-[#64748B]">Value Beta</td>
+                <td class="py-3.5 px-4 text-[#64748B]">Value Description</td>
+                <td class="py-3.5 px-4 text-right">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FFFBEB] text-[#92400E]">Pending</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6. MODAL -->
+      <section class="bg-white border border-[#E2E5E9] rounded-xl p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between border-b border-[#E2E5E9] pb-3 mb-5">
+            <h2 class="text-base font-bold text-[#1F2937] tracking-tight">6. Modal</h2>
+            <span class="text-xs text-[#64748B] font-mono">Dialog Outline</span>
+          </div>
+          <p class="text-xs text-[#64748B] mb-5">Standard dialog container with header title, supporting line, and action pair.</p>
+        </div>
+
+        <div class="pt-1">
+          <div class="border-2 border-[#E2E5E9] rounded-xl p-5 bg-white shadow-md max-w-sm mx-auto">
+            <div class="flex items-center justify-between border-b border-[#E2E5E9] pb-3 mb-3">
+              <h3 class="text-sm font-bold text-[#1F2937]">Modal Dialog Title</h3>
+              <span class="text-[#94A3B8] text-xs">✕</span>
+            </div>
+            <p class="text-xs text-[#64748B] mb-5">Single line of placeholder text describing dialog content or user confirmation prompt.</p>
+            <div class="flex items-center justify-end gap-2.5 pt-1">
+              <button type="button" class="h-9 px-3.5 rounded-lg border border-[#E2E5E9] text-xs font-semibold text-[#1F2937] bg-white hover:bg-[#F7F9FA]">
+                Cancel
+              </button>
+              <button type="button" class="h-9 px-3.5 rounded-lg text-xs font-semibold text-white bg-[#0F6E6A] hover:bg-[#0C5A57]">
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. TABS -->
+      <section class="bg-white border border-[#E2E5E9] rounded-xl p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between border-b border-[#E2E5E9] pb-3 mb-5">
+            <h2 class="text-base font-bold text-[#1F2937] tracking-tight">7. Tabs</h2>
+            <span class="text-xs text-[#64748B] font-mono">Horizontal Set</span>
+          </div>
+          <p class="text-xs text-[#64748B] mb-5">Segmented horizontal tab list with active indicator state in primary teal.</p>
+        </div>
+
+        <div class="pt-4">
+          <div class="border-b border-[#E2E5E9] flex space-x-6">
+            <!-- Active Tab -->
+            <button type="button" class="pb-3 border-b-2 border-[#0F6E6A] text-sm font-bold text-[#0F6E6A] flex items-center gap-1.5 focus:outline-none">
+              Tab One
+            </button>
+            <!-- Inactive Tab 2 -->
+            <button type="button" class="pb-3 border-b-2 border-transparent text-sm font-medium text-[#64748B] hover:text-[#1F2937] hover:border-[#CBD5E1] transition focus:outline-none">
+              Tab Two
+            </button>
+            <!-- Inactive Tab 3 -->
+            <button type="button" class="pb-3 border-b-2 border-transparent text-sm font-medium text-[#64748B] hover:text-[#1F2937] hover:border-[#CBD5E1] transition focus:outline-none">
+              Tab Three
+            </button>
+          </div>
+          <div class="pt-3 text-[11px] text-[#94A3B8]">
+            Active indicator: 2px solid #0F6E6A
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. STEPPER -->
+      <section class="bg-white border border-[#E2E5E9] rounded-xl p-6 shadow-sm flex flex-col justify-between md:col-span-2">
+        <div>
+          <div class="flex items-center justify-between border-b border-[#E2E5E9] pb-3 mb-4">
+            <h2 class="text-base font-bold text-[#1F2937] tracking-tight">8. Stepper</h2>
+            <span class="text-xs text-[#64748B] font-mono">4-Step Progress Flow</span>
+          </div>
+          <p class="text-xs text-[#64748B] mb-4">Horizontal stepped progression displaying completed, current active, and upcoming pending states.</p>
+        </div>
+
+        <div class="pt-4 pb-2">
+          <div class="flex items-center justify-between w-full max-w-2xl mx-auto">
+            
+            <!-- Step 1: Completed -->
+            <div class="flex flex-col items-center relative flex-1">
+              <div class="w-8 h-8 rounded-full bg-[#0F6E6A] text-white flex items-center justify-center font-bold text-xs shadow-sm z-10">
+                <svg class="w-4 h-4 text-white" viewBox="0 0 16 16" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="text-xs font-bold text-[#1F2937] mt-2">Step 1</span>
+              <span class="text-[10px] text-[#64748B]">Completed</span>
+              <!-- Connector line to step 2 -->
+              <div class="absolute top-4 left-1/2 w-full h-0.5 bg-[#0F6E6A] -z-0"></div>
+            </div>
+
+            <!-- Step 2: Active -->
+            <div class="flex flex-col items-center relative flex-1">
+              <div class="w-8 h-8 rounded-full bg-white border-2 border-[#0F6E6A] text-[#0F6E6A] flex items-center justify-center font-bold text-xs shadow-sm z-10 ring-4 ring-[#0F6E6A]/15">
+                2
+              </div>
+              <span class="text-xs font-bold text-[#0F6E6A] mt-2">Step 2</span>
+              <span class="text-[10px] text-[#0F6E6A] font-semibold">Active</span>
+              <!-- Connector line to step 3 -->
+              <div class="absolute top-4 left-1/2 w-full h-0.5 bg-[#E2E5E9] -z-0"></div>
+            </div>
+
+            <!-- Step 3: Pending -->
+            <div class="flex flex-col items-center relative flex-1">
+              <div class="w-8 h-8 rounded-full bg-[#F7F9FA] border border-[#E2E5E9] text-[#94A3B8] flex items-center justify-center font-semibold text-xs z-10">
+                3
+              </div>
+              <span class="text-xs font-medium text-[#64748B] mt-2">Step 3</span>
+              <span class="text-[10px] text-[#94A3B8]">Pending</span>
+              <!-- Connector line to step 4 -->
+              <div class="absolute top-4 left-1/2 w-full h-0.5 bg-[#E2E5E9] -z-0"></div>
+            </div>
+
+            <!-- Step 4: Pending -->
+            <div class="flex flex-col items-center relative">
+              <div class="w-8 h-8 rounded-full bg-[#F7F9FA] border border-[#E2E5E9] text-[#94A3B8] flex items-center justify-center font-semibold text-xs z-10">
+                4
+              </div>
+              <span class="text-xs font-medium text-[#64748B] mt-2">Step 4</span>
+              <span class="text-[10px] text-[#94A3B8]">Pending</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Sheet Footer Metadata -->
+    <footer class="pt-6 border-t border-[#E2E5E9] text-xs text-[#64748B] flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div>Palette: Primary Teal <span class="font-mono text-[#0F6E6A] font-semibold">#0F6E6A</span> • Accent Coral <span class="font-mono text-[#FF8A65] font-semibold">#FF8A65</span> • Neutrals <span class="font-mono">#F7F9FA / #1F2937 / #E2E5E9</span></div>
+      <div>WCAG AA Compliant • 44px Touch Boundaries</div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+{
+  "practitioners": [
+    {
+      "id": 1,
+      "name": "Dr. Leila Ben Salem",
+      "title": "Cardiologue & Maladies Vasculaires",
+      "cnom_number": "19204/CNOM",
+      "specialty": "Cardiologie",
+      "city": "Tunis",
+      "address": "Centre Urbain Nord, Immeuble Clarita, 4ème étage, Tunis",
+      "phone": "+216 71 950 120",
+      "email": "dr.bensalem@cardioclinic.tn",
+      "fee_tnd": 60,
+      "cnam_convention": 1,
+      "rating": 4.9,
+      "reviews_count": 142,
+      "availability_status": "Available Today",
+      "avatar_url": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400",
+      "bio": "Ancienne interne des hôpitaux de Tunis. Spécialisée en échocardiographie doppler et cardiologie préventive."
+    },
+    {
+      "id": 2,
+      "name": "Dr. Mohamed Triki",
+      "title": "Pédiatre & Néonatologue",
+      "cnom_number": "16840/CNOM",
+      "specialty": "Pédiatrie",
+      "city": "Sousse",
+      "address": "Khezama Ouest, Rue du Maghreb Arabe, Sousse",
+      "phone": "+216 73 240 880",
+      "email": "dr.triki@pediatrie-sousse.tn",
+      "fee_tnd": 50,
+      "cnam_convention": 1,
+      "rating": 4.8,
+      "reviews_count": 98,
+      "availability_status": "Demain 09:00",
+      "avatar_url": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=400",
+      "bio": "Suivi pédiatrique global, vaccinations, croissance et urgences néonatales."
+    },
+    {
+      "id": 3,
+      "name": "Dr. Sarah Karray",
+      "title": "Dermatologue & Vénérologue",
+      "cnom_number": "21055/CNOM",
+      "specialty": "Dermatologie",
+      "city": "Tunis",
+      "address": "Avenue Hédi Nouira, Ennasr 2, Tunis",
+      "phone": "+216 71 885 300",
+      "email": "contact@dr-karray-dermato.tn",
+      "fee_tnd": 65,
+      "cnam_convention": 0,
+      "rating": 4.9,
+      "reviews_count": 128,
+      "availability_status": "Jeudi 10:30",
+      "avatar_url": "https://images.unsplash.com/photo-1594824813570-826f63412952?auto=format&fit=crop&q=80&w=400",
+      "bio": "Expertise en dermatologie esthétique, laser médical et pathologies allergiques cutanées."
+    },
+    {
+      "id": 4,
+      "name": "Dr. Yassine Chaabane",
+      "title": "Ophtalmologiste - Chirurgie Laser",
+      "cnom_number": "17930/CNOM",
+      "specialty": "Ophtalmologie",
+      "city": "Sfax",
+      "address": "Route de Téniour Km 1.5, Complexe Médical Al Chifa, Sfax",
+      "phone": "+216 74 400 650",
+      "email": "dr.chaabane@ophtalmo-sfax.tn",
+      "fee_tnd": 55,
+      "cnam_convention": 1,
+      "rating": 4.7,
+      "reviews_count": 84,
+      "availability_status": "Aujourd'hui 17:00",
+      "avatar_url": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400",
+      "bio": "Chirurgie de la cataracte, chirurgie réfractive laser et exploration de la rétine."
+    },
+    {
+      "id": 5,
+      "name": "Dr. Karim Ben Mahmoud",
+      "title": "Médecin Généraliste & Urgentiste",
+      "cnom_number": "18452/CNOM",
+      "specialty": "Généraliste",
+      "city": "Tunis",
+      "address": "Rue du Lac de Constance, Immeuble Carthage, Les Berges du Lac, Tunis",
+      "phone": "+216 98 420 811",
+      "email": "dr.k.benmahmoud@clinique-carthage.tn",
+      "fee_tnd": 45,
+      "cnam_convention": 1,
+      "rating": 4.9,
+      "reviews_count": 176,
+      "availability_status": "Available Today",
+      "avatar_url": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400",
+      "bio": "Consultations générales, certificats médicaux, électrocardiogramme de repos et bilans de santé."
+    },
+    {
+      "id": 6,
+      "name": "Dr. Chiraz Mansour",
+      "title": "Gynécologue Obstétricienne",
+      "cnom_number": "20110/CNOM",
+      "specialty": "Gynécologie",
+      "city": "Monastir",
+      "address": "Avenue Habib Bourguiba, Face Hôpital Fattouma Bourguiba, Monastir",
+      "phone": "+216 73 468 900",
+      "email": "dr.mansour@gyneco-monastir.tn",
+      "fee_tnd": 60,
+      "cnam_convention": 1,
+      "rating": 4.8,
+      "reviews_count": 110,
+      "availability_status": "Demain 11:00",
+      "avatar_url": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=400",
+      "bio": "Suivi de grossesse, échographie 3D/4D, hystéroscopie et chirurgie gynécologique."
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "practitioner_id": 1,
+      "patient_name": "Amel Ben Ali",
+      "patient_phone": "+216 97 123 456",
+      "patient_cin": "08765432",
+      "appointment_date": "2026-09-21",
+      "appointment_time": "15:15",
+      "consultation_type": "Cabinet",
+      "status": "confirmed",
+      "cnam_requested": "confirmed",
+      "notes": 1,
+      "created_at": "2026-09-21T15:23:00.895Z"
+    },
+    {
+      "id": 2,
+      "practitioner_id": 1,
+      "patient_name": "Sami Hamdi",
+      "patient_phone": "+216 22 987 654",
+      "patient_cin": "05432109",
+      "appointment_date": "2026-09-21",
+      "appointment_time": "16:00",
+      "consultation_type": "Cabinet",
+      "status": "confirmed",
+      "cnam_requested": "confirmed",
+      "notes": 1,
+      "created_at": "2026-09-21T15:23:00.901Z"
+    },
+    {
+      "id": 3,
+      "practitioner_id": 5,
+      "patient_name": "Youssef Gharbi",
+      "patient_phone": "+216 55 444 333",
+      "patient_cin": "09871234",
+      "appointment_date": "2026-09-21",
+      "appointment_time": "14:30",
+      "consultation_type": "Cabinet",
+      "status": "confirmed",
+      "cnam_requested": "confirmed",
+      "notes": 1,
+      "created_at": "2026-09-21T15:23:00.902Z"
+    }
+  ],
+  "waiting_queue": [
+    {
+      "id": 1,
+      "practitioner_id": 1,
+      "current_patient_number": 4,
+      "total_in_queue": 8,
+      "estimated_wait_mins": 12,
+      "status_message": "Dr. in session with patient #03"
+    },
+    {
+      "id": 2,
+      "practitioner_id": 5,
+      "current_patient_number": 6,
+      "total_in_queue": 11,
+      "estimated_wait_mins": 18,
+      "status_message": "Dr. in session with patient #05"
+    }
+  ],
+  "onboarding_requests": [
+    {
+      "id": 1,
+      "tracking_code": "MD-2024-8841",
+      "doctor_name": "Dr. Karim Ben Mahmoud",
+      "cnom_number": "18452 / CNOM",
+      "specialty": "Cardiologie & Maladies Vasculaires",
+      "phone": "+216 98 420 811",
+      "email": "dr.k.benmahmoud@clinique-carthage.tn",
+      "clinic_name": "Cabinet Médical Les Berges du Lac",
+      "city": "Tunis",
+      "address": "Rue du Lac de Constance, Immeuble Carthage Médical, 3ème étage, Les Berges du Lac, 1053 Tunis",
+      "cnam_convention": 1,
+      "plan_type": "cloud_hds",
+      "secretariat_invited": "Amira Trabelsi (amira.t@cabinet-lac.tn)",
+      "document_name": "Attestation_CNOM_2024.pdf",
+      "status": "under_review",
+      "created_at": "2026-09-21T15:23:00.910Z"
+    }
+  ],
+  "prescriptions": [
+    {
+      "id": 1,
+      "reference_code": "ORD-TN-2024-9921",
+      "patient_name": "Amel Ben Ali",
+      "patient_cin": "08765432",
+      "doctor_name": "Dr. Leila Ben Salem",
+      "doctor_cnom": "19204/CNOM",
+      "date": "2026-09-21",
+      "medications_json": "[{\"name\":\"Amlodipine 5mg\",\"dosage\":\"1 comprimé le matin\",\"duration\":\"30 jours\",\"quantity\":1},{\"name\":\"Aspegic 100mg\",\"dosage\":\"1 sachet à midi au cours du repas\",\"duration\":\"30 jours\",\"quantity\":1}]",
+      "contraindication_warning": "Remarque: Antécédent d'allergie Pénicilline noté au dossier. Aucune bêta-lactamine prescrite.",
+      "created_at": "2026-09-21T15:23:00.910Z"
+    }
+  ],
+  "pricing_plans": [
+    {
+      "id": 1,
+      "code": "local",
+      "name": "Stockage Local",
+      "price_monthly": 65,
+      "price_annual": 55,
+      "description": "Cabinet autonome mono-poste sans connexion internet permanente.",
+      "features_json": "[\"Installation sur serveur ou PC cabinet\",\"Dossier Médical & Ordonnances Bilingues (FR/AR)\",\"Module Feuilles de Soins & Bordereaux CNAM\",\"Impression recettes & reçus honoraires\"]",
+      "is_popular": 0
+    },
+    {
+      "id": 2,
+      "code": "cloud_hds",
+      "name": "Cloud HDS Sécurisé",
+      "price_monthly": 115,
+      "price_annual": 95,
+      "description": "Pratique moderne & mobilité intégrale avec synchronisation temps réel.",
+      "features_json": "[\"Sauvegarde continue 3 sites certifiés HDS Santé\",\"Synchronisation temps réel médecin & secrétariat\",\"Accès multi-écrans sécurisé (PC, Mac, Tablette)\",\"Rappels automatiques SMS & WhatsApp aux patients\",\"Assistance téléphonique dédiée 7j/7\"]",
+      "is_popular": 1
+    },
+    {
+      "id": 3,
+      "code": "polyclinique",
+      "name": "Polyclinique / Clinique",
+      "price_monthly": 210,
+      "price_annual": 180,
+      "description": "Infrastructure complète pour centres médicaux pluri-disciplinaires.",
+      "features_json": "[\"Multi-praticiens & Secrétariats illimités\",\"Facturation avancée Polyclinique & Tiers payant\",\"Interfaçage matériel médical & laboratoire\",\"Gestionnaire de garde & Planning blocs opératoires\",\"Account Manager dédié à Tunis\"]",
+      "is_popular": 0
+    }
+  ]
+}
