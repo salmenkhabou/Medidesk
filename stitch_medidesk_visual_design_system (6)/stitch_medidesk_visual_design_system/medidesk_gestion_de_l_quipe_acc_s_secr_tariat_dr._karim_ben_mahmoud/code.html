@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>MediDesk - Dr. Karim Ben Mahmoud</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'on-background': '#121c2a', 'on-surface-variant': '#3e4948', 'on-secondary-fixed': '#3a0b00', 'on-primary-fixed-variant': '#00504d', 'surface-variant': '#d9e3f6', 'surface': '#f8f9ff', 'surface-container-low': '#eff4ff', 'secondary-fixed-dim': '#ffb59e', 'inverse-surface': '#27313f', 'on-error-container': '#93000a', 'primary': '#005451', 'tertiary-fixed-dim': '#ffb77d', 'surface-container-highest': '#d9e3f6', 'on-secondary-container': '#722104', 'on-primary': '#ffffff', 'secondary-container': '#fd8863', 'inverse-on-surface': '#eaf1ff', 'surface-container-high': '#dee9fc', 'on-tertiary': '#ffffff', 'on-surface': '#121c2a', 'on-primary-container': '#9dede8', 'on-secondary': '#ffffff', 'tertiary-fixed': '#ffdcc3', 'on-tertiary-fixed-variant': '#6e3900', 'surface-container': '#e6eeff', 'on-tertiary-fixed': '#2f1500', 'surface-dim': '#d0dbed', 'on-tertiary-container': '#ffd7ba', 'on-error': '#ffffff', 'outline-variant': '#bec9c7', 'primary-fixed-dim': '#85d4cf', 'tertiary': '#733c00', 'secondary': '#9f4122', 'on-secondary-fixed-variant': '#7f2a0d', 'primary-fixed': '#a1f1eb', 'tertiary-container': '#965000', 'surface-tint': '#046a66', 'error': '#ba1a1a', 'surface-bright': '#f8f9ff', 'primary-container': '#0f6e6a', 'background': '#f8f9ff', 'secondary-fixed': '#ffdbd0', 'error-container': '#ffdad6', 'surface-container-lowest': '#ffffff', 'on-primary-fixed': '#00201e', 'inverse-primary': '#85d4cf', 'outline': '#6e7978' }, 'borderRadius': { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, 'spacing': { 'space-lg': '1.5rem', 'space-xl': '2.5rem', 'gutter': '1rem', 'gutter-lg': '2rem', 'space-md': '1rem', 'margin': '1rem', 'margin-lg': '2.5rem', 'margin-md': '1.5rem', 'space-sm': '0.5rem', 'space-xs': '0.25rem', 'gutter-md': '1.5rem' }, 'fontFamily': { 'body-sm': ['Plus Jakarta Sans'], 'body-md': ['Plus Jakarta Sans'], 'headline-xl-mobile': ['Plus Jakarta Sans'], 'label-lg': ['Plus Jakarta Sans'], 'label-md': ['Plus Jakarta Sans'], 'label-sm': ['Plus Jakarta Sans'], 'body-lg': ['Plus Jakarta Sans'], 'headline-lg': ['Plus Jakarta Sans'], 'headline-lg-mobile': ['Plus Jakarta Sans'], 'headline-md': ['Plus Jakarta Sans'], 'headline-sm': ['Plus Jakarta Sans'], 'headline-xl': ['Plus Jakarta Sans'] }, 'fontSize': { 'body-sm': ['0.875rem', { 'lineHeight': '1.25rem', 'fontWeight': '400' }], 'body-md': ['1rem', { 'lineHeight': '1.5rem', 'fontWeight': '400' }], 'headline-xl-mobile': ['1.75rem', { 'lineHeight': '2.25rem', 'letterSpacing': '-0.01em', 'fontWeight': '700' }], 'label-lg': ['0.875rem', { 'lineHeight': '1.25rem', 'letterSpacing': '0.01em', 'fontWeight': '600' }], 'label-md': ['0.75rem', { 'lineHeight': '1rem', 'letterSpacing': '0.02em', 'fontWeight': '600' }], 'label-sm': ['0.6875rem', { 'lineHeight': '0.875rem', 'letterSpacing': '0.03em', 'fontWeight': '600' }], 'body-lg': ['1.125rem', { 'lineHeight': '1.75rem', 'fontWeight': '400' }], 'headline-lg': ['1.75rem', { 'lineHeight': '2.25rem', 'letterSpacing': '-0.015em', 'fontWeight': '600' }], 'headline-lg-mobile': ['1.375rem', { 'lineHeight': '1.75rem', 'letterSpacing': '-0.01em', 'fontWeight': '600' }], 'headline-md': ['1.25rem', { 'lineHeight': '1.75rem', 'fontWeight': '600' }], 'headline-sm': ['1.125rem', { 'lineHeight': '1.5rem', 'fontWeight': '600' }], 'headline-xl': ['2.25rem', { 'lineHeight': '2.75rem', 'letterSpacing': '-0.02em', 'fontWeight': '700' }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 w-full px-gutter-lg flex flex-col justify-between py-space-xs"><div class="flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-max"><img alt="MediDesk Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UgrkqncDWnqETT84tUrNq4ssg9LEpQs_jqO87VWpLkUzJPdhnfOuLHX7GhcRUimQjCA85DLfzkCJXQsif_aQGJdawi9ox2GMFN-JZCIMQgMsgjriEXjpGfEDgsaoYMmnuxd0hzm5EeNDA1He3pUEbO-00mtZ8xoeINDwCQzCVlrrrB7GivyctDU01l-Pqsn4s5MhvXka5_iE2Q7_R2cvKiqjxBQ0A3vN6dHer75N_3rL4E-k2kPGQ-h_M"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight leading-tight">MediDesk</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Clinique Alyssa — Cabinet Médical Central</span></div></div><div class="flex-1 max-w-lg mx-space-md"><div class="relative flex items-center w-full bg-surface-container-low rounded-lg px-space-md py-space-xs focus-within:ring-2 focus-within:ring-primary"><span class="material-symbols-outlined text-outline mr-space-sm text-[20px]">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none" placeholder="Rechercher patient, CIN, ordonnance..." type="search"/></div></div><div class="flex items-center gap-space-sm min-w-max"><a class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high border border-outline-variant/40 hover:bg-surface-container transition-colors" data-path="abonnement-facturation" href="#"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm text-primary font-semibold whitespace-nowrap">Abonnement Pro — Actif</span></a><div class="inline-flex items-center bg-surface-container-low rounded-lg p-0.5"><button class="px-space-sm py-1 font-label-sm text-label-sm rounded-md bg-surface-container-lowest text-primary font-bold shadow-[0_1px_3px_0_rgba(15,110,106,0.04)]" type="button">FR</button><button class="px-space-sm py-1 font-label-sm text-label-sm rounded-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">عربي</button><button class="px-space-sm py-1 font-label-sm text-label-sm rounded-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">EN</button></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface rounded-lg transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-0.5 right-0.5 flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-on-secondary leading-none">3</span></button><a class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30 hover:opacity-90 transition-opacity" data-path="parametres-du-compte" href="#"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">Dr. Karim Ben Mahmoud</span><span class="font-label-sm text-label-sm text-on-surface-variant">Cardiologie &amp; Angiologie</span></div><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">stethoscope</span></div></a></div></div><div class="flex items-center justify-between border-t border-outline-variant/15 pt-space-xs"><nav class="flex items-center gap-space-xs overflow-x-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_1px_3px_0_rgba(15,110,106,0.08)]"><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="tableau-de-bord" href="#">Tableau de bord</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="agenda-consultations" href="#">Agenda &amp; Consultations</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="salle-dattente" href="#">Salle d'attente</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="dossiers-patients" href="#">Dossiers Patients</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="teletransmissions-cnam" href="#">Télétransmissions CNAM</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="statistiques-honoraires" href="#">Statistiques &amp; Honoraires</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="equipe-secretariat" href="#">Équipe &amp; Secrétariat</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="abonnement-facturation" href="#">Abonnement &amp; Facturation</a></nav><div class="flex items-center"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap px-space-sm py-1" data-path="parametres-du-compte" href="#">Paramètres Compte</a></div></div></div></header><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive / Operational Content Canvas -->
+<div class="w-full px-gutter-lg py-space-md flex flex-col gap-space-lg">
+<!-- Top Breadcrumb & Action Header -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-1 max-w-3xl">
+<!-- Medical Breadcrumb -->
+<nav class="flex items-center gap-2 font-label-sm text-label-sm text-outline mb-1">
+<span>Cabinet Médical Dr. Karim Ben Mahmoud</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Paramètres du Cabinet</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Équipe &amp; Collaborateurs</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Gestion de l'Équipe &amp; Droits Secrétariat
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Gérez les accès de vos secrétaires médicales, assistants et remplaçants. Chaque accès est audité et conforme au secret médical (<span class="font-medium text-primary">INPDP Loi N° 2004-63</span> &amp; Déontologie CNOM Tunisie).
+        </p>
+</div>
+<!-- Action Button Group -->
+<div class="flex items-center gap-space-sm self-start lg:self-center flex-wrap">
+<button class="inline-flex items-center gap-space-xs px-space-md h-11 bg-surface-container-high hover:bg-surface-container text-primary font-label-lg text-label-lg rounded-lg transition-colors" id="open-audit-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+<span>Journal d'audit</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md h-11 bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm transition-all hover:shadow-md" id="open-invite-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>Inviter une secrétaire</span>
+</button>
+</div>
+</div>
+<!-- Summary KPI & Licence Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1: Active Accounts License -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-primary/5 pointer-events-none"></div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">
+            1 poste disponible
+          </span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Comptes Secrétariat</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface leading-none">2 <span class="text-headline-md font-normal text-outline">/ 3</span></span>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-1 block">Inclus dans Formule Cloud Secure Pro</span>
+</div>
+</div>
+<!-- Card 2: Last Clinic Activity -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">nest_clock_farsight_analog</span>
+</div>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            En ligne
+          </span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Dernière Activité</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">11:42</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Aujourd'hui</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-1 block truncate">Siwar R. • Pointage salle d'attente</span>
+</div>
+</div>
+<!-- Card 3: 2FA & Auth Security -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">shield_person</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+            Conforme INPDP
+          </span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Sécurité &amp; Authentification</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-xl text-headline-xl font-bold text-primary leading-none">100%</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Actif</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-1 block">Double facteur (SMS/OTP) exigé</span>
+</div>
+</div>
+<!-- Card 4: Access Perimeter -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+            Cloisonné
+          </span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Périmètre d'Accès</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Administratif &amp; RDV</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-1 block truncate">Dossier médical clinique masqué</span>
+</div>
+</div>
+</div>
+<!-- Main Staff Management Table Panel -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Utility Bar -->
+<div class="p-space-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm bg-surface-container-low/50">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Collaborateurs enregistrés</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-bold">4 au total</span>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<div class="relative flex-1 sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">filter_list</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-sm text-body-sm pl-9 pr-3 py-1.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Filtrer par nom ou rôle..." type="text"/>
+</div>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="Actualiser la liste" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Responsive Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container-low font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+<tr>
+<th class="py-3 px-space-md" scope="col">Membre de l'équipe</th>
+<th class="py-3 px-space-md" scope="col">Identifiant &amp; Contact</th>
+<th class="py-3 px-space-md" scope="col">Rôle &amp; Prérogatives</th>
+<th class="py-3 px-space-md" scope="col">Statut</th>
+<th class="py-3 px-space-md" scope="col">Dernière Connexion</th>
+<th class="py-3 px-space-md text-right" scope="col">Contrôle d'accès</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1: Siwar RAHMANI -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm" data-alt="Professional portrait photograph of a confident Tunisian medical secretary smiling in a modern clinic reception desk with soft ambient lighting and clean teal elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoEoMGovK3rgqFHlActZwNmrgxEGbpZnq5VQXlo7-_kt7j6iHTAENquyKk7lk_QpD8jC7d8Efyh29UaRPihbtdR_DTd_IB-aAlSGhL3htfROaJAHdW4sXnoBwpblq1gOa4r4OyQiqajfC4YbAYla3eUKN7EFUVxjZ6xFlbzxhBPXquW_b9C00FQhT57DJEiteeMPfcu3Iy2IKNU25aTM3sxYT6dwxKFtqVOtNOk-ZZiPeVNgdCsbgp"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-primary-fixed-dim rounded-full flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Siwar RAHMANI</span>
+<span class="font-label-sm text-label-sm text-outline">+216 98 412 001</span>
+<span class="font-label-sm text-label-sm text-outline">Poste créé le 14 Janv. 2023</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">siwar.rahmani@clinique-alyssa.tn</span>
+<div class="flex items-center gap-1 text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Email &amp; CIN vérifiés</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1.5 max-w-xs">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Secrétaire Médicale Titulaire</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Accueil</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Agenda &amp; SMS</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Encaissement</span>
+<span class="px-2 py-0.5 rounded-md bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Télétransmission CNAM</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed-dim/40 text-on-primary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                  Actif
+                </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Aujourd'hui à 11:42</span>
+<span class="font-label-sm text-label-sm text-outline">Poste Accueil #1 (Clinique Alyssa)</span>
+<span class="font-label-sm text-label-sm text-primary font-mono text-[10px]">IP: 197.14.88.42</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-sm">
+<!-- Custom Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<!-- Actions Dropdown Trigger -->
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Mariem KACEM -->
+<tr class="hover:bg-surface-container-low/40 transition-colors bg-surface-container-low/20">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm text-primary font-bold">
+                    MK
+                  </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Mariem KACEM</span>
+<span class="font-label-sm text-label-sm text-outline">+216 22 780 334</span>
+<span class="font-label-sm text-label-sm text-outline">Poste créé le 05 Août 2024</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">m.kacem@gmail.com</span>
+<div class="flex items-center gap-1 text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Double Authentification validée</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1.5 max-w-xs">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Secrétaire Remplaçante (Mi-temps)</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Accueil</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Agenda Samedi</span>
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">Télétrans. Restreinte</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed-dim/40 text-on-primary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                  Actif
+                </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Samedi 25 Oct. à 13:15</span>
+<span class="font-label-sm text-label-sm text-outline">Poste Accueil #2</span>
+<span class="font-label-sm text-label-sm text-outline font-mono text-[10px]">IP: 197.14.88.43</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-sm">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Leila BEN SALAH -->
+<tr class="hover:bg-surface-container-low/40 transition-colors opacity-75">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-11 h-11 rounded-full bg-surface-container-highest flex items-center justify-center font-headline-sm text-headline-sm text-outline font-bold">
+                    LB
+                  </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Leila BEN SALAH</span>
+<span class="font-label-sm text-label-sm text-outline">+216 55 120 908</span>
+<span class="font-label-sm text-label-sm text-outline">Fin de contrat : 15 Sept. 2025</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm text-outline line-through">leila.bensalah@outlook.com</span>
+<span class="font-label-sm text-label-sm text-outline">Certificat révoqué</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1.5 max-w-xs">
+<span class="font-label-lg text-label-lg font-medium text-outline">Secrétaire Médicale Stagiaire</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-highest text-outline font-label-sm text-label-sm">Accès Révoqués</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-outline font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                  Désactivé
+                </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline">15 Septembre 2025</span>
+<span class="font-label-sm text-label-sm text-outline">Accès suspendu fin de stage</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-sm">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Dr. Yassine TRABELSI (Pending Invitation) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors bg-tertiary-fixed/15">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm opacity-90" data-alt="Professional warm corporate headshot of a middle-aged North African male doctor wearing professional clinic attire in a contemporary medical office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW46Ri_x5HQVoiRC1tLWNaJIFmyGRzFbQlvjCWpFJb-sJ307qLl2bdMYAEtm9klpHCrfxtL3T6PFITqEVsH492pMYKGbbv8XcNWk2LjrXtyjdxLXV15NTi1N_Pa5Bq3JoZu41L5vFqDnkyeXTFO8G8ttNW6vONPBdyVYUYHtKHoLIRP70tb1aCGx8pwsehuq7jVlnpFRI8RLHgDlKfjkdvf41C0ao2wWDYvWcudlnfkdYo6lmLmzmD"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary-fixed-dim rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-on-tertiary-fixed">mail</span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Dr. Yassine TRABELSI</span>
+<span class="px-1.5 py-0.2 rounded bg-primary/10 text-primary font-label-sm text-[10px] font-bold">Confrère</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">+216 97 330 119</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Invitation envoyée hier à 16:30</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">y.trabelsi.cardio@gmail.com</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+                    Lien sécurisé expire dans 48h
+                  </span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-1.5 max-w-xs">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Médecin Remplaçant Conventionné</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Dossiers Cardiologie</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Prescriptions</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Télétransmission</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                  En attente d'activation
+                </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline">Première connexion requise</span>
+<button class="text-left font-label-sm text-label-sm text-primary hover:underline mt-0.5" type="button">
+                    Renvoyer l'email d'activation
+                  </button>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-space-sm">
+<label class="relative inline-flex items-center cursor-not-allowed opacity-50">
+<input class="sr-only peer" disabled="" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5"></div>
+</label>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Utility -->
+<div class="p-space-md bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">security_update_good</span>
+<span>Chaque session fait l'objet d'un chiffrement TLS 1.3 avec traçabilité intégrale de l'adresse IP.</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="hover:text-primary font-semibold transition-colors" type="button">Exporter le registre (CSV)</button>
+<span>•</span>
+<button class="hover:text-primary font-semibold transition-colors" type="button">Politique d'habilitation</button>
+</div>
+</div>
+</div>
+<!-- Security & Legal Permission Boundary Callout Box -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col md:flex-row items-start gap-space-md shadow-sm">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">lock_person</span>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+            Cloisonnement Strict du Secret Médical &amp; Séparation des Fonctions
+          </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-bold">
+            Article 8 &amp; 37 du Code de Déontologie Médicale
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mt-1">
+          Sur <strong class="text-primary font-semibold">MediDesk</strong>, le profil « Secrétariat » a un accès strict limité à l’accueil des patients, la gestion des créneaux de consultation, l’émission des notes d'honoraires et l'enregistrement administratif des bordereaux CNAM. 
+          Les antécédents médicaux, comptes-rendus échographiques, tracés ECG et ordonnances thérapeutiques demeurent <strong>strictement inaccessibles</strong> sans délégation expresse nominative délivrée par le Dr. Karim Ben Mahmoud.
+        </p>
+<div class="flex items-center gap-space-md mt-2 pt-2 text-outline font-label-sm text-label-sm flex-wrap">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">check_circle</span>
+            Journalisation immuable pendant 5 ans
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">check_circle</span>
+            Verrouillage de session après 15 minutes d’inactivité
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">check_circle</span>
+            Révocation immédiate en 1 clic
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Dedicated "Inviter une secrétaire" Modal Dialog Overlay (Preview State & Interactive) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/40 backdrop-blur-sm transition-opacity duration-300" id="invite-modal">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl shadow-xl overflow-hidden flex flex-col transform transition-transform">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">person_add</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+              Inviter une nouvelle collaboratrice
+            </h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+              Un email sécurisé avec code temporaire (48h) sera expédié automatiquement.
+            </p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" id="close-modal-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body / Form -->
+<div class="p-space-lg flex flex-col gap-space-md max-h-[768px] overflow-y-auto">
+<!-- Field 1 & 2: Name and Email -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1" for="full-name">
+<span>Nom complet de la secrétaire</span>
+<span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">badge</span>
+<input class="w-full h-11 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm pl-10 pr-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="full-name" placeholder="ex: Inès Mansouri" type="text" value="Inès Mansouri"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1" for="email-field">
+<span>Email professionnel</span>
+<span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">mail</span>
+<input class="w-full h-11 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm pl-10 pr-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="email-field" placeholder="i.mansouri@clinique-alyssa.tn" type="email" value="i.mansouri@clinique-alyssa.tn"/>
+</div>
+</div>
+</div>
+<!-- Field 3: Mobile Phone for 2FA SMS -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between" for="phone-field">
+<span class="flex items-center gap-1">
+<span>Numéro de téléphone mobile (SMS 2FA Tunisie)</span>
+<span class="text-error">*</span>
+</span>
+<span class="font-label-sm text-label-sm text-outline">Code de sécurité OTP</span>
+</label>
+<div class="flex gap-2">
+<div class="w-24 h-11 bg-surface-container flex items-center justify-center font-label-md text-label-md text-on-surface font-semibold rounded-lg shadow-sm">
+              +216 (TN)
+            </div>
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">smartphone</span>
+<input class="w-full h-11 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm pl-10 pr-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="phone-field" placeholder="98 123 456" type="tel" value="98 123 456"/>
+</div>
+</div>
+</div>
+<!-- Field 4: Role Assignment Radio Cards -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface font-semibold">
+            Profil &amp; Rôle attribué
+          </label>
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Option 1: Titulaire -->
+<label class="flex items-start gap-3 p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 text-primary focus:ring-primary" name="staff_role" type="radio" value="titulaire"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Secrétaire Médicale Titulaire</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">Standard</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Accueil des patients, gestion intégrale de l'agenda, encaissement des honoraires et télétransmission des bordereaux CNAM.
+                </span>
+</div>
+</label>
+<!-- Option 2: Remplaçante -->
+<label class="flex items-start gap-3 p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer">
+<input class="mt-1 w-4 h-4 text-primary focus:ring-primary" name="staff_role" type="radio" value="remplacante"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Secrétaire Remplaçante / Garde</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Pointage salle d'attente et prise de rendez-vous uniquement. Encaissement restreint et pas d'accès aux télétransmissions globales.
+                </span>
+</div>
+</label>
+<!-- Option 3: Facturation Caisse -->
+<label class="flex items-start gap-3 p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer">
+<input class="mt-1 w-4 h-4 text-primary focus:ring-primary" name="staff_role" type="radio" value="caisse"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Accès Facturation / Caisse Seule</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Clôture journalière, états financiers du cabinet et quittances mutuelles. Pas d'accès aux flux patients.
+                </span>
+</div>
+</label>
+</div>
+</div>
+<!-- 2FA Checkbox Option -->
+<div class="p-space-sm bg-surface-container-lowest rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">phonelink_lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Exiger la configuration 2FA dès la première connexion</span>
+<span class="font-label-sm text-label-sm text-outline">Validation par code SMS sur le mobile du collaborateur</span>
+</div>
+</div>
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox"/>
+</div>
+<!-- Security Reassurance Banner -->
+<div class="p-space-sm rounded-lg bg-surface-container-high text-on-surface-variant flex items-start gap-space-xs font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0 mt-0.5">verified_user</span>
+<span>
+<strong>Garantie CNOM &amp; INPDP :</strong> Les données médicales hautement confidentielles (antécédents cardiovasculaires, imageries coronariennes, comptes-rendus) sont automatiquement masquées pour ce profil.
+          </span>
+</div>
+</div>
+<!-- Modal Actions Footer -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between gap-space-sm">
+<span class="font-label-sm text-label-sm text-outline hidden sm:inline">Raccourci : [Échap] Annuler • [F10] Valider</span>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<button class="px-space-md h-11 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-lg text-label-lg transition-colors" id="cancel-modal-btn" type="button">
+            Annuler
+          </button>
+<button class="px-space-md h-11 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg shadow-sm transition-all flex items-center gap-2" id="submit-modal-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">outgoing_mail</span>
+<span>Envoyer l'invitation sécurisée</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript Controller -->
+<script>
+    (function() {
+      const inviteModal = document.getElementById('invite-modal');
+      const openBtn = document.getElementById('open-invite-btn');
+      const closeBtn = document.getElementById('close-modal-btn');
+      const cancelBtn = document.getElementById('cancel-modal-btn');
+      const submitBtn = document.getElementById('submit-modal-btn');
+
+      function hideModal() {
+        if (inviteModal) {
+          inviteModal.classList.add('hidden');
+        }
+      }
+
+      function showModal() {
+        if (inviteModal) {
+          inviteModal.classList.remove('hidden');
+        }
+      }
+
+      if (openBtn) openBtn.addEventListener('click', showModal);
+      if (closeBtn) closeBtn.addEventListener('click', hideModal);
+      if (cancelBtn) cancelBtn.addEventListener('click', hideModal);
+      
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function() {
+          submitBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Envoi en cours...</span>';
+          setTimeout(function() {
+            submitBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done</span><span>Invitation expédiée !</span>';
+            setTimeout(hideModal, 700);
+          }, 600);
+        });
+      }
+
+      // Close on backdrop click
+      if (inviteModal) {
+        inviteModal.addEventListener('click', function(e) {
+          if (e.target === inviteModal) {
+            hideModal();
+          }
+        });
+      }
+
+      // Keyboard Esc handler
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          hideModal();
+        }
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low"><div class="w-full px-gutter-lg py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md border-t border-outline-variant/20"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">MediDesk Santé</span><span class="font-label-sm text-label-sm text-outline">•</span><span class="font-label-sm text-label-sm text-on-surface-variant">Clinique Alyssa — Cabinet Médical Central</span></div><div class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">verified_user</span> Certification HDS &amp; Sécurité Médicale</span><span>•</span><span>Protection des Données INPDP (Loi N° 2004-63)</span></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-md bg-surface-container-lowest px-space-md py-space-xs rounded-lg shadow-[0_1px_3px_0_rgba(15,110,106,0.04)]"><span class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wide">Urgences</span><div class="flex items-center gap-space-sm"><span class="font-label-sm text-label-sm text-on-surface"><strong class="text-error">SAMU:</strong> 190</span><span class="font-label-sm text-label-sm text-outline">|</span><span class="font-label-sm text-label-sm text-on-surface"><strong class="text-secondary">Prot. Civile:</strong> 198</span></div></div><span class="font-label-sm text-label-sm text-outline">© 2025 MediDesk Santé. Tous droits réservés.</span></div></div></footer></body></html>

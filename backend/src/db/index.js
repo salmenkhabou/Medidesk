@@ -29,8 +29,15 @@ function loadData() {
 }
 
 function saveData(data) {
-  fs.writeFileSync(dbFilePath, JSON.stringify(data, null, 2));
+  try {
+    const tmpPath = `${dbFilePath}.tmp`;
+    fs.writeFileSync(tmpPath, JSON.stringify(data, null, 2), 'utf8');
+    fs.renameSync(tmpPath, dbFilePath);
+  } catch (err) {
+    console.error('Critical database write error:', err);
+  }
 }
+
 
 let store = loadData();
 

@@ -1,0 +1,19 @@
+# Secrets & environment
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Design archives (extracted folders are kept)
+*.zip
+
+# Local DB temp files
+*.tmp
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

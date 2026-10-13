@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>MediDesk Santé - Portail Secrétariat</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-tint":"#046a66","primary-fixed-dim":"#85d4cf","surface-container-highest":"#d9e3f6","on-secondary-fixed-variant":"#7f2a0d","on-primary":"#ffffff","on-error":"#ffffff","surface":"#f8f9ff","error":"#ba1a1a","secondary":"#9f4122","on-surface":"#121c2a","primary":"#005451","surface-bright":"#f8f9ff","error-container":"#ffdad6","surface-container-low":"#eff4ff","secondary-container":"#fd8863","surface-variant":"#d9e3f6","secondary-fixed":"#ffdbd0","tertiary-fixed":"#ffdcc3","on-secondary-fixed":"#3a0b00","tertiary-container":"#965000","tertiary":"#733c00","primary-fixed":"#a1f1eb","surface-dim":"#d0dbed","on-tertiary":"#ffffff","on-primary-container":"#9dede8","on-secondary":"#ffffff","on-background":"#121c2a","outline":"#6e7978","surface-container-high":"#dee9fc","inverse-on-surface":"#eaf1ff","primary-container":"#0f6e6a","on-error-container":"#93000a","on-tertiary-container":"#ffd7ba","on-tertiary-fixed":"#2f1500","on-surface-variant":"#3e4948","inverse-surface":"#27313f","tertiary-fixed-dim":"#ffb77d","inverse-primary":"#85d4cf","surface-container":"#e6eeff","on-secondary-container":"#722104","on-primary-fixed-variant":"#00504d","on-tertiary-fixed-variant":"#6e3900","secondary-fixed-dim":"#ffb59e","outline-variant":"#bec9c7","on-primary-fixed":"#00201e","background":"#f8f9ff","surface-container-lowest":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2.5rem","margin-md":"1.5rem","margin-lg":"2.5rem","space-sm":"0.5rem","margin":"1rem","space-md":"1rem","gutter-md":"1.5rem","gutter":"1rem","gutter-lg":"2rem","space-xs":"0.25rem","space-lg":"1.5rem"},"fontFamily":{"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"]},"fontSize":{"headline-lg-mobile":["1.375rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["0.875rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","fontWeight":"400"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"body-md":["1rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"headline-xl":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","fontWeight":"600"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","fontWeight":"600"}],"headline-lg":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-xl-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.01em","fontWeight":"700"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-margin-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-shrink-0"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-md text-headline-md font-bold"><span class="material-symbols-outlined text-[24px]">local_hospital</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold leading-none">MediDesk</span><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase leading-none mt-1">Santé Hub</span></div></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded-full text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-[16px] text-primary">apartment</span><span>Clinique Alyssa — Cabinet Médical Central (Tunis)</span></div><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low hover:bg-surface-container-high hover:text-on-surface rounded-lg cursor-pointer transition-colors text-on-surface font-label-lg text-label-lg"><span class="material-symbols-outlined text-[18px] text-secondary">stethoscope</span><span>Dr. Karim Ben Mahmoud <span class="text-outline font-label-sm text-label-sm font-normal">(Cardiologie)</span></span><span class="material-symbols-outlined text-[16px] text-outline">arrow_drop_down</span></div></div><div class="flex-1 max-w-md hidden md:block"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">search</span><input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-[0_1px_3px_0_rgba(15,110,106,0.04)]" placeholder="Rechercher patient, CIN ou tél..." type="text"/></div></div><div class="flex items-center gap-space-md flex-shrink-0"><div class="inline-flex p-1 bg-surface-container rounded-lg font-label-sm text-label-sm"><button class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface shadow-[0_1px_2px_rgba(0,0,0,0.04)] font-semibold" type="button">FR</button><button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button">عربي</button><button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button">EN</button></div><button class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error font-label-sm text-label-sm rounded-full flex items-center justify-center text-[10px] font-bold">3</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="hidden text-right sm:block"><div class="font-label-lg text-label-lg text-on-surface leading-tight">Amel Trabelsi</div><div class="font-label-sm text-label-sm text-outline leading-tight">Secrétariat Principal</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div><nav class="w-full px-margin-lg bg-surface-container-lowest flex items-center gap-space-xs overflow-x-auto shadow-[0_1px_4px_rgba(0,0,0,0.03)] py-1" data-active-classes="bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg"><a class="px-space-md py-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="accueil-secretariat" href="#">Accueil Secrétariat</a><a class="px-space-md py-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="tableau-de-bord" href="#">Tableau de bord</a><a class="px-space-md py-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="planning-et-rendez-vous" href="#">Planning &amp; Rendez-vous</a><a aria-current="page" class="px-space-md py-2 transition-colors whitespace-nowrap bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg" data-path="salle-d-attente" href="#">Salle d'attente</a><a class="px-space-md py-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="dossiers-patients" href="#">Dossiers Patients</a><a class="px-space-md py-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="teletransmissions-cnam" href="#">Télétransmissions CNAM</a></nav><div class="w-full px-margin-lg py-2 bg-surface-container-low flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant"><a class="hover:text-primary transition-colors flex items-center gap-1" href="#"><span class="material-symbols-outlined text-[16px]">home</span><span>Accueil Secrétariat</span></a><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><a class="hover:text-primary transition-colors" href="#">Planning &amp; Rendez-vous</a><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="text-on-surface font-semibold">Salle d'attente</span></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<div class="w-full px-margin-lg py-space-md flex flex-col gap-space-lg">
+<!-- TOP SECTION: HEADER & BROADCAST BAR -->
+<div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">
+            Salle d'Attente Interactive v2.4
+          </span>
+<span class="font-label-sm text-label-sm text-outline">• Cabinet 1 — Cardiologie</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+          Gestion de la Salle d'Attente &amp; File Temps Réel
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Pilotage du flux patient en temps réel et régulation du carillon d'appel HDMI pour le Dr. Karim Ben Mahmoud.
+        </p>
+</div>
+<!-- TV Broadcast Widget & Action Toolbar -->
+<div class="flex flex-wrap items-center gap-space-sm w-full xl:w-auto">
+<!-- HDMI Display Status Pill -->
+<div class="flex items-center gap-space-sm px-space-md py-2 bg-surface-container rounded-xl">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Écran Mural HDMI-1</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-primary-fixed text-on-primary-fixed font-bold">ACTIF</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Diffusion anonymisée (Tickets #A-xx)</span>
+</div>
+<button class="ml-2 p-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-bright text-primary transition-all flex items-center gap-1 shadow-sm" id="previewTvModalTrigger" title="Aperçu écran mural">
+<span class="material-symbols-outlined text-[18px]">tv</span>
+<span class="font-label-sm text-label-sm font-semibold hidden sm:inline">Aperçu TV ↗</span>
+</button>
+</div>
+<!-- Quick Top Action Buttons -->
+<div class="flex items-center gap-space-xs flex-wrap sm:flex-nowrap">
+<button class="px-space-md py-2.5 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg font-label-lg text-label-lg flex items-center gap-1.5 transition-all shadow-sm" id="btnBuzzDoc" onclick="ringDoctor()">
+<span class="material-symbols-outlined text-[18px] text-tertiary">notifications_active</span>
+<span>Sonner Cabinet 1</span>
+</button>
+<button class="px-space-md py-2.5 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg flex items-center gap-1.5 transition-all shadow-sm" id="btnCallNext" onclick="callNextPatientVoice()">
+<span class="material-symbols-outlined text-[18px]">record_voice_over</span>
+<span>Appeler Patient Suivant</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 4 COMPACT KPI METRICS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Waiting KPI -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">En attente en salle</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">6</span>
+<span class="font-label-sm text-label-sm text-outline">patients</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Attente moy. 16 min
+          </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/50 flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[26px]">chair</span>
+</div>
+</div>
+<!-- In Consultation KPI -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">En consultation</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl font-bold text-primary">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Cabinet 1</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium mt-1 flex items-center gap-1 truncate max-w-[180px]">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span> Yasmine B. (18 min)
+          </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed/50 flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[26px]">stethoscope</span>
+</div>
+</div>
+<!-- Completed KPI -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Terminés aujourd'hui</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">12</span>
+<span class="font-label-sm text-label-sm text-outline">consultations</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">task_alt</span> Quittancés &amp; Traités
+          </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">done_all</span>
+</div>
+</div>
+<!-- No-show KPI -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Absents / No-show</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl font-bold text-error">1</span>
+<span class="font-label-sm text-label-sm text-outline">créneau libéré</span>
+</div>
+<span class="font-label-sm text-label-sm text-error font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person_off</span> M. Trabelsi (09:00)
+          </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-[26px]">cancel</span>
+</div>
+</div>
+</div>
+<!-- MAIN OPERATIONAL GRID: CHECK-IN DESK & LIVE QUEUE + TV SIDEBAR -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT / CENTRAL SECTION: CHECK-IN EXPRESS & LIVE STATUS BOARD (8 COLS) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- CHECK-IN EXPRESS BAR (POINTAGE RAPIDE) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Pointage Express &amp; Enregistrement Comptoir</h2>
+<span class="font-label-sm text-label-sm text-outline">Attribution immédiate d'un ticket et notification à l'écran mural</span>
+</div>
+</div>
+<!-- Quick Barcode / Scanner Trigger -->
+<button class="px-3 py-1.5 bg-surface-container-low hover:bg-surface-container text-primary rounded-lg font-label-md text-label-md flex items-center gap-1.5 transition-colors self-start sm:self-auto" onclick="simulateScanner()">
+<span class="material-symbols-outlined text-[18px]">qr_code_scanner</span>
+<span>Scanner Pass / QR Code</span>
+</button>
+</div>
+<!-- Express Check-in Input Row -->
+<div class="grid grid-cols-1 sm:grid-cols-12 gap-space-sm items-end">
+<!-- Patient Search Input -->
+<div class="sm:col-span-5 relative flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-medium">Rechercher Patient (Nom, CIN 8 chiffres, N° Tél)</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">badge</span>
+<input class="w-full pl-10 pr-3 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="checkinSearchInput" placeholder="Ex: 08842109 ou Mansour..." type="text"/>
+</div>
+</div>
+<!-- Appointment Slot Select -->
+<div class="sm:col-span-4 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-medium">Créneau ou Urgence</label>
+<div class="relative flex items-center">
+<select class="w-full px-3 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none" id="slotSelect">
+<option value="11:45">11:45 — Dr. Ben Mahmoud (Prévu)</option>
+<option value="12:15">12:15 — Dr. Ben Mahmoud (Prévu)</option>
+<option value="walkin">Sans RDV (Intercalaire prioritaire)</option>
+<option value="emergency">Urgence Rythmologie / Triage</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 text-outline pointer-events-none text-[18px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Validate Arrival Button -->
+<div class="sm:col-span-3">
+<button class="w-full py-2 bg-secondary text-on-secondary hover:bg-secondary/90 rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-1.5 transition-all shadow-sm" onclick="checkinCurrentPatient()">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Pointer Arrivé</span>
+</button>
+</div>
+</div>
+<!-- Bottom Micro-Options for Check-in -->
+<div class="flex flex-wrap items-center justify-between gap-2 pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" id="chkPriority" type="checkbox"/>
+<span class="font-label-sm text-label-sm">Priorité médicale / Personne âgée</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" id="chkSms" type="checkbox"/>
+<span class="font-label-sm text-label-sm">SMS Alerte si départ provisoire</span>
+</label>
+</div>
+<div class="flex items-center gap-1 text-outline">
+<span class="material-symbols-outlined text-[14px]">keyboard</span>
+<span>Raccourci: <kbd class="px-1.5 py-0.5 rounded bg-surface-container font-mono text-[10px]">Entrée</kbd> pour valider</span>
+</div>
+</div>
+</div>
+<!-- LIVE PATIENTS TABLE (TABLEAU DE BORD TEMPS RÉEL) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Control Bar -->
+<div class="p-space-md flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low/40">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">File d'Attente Interactive</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold" id="queueBadgeCount">
+                8 patients inscrits
+              </span>
+</div>
+<!-- Filter Chips -->
+<div class="flex items-center gap-1 bg-surface-container p-1 rounded-lg font-label-sm text-label-sm">
+<button class="queue-filter-btn px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface font-semibold shadow-xs" onclick="filterQueue('all')">Tous (8)</button>
+<button class="queue-filter-btn px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors" onclick="filterQueue('waiting')">En salle (6)</button>
+<button class="queue-filter-btn px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors" onclick="filterQueue('active')">En consult (1)</button>
+<button class="queue-filter-btn px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors" onclick="filterQueue('done')">Traités (1)</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-4">N° Ticket &amp; TV</th>
+<th class="py-3 px-3">Heure RDV</th>
+<th class="py-3 px-4">Patient &amp; Contact</th>
+<th class="py-3 px-4">Motif &amp; Soin</th>
+<th class="py-3 px-4">Statut Temps Réel</th>
+<th class="py-3 px-3 text-center">Changer Statut</th>
+<th class="py-3 px-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest/60 font-body-sm text-body-sm text-on-surface" id="patientQueueTbody">
+<!-- Row 1: In Consultation (Active) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-primary-fixed/10" data-status="active">
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold tracking-tight">
+                        #A-08
+                      </span>
+<span class="material-symbols-outlined text-primary text-[18px]" title="Diffusé sur l'écran public">desktop_windows</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">10:00</span>
+<span class="block font-label-sm text-label-sm text-outline">Arrivée 09:48</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Yasmine Ben Amor</span>
+<span class="font-label-sm text-label-sm text-outline">CIN 09241882 • 34 ans • +216 98 412 870</span>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-block px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                      Écho-Doppler Cardiaque
+                    </span>
+<span class="block font-label-sm text-label-sm text-outline mt-0.5">Dr. K. Ben Mahmoud</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-semibold">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span>En consultation (18 min)</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap text-center">
+<select class="text-xs bg-surface-container-lowest rounded px-2 py-1 shadow-sm font-label-sm text-label-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary" onchange="handleStatusChange(this, '#A-08')">
+<option selected="" value="active">En consultation</option>
+<option value="done">Terminé (Quittancé)</option>
+<option value="waiting">En attente en salle</option>
+<option value="exam">En salle d'examen</option>
+<option value="noshow">Absent (No-show)</option>
+</select>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-primary transition-colors" onclick="callTicket('#A-08', 'Yasmine Ben Amor')" title="Rappeler sur écran public">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Dossier Médical">
+<span class="material-symbols-outlined text-[18px]">folder_shared</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Waiting in Lounge (Next) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors" data-status="waiting">
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-secondary-container text-on-secondary-container font-headline-sm text-headline-sm font-bold tracking-tight">
+                        #A-09
+                      </span>
+<span class="material-symbols-outlined text-outline text-[18px]" title="En attente d'appel TV">tv</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">10:30</span>
+<span class="block font-label-sm text-label-sm text-outline">Arrivée 10:12</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Mohamed Salah Guesmi</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold">Prioritaire</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">CIN 04112093 • 68 ans • +216 22 581 902</span>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-block px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                      Contrôle Post-Infarctus &amp; ECG
+                    </span>
+<span class="block font-label-sm text-label-sm text-outline mt-0.5">Dr. K. Ben Mahmoud</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+<span>En salle (26 min)</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap text-center">
+<select class="text-xs bg-surface-container-lowest rounded px-2 py-1 shadow-sm font-label-sm text-label-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary" onchange="handleStatusChange(this, '#A-09')">
+<option selected="" value="waiting">En attente en salle</option>
+<option value="active">En consultation</option>
+<option value="exam">En salle d'examen</option>
+<option value="done">Terminé (Quittancé)</option>
+<option value="noshow">Absent (No-show)</option>
+</select>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-1">
+<button class="px-2.5 py-1 bg-secondary text-on-secondary rounded-lg font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm hover:opacity-95" onclick="callTicket('#A-09', 'Mohamed Salah Guesmi')">
+<span class="material-symbols-outlined text-[16px]">campaign</span>
+<span>Faire Entrer</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Waiting (Walk-in without appointment) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors" data-status="waiting">
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-headline-sm text-headline-sm font-bold tracking-tight">
+                        #A-10
+                      </span>
+<span class="material-symbols-outlined text-outline text-[18px]">tv</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="font-label-lg text-label-lg font-bold text-on-surface-variant">Sans RDV</span>
+<span class="block font-label-sm text-label-sm text-secondary font-semibold">Arrivée 10:20</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Fatma Khemiri</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">Walk-in</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">CIN 11093412 • 45 ans • +216 55 104 332</span>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-block px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                      Palpitations aiguës / Rythmologie
+                    </span>
+<span class="block font-label-sm text-label-sm text-outline mt-0.5">Dr. K. Ben Mahmoud</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+<span>En salle (18 min)</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap text-center">
+<select class="text-xs bg-surface-container-lowest rounded px-2 py-1 shadow-sm font-label-sm text-label-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary" onchange="handleStatusChange(this, '#A-10')">
+<option selected="" value="waiting">En attente en salle</option>
+<option value="active">En consultation</option>
+<option value="exam">En salle d'examen</option>
+<option value="done">Terminé (Quittancé)</option>
+<option value="noshow">Absent (No-show)</option>
+</select>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-primary transition-colors" onclick="callTicket('#A-10', 'Fatma Khemiri')" title="Appeler dans Cabinet">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Waiting (Standard) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors" data-status="waiting">
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-headline-sm text-headline-sm font-bold tracking-tight">
+                        #A-11
+                      </span>
+<span class="material-symbols-outlined text-outline text-[18px]">tv</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">11:00</span>
+<span class="block font-label-sm text-label-sm text-outline">Arrivée 10:35</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Hichem Dridi</span>
+<span class="font-label-sm text-label-sm text-outline">CIN 07654129 • 59 ans • +216 29 441 770</span>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-block px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                      Renouvellement Traitement HTA
+                    </span>
+<span class="block font-label-sm text-label-sm text-outline mt-0.5">Dr. K. Ben Mahmoud</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+<span>En salle (3 min)</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap text-center">
+<select class="text-xs bg-surface-container-lowest rounded px-2 py-1 shadow-sm font-label-sm text-label-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary" onchange="handleStatusChange(this, '#A-11')">
+<option selected="" value="waiting">En attente en salle</option>
+<option value="active">En consultation</option>
+<option value="exam">En salle d'examen</option>
+<option value="done">Terminé (Quittancé)</option>
+<option value="noshow">Absent (No-show)</option>
+</select>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-primary transition-colors" onclick="callTicket('#A-11', 'Hichem Dridi')" title="Appeler">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Upcoming Expected (Not yet arrived) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors opacity-75" data-status="expected">
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center px-2 py-1 rounded bg-surface-container-low text-outline font-label-md text-label-md font-semibold">
+                        #A-12 (Prévu)
+                      </span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">11:30</span>
+<span class="block font-label-sm text-label-sm text-outline">À venir</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-medium text-on-surface">Monia Bouazizi</span>
+<span class="font-label-sm text-label-sm text-outline">CIN 06120894 • 51 ans • +216 93 112 400</span>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-block px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                      Suivi Bilan Lipidique
+                    </span>
+<span class="block font-label-sm text-label-sm text-outline mt-0.5">Dr. K. Ben Mahmoud</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md font-medium">
+<span class="material-symbols-outlined text-[14px]">departure_board</span>
+<span>Non pointé (En route)</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap text-center">
+<button class="px-2 py-1 rounded bg-primary-fixed hover:bg-primary-fixed-dim text-on-primary-fixed font-label-sm text-label-sm font-semibold" onclick="quickCheckInRow('#A-12', 'Monia Bouazizi')">
+                      Pointer Arrivée
+                    </button>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right">
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Contacter par SMS">
+<span class="material-symbols-outlined text-[18px]">sms</span>
+</button>
+</td>
+</tr>
+<!-- Row 6: No Show Record -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-error-container/20" data-status="noshow">
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="inline-flex items-center justify-center px-2 py-1 rounded bg-error/10 text-error font-label-md text-label-md font-semibold">
+                      #A-05
+                    </span>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">09:00</span>
+<span class="block font-label-sm text-label-sm text-error">Non présenté</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-medium text-on-surface line-through text-outline">Kamel Trabelsi</span>
+<span class="font-label-sm text-label-sm text-outline">CIN 05441920 • 62 ans</span>
+</div>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<span class="font-label-sm text-label-sm text-outline">Consultation Annuelle</span>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">event_busy</span>
+<span>Absent (No-Show 09:00)</span>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap text-center">
+<select class="text-xs bg-surface-container-lowest rounded px-2 py-1 shadow-sm font-label-sm text-label-sm text-on-surface focus:outline-none" onchange="handleStatusChange(this, '#A-05')">
+<option selected="" value="noshow">Absent (No-show)</option>
+<option value="waiting">En attente en salle</option>
+<option value="active">En consultation</option>
+</select>
+</td>
+<td class="py-3.5 px-4 whitespace-nowrap text-right">
+<button class="p-1.5 rounded-lg bg-surface-container text-outline hover:text-error" title="Reprogrammer RDV">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Pagination / Quick stats -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm text-outline font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Synchronisation temps réel WebSocket active (0.4s)</span>
+</div>
+<div class="flex items-center gap-4">
+<span>Temps moyen consultation Dr. Ben Mahmoud : <strong>19 min</strong></span>
+<button class="hover:text-primary transition-colors flex items-center gap-1" onclick="window.location.reload()">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>Actualiser file</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT SECTION: TV DISPLAY PREVIEW & RECEPTION DESK TOOLS (4 COLS) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- MINI TV MONITOR (APERÇU SALLE D'ATTENTE EN TEMPS RÉEL) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col">
+<!-- TV Header bar -->
+<div class="px-space-md py-2.5 bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="ml-2 font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">tv</span>
+                Aperçu Écran Mural (Salle d'Attente)
+              </span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold animate-pulse">
+              LIVE 1080p
+            </span>
+</div>
+<!-- The Virtual Screen Mockup -->
+<div class="p-space-md bg-gradient-to-b from-inverse-surface to-on-surface text-inverse-on-surface flex flex-col gap-space-md shadow-inner">
+<!-- Screen Header inside TV -->
+<div class="flex items-center justify-between pb-2 border-b border-inverse-surface/40">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-primary flex items-center justify-center text-on-primary font-bold">
+<span class="material-symbols-outlined text-[16px]">local_hospital</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold leading-tight">CLINIQUE ALYSSA</div>
+<div class="text-[10px] text-outline-variant leading-none">Cabinet Cardiologie — Dr. Ben Mahmoud</div>
+</div>
+</div>
+<div class="font-mono text-label-md font-bold text-primary-fixed" id="tvClock">
+                10:38:22
+              </div>
+</div>
+<!-- Current Called Patient Flashcard -->
+<div class="bg-surface-container-lowest/10 backdrop-blur-md rounded-xl p-space-md border border-inverse-surface/20 flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim font-semibold">
+                Patient Appelé au Cabinet
+              </span>
+<div class="my-2 flex items-center gap-3">
+<span class="font-headline-xl text-[2.75rem] leading-none font-extrabold text-on-primary tracking-wider bg-primary/40 px-4 py-2 rounded-xl" id="tvCurrentTicket">
+                  #A-08
+                </span>
+<span class="material-symbols-outlined text-primary-fixed text-[32px] animate-bounce">
+                  arrow_forward
+                </span>
+<div class="text-left">
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary">Cabinet 1</div>
+<div class="font-label-sm text-label-sm text-primary-fixed-dim">Dr. K. Ben Mahmoud</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline-variant italic" id="tvCallSubtitle">
+                En consultation — Merci d'entrer
+              </span>
+</div>
+<!-- Next in Line Tickets Grid -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline-variant font-semibold">
+                Prochains Numéros Estimés
+              </span>
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-surface-container-lowest/5 rounded-lg p-2 text-center border border-white/5">
+<span class="block font-headline-sm text-headline-sm font-bold text-tertiary-fixed">#A-09</span>
+<span class="text-[10px] text-outline-variant font-mono">~ 10:45</span>
+</div>
+<div class="bg-surface-container-lowest/5 rounded-lg p-2 text-center border border-white/5">
+<span class="block font-headline-sm text-headline-sm font-bold text-on-primary">#A-10</span>
+<span class="text-[10px] text-outline-variant font-mono">~ 11:05</span>
+</div>
+<div class="bg-surface-container-lowest/5 rounded-lg p-2 text-center border border-white/5">
+<span class="block font-headline-sm text-headline-sm font-bold text-on-primary">#A-11</span>
+<span class="text-[10px] text-outline-variant font-mono">~ 11:25</span>
+</div>
+</div>
+</div>
+<!-- Ticker Banner at Bottom of TV Screen -->
+<div class="bg-primary/20 rounded-lg p-2 flex items-center gap-2 overflow-hidden text-primary-fixed">
+<span class="material-symbols-outlined text-[18px] flex-shrink-0 animate-spin">info</span>
+<div class="font-label-sm text-label-sm truncate">
+                Merci de préparer votre pièce d'identité (CIN) et carnet de soins CNAM. Masque conseillé si toux.
+              </div>
+</div>
+</div>
+<!-- TV Controls Footer -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm" onclick="triggerVoiceSynthesis()">
+<span class="material-symbols-outlined text-[16px]">volume_up</span>
+<span>Test Carillon TV</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shadow-sm" onclick="toggleTvMute(this)" title="Couper le son">
+<span class="material-symbols-outlined text-[16px]">volume_off</span>
+</button>
+<button class="p-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-sm text-label-sm shadow-sm flex items-center gap-1" onclick="openFullDisplayWindow()">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span>Plein Écran</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RECEPTION DESK QUICK WIDGET: INTERCOM & DOCTOR STATUS -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary font-bold">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Interphone Cabinet 1</h3>
+<span class="font-label-sm text-label-sm text-outline">Liaison directe Secrétariat ↔ Dr. Ben Mahmoud</span>
+</div>
+</div>
+<span class="w-3 h-3 rounded-full bg-primary" title="Médecin connecté"></span>
+</div>
+<!-- Doctor Status Pill -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]">medical_services</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Dr. Karim Ben Mahmoud</div>
+<div class="font-label-sm text-label-sm text-outline">En consultation active • 18 min</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+              OCCUPÉ
+            </span>
+</div>
+<!-- Intercom Action Triggers -->
+<div class="grid grid-cols-2 gap-2">
+<button class="px-2 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm text-left flex items-center gap-1.5 transition-colors" onclick="sendDoctorNote('Patient urgent en salle')">
+<span class="material-symbols-outlined text-[16px] text-secondary">priority_high</span>
+<span>Signaler Urgence</span>
+</button>
+<button class="px-2 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm text-left flex items-center gap-1.5 transition-colors" onclick="sendDoctorNote('Dossier CNAM validé')">
+<span class="material-symbols-outlined text-[16px] text-primary">fact_check</span>
+<span>Dossier Prêt</span>
+</button>
+<button class="px-2 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm text-left flex items-center gap-1.5 transition-colors" onclick="sendDoctorNote('Pause demandée')">
+<span class="material-symbols-outlined text-[16px] text-outline">coffee</span>
+<span>Pause 5 min</span>
+</button>
+<button class="px-2 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm text-left flex items-center gap-1.5 transition-colors" onclick="sendDoctorNote('Appel téléphonique entrant')">
+<span class="material-symbols-outlined text-[16px] text-outline">phone_in_talk</span>
+<span>Transférer Appel</span>
+</button>
+</div>
+</div>
+<!-- PRINT TICKET MODULE FOR PHYSICAL DESK PRINTER -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[20px]">print</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Imprimante Thermique Ticket</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-primary font-semibold">
+              EPSON TM-T88 (Prête)
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Impression automatique d'un reçu avec QR Code de suivi du rang d'attente sur smartphone.
+          </p>
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1" onclick="reprintLastTicket()">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Réimprimer Dernier Ticket (#A-11)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2 px-4 py-3 bg-inverse-surface text-inverse-on-surface rounded-xl shadow-2xl font-label-md text-label-md" id="mediDeskToast">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]" id="toastIcon">check_circle</span>
+<span id="toastMessage">Action enregistrée avec succès.</span>
+</div>
+<!-- MODAL: TV FULL PREVIEW DIALOG -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-4" id="tvModal">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-2xl w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col border border-surface-container-highest/20">
+<div class="p-space-md bg-surface-container-lowest/10 flex items-center justify-between border-b border-white/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[24px]">connected_tv</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary">Aperçu Grand Écran Salle d'Attente (1920x1080 Full HD)</span>
+</div>
+<button class="p-1 rounded-lg text-outline-variant hover:text-white transition-colors" id="closeTvModal">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<div class="p-space-xl flex flex-col items-center justify-center gap-space-lg text-center bg-gradient-to-b from-inverse-surface to-black min-h-[380px]">
+<div class="flex items-center gap-3">
+<span class="text-outline-variant font-mono text-label-lg">CLINIQUE ALYSSA — SALLE D'ATTENTE CARDIOLOGIE</span>
+</div>
+<div class="p-8 rounded-2xl bg-white/5 border border-white/10 w-full max-w-xl flex flex-col items-center">
+<span class="font-label-lg text-label-lg uppercase tracking-widest text-primary-fixed mb-2 font-bold animate-pulse">
+            •• APPEL EN COURS ••
+          </span>
+<div class="text-[5rem] font-extrabold tracking-wider text-white font-mono leading-none my-2">
+            #A-09
+          </div>
+<div class="text-headline-lg text-white font-bold mt-2">
+            Cabinet 1 → Dr. Karim Ben Mahmoud
+          </div>
+<span class="font-body-md text-outline-variant mt-2">
+            Monsieur Mohamed Salah Guesmi, veuillez vous présenter en salle de consultation.
+          </span>
+</div>
+<div class="flex items-center gap-8 text-on-surface-variant font-label-md text-label-md">
+<span>Tickets Suivants: <strong class="text-white">#A-10</strong> (11:05), <strong class="text-white">#A-11</strong> (11:25)</span>
+<span>•</span>
+<span>Heure actuelle: <strong class="text-white">10:38</strong></span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-lowest/5 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline-variant">Liaison HDMI Cable 1 — Taux de rafraîchissement 60 Hz</span>
+<button class="px-4 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold" onclick="document.getElementById('tvModal').classList.add('hidden')">
+          Fermer l'aperçu
+        </button>
+</div>
+</div>
+</div>
+<!-- JAVASCRIPT MICRO-INTERACTIONS -->
+<script>
+    // Live TV Clock updater
+    function updateClock() {
+      const now = new Date();
+      const timeStr = now.toTimeString().split(' ')[0];
+      const el = document.getElementById('tvClock');
+      if (el) el.textContent = timeStr;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Toast trigger function
+    function showToast(msg, icon = 'check_circle') {
+      const toast = document.getElementById('mediDeskToast');
+      const toastMsg = document.getElementById('toastMessage');
+      const toastIco = document.getElementById('toastIcon');
+      if (!toast) return;
+
+      toastMsg.textContent = msg;
+      toastIco.textContent = icon;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3200);
+    }
+
+    // Call Ticket Action (Voice + TV visual flash)
+    function callTicket(ticket, patientName) {
+      const tvCurrent = document.getElementById('tvCurrentTicket');
+      const tvSub = document.getElementById('tvCallSubtitle');
+      if (tvCurrent) {
+        tvCurrent.textContent = ticket;
+        tvCurrent.classList.add('scale-110');
+        setTimeout(() => tvCurrent.classList.remove('scale-110'), 600);
+      }
+      if (tvSub) {
+        tvSub.textContent = patientName + ' appelé au Cabinet 1';
+      }
+
+      showToast('Appel sonore & affichage TV transmis pour ' + ticket + ' (' + patientName + ')', 'campaign');
+    }
+
+    // Fast Check-in Handler
+    function checkinCurrentPatient() {
+      const input = document.getElementById('checkinSearchInput');
+      const val = input.value.trim();
+      const name = val ? val : 'Nouveau Patient Arrivé';
+      const slot = document.getElementById('slotSelect').value;
+
+      showToast('Patient ' + name + ' pointé avec succès ! Ticket #A-13 généré.', 'how_to_reg');
+      input.value = '';
+    }
+
+    // Quick Check-in from Row
+    function quickCheckInRow(ticket, name) {
+      showToast('Pointage confirmé pour ' + name + ' (' + ticket + ') - Statut: En salle', 'chair');
+    }
+
+    // Intercom message to doctor
+    function sendDoctorNote(note) {
+      showToast('Message instantané envoyé au Dr. Ben Mahmoud : "' + note + '"', 'send');
+    }
+
+    // Ring Cabinet button
+    function ringDoctor() {
+      const btn = document.getElementById('btnBuzzDoc');
+      btn.classList.add('bg-tertiary-fixed');
+      setTimeout(() => btn.classList.remove('bg-tertiary-fixed'), 400);
+      showToast('Carillon discret envoyé au bureau du Dr. Ben Mahmoud', 'notifications_active');
+    }
+
+    // Call next patient automatic
+    function callNextPatientVoice() {
+      callTicket('#A-09', 'Mohamed Salah Guesmi');
+    }
+
+    // Simulate Barcode Scanner
+    function simulateScanner() {
+      const input = document.getElementById('checkinSearchInput');
+      input.value = '08842109 (Mongi Ayari - RDV 11:45)';
+      showToast('Pass Patient scanné avec succès : CIN 08842109', 'qr_code_scanner');
+    }
+
+    // Filter queue rows
+    function filterQueue(status) {
+      const rows = document.querySelectorAll('#patientQueueTbody tr');
+      rows.forEach(r => {
+        const rowStatus = r.getAttribute('data-status');
+        if (status === 'all' || rowStatus === status) {
+          r.style.display = '';
+        } else {
+          r.style.display = 'none';
+        }
+      });
+
+      // Update button styling
+      document.querySelectorAll('.queue-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-xs');
+        btn.classList.add('text-on-surface-variant');
+      });
+      event.target.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-xs');
+      event.target.classList.remove('text-on-surface-variant');
+    }
+
+    // Status dropdown change handler
+    function handleStatusChange(selectElem, ticket) {
+      const status = selectElem.value;
+      let label = 'Mis à jour';
+      if (status === 'done') label = 'Terminé / Facturation clôturée';
+      if (status === 'waiting') label = 'En attente en salle';
+      if (status === 'active') label = 'En cours de consultation';
+      if (status === 'noshow') label = 'Marqué comme Absent';
+      showToast('Ticket ' + ticket + ' : ' + label, 'sync');
+    }
+
+    // Trigger synthetic audio
+    function triggerVoiceSynthesis() {
+      showToast('Carillon TV et synthèse vocale diffusés en salle d\'attente', 'volume_up');
+    }
+
+    // Mute toggle
+    function toggleTvMute(btn) {
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon.textContent === 'volume_off') {
+        icon.textContent = 'volume_up';
+        showToast('Haut-parleurs TV salle d\'attente activés', 'volume_up');
+      } else {
+        icon.textContent = 'volume_off';
+        showToast('Haut-parleurs TV coupés', 'volume_off');
+      }
+    }
+
+    // Full display preview modal
+    const modal = document.getElementById('tvModal');
+    const trigger = document.getElementById('previewTvModalTrigger');
+    const closeBtn = document.getElementById('closeTvModal');
+
+    if (trigger && modal) {
+      trigger.addEventListener('click', () => modal.classList.remove('hidden'));
+    }
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    }
+
+    function openFullDisplayWindow() {
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function reprintLastTicket() {
+      showToast('Réimpression du ticket thermique #A-11 lancée...', 'print');
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.03)] py-space-lg"><div class="w-full px-margin-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-wrap items-center gap-space-md font-label-md text-label-md text-on-surface-variant"><span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[16px]">verified_user</span>Conformité Données Santé (HDS) &amp; INPDP Tunisie (Loi 2004-63)</span><span class="hidden lg:inline text-outline">•</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">workspace_premium</span>Plateforme certifiée Médicale Pro</span></div><div class="flex flex-wrap items-center gap-space-md"><div class="flex items-center gap-2 px-3 py-1 bg-error-container rounded-full text-on-error-container font-label-md text-label-md font-semibold"><span class="material-symbols-outlined text-[16px]">emergency</span><span>Urgences SAMU 190</span></div><div class="font-label-md text-label-md text-outline">© 2025 MediDesk Santé. Tous droits réservés.</div></div></div></footer></body></html>

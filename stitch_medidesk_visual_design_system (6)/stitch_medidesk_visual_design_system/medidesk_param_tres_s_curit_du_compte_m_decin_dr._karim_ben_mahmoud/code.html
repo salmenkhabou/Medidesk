@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>MediDesk - Dr. Karim Ben Mahmoud</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'primary-fixed': '#a1f1eb', 'surface': '#f8f9ff', 'surface-variant': '#d9e3f6', 'secondary-container': '#fd8863', 'secondary-fixed': '#ffdbd0', 'on-tertiary-fixed-variant': '#6e3900', 'on-primary': '#ffffff', 'on-background': '#121c2a', 'tertiary-fixed-dim': '#ffb77d', 'on-error': '#ffffff', 'error-container': '#ffdad6', 'surface-container': '#e6eeff', 'on-surface-variant': '#3e4948', 'surface-container-high': '#dee9fc', 'primary': '#005451', 'on-tertiary-fixed': '#2f1500', 'primary-container': '#0f6e6a', 'on-surface': '#121c2a', 'on-error-container': '#93000a', 'inverse-on-surface': '#eaf1ff', 'on-tertiary-container': '#ffd7ba', 'error': '#ba1a1a', 'outline': '#6e7978', 'tertiary': '#733c00', 'on-secondary-fixed-variant': '#7f2a0d', 'outline-variant': '#bec9c7', 'surface-container-low': '#eff4ff', 'secondary-fixed-dim': '#ffb59e', 'surface-bright': '#f8f9ff', 'surface-dim': '#d0dbed', 'on-tertiary': '#ffffff', 'secondary': '#9f4122', 'on-primary-fixed': '#00201e', 'on-secondary': '#ffffff', 'primary-fixed-dim': '#85d4cf', 'background': '#f8f9ff', 'surface-container-lowest': '#ffffff', 'inverse-surface': '#27313f', 'surface-tint': '#046a66', 'on-primary-fixed-variant': '#00504d', 'surface-container-highest': '#d9e3f6', 'on-secondary-fixed': '#3a0b00', 'tertiary-fixed': '#ffdcc3', 'tertiary-container': '#965000', 'on-primary-container': '#9dede8', 'on-secondary-container': '#722104', 'inverse-primary': '#85d4cf' }, 'borderRadius': { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, 'spacing': { 'gutter': '1rem', 'space-xl': '2.5rem', 'margin-lg': '2.5rem', 'gutter-lg': '2rem', 'gutter-md': '1.5rem', 'space-lg': '1.5rem', 'margin-md': '1.5rem', 'margin': '1rem', 'space-sm': '0.5rem', 'space-md': '1rem', 'space-xs': '0.25rem' }, 'fontFamily': { 'body-sm': ['Plus Jakarta Sans'], 'headline-md': ['Plus Jakarta Sans'], 'label-lg': ['Plus Jakarta Sans'], 'headline-lg': ['Plus Jakarta Sans'], 'headline-lg-mobile': ['Plus Jakarta Sans'], 'label-sm': ['Plus Jakarta Sans'], 'label-md': ['Plus Jakarta Sans'], 'headline-xl': ['Plus Jakarta Sans'], 'body-lg': ['Plus Jakarta Sans'], 'headline-sm': ['Plus Jakarta Sans'], 'headline-xl-mobile': ['Plus Jakarta Sans'], 'body-md': ['Plus Jakarta Sans'] }, 'fontSize': { 'body-sm': ['0.875rem', { 'lineHeight': '1.25rem', 'fontWeight': '400' }], 'headline-md': ['1.25rem', { 'lineHeight': '1.75rem', 'fontWeight': '600' }], 'label-lg': ['0.875rem', { 'lineHeight': '1.25rem', 'letterSpacing': '0.01em', 'fontWeight': '600' }], 'headline-lg': ['1.75rem', { 'lineHeight': '2.25rem', 'letterSpacing': '-0.015em', 'fontWeight': '600' }], 'headline-lg-mobile': ['1.375rem', { 'lineHeight': '1.75rem', 'letterSpacing': '-0.01em', 'fontWeight': '600' }], 'label-sm': ['0.6875rem', { 'lineHeight': '0.875rem', 'letterSpacing': '0.03em', 'fontWeight': '600' }], 'label-md': ['0.75rem', { 'lineHeight': '1rem', 'letterSpacing': '0.02em', 'fontWeight': '600' }], 'headline-xl': ['2.25rem', { 'lineHeight': '2.75rem', 'letterSpacing': '-0.02em', 'fontWeight': '700' }], 'body-lg': ['1.125rem', { 'lineHeight': '1.75rem', 'fontWeight': '400' }], 'headline-sm': ['1.125rem', { 'lineHeight': '1.5rem', 'fontWeight': '600' }], 'headline-xl-mobile': ['1.75rem', { 'lineHeight': '2.25rem', 'letterSpacing': '-0.01em', 'fontWeight': '700' }], 'body-md': ['1rem', { 'lineHeight': '1.5rem', 'fontWeight': '400' }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 w-full px-gutter-lg flex flex-col justify-between py-space-xs"><div class="flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-max"><img alt="MediDesk Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UgrkqncDWnqETT84tUrNq4ssg9LEpQs_jqO87VWpLkUzJPdhnfOuLHX7GhcRUimQjCA85DLfzkCJXQsif_aQGJdawi9ox2GMFN-JZCIMQgMsgjriEXjpGfEDgsaoYMmnuxd0hzm5EeNDA1He3pUEbO-00mtZ8xoeINDwCQzCVlrrrB7GivyctDU01l-Pqsn4s5MhvXka5_iE2Q7_R2cvKiqjxBQ0A3vN6dHer75N_3rL4E-k2kPGQ-h_M"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight leading-tight">MediDesk</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Clinique Alyssa — Cabinet Médical Central</span></div></div><div class="flex-1 max-w-lg mx-space-md"><div class="relative flex items-center w-full bg-surface-container-low rounded-lg px-space-md py-space-xs focus-within:ring-2 focus-within:ring-primary"><span class="material-symbols-outlined text-outline mr-space-sm text-[20px]">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none" placeholder="Rechercher patient, CIN, ordonnance..." type="search"/></div></div><div class="flex items-center gap-space-sm min-w-max"><a class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high border border-outline-variant/40 hover:bg-surface-container transition-colors" data-path="abonnement-facturation" href="#"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm text-primary font-semibold whitespace-nowrap">Abonnement Pro — Actif</span></a><div class="inline-flex items-center bg-surface-container-low rounded-lg p-0.5"><button class="px-space-sm py-1 font-label-sm text-label-sm rounded-md bg-surface-container-lowest text-primary font-bold shadow-[0_1px_3px_0_rgba(15,110,106,0.04)]" type="button">FR</button><button class="px-space-sm py-1 font-label-sm text-label-sm rounded-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">عربي</button><button class="px-space-sm py-1 font-label-sm text-label-sm rounded-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">EN</button></div><button class="relative p-space-xs text-on-surface-variant hover:text-on-surface rounded-lg transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-0.5 right-0.5 flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-on-secondary leading-none">3</span></button><a class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30 hover:opacity-90 transition-opacity" data-path="parametres-compte" href="#"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">Dr. Karim Ben Mahmoud</span><span class="font-label-sm text-label-sm text-on-surface-variant">Cardiologie &amp; Angiologie</span></div><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">stethoscope</span></div></a></div></div><div class="flex items-center justify-between border-t border-outline-variant/15 pt-space-xs"><nav class="flex items-center gap-space-xs overflow-x-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_1px_3px_0_rgba(15,110,106,0.08)]"><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="tableau-de-bord" href="#">Tableau de bord</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="agenda" href="#">Agenda</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="salle-dattente" href="#">Salle d'attente</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="dossiers-patients" href="#">Dossiers Patients</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="teletransmissions-cnam" href="#">Télétransmissions CNAM</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="statistiques-honoraires" href="#">Statistiques &amp; Honoraires</a><a class="px-space-md py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors whitespace-nowrap" data-path="abonnement-facturation" href="#">Abonnement &amp; Facturation</a><a aria-current="page" class="px-space-md py-1.5 transition-colors whitespace-nowrap bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_1px_3px_0_rgba(15,110,106,0.08)]" data-path="parametres-compte" href="#">Paramètres Compte</a></nav></div></div></header><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Top Gradient for Medical Tone -->
+<div class="w-full bg-gradient-to-b from-surface-container-high/40 via-surface to-surface pb-space-xl">
+<!-- Header Context & Quick Actions -->
+<div class="w-full max-w-7xl mx-auto px-gutter-md md:px-gutter-lg pt-space-lg pb-space-md">
+<!-- Breadcrumbs & System Status Pill -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-sm">
+<nav class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" data-path="tableau-de-bord" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+            Accueil Praticien
+          </a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">Paramètres du Compte &amp; Cabinet</span>
+</nav>
+<div class="inline-flex items-center gap-2 px-space-md py-1 bg-surface-container-lowest rounded-full shadow-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<span>Connexion Sécurisée TLS 1.3 • Chiffrement Clé Ed25519</span>
+<span class="text-outline">•</span>
+<span class="font-semibold text-primary">ID Session : 8841-TN</span>
+</div>
+</div>
+<!-- Title Bar with Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pt-space-xs pb-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-xl bg-primary-container/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">account_circle</span>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+                Paramètres du Compte &amp; Identité Médicale
+              </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Gérez vos informations professionnelles, l'apposition du cachet et de la signature électronique sur les ordonnances, la sécurité 2FA et vos alertes cliniques.
+              </p>
+</div>
+</div>
+</div>
+<!-- Sticky action preview buttons -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-variant font-label-md text-label-md text-on-surface font-semibold transition-colors" type="button">
+            Annuler
+          </button>
+<button class="px-space-lg py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-md flex items-center gap-2 transition-all transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Enregistrer les modifications <span class="font-normal opacity-75 text-xs ml-1 hidden sm:inline">[Ctrl+S]</span></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Workspace: 2-Column Split Framework -->
+<div class="w-full max-w-7xl mx-auto px-gutter-md md:px-gutter-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- ======================= LEFT COLUMN: STICKY NAV TABS ======================= -->
+<aside class="lg:col-span-3 lg:sticky lg:top-32 space-y-space-md">
+<!-- Navigation Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-space-md bg-surface-container-low/60">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Rubriques du Cabinet</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold">Actif</span>
+</div>
+</div>
+<nav class="p-space-xs space-y-1 font-label-md text-label-md" id="settings-tabs-nav">
+<button class="w-full flex items-center justify-between px-space-md py-3 rounded-lg bg-primary-container text-on-primary-container font-semibold shadow-sm text-left transition-colors group" data-target="profil-identite" type="button">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+<span>Profil &amp; Coordonnées</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary text-on-primary text-[11px]">Vérifié CNOM</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface text-left transition-colors group" data-target="cabinet-consultation" type="button">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+<span>Cabinet &amp; Remplaçants</span>
+</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary text-[18px]">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface text-left transition-colors group" data-target="signature-tampon" type="button">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px]">draw</span>
+<span>Signature &amp; Cachet</span>
+</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary-fixed-dim/40 text-primary text-[10px] font-bold">Ordonnances</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface text-left transition-colors group" data-target="securite-2fa" type="button">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px]">encrypted</span>
+<span>Sécurité &amp; 2FA</span>
+</span>
+<span class="flex h-2 w-2 rounded-full bg-primary" title="2FA Activée"></span>
+</button>
+<button class="w-full flex items-center justify-between px-space-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface text-left transition-colors group" data-target="alertes-cliniques" type="button">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px]">notifications_active</span>
+<span>Notifications &amp; Alertes</span>
+</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold text-[11px]">3 actives</span>
+</button>
+<a class="w-full flex items-center justify-between px-space-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface text-left transition-colors group" data-path="delegation-equipe" href="#">
+<span class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px]">group_add</span>
+<span>Délégation Secrétariat</span>
+</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary text-[18px]">open_in_new</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Legal / Practice Status Banner -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm space-y-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">health_and_safety</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Statut d'Exercice Officiel</span>
+</div>
+<div class="space-y-1.5 text-[12px] font-body-sm text-on-surface-variant">
+<div class="flex justify-between py-1 bg-surface-container-low px-2 rounded">
+<span class="text-outline">Régime conventionnel</span>
+<span class="font-semibold text-primary">Secteur Privé / CNAM</span>
+</div>
+<div class="flex justify-between py-1 px-2">
+<span class="text-outline">Code Conventionné</span>
+<span class="font-semibold text-on-surface font-mono">12-4890-K</span>
+</div>
+<div class="flex justify-between py-1 px-2">
+<span class="text-outline">Assurance RCP</span>
+<span class="inline-flex items-center text-primary font-semibold gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  À jour (STAR Assurances)
+                </span>
+</div>
+<div class="flex justify-between py-1 px-2">
+<span class="text-outline">Certificat ANCE</span>
+<span class="font-semibold text-on-surface font-mono">Valide &gt; 2026</span>
+</div>
+</div>
+<div class="pt-space-xs text-[11px] text-outline text-center">
+              Dernier audit de conformité ordinale : 14 Janvier 2025
+            </div>
+</div>
+<!-- Need Assistance Card -->
+<div class="p-space-md rounded-xl bg-gradient-to-br from-primary/10 via-surface-container-low to-secondary/10 shadow-sm flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[24px] shrink-0">support_agent</span>
+<div class="space-y-1">
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Support Technique Dédié</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Assistance configuration certificat &amp; télétransmission CNAM.</p>
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-primary hover:underline" href="tel:+21671999888">
+                Appel direct : +216 71 999 888
+              </a>
+</div>
+</div>
+</aside>
+<!-- ======================= RIGHT COLUMN: MAIN CONTENT FORMS ======================= -->
+<main class="lg:col-span-9 space-y-space-lg">
+<!-- ================= SECTION 1: PROFIL & IDENTITÉ MÉDICALE ================= -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden" id="profil-identite">
+<div class="p-space-lg bg-surface-container-low/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Section 01</span>
+<span class="text-outline">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Données Déontologiques</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Profil &amp; Identité Médicale Officielle</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ces informations figurent obligatoirement sur les ordonnances, bilans et attestations certifiées.</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold shrink-0">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                Identité Ordinale Certifiée
+              </span>
+</div>
+<div class="p-space-lg space-y-space-lg">
+<!-- Avatar Upload Block -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-center gap-space-lg">
+<div class="relative group">
+<div class="w-24 h-24 rounded-full overflow-hidden shadow-md bg-surface-container-high flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Portrait professionnel chaleureux et confiant d'un cardiologue tunisien portant une blouse médicale blanche avec un stéthoscope autour du cou, éclairage doux de clinique moderne avec teintes subtiles teal et terracotta en fond" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC40fKAW6r17CWNLGqI0PudP3Z4IPNhzaSaUg0r7EXdugndKLBcQBL2LTdanZ7ewEoTrCzIcZM9XerRnI2x6GvlnuBsmokPMFq_kEgAIZL-weR0gtUBAmnDIQ0HYi9NbmkZMg-d6Va8qNKfI_LC5XamrYS3JBArmso3W3P1qWPkcXzg9SfrfI6sCwrDWf_YXpWIqCPKSzlIrMorXUFAx3C-jyxbxMRh3GCJnTPknejD6TLyhRZvKGIU"/>
+</div>
+<button class="absolute bottom-0 right-0 p-1.5 rounded-full bg-primary text-on-primary shadow hover:bg-primary-container transition-transform active:scale-90" title="Modifier la photo" type="button">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+</button>
+</div>
+<div class="flex-1 text-center sm:text-left space-y-1">
+<div class="flex flex-col sm:flex-row sm:items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Dr. Karim Ben Mahmoud</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium">Cardiologue Inscrit</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Format carré recommandé : PNG ou JPG haute résolution, max. 5 Mo. Conforme aux standards téléconsultation.</p>
+<div class="pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-space-sm">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+                      Changer la photo
+                    </button>
+<button class="px-space-md py-1.5 rounded-lg text-error hover:bg-error-container/20 font-label-md text-label-md font-semibold transition-colors" type="button">
+                      Supprimer
+                    </button>
+</div>
+</div>
+<!-- Arabic script badge preview -->
+<div class="hidden xl:flex flex-col items-end text-right px-space-md py-space-sm rounded-lg bg-surface-container-low font-body-sm">
+<span class="font-label-sm text-label-sm text-outline">Mention Arabe Ordinale</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary leading-tight font-serif mt-0.5">د. كريم بن محمود</span>
+<span class="text-[12px] text-on-surface-variant">طبيب أخصائي في أمراض القلب والشرايين</span>
+</div>
+</div>
+<!-- Form Inputs Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Titre & Nom Complet (Readonly with official lock) -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1">
+                      Nom &amp; Prénom (Officiel CNOM)
+                      <span class="material-symbols-outlined text-outline text-[16px]" title="Verrouillé pour conformité ordinale">lock</span>
+</label>
+<span class="font-label-sm text-label-sm text-outline">Modifiable sur justificatif</span>
+</div>
+<div class="relative">
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md cursor-not-allowed" readonly="" type="text" value="Dr. Karim Ben Mahmoud"/>
+<span class="absolute right-3 top-3 text-primary material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+</div>
+<!-- Numéro CNOM -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Numéro d'Ordre (CNOM)</label>
+<span class="font-label-sm text-label-sm text-primary font-bold">Conseil de Tunis</span>
+</div>
+<div class="relative">
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-on-surface font-mono font-semibold tracking-wider" readonly="" type="text" value="14892"/>
+<span class="absolute right-3 top-2.5 px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">Vérifié</span>
+</div>
+</div>
+<!-- Spécialité Principale -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Spécialité Principale Diplômante</label>
+<select class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest">
+<option selected="">Cardiologie &amp; Maladies Vasculaires</option>
+<option>Angiologie &amp; Médecine Vasculaire</option>
+<option>Médecine Interne</option>
+<option>Chirurgie Cardio-Vasculaire</option>
+</select>
+</div>
+<!-- Code Convention CNAM -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Code Convention Télétransmission CNAM</label>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Régime APCI</span>
+</div>
+<div class="relative">
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-mono font-semibold" type="text" value="08742911-APCI"/>
+<span class="absolute right-3 top-3 text-outline material-symbols-outlined text-[18px]">key</span>
+</div>
+</div>
+<!-- Compétences & Sous-spécialités (Full width) -->
+<div class="md:col-span-2 space-y-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Compétences &amp; Sous-spécialités Cliniques</label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md" type="text" value="Échocardiographie Doppler transthoracique et transœsophagienne, Épreuve d'effort sur tapis roulant, MAPA, Holter ECG, Cardiologie interventionnelle"/>
+<span class="font-label-sm text-label-sm text-outline">Séparez les spécialisations complémentaires par des virgules (apparaissent sur le profil patient).</span>
+</div>
+<!-- Matricule Fiscale / R.C. -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Matricule Fiscale &amp; R.C. Cabinet</label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-mono" type="text" value="0874291/K/A/M/000"/>
+</div>
+<!-- Email Professionnel -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Email Professionnel Dédié</label>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[14px]">check</span> Validé
+                    </span>
+</div>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md" type="email" value="dr.benmahmoud@clinique-alyssa.tn"/>
+</div>
+<!-- Téléphone Direct Praticien -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Ligne Directe Cabinet / Confrères</label>
+<div class="flex">
+<span class="inline-flex items-center px-3 rounded-l-lg bg-surface-container font-label-md text-label-md text-on-surface-variant font-mono">+216</span>
+<input class="w-full h-11 px-space-md rounded-r-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md" type="tel" value="71 840 220"/>
+</div>
+</div>
+<!-- Mobile SMS Urgences -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Mobile Professionnel (Alertes &amp; 2FA)</label>
+<div class="flex">
+<span class="inline-flex items-center px-3 rounded-l-lg bg-surface-container font-label-md text-label-md text-on-surface-variant font-mono">+216</span>
+<input class="w-full h-11 px-space-md rounded-r-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md" type="tel" value="98 234 567"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 2: CABINET & CONSULTATION ================= -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden" id="cabinet-consultation">
+<div class="p-space-lg bg-surface-container-low/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Section 02</span>
+<span class="text-outline">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lieu d'Exercice &amp; Accueil</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Cabinet &amp; Coordonnées de Consultation</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Données imprimées sur les reçus d'honoraires et transmises dans les SMS de rappel aux patients.</p>
+</div>
+<div class="p-2 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">apartment</span>
+</div>
+</div>
+<div class="p-space-lg space-y-space-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="md:col-span-2 space-y-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Dénomination de la Structure de Consultation</label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md" type="text" value="Clinique Alyssa — Cabinet Médical Central (Cardiologie &amp; Angiologie)"/>
+</div>
+<div class="md:col-span-2 space-y-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Adresse Physique Complète</label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md" type="text" value="Cabinet 302, 3ème étage, Rue du Lac de Constance, Les Berges du Lac 2, 1053 Tunis"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Téléphone Standard Secrétariat</label>
+<div class="flex">
+<span class="inline-flex items-center px-3 rounded-l-lg bg-surface-container font-label-md text-label-md text-on-surface-variant font-mono">+216</span>
+<input class="w-full h-11 px-space-md rounded-r-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md" type="tel" value="71 960 000"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Coordonnées GPS / Plan d'Accès</label>
+<div class="relative">
+<input class="w-full h-11 pl-space-md pr-10 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md" type="text" value="Berges du Lac 2, Tunis (Lien Google Maps actif)"/>
+<a class="absolute right-3 top-3 text-primary hover:text-primary-container" href="#" title="Tester le lien itinéraire">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</a>
+</div>
+</div>
+<!-- Location Map Embed Card -->
+<div class="md:col-span-2 rounded-xl overflow-hidden shadow-inner bg-surface-container-low">
+<div class="w-full h-44 bg-cover bg-center relative" data-location="Clinique Alyssa, Les Berges du Lac 2, Tunis, Tunisia" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC62HJU5fZvnRPrQxyQ6jZ4hpTGUrKyXPYQC46Nrl13C63uzP3vzoeD2mUU_tCE54n8znF-fWzk2QurN9AH8U_5WYUlej3usqM8dR6Wvvvxw9yTYi__Yg_GkAnrh-IZ5OQjps9i0qZFqsyTQUWPDeMHkYbq_wFVFJ1nuwoC9XsU-qYVzKA7Z9MLW4levuF6Y4hyKFcZWeK-gpwlnz95QCp1wDaUzKo0WwzCuRwVOJ6G135r0f-3DTIq')">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-2">
+<span class="p-1 rounded-md bg-secondary text-white material-symbols-outlined text-[16px]">pin_drop</span>
+<span class="font-label-sm text-label-sm font-semibold">Clinique Alyssa — Lac 2 • Tunis</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface/90 text-on-surface px-2 py-0.5 rounded shadow">Itinéraire vérifié SAMU</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 space-y-1">
+<label class="font-label-md text-label-md font-semibold text-on-surface">Horaires Réguliers d'Ouverture du Cabinet</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">Lundi au Vendredi</span>
+<span class="font-label-md text-label-md font-bold text-primary font-mono">08:30 — 17:30</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">Samedi matin</span>
+<span class="font-label-md text-label-md font-bold text-primary font-mono">08:30 — 13:00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 3: SIGNATURE & CACHET (SHOWCASE FEATURE) ================= -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden" id="signature-tampon">
+<div class="p-space-lg bg-surface-container-low/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Section Clé 03</span>
+<span class="text-outline">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Conformité Déontologique &amp; ANCE</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Signature Électronique &amp; Cachet Professionnel</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Système d'apposition automatique cryptographique pour ordonnances, bilans et certificats d'aptitude.</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+                Horodatage Conforme
+              </span>
+</div>
+<div class="p-space-lg space-y-space-lg">
+<!-- Legal Compliance Banner -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-md">
+<div class="p-2 rounded-lg bg-primary-container text-on-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<div class="space-y-1">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Conformité Déontologique &amp; Sécurité Juridique</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                    Conformément aux directives de l'Ordre des Médecins de Tunisie et à la législation sur les échanges électroniques (Loi N° 2000-83), chaque ordonnance générée porte une signature numérique certifiée par l'ANCE TunTrust et un cachet horodaté infalsifiable.
+                  </p>
+</div>
+</div>
+<!-- Two Interactive Visual Cards: Signature and Stamp Side-by-Side -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- CARD A: SIGNATURE ÉLECTRONIQUE PRATICIEN -->
+<div class="p-space-lg rounded-xl bg-surface-container-low/70 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">history_edu</span>
+                        Signature Numérisée
+                      </span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-bold">ANCE TunTrust</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] mb-space-md">
+                      Tracé haute définition appliqué sur vos ordonnances télétransmises aux officines et patients.
+                    </p>
+<!-- Preview Frame with Realistic Signature Graphic -->
+<div class="relative w-full h-44 rounded-xl bg-surface-container-lowest p-space-md flex flex-col justify-between shadow-inner overflow-hidden">
+<div class="flex justify-between items-center text-[10px] text-outline font-mono">
+<span>CANVAS_SECURE_TRACE #8841-TN</span>
+<span class="text-primary font-bold">HASH VALIDÉ SHA-256</span>
+</div>
+<!-- Doctor's handwritten signature SVG representation -->
+<div class="flex items-center justify-center py-1">
+<svg class="w-56 h-24 text-primary" fill="none" viewbox="0 0 240 90" xmlns="http://www.w3.org/2000/svg">
+<path class="drop-shadow-sm" d="M15 65 C 25 35, 30 15, 45 18 C 55 20, 48 55, 38 68 C 30 78, 55 50, 75 42 C 95 35, 80 65, 92 62 C 105 58, 120 30, 135 28 C 145 27, 138 60, 150 55 C 160 50, 175 35, 190 38 C 200 40, 215 25, 225 30" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"></path>
+<path d="M50 48 Q 90 40 140 52 T 210 46" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M110 70 L 195 62" stroke="currentColor" stroke-linecap="round" stroke-width="2.2"></path>
+</svg>
+</div>
+<!-- Metadata footer on preview -->
+<div class="flex items-center justify-between text-[11px] bg-surface-container-low px-2 py-1 rounded text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+                          Horodatage auto : [Date/Heure Acte]
+                        </span>
+<span class="font-mono text-outline">v2.4</span>
+</div>
+</div>
+</div>
+<div class="space-y-space-md pt-space-xs">
+<!-- Toggle Switch -->
+<label class="flex items-start gap-3 cursor-pointer select-none">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary relative shrink-0 mt-0.5"></div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">
+                        Apposer automatiquement la signature sur les ordonnances validées (F5)
+                      </span>
+</label>
+<div class="flex items-center gap-space-sm">
+<button class="flex-1 px-space-sm py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-label-md font-semibold shadow-sm flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">gesture</span>
+                        Remplacer le tracé
+                      </button>
+<button class="px-space-sm py-2 rounded-lg text-error hover:bg-error-container/20 font-label-md text-label-md font-semibold transition-colors" type="button">
+                        Effacer
+                      </button>
+</div>
+</div>
+</div>
+<!-- CARD B: CACHET OFFICIEL DU CABINET / TAMPON -->
+<div class="p-space-lg rounded-xl bg-surface-container-low/70 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">approval</span>
+                        Cachet Officiel &amp; Tampon
+                      </span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">Rendu Vectoriel</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] mb-space-md">
+                      Empreinte ordinale gravée avec les mentions obligatoires du Ministère de la Santé Publique.
+                    </p>
+<!-- Realistic Doctor Stamp Visual Container -->
+<div class="relative w-full h-44 rounded-xl bg-surface-container-lowest p-space-md flex items-center justify-center shadow-inner overflow-hidden">
+<!-- Circular/Oval Realistic Stamp SVG -->
+<div class="relative flex items-center justify-center transform -rotate-2 hover:rotate-0 transition-transform">
+<svg class="w-40 h-40 text-primary" fill="none" viewbox="0 0 160 160">
+<!-- Outer Ring Double -->
+<circle cx="80" cy="80" r="74" stroke="currentColor" stroke-dasharray="4 2" stroke-width="2.5"></circle>
+<circle cx="80" cy="80" r="69" stroke="currentColor" stroke-width="1.2"></circle>
+<!-- Inner Circular Path with Texts -->
+<path d="M 22 80 A 58 58 0 1 1 138 80" fill="none" id="stamp-text-top"></path>
+<text fill="currentColor" font-size="7" font-weight="700" letter-spacing="1.2">
+<textpath href="#stamp-text-top" startoffset="50%" text-anchor="middle">
+                              DR. KARIM BEN MAHMOUD • CARDIOLOGIE
+                            </textpath>
+</text>
+<path d="M 138 80 A 58 58 0 0 1 22 80" fill="none" id="stamp-text-bottom"></path>
+<text fill="currentColor" font-size="6.8" font-weight="700" letter-spacing="1">
+<textpath href="#stamp-text-bottom" startoffset="50%" text-anchor="middle">
+                              CLINIQUE ALYSSA TUNIS • CNOM 14892
+                            </textpath>
+</text>
+<!-- Center Caduceus / Cross Emblem -->
+<circle cx="80" cy="80" r="28" stroke="currentColor" stroke-width="1"></circle>
+<path d="M 80 58 L 80 102 M 66 74 L 94 74 M 70 86 L 90 86" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<text fill="currentColor" font-size="6.5" font-weight="bold" text-anchor="middle" x="80" y="70">CNAM</text>
+<text fill="currentColor" font-size="6" font-weight="bold" text-anchor="middle" x="80" y="98">CONVENTIONNÉ</text>
+</svg>
+</div>
+<span class="absolute bottom-2 right-2 text-[10px] font-mono text-outline">
+                        PNG_ALPHA_HIGH_DPI
+                      </span>
+</div>
+</div>
+<div class="space-y-space-md pt-space-xs">
+<!-- Toggle Switch -->
+<label class="flex items-start gap-3 cursor-pointer select-none">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary relative shrink-0 mt-0.5"></div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">
+                        Apposer automatiquement le cachet en pied de page des certificats et ordonnances
+                      </span>
+</label>
+<button class="w-full px-space-md py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold shadow-sm flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">cloud_upload</span>
+                      Téléverser une nouvelle matrice de cachet
+                    </button>
+</div>
+</div>
+</div>
+<!-- High Security Condition for Restricted Drugs -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-3">
+<input checked="" class="mt-1 h-5 w-5 rounded text-primary focus:ring-primary" id="pin-narcotics" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface cursor-pointer select-none" for="pin-narcotics">
+<strong class="font-bold text-secondary">Protocole Stupéfiants &amp; Tableau A :</strong> 
+                  Exiger systématiquement le code PIN rapide praticien ou l'empreinte biométrique avant validation et signature de toute ordonnance contenant des substances vénéneuses ou psychotropes.
+                </label>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 4: SÉCURITÉ & 2FA ================= -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden" id="securite-2fa">
+<div class="p-space-lg bg-surface-container-low/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Section 04</span>
+<span class="text-outline">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Confidentialité Patient &amp; HDS</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Sécurité &amp; Authentification à Deux Facteurs (2FA)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Protection renforcée des dossiers médicaux électroniques (DME) contre tout accès non autorisé.</p>
+</div>
+<div class="p-2 rounded-lg bg-primary-container/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">shield_person</span>
+</div>
+</div>
+<div class="p-space-lg space-y-space-lg">
+<!-- 2FA Active Banner -->
+<div class="p-space-md rounded-xl bg-primary-container text-on-primary-container flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<div class="p-2.5 rounded-full bg-on-primary-container text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-primary">Double Authentification (2FA) Active</h4>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim">Votre compte praticien répond aux critères stricts de la norme de protection INPDP et HDS Santé.</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold self-start sm:self-auto">
+                  Niveau Maximal 3/3
+                </span>
+</div>
+<!-- Security Methods Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between space-y-space-md">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">smartphone</span>
+                        SMS de Secours
+                      </span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Actif</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">
+                      Envoi d'un code OTP à 6 chiffres sur votre mobile vérifié :
+                    </p>
+<p class="font-mono text-headline-sm text-headline-sm font-bold text-on-surface pt-1">
+                      +216 98 ••• 567
+                    </p>
+</div>
+<button class="w-full px-space-md py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-label-md font-semibold shadow-sm transition-colors text-left flex items-center justify-between" type="button">
+<span>Modifier le numéro mobile 2FA</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between space-y-space-md">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">token</span>
+                        App Authenticator (TOTP)
+                      </span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-bold">Recommandé</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px]">
+                      Compatible Google Authenticator, Microsoft Authenticator ou 1Password.
+                    </p>
+<p class="font-label-sm text-label-sm text-outline pt-1">
+                      8 codes de secours d'urgence restants
+                    </p>
+</div>
+<button class="w-full px-space-md py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-label-md font-semibold shadow-sm transition-colors text-left flex items-center justify-between" type="button">
+<span>Régénérer les codes de secours</span>
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Password Management Row -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">password</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Mot de passe du compte praticien</h4>
+<p class="font-body-sm text-body-sm text-outline">Dernière modification il y a 45 jours (Recommandation : renouveler tous les 90 jours)</p>
+</div>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md font-semibold transition-colors shrink-0" type="button">
+                  Mettre à jour le mot de passe
+                </button>
+</div>
+<!-- Active Connected Sessions Table -->
+<div class="space-y-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<h4 class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">devices</span>
+                    Sessions Actives Récentes
+                  </h4>
+<button class="font-label-sm text-label-sm text-error hover:underline font-bold" type="button">
+                    Déconnecter toutes les autres sessions
+                  </button>
+</div>
+<div class="rounded-xl overflow-hidden shadow-sm bg-surface-container-lowest">
+<div class="p-space-md flex items-center justify-between bg-primary/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">laptop_mac</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">MacBook Pro Cabinet 302 — Tunis</span>
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm text-[10px] font-bold">Session actuelle</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline text-[12px]">IP : 197.0.12.84 • Navigateur Chrome 129 • macOS Sonoma</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold flex items-center gap-1">
+<span class="h-2 w-2 rounded-full bg-primary animate-ping"></span> En ligne
+                    </span>
+</div>
+<div class="p-space-md flex items-center justify-between bg-surface-container-lowest">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-[22px]">tablet_mac</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold text-on-surface">iPad Pro Visite Clinique — Clinique Alyssa</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline text-[12px]">IP : 197.0.12.89 • MediDesk App iOS 18.1 • Il y a 2 heures</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error text-[12px] font-semibold" type="button">
+                      Déconnecter
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 5: NOTIFICATIONS & ALERTES CLINIQUES ================= -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden" id="alertes-cliniques">
+<div class="p-space-lg bg-surface-container-low/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Section 05</span>
+<span class="text-outline">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Flux Clinique en Temps Réel</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Préférences de Notifications &amp; Alertes Cliniques</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Définissez vos canaux de réception pour ne jamais manquer une urgence tout en préservant votre temps de consultation.</p>
+</div>
+<div class="p-2 rounded-lg bg-secondary-container/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</div>
+</div>
+<div class="p-space-lg space-y-space-lg">
+<!-- Channels Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase">
+<th class="py-3 px-4 rounded-l-lg">Type d'Événement Médical</th>
+<th class="py-3 px-4 text-center">In-App (Écran)</th>
+<th class="py-3 px-4 text-center">SMS Urgent</th>
+<th class="py-3 px-4 text-center rounded-r-lg">Email Récap</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm">
+<!-- Row 1: Patient arrival -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Arrivée d'un patient en salle d'attente</div>
+<div class="text-[12px] text-outline">Notification dès l'enregistrement par la secrétaire à l'accueil</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+</tr>
+<!-- Row 2: Delay reported -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Signalement de retard par un patient (&gt; 15 min)</div>
+<div class="text-[12px] text-outline">Permet de réorganiser la file d'attente active</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+</tr>
+<!-- Row 3: Critical Lab Results (URGENT HIGHLIGHT) -->
+<tr class="bg-secondary-fixed/20">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2 font-bold text-secondary">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+                          Résultats biologiques critiques (OCR / Alerte laboratoire)
+                        </div>
+<div class="text-[12px] text-on-secondary-fixed-variant">Troponine, D-Dimères, ionogramme sévère reçu de la Clinique Alyssa</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="h-4 w-4 rounded text-secondary" disabled="" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="h-4 w-4 rounded text-secondary" disabled="" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="h-4 w-4 rounded text-secondary" disabled="" type="checkbox"/>
+</td>
+</tr>
+<!-- Row 4: Daily Schedule Summary -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Rappels quotidiens du planning du lendemain (20h00)</div>
+<div class="text-[12px] text-outline">Liste ordonnée des RDV, actes prévus (Doppler/Épreuve d'effort)</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+</tr>
+<!-- Row 5: Invoicing / Billing alerts -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-semibold text-on-surface">Alertes d'échéance de l'abonnement &amp; Facturation</div>
+<div class="text-[12px] text-outline">Reçus mensuels et suivi des bordereaux CNAM télétransmis</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="h-4 w-4 rounded text-primary focus:ring-primary" type="checkbox"/>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Quiet Hours (Ne Pas Déranger) -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-surface-container-highest text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">bedtime</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface">Mode « Ne Pas Déranger » en dehors du cabinet</h4>
+<p class="font-body-sm text-body-sm text-outline">Coupe les alertes non-urgentes entre 20h30 et 07h30 (sauf alertes vitales SAMU 190 / Gardes)</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+<!-- ================= STICKY BOTTOM SAVE ACTION BAR ================= -->
+<div class="sticky bottom-0 left-0 right-0 w-full z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.06)] mt-space-xl">
+<div class="max-w-7xl mx-auto px-gutter-md md:px-gutter-lg py-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm text-[13px]">
+<span class="material-symbols-outlined text-primary text-[18px]">cloud_done</span>
+<span>Dernière sauvegarde automatique : <strong>Aujourd'hui à 11:42</strong></span>
+<span class="text-outline hidden md:inline">•</span>
+<span class="text-outline hidden md:inline">Toutes les modifications sont chiffrées selon les normes INPDP.</span>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high font-label-md text-label-md text-on-surface font-semibold transition-colors" type="button">
+            Réinitialiser
+          </button>
+<button class="px-space-lg py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-md flex items-center gap-2 transition-all transform active:scale-95" id="btn-save-main" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Enregistrer les modifications</span>
+<span class="font-normal opacity-70 text-xs hidden lg:inline">[Ctrl+S]</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple smooth scroll tab navigation interaction
+  document.addEventListener('DOMContentLoaded', () => {
+    const navButtons = document.querySelectorAll('#settings-tabs-nav button');
+    
+    navButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          // Update active styles
+          navButtons.forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+          btn.classList.remove('text-on-surface-variant');
+          
+          // Scroll cleanly into view with shell header offset
+          const yOffset = -140;
+          const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Keyboard shortcut handler [Ctrl+S] / [Cmd+S]
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault();
+        const saveBtn = document.getElementById('btn-save-main');
+        if (saveBtn) {
+          saveBtn.classList.add('scale-95', 'bg-primary-container');
+          setTimeout(() => {
+            saveBtn.classList.remove('scale-95', 'bg-primary-container');
+            alert('Paramètres du compte praticien Dr. Karim Ben Mahmoud enregistrés avec succès.');
+          }, 200);
+        }
+      }
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-low"><div class="w-full px-gutter-lg py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md border-t border-outline-variant/20"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-sm"><span class="font-label-md text-label-md text-on-surface font-semibold">MediDesk Santé</span><span class="font-label-sm text-label-sm text-outline">•</span><span class="font-label-sm text-label-sm text-on-surface-variant">Clinique Alyssa — Cabinet Médical Central</span></div><div class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">verified_user</span> Certification HDS &amp; Sécurité Médicale</span><span>•</span><span>Protection des Données INPDP (Loi N° 2004-63)</span></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-md bg-surface-container-lowest px-space-md py-space-xs rounded-lg shadow-[0_1px_3px_0_rgba(15,110,106,0.04)]"><span class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wide">Urgences</span><div class="flex items-center gap-space-sm"><span class="font-label-sm text-label-sm text-on-surface"><strong class="text-error">SAMU:</strong> 190</span><span class="font-label-sm text-label-sm text-outline">|</span><span class="font-label-sm text-label-sm text-on-surface"><strong class="text-secondary">Prot. Civile:</strong> 198</span></div></div><span class="font-label-sm text-label-sm text-outline">© 2025 MediDesk Santé. Tous droits réservés.</span></div></div></footer></body></html>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>MediDesk - Trouver un Médecin</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-container-high": "#dee9fc",
+        "outline": "#6e7978",
+        "on-error-container": "#93000a",
+        "surface-dim": "#d0dbed",
+        "on-primary-container": "#9dede8",
+        "on-tertiary": "#ffffff",
+        "secondary-fixed-dim": "#ffb59e",
+        "secondary-container": "#fd8863",
+        "outline-variant": "#bec9c7",
+        "on-surface": "#121c2a",
+        "surface-container-highest": "#d9e3f6",
+        "error": "#ba1a1a",
+        "on-secondary": "#ffffff",
+        "surface-container-lowest": "#ffffff",
+        "on-tertiary-fixed-variant": "#6e3900",
+        "surface-container-low": "#eff4ff",
+        "inverse-primary": "#85d4cf",
+        "tertiary-fixed": "#ffdcc3",
+        "primary": "#005451",
+        "tertiary-container": "#965000",
+        "on-primary-fixed": "#00201e",
+        "on-tertiary-container": "#ffd7ba",
+        "inverse-on-surface": "#eaf1ff",
+        "on-primary": "#ffffff",
+        "on-error": "#ffffff",
+        "tertiary": "#733c00",
+        "secondary-fixed": "#ffdbd0",
+        "primary-fixed-dim": "#85d4cf",
+        "surface-container": "#e6eeff",
+        "surface": "#f8f9ff",
+        "background": "#f8f9ff",
+        "surface-tint": "#046a66",
+        "surface-bright": "#f8f9ff",
+        "tertiary-fixed-dim": "#ffb77d",
+        "on-secondary-container": "#722104",
+        "primary-fixed": "#a1f1eb",
+        "on-secondary-fixed-variant": "#7f2a0d",
+        "surface-variant": "#d9e3f6",
+        "primary-container": "#0f6e6a",
+        "on-background": "#121c2a",
+        "inverse-surface": "#27313f",
+        "on-primary-fixed-variant": "#00504d",
+        "on-surface-variant": "#3e4948",
+        "error-container": "#ffdad6",
+        "on-tertiary-fixed": "#2f1500",
+        "on-secondary-fixed": "#3a0b00",
+        "secondary": "#9f4122"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-xs": "0.25rem",
+        "margin": "1rem",
+        "space-xl": "2.5rem",
+        "space-sm": "0.5rem",
+        "space-lg": "1.5rem",
+        "gutter-lg": "2rem",
+        "margin-lg": "2.5rem",
+        "space-md": "1rem",
+        "margin-md": "1.5rem",
+        "gutter-md": "1.5rem",
+        "gutter": "1rem"
+      },
+      "fontFamily": {
+        "headline-xl": ["Plus Jakarta Sans"],
+        "body-md": ["Plus Jakarta Sans"],
+        "body-lg": ["Plus Jakarta Sans"],
+        "label-lg": ["Plus Jakarta Sans"],
+        "label-md": ["Plus Jakarta Sans"],
+        "headline-xl-mobile": ["Plus Jakarta Sans"],
+        "label-sm": ["Plus Jakarta Sans"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "body-sm": ["Plus Jakarta Sans"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "headline-sm": ["Plus Jakarta Sans"]
+      },
+      "fontSize": {
+        "headline-xl": ["2.25rem", {"lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "body-md": ["1rem", {"lineHeight": "1.5rem", "fontWeight": "400"}],
+        "body-lg": ["1.125rem", {"lineHeight": "1.75rem", "fontWeight": "400"}],
+        "label-lg": ["0.875rem", {"lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "label-md": ["0.75rem", {"lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "headline-xl-mobile": ["1.75rem", {"lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "label-sm": ["0.6875rem", {"lineHeight": "0.875rem", "letterSpacing": "0.03em", "fontWeight": "600"}],
+        "headline-md": ["1.25rem", {"lineHeight": "1.75rem", "fontWeight": "600"}],
+        "headline-lg-mobile": ["1.375rem", {"lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "body-sm": ["0.875rem", {"lineHeight": "1.25rem", "fontWeight": "400"}],
+        "headline-lg": ["1.75rem", {"lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "headline-sm": ["1.125rem", {"lineHeight": "1.5rem", "fontWeight": "600"}]
+      }
+    }
+  }
+}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-margin md:px-margin-md lg:px-margin-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="MediDesk Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WFStIlxB2FaXASVGdkaJT9w2n4VY5QxAxAh8r_fOmU7RX0IWiuD0tIAgrCx9c1m_Isox7BfjoMSz3wI97tRdACczgMRfHkMIIB0uI7Cr9i1MTMelwVUoo3WuySVu33kodMuAqMPWIVKQIt9nI_eGm4j3Ue7UpyOq15xMem6Yj6z3HevWEMGQhoV5MsP3E0FC1H5s4hPg2LVJQK2hxOMrdm_dnoFpidf75MfzLTx8abdjfcq1mKrC-7m6U"/><span class="font-headline-sm text-headline-sm font-bold text-primary-container tracking-tight">MediDesk</span></a><nav class="hidden md:flex items-center gap-space-xs p-space-xs" data-active-classes="bg-surface-container-high text-on-surface font-semibold rounded-lg"><a class="px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="for-doctors" href="#">For Doctors</a><a class="px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pricing" href="#">Pricing</a><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-surface-container-high text-on-surface font-semibold rounded-lg" data-path="find-a-doctor" href="#">Find a Doctor</a></nav></div><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors px-space-md py-space-sm rounded-lg hover:bg-surface-container-low" data-path="login" href="#">Log in</a><a class="inline-flex items-center justify-center px-space-lg py-space-sm rounded-lg bg-secondary-container text-on-secondary font-label-lg text-label-lg shadow-sm hover:bg-secondary transition-colors" data-path="book-an-appointment" href="#">Book an Appointment</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Search & Breadcrumb Header Area -->
+<section class="w-full bg-surface-container-low px-margin md:px-margin-md lg:px-margin-lg pt-space-md pb-space-lg">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-md">
+<!-- Breadcrumbs & Quick reassurance counter -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<nav aria-label="Fil d'Ariane" class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<a class="hover:text-primary transition-colors" href="#">Accueil</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Trouver un médecin</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-outline">Annuaire Tunisie</span>
+</nav>
+<div class="flex items-center gap-space-xs bg-surface px-space-sm py-space-xs rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface">380+ cabinets médicaux connectés en direct</span>
+</div>
+</div>
+<!-- Main Search Multi-Segment Bar (Desktop Ergonomics) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-md flex flex-col lg:flex-row items-stretch gap-space-xs">
+<!-- Input: Practitioner / Pathologie -->
+<div class="flex-1 flex items-center px-space-md py-space-xs bg-surface-container-low/50 hover:bg-surface-container-low rounded-lg transition-colors group">
+<span class="material-symbols-outlined text-primary text-[22px] mr-space-sm group-focus-within:text-primary-container">search</span>
+<div class="flex flex-col w-full">
+<label class="font-label-sm text-label-sm text-outline group-focus-within:text-primary font-semibold" for="search-query">Médecin, cabinet ou pathologie</label>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface focus:outline-none placeholder:text-outline/70" id="search-query" placeholder="Ex: Cardiologue, Dr. Amira, Diabète..." type="text" value="Dr. Ben Mahmoud"/>
+</div>
+</div>
+<!-- Specialty Dropdown -->
+<div class="flex-1 flex items-center px-space-md py-space-xs bg-surface-container-low/50 hover:bg-surface-container-low rounded-lg transition-colors group">
+<span class="material-symbols-outlined text-primary text-[22px] mr-space-sm">stethoscope</span>
+<div class="flex flex-col w-full">
+<label class="font-label-sm text-label-sm text-outline font-semibold" for="select-specialty">Spécialité médicale</label>
+<select class="w-full bg-transparent font-body-sm text-body-sm text-on-surface focus:outline-none cursor-pointer" id="select-specialty">
+<option value="all">Toutes les spécialités</option>
+<option selected="" value="cardio">Cardiologie &amp; Vasculaire</option>
+<option value="pediatrie">Pédiatrie</option>
+<option value="ophtalmo">Ophtalmologie</option>
+<option value="dentiste">Chirurgie Dentaire</option>
+<option value="generaliste">Médecine Générale</option>
+<option value="dermato">Dermatologie</option>
+</select>
+</div>
+</div>
+<!-- Governorate & City Dropdown -->
+<div class="flex-1 flex items-center px-space-md py-space-xs bg-surface-container-low/50 hover:bg-surface-container-low rounded-lg transition-colors group">
+<span class="material-symbols-outlined text-primary text-[22px] mr-space-sm">location_on</span>
+<div class="flex flex-col w-full">
+<label class="font-label-sm text-label-sm text-outline font-semibold" for="select-city">Gouvernorat / Ville</label>
+<select class="w-full bg-transparent font-body-sm text-body-sm text-on-surface focus:outline-none cursor-pointer" id="select-city">
+<option selected="" value="tunis">Tunis (Grand Tunis)</option>
+<option value="ariana">Ariana (Ennasr, Menzah)</option>
+<option value="benarous">Ben Arous (Mégrine, Ezzahra)</option>
+<option value="sousse">Sousse</option>
+<option value="sfax">Sfax</option>
+<option value="monastir">Monastir</option>
+<option value="nabeul">Nabeul / Hammamet</option>
+</select>
+</div>
+</div>
+<!-- Search Action Button -->
+<button class="px-space-lg py-space-md bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm hover:bg-primary transition-all flex items-center justify-center gap-space-xs shrink-0 active:scale-[0.99]" type="button">
+<span class="material-symbols-outlined text-[20px]">manage_search</span>
+<span>Rechercher</span>
+</button>
+</div>
+<!-- Quick Availability Filter Pills -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline mr-space-xs">Disponibilité :</span>
+<button class="px-space-md py-space-xs rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-xs" type="button">Tous</button>
+<button class="px-space-md py-space-xs rounded-full font-label-md text-label-md bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Aujourd'hui
+          </button>
+<button class="px-space-md py-space-xs rounded-full font-label-md text-label-md bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" type="button">Cette semaine</button>
+<button class="px-space-md py-space-xs rounded-full font-label-md text-label-md bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">videocam</span>
+            Téléconsultation
+          </button>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Prise de rendez-vous 100% gratuite &amp; sans compte préalable</span>
+</div>
+</div>
+</section>
+<!-- Main Directory Layout -->
+<div class="w-full px-margin md:px-margin-md lg:px-margin-lg py-space-lg max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<!-- Left Sidebar: Filter Matrix (~280px / 3.5 cols on desktop) -->
+<aside class="lg:col-span-4 xl:col-span-3 flex flex-col gap-space-md sticky top-24">
+<!-- Filter Card Container -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Filtres précis</h2>
+</div>
+<button class="font-label-sm text-label-sm text-secondary hover:underline cursor-pointer" id="reset-filters-btn" type="button">Effacer tout</button>
+</div>
+<!-- Active tags -->
+<div class="flex flex-wrap gap-space-xs">
+<span class="inline-flex items-center gap-1 bg-surface-container-high text-primary px-space-sm py-0.5 rounded-full font-label-sm text-label-sm">
+              Tunis &amp; environs
+              <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-on-surface">close</span>
+</span>
+<span class="inline-flex items-center gap-1 bg-surface-container-high text-primary px-space-sm py-0.5 rounded-full font-label-sm text-label-sm">
+              Conventionné CNAM
+              <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-on-surface">close</span>
+</span>
+</div>
+<!-- Filter Section: Conventionnement CNAM -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Remboursement CNAM</span>
+<label class="flex items-start gap-space-sm cursor-pointer py-1 group">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-medium group-hover:text-primary transition-colors">Conventionné CNAM</span>
+<span class="font-label-sm text-label-sm text-outline">Filière privée / Médecin de famille</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm cursor-pointer py-1 group">
+<input class="mt-0.5 w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-medium group-hover:text-primary transition-colors">Remboursement Mutuelles</span>
+<span class="font-label-sm text-label-sm text-outline">Feuille de soin instantanée</span>
+</div>
+</label>
+</div>
+<!-- Filter Section: Honoraires & Tarifs -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Honoraires de consultation</span>
+<div class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+<label class="flex items-center justify-between cursor-pointer py-1 text-on-surface-variant hover:text-on-surface">
+<span class="flex items-center gap-space-xs">
+<input class="accent-primary cursor-pointer" name="tarifs" type="radio"/>
+<span>Moins de 50 TND</span>
+</span>
+<span class="font-label-sm text-label-sm text-outline">12</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer py-1 text-on-surface-variant hover:text-on-surface">
+<span class="flex items-center gap-space-xs">
+<input checked="" class="accent-primary cursor-pointer" name="tarifs" type="radio"/>
+<span>50 à 80 TND</span>
+</span>
+<span class="font-label-sm text-label-sm text-outline">24</span>
+</label>
+<label class="flex items-center justify-between cursor-pointer py-1 text-on-surface-variant hover:text-on-surface">
+<span class="flex items-center gap-space-xs">
+<input class="accent-primary cursor-pointer" name="tarifs" type="radio"/>
+<span>80 TND et plus</span>
+</span>
+<span class="font-label-sm text-label-sm text-outline">6</span>
+</label>
+</div>
+</div>
+<!-- Filter Section: Type de Consultation -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Mode de consultation</span>
+<label class="flex items-center gap-space-sm cursor-pointer py-1">
+<input checked="" class="w-4 h-4 rounded accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Cabinet présentiel</span>
+</label>
+<label class="flex items-center gap-space-sm cursor-pointer py-1">
+<input class="w-4 h-4 rounded accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Téléconsultation vidéo</span>
+</label>
+<label class="flex items-center gap-space-sm cursor-pointer py-1">
+<input class="w-4 h-4 rounded accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Visite médicale à domicile</span>
+</label>
+</div>
+<!-- Filter Section: Langues parlées -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Langues parlées</span>
+<label class="flex items-center gap-space-sm cursor-pointer py-1">
+<input checked="" class="w-4 h-4 rounded accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Arabe tunisien (لهجة تونسية)</span>
+</label>
+<label class="flex items-center gap-space-sm cursor-pointer py-1">
+<input checked="" class="w-4 h-4 rounded accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Français</span>
+</label>
+<label class="flex items-center gap-space-sm cursor-pointer py-1">
+<input class="w-4 h-4 rounded accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Anglais</span>
+</label>
+</div>
+<!-- Filter Section: Équipements & Accès -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Équipements du cabinet</span>
+<label class="flex items-center gap-space-sm cursor-pointer py-1">
+<input checked="" class="w-4 h-4 rounded accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Accès ascenseur / PMR</span>
+</label>
+<label class="flex items-center gap-space-sm cursor-pointer py-1">
+<input class="w-4 h-4 rounded accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Parking patientèle</span>
+</label>
+<label class="flex items-center gap-space-sm cursor-pointer py-1">
+<input checked="" class="w-4 h-4 rounded accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Paiement Carte Bancaire / D17</span>
+</label>
+</div>
+<!-- Filter Section: Genre -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Genre du praticien</span>
+<div class="grid grid-cols-3 gap-1 bg-surface-container p-1 rounded-lg">
+<button class="py-1 text-center font-label-sm text-label-sm rounded bg-surface-container-lowest font-bold text-primary shadow-xs" type="button">Tous</button>
+<button class="py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" type="button">Femme</button>
+<button class="py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface" type="button">Homme</button>
+</div>
+</div>
+</div>
+<!-- INPDP / Security Reassurance Badge -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-start gap-space-sm shadow-xs">
+<span class="material-symbols-outlined text-primary text-[24px] mt-0.5">verified_user</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Conforme INPDP Tunisie</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] leading-snug">
+              Vos démarches et données médicales sont chiffrées selon les normes de la République Tunisienne.
+            </p>
+</div>
+</div>
+</aside>
+<!-- Right Column: Main Results Listing (8.5 cols desktop) -->
+<main class="lg:col-span-8 xl:col-span-9 flex flex-col gap-space-lg">
+<!-- Results Counter & Sort bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md bg-surface-container-lowest px-space-md py-space-sm rounded-xl shadow-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">42 médecins</span>
+<span class="font-body-md text-body-md text-outline">trouvés à Tunis et environs</span>
+</div>
+<!-- Sort select -->
+<div class="flex items-center gap-space-xs">
+<label class="font-label-md text-label-md text-outline whitespace-nowrap" for="sort-results">Trier par :</label>
+<div class="relative inline-flex items-center">
+<select class="bg-surface-container font-label-md text-label-md text-on-surface px-space-md py-1.5 pr-8 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary" id="sort-results">
+<option value="pertinence">Pertinence MediDesk</option>
+<option selected="" value="dispo">Disponibilité la plus proche</option>
+<option value="rating">Note &amp; avis vérifiés</option>
+<option value="tarif_asc">Honoraires : Moins cher</option>
+</select>
+<span class="material-symbols-outlined text-[18px] text-outline absolute right-2 pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- DOCTOR CARD 1: Dr. Karim Ben Mahmoud -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col xl:flex-row gap-space-lg">
+<!-- 4px Category Accent Bar (Teal for Cardiology/Specialty) -->
+<div class="absolute left-0 inset-y-0 w-1.5 bg-primary"></div>
+<!-- Doctor Identification & Bio (Left side of card) -->
+<div class="flex-1 flex flex-col gap-space-sm pl-space-xs">
+<div class="flex items-start gap-space-md">
+<!-- Avatar with verified badge -->
+<div class="relative shrink-0">
+<img class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover shadow-sm" data-alt="Portrait photograph of Dr. Karim Ben Mahmoud, an experienced male Tunisian cardiologist in his mid-40s wearing an immaculate white clinic coat with stethoscope over a soft teal dress shirt, clean medical office background with soft neutral Mediterranean lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh1ppX3NMmczf3Limjgt1aE2aoUXlPZ0HqN-xBsbBHCNYQlkKY-Xq4sHThd1kTbpRkkV3T3pGB50S9DrjXG6rx7GBqBkhwyxydMrFFrbY5x2f3tGvHFINfuylSUFNDUBqtlI47cg_iR0MR8DuHquwJE2Sifr4xE2xhlNBgsBKPOFR1X6CUnwFxbX2Pcj0z96nvNdsUh2SAd24_qDvLrjey32Ci9CpvUE04dim06_T956YhLdqlxdgU"/>
+<span class="absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-0.5 shadow-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</span>
+</div>
+<!-- Main Title & Credentials -->
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface hover:text-primary transition-colors cursor-pointer">
+                    Dr. Karim Ben Mahmoud
+                  </h3>
+<span class="px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-[#ECFDF5] text-[#16A34A] font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16A34A]"></span>
+                    Conventionné CNAM
+                  </span>
+</div>
+<span class="font-label-lg text-label-lg font-semibold text-primary">Cardiologue &amp; Maladies Vasculaires</span>
+<!-- Rating pill -->
+<div class="flex items-center gap-space-xs mt-1">
+<span class="material-symbols-outlined text-amber-500 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-outline">(148 avis vérifiés)</span>
+</div>
+</div>
+</div>
+<!-- Clinic Location & Practice Information -->
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0">apartment</span>
+<span>Cabinet Médical Les Berges du Lac, 3ème étage, 1053 Tunis</span>
+</div>
+<!-- Short Bio Line -->
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Ancien Chef de Clinique aux Hôpitaux de Paris, spécialiste en échocardiographie doppler, holter tensionnel et suivi rigoureux de l'hypertension artérielle.
+            </p>
+<!-- Fees and specs badges -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<span class="font-label-md text-label-md bg-surface-container px-space-sm py-1 rounded text-on-surface">
+                Tarif : <strong class="font-bold text-primary">70 TND</strong>
+</span>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">credit_card</span>
+                CB &amp; Chèques acceptés
+              </span>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">accessible</span>
+                Ascenseur PMR
+              </span>
+</div>
+</div>
+<!-- Availability Matrix & Appointment Booker (Right side of card) -->
+<div class="w-full xl:w-72 shrink-0 bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between gap-space-md">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold text-outline">Prochains créneaux</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Temps réel</span>
+</div>
+<!-- Quick Time Slots Grid -->
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="px-space-xs py-space-xs rounded bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md text-center shadow-xs transition-colors flex flex-col items-center" type="button">
+<span class="font-bold">Aujourd'hui</span>
+<span class="text-[11px] opacity-80">15:30</span>
+</button>
+<button class="px-space-xs py-space-xs rounded bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md text-center shadow-xs transition-colors flex flex-col items-center" type="button">
+<span class="font-bold">Demain</span>
+<span class="text-[11px] opacity-80">10:00</span>
+</button>
+<button class="px-space-xs py-space-xs rounded bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md text-center shadow-xs transition-colors flex flex-col items-center" type="button">
+<span class="font-bold">Demain</span>
+<span class="text-[11px] opacity-80">11:30</span>
+</button>
+<button class="px-space-xs py-space-xs rounded bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md text-center shadow-xs transition-colors flex flex-col items-center" type="button">
+<span class="font-bold">Jeudi</span>
+<span class="text-[11px] opacity-80">16:15</span>
+</button>
+</div>
+</div>
+<!-- Direct Booking CTA -->
+<button class="w-full py-space-sm px-space-md bg-primary text-on-primary font-label-md text-label-md rounded-lg shadow-sm hover:bg-primary-container transition-all flex items-center justify-center gap-space-xs group" type="button">
+<span>Prendre rendez-vous</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- DOCTOR CARD 2: Dr. Leila Ben Salem (With Live Waiting Room Queue Indicator) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col xl:flex-row gap-space-lg">
+<!-- 4px Category Accent Bar -->
+<div class="absolute left-0 inset-y-0 w-1.5 bg-secondary"></div>
+<!-- Doctor Identification & Bio -->
+<div class="flex-1 flex flex-col gap-space-sm pl-space-xs">
+<div class="flex items-start gap-space-md">
+<div class="relative shrink-0">
+<img class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover shadow-sm" data-alt="Professional studio portrait of Dr. Leila Ben Salem, a Tunisian female pediatrician smiling warmly, wearing a modern pediatric lab coat with colorful clip pin in a bright welcoming pediatric clinic room with warm sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpbXCmR_d3ynpOyTeQWlszbgxViouM5sqQ4BW3oyU8EeJgLtl6YoiNrP_4JPK9TssaytGDIJyybqVHc55v3dvkdby2u-NpEof521ojewHAQnHyAJrxdHSfobhq1lHjL7G6ASOitn1BUiEcW0ydCHC2_NGCtcyajZdmdIiHCYGBJKFEpmP2h63T6F8zlr-OXMJli8fsz0uJDFs4eQTs00DWEDe6cYO06wtrmqfPmU8Zc9dydmPkj4md"/>
+<span class="absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-0.5 shadow-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface hover:text-primary transition-colors cursor-pointer">
+                    Dr. Leila Ben Salem
+                  </h3>
+<!-- Live Queue Feature Badge -->
+<span class="px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-[#FFFBEB] text-[#D97706] font-bold inline-flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#D97706] animate-ping"></span>
+                    File live : 3 patients en salle
+                  </span>
+</div>
+<span class="font-label-lg text-label-lg font-semibold text-primary">Pédiatre &amp; Urgences du Nourrisson</span>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="material-symbols-outlined text-amber-500 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">5.0</span>
+<span class="font-body-sm text-body-sm text-outline">(214 avis vérifiés)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0">apartment</span>
+<span>Clinique Urbaine Ennasr 2, Av. Hédi Nouira, 2037 Ariana</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Prise en charge pédiatrique complète du nourrisson à l'adolescent, gestion des urgences pédiatriques, suivi de croissance et calendrier vaccinal tunisien.
+            </p>
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<span class="font-label-md text-label-md bg-surface-container px-space-sm py-1 rounded text-on-surface">
+                Tarif : <strong class="font-bold text-primary">60 TND</strong>
+</span>
+<span class="px-space-sm py-0.5 rounded font-label-sm text-label-sm bg-[#ECFDF5] text-[#16A34A] font-semibold">
+                Conventionnée CNAM
+              </span>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">toys</span>
+                Espace jeux enfants
+              </span>
+</div>
+</div>
+<!-- Availability & booking -->
+<div class="w-full xl:w-72 shrink-0 bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between gap-space-md">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold text-outline">Créneau le plus proche</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Sans attente</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-xs flex flex-col items-center justify-center text-center">
+<span class="font-label-md text-label-md text-outline">Aujourd'hui en fin d'après-midi</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">16:45</span>
+<span class="font-label-sm text-label-sm text-[#16A34A] mt-0.5">Confirmation SMS instantanée</span>
+</div>
+</div>
+<button class="w-full py-space-sm px-space-md bg-primary text-on-primary font-label-md text-label-md rounded-lg shadow-sm hover:bg-primary-container transition-all flex items-center justify-center gap-space-xs group" type="button">
+<span>Réserver ce créneau</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">calendar_month</span>
+</button>
+</div>
+</article>
+<!-- DOCTOR CARD 3: Dr. Yassine Chaabane (Ophtalmologue) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col xl:flex-row gap-space-lg">
+<div class="absolute left-0 inset-y-0 w-1.5 bg-primary-fixed-dim"></div>
+<div class="flex-1 flex flex-col gap-space-sm pl-space-xs">
+<div class="flex items-start gap-space-md">
+<div class="relative shrink-0">
+<img class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover shadow-sm" data-alt="Portrait photography of Dr. Yassine Chaabane, a male Tunisian ophthalmologist in his early 50s wearing dark tailored suit under a white open lab coat with ophthalmic diagnostic optical equipment in soft focus in background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIYJA6DskusatKmjO1uTBhYPMoj6koNdf4Kl8UYuP7QpREsT8mKTtqXBYQ4QyZcIRm9_5r_izpJNpA437Sia9eF_i1lqTEA_yqRjfDlzQYIlpz9SXhe70BEDYOSzH5_WVwIdxHCK7OI4yEJa47zcenEDKvjNkO6iUG-wr52eGjGraLFAD421N5Xjq8ykFygtUhR1jyTJBkh4y9YqquLWcO8ZILYhzj8HQuF64ddhZnw7sjJZEyuh8q"/>
+<span class="absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-0.5 shadow-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface hover:text-primary transition-colors cursor-pointer">
+                    Dr. Yassine Chaabane
+                  </h3>
+</div>
+<span class="font-label-lg text-label-lg font-semibold text-primary">Ophtalmologiste &amp; Chirurgie Réfractive</span>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="material-symbols-outlined text-amber-500 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-outline">(92 avis vérifiés)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0">apartment</span>
+<span>Centre Médical Sousse Ville, Route de Téniour, Sousse</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Spécialisé en chirurgie réfractive laser (Myopie, Hypermétropie), OCT rétinien de pointe, chirurgie de la cataracte et contactologie sur-mesure.
+            </p>
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<span class="font-label-md text-label-md bg-surface-container px-space-sm py-1 rounded text-on-surface">
+                Tarif : <strong class="font-bold text-primary">70 TND</strong>
+</span>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                Champ visuel &amp; OCT sur place
+              </span>
+</div>
+</div>
+<div class="w-full xl:w-72 shrink-0 bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold text-outline">Prochaine séance</span>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-xs flex items-center justify-between mt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Jeudi 24 Octobre</span>
+<span class="font-label-sm text-label-sm text-outline">3 plages disponibles</span>
+</div>
+<span class="px-space-sm py-1 rounded bg-surface-container font-label-md text-label-md font-bold text-primary">14:00</span>
+</div>
+</div>
+<button class="w-full py-space-sm px-space-md bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary transition-colors font-label-md text-label-md rounded-lg shadow-xs flex items-center justify-center gap-space-xs" type="button">
+<span>Voir l'agenda complet</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+</article>
+<!-- DOCTOR CARD 4: Dr. Amira Jaziri (Chirurgien-Dentiste) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col xl:flex-row gap-space-lg">
+<div class="absolute left-0 inset-y-0 w-1.5 bg-secondary-container"></div>
+<div class="flex-1 flex flex-col gap-space-sm pl-space-xs">
+<div class="flex items-start gap-space-md">
+<div class="relative shrink-0">
+<img class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover shadow-sm" data-alt="Portrait photography of Dr. Amira Jaziri, a young female Tunisian dental surgeon in clean modern dental scrubs, bright warm natural smile, high-tech dental cabinet background with soft ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt05fteY5G7OevlK8Ptn7l2xrtrLJaR_BW8Vu2CblR95RpKRvrOPkHDn8R1iCwRvQkDg6dSPgioqL53ZboncKRA6nV9PIDSS71OOFdtVrA-ZsCHOAzG3pjFxE9hL2FL39zyGHXGNpL8DQq1OPK55LuDgGUwl6K8vqEmSdbdcC_LVzfPxGXgiK5SMsgKbsmufnYVV28Ix_L_5zcuemJLPjKZ8X68owWxHydYO8pOhzOA6JCFvTjDB12"/>
+<span class="absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-0.5 shadow-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface hover:text-primary transition-colors cursor-pointer">
+                    Dr. Amira Jaziri
+                  </h3>
+<span class="px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-[#FEF2F2] text-[#DC2626] font-bold inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">emergency</span>
+                    Urgences acceptées aujourd'hui
+                  </span>
+</div>
+<span class="font-label-lg text-label-lg font-semibold text-primary">Chirurgien-Dentiste &amp; Implantologie</span>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="material-symbols-outlined text-amber-500 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-outline">(176 avis vérifiés)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0">apartment</span>
+<span>Cabinet Dentaire Borj Louzir, Ariana</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Soins conservateurs, esthétique du sourire (blanchiment &amp; facettes), traitement des urgences pulpaires sans douleur et implantologie guidée par imagerie 3D.
+            </p>
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<span class="font-label-md text-label-md bg-surface-container px-space-sm py-1 rounded text-on-surface">
+                Consultation initiale : <strong class="font-bold text-primary">50 TND</strong>
+</span>
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radiology</span>
+                Radio Panoramique numérique
+              </span>
+</div>
+</div>
+<div class="w-full xl:w-72 shrink-0 bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold text-outline">Créneau d'urgence</span>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-xs flex items-center justify-between mt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-secondary">Aujourd'hui</span>
+<span class="font-label-sm text-label-sm text-outline">Dernier slot disponible</span>
+</div>
+<span class="px-space-sm py-1 rounded bg-secondary-container text-on-secondary font-label-md text-label-md font-bold">17:15</span>
+</div>
+</div>
+<button class="w-full py-space-sm px-space-md bg-secondary-container text-on-secondary font-label-md text-label-md rounded-lg shadow-sm hover:bg-secondary transition-all flex items-center justify-center gap-space-xs" type="button">
+<span>Réserver l'urgence</span>
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+</button>
+</div>
+</article>
+<!-- Pagination Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-xs">
+<span class="font-body-sm text-body-sm text-outline">Affichage de 1 à 4 sur 42 praticiens qualifiés</span>
+<div class="flex items-center gap-space-xs">
+<button class="p-space-xs rounded bg-surface-container text-outline/50 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="px-space-sm py-1 rounded bg-primary text-on-primary font-label-md text-label-md font-bold" type="button">1</button>
+<button class="px-space-sm py-1 rounded hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" type="button">2</button>
+<button class="px-space-sm py-1 rounded hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" type="button">3</button>
+<button class="px-space-sm py-1 rounded hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" type="button">...</button>
+<button class="px-space-sm py-1 rounded hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors" type="button">11</button>
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Demonstration of Empty State Section (collapsible / toggleable for inspection) -->
+<section class="mt-space-lg pt-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold text-outline">Comportement ergonomique</span>
+<span class="font-label-sm text-label-sm text-outline">• Aperçu en l'absence de résultats</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-1" id="toggle-empty-state-btn" type="button">
+<span id="toggle-state-text">Masquer le module d'état vide</span>
+<span class="material-symbols-outlined text-[16px]">expand_less</span>
+</button>
+</div>
+<!-- Empty State Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg md:p-space-xl text-center flex flex-col items-center justify-center gap-space-md shadow-sm" id="empty-state-container">
+<!-- Icon Composition -->
+<div class="relative w-20 h-20 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-[40px]">search_off</span>
+<span class="absolute top-1 right-1 w-6 h-6 rounded-full bg-secondary-container text-on-secondary flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</span>
+</div>
+<!-- Content -->
+<div class="max-w-md flex flex-col gap-space-xs">
+<h4 class="font-headline-md text-headline-md font-bold text-on-surface">Aucun médecin ne correspond à vos filtres actuels</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Nous n'avons pas encore de praticien disponible avec l'ensemble de ces critères stricts dans cette zone géographique. Vos filtres peuvent être temporairement trop restrictifs.
+              </p>
+</div>
+<!-- Action Pair: Reset or Suggest Practitioner -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md pt-space-xs">
+<button class="px-space-lg py-space-sm bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg rounded-lg transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span>Réinitialiser tous les filtres</span>
+</button>
+<button class="px-space-lg py-space-sm bg-secondary-container hover:bg-secondary text-on-secondary font-label-lg text-label-lg rounded-lg shadow-sm transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Suggérer mon médecin habituel</span>
+</button>
+</div>
+<p class="font-label-sm text-label-sm text-outline max-w-sm mt-space-xs">
+              En suggérant votre praticien, l'équipe MediDesk Tunisie contacte gracieusement son secrétariat sous 48h pour faciliter vos futures prises de rendez-vous en ligne.
+            </p>
+</div>
+</section>
+</main>
+</div>
+</div>
+<script>
+    // Lightweight UI micro-interactions
+    (function() {
+      const toggleBtn = document.getElementById('toggle-empty-state-btn');
+      const emptyState = document.getElementById('empty-state-container');
+      const toggleText = document.getElementById('toggle-state-text');
+      
+      if (toggleBtn && emptyState) {
+        toggleBtn.addEventListener('click', function() {
+          const isHidden = emptyState.classList.contains('hidden');
+          if (isHidden) {
+            emptyState.classList.remove('hidden');
+            toggleText.textContent = "Masquer le module d'état vide";
+          } else {
+            emptyState.classList.add('hidden');
+            toggleText.textContent = "Afficher l'état sans résultat";
+          }
+        });
+      }
+
+      // Filter Reset interaction
+      const resetBtn = document.getElementById('reset-filters-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function() {
+          const checkboxes = document.querySelectorAll('aside input[type="checkbox"]');
+          checkboxes.forEach(cb => cb.checked = false);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low pt-space-xl pb-space-lg"><div class="w-full px-margin md:px-margin-md lg:px-margin-lg"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter-lg pb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md pr-space-lg"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm font-bold text-primary-container tracking-tight">MediDesk</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Unified healthcare ergonomics for private practices, clinics, and patients across Tunisia. Sterile efficiency harmonized with clinical empathy.</p><div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface max-w-xs"><span class="material-symbols-outlined text-primary text-[20px]">verified_user</span><span class="font-label-sm text-label-sm text-on-surface-variant">Conforme RGPD &amp; INPDP (Tunisie) • HDS Certifié</span></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-surface font-semibold">Platform</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="find-a-doctor" href="#">Find a Doctor</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="for-doctors" href="#">For Doctors</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="pricing" href="#">Pricing</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="suggest-a-doctor" href="#">Suggest a doctor</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-surface font-semibold">Organization</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="about" href="#">About</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="contact" href="#">Contact</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="clinic-network" href="#">Clinic Trust Network</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="privacy-and-rgpd" href="#">Legal &amp; RGPD / INPDP</a></div><div class="flex flex-col gap-space-md"><span class="font-label-lg text-label-lg text-on-surface font-semibold">Language</span><div class="inline-flex items-center p-space-xs rounded-lg bg-surface-container gap-space-xs w-fit"><button class="px-space-sm py-space-xs rounded font-label-sm text-label-sm bg-surface text-primary font-bold shadow-sm" type="button">FR</button><button class="px-space-sm py-space-xs rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">عربي</button><button class="px-space-sm py-space-xs rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">EN</button></div><p class="font-label-sm text-label-sm text-outline">Switch context instantly across Arabic, French, and English interfaces.</p></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md"><span class="font-label-sm text-label-sm text-outline">© 2025 MediDesk Tunisia. All rights reserved. Protection des données INPDP.</span><div class="flex items-center gap-space-lg"><a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a><a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors" data-path="privacy-and-rgpd" href="#">Privacy Policy (RGPD/INPDP)</a></div></div></div></footer></body></html>

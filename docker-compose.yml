@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # -----------------------------------------------
+  # MediDesk Backend REST API Service
+  # -----------------------------------------------
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      - PORT=5000
+      - NODE_ENV=production
+      - JWT_SECRET=medidesk_hds_secure_jwt_token_key_2026_super_secret_tn
+      - FRONTEND_URL=http://localhost:5173,http://localhost,https://medidesk.tn
+      - DB_PATH=./src/db/medidesk.db
+    volumes:
+      - backend-db-data:/home/node/app/src/db
+    ports:
+      - "5000:5000"
+    networks:
+      - medidesk-network
+
+  # -----------------------------------------------
+  # MediDesk Frontend Client (Vite + Nginx)
+  # -----------------------------------------------
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - medidesk-network
+
+networks:
+  medidesk-network:
+    driver: bridge
+
+volumes:
+  backend-db-data:
+    driver: local

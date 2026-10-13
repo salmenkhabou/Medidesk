@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-highest":"#d9e3f6","tertiary-container":"#965000","on-secondary-container":"#722104","surface-container":"#e6eeff","on-tertiary":"#ffffff","primary-fixed-dim":"#85d4cf","on-tertiary-fixed-variant":"#6e3900","tertiary-fixed":"#ffdcc3","surface-variant":"#d9e3f6","surface":"#f8f9ff","secondary-container":"#fd8863","on-tertiary-fixed":"#2f1500","secondary-fixed-dim":"#ffb59e","on-primary-fixed":"#00201e","on-primary-fixed-variant":"#00504d","surface-bright":"#f8f9ff","on-primary":"#ffffff","on-surface-variant":"#3e4948","primary":"#005451","on-tertiary-container":"#ffd7ba","surface-tint":"#046a66","on-primary-container":"#9dede8","error-container":"#ffdad6","on-secondary-fixed":"#3a0b00","outline":"#6e7978","on-background":"#121c2a","surface-container-lowest":"#ffffff","outline-variant":"#bec9c7","on-secondary-fixed-variant":"#7f2a0d","tertiary":"#733c00","surface-dim":"#d0dbed","surface-container-high":"#dee9fc","primary-container":"#0f6e6a","on-error-container":"#93000a","primary-fixed":"#a1f1eb","secondary-fixed":"#ffdbd0","tertiary-fixed-dim":"#ffb77d","on-error":"#ffffff","inverse-primary":"#85d4cf","inverse-on-surface":"#eaf1ff","surface-container-low":"#eff4ff","error":"#ba1a1a","on-secondary":"#ffffff","secondary":"#9f4122","on-surface":"#121c2a","background":"#f8f9ff","inverse-surface":"#27313f"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin":"1rem","space-xl":"2.5rem","space-xs":"0.25rem","gutter-lg":"2rem","space-md":"1rem","gutter":"1rem","space-sm":"0.5rem","gutter-md":"1.5rem","margin-lg":"2.5rem","space-lg":"1.5rem","margin-md":"1.5rem"},fontFamily:{"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"]},fontSize:{"body-md":["1rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-lg":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-xl-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["0.875rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","fontWeight":"400"}],"headline-xl":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["1.375rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","fontWeight":"600"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><img alt="MediDesk Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UgrkqncDWnqETT84tUrNq4ssg9LEpQs_jqO87VWpLkUzJPdhnfOuLHX7GhcRUimQjCA85DLfzkCJXQsif_aQGJdawi9ox2GMFN-JZCIMQgMsgjriEXjpGfEDgsaoYMmnuxd0hzm5EeNDA1He3pUEbO-00mtZ8xoeINDwCQzCVlrrrB7GivyctDU01l-Pqsn4s5MhvXka5_iE2Q7_R2cvKiqjxBQ0A3vN6dHer75N_3rL4E-k2kPGQ-h_M"/><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">MediDesk</span><span class="px-space-sm py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm uppercase tracking-wide">SuperAdmin</span></div></div><div class="relative hidden xl:block w-72"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-space-md rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary shadow-[0_1px_3px_0_rgba(15,110,106,0.04)] transition-all" placeholder="Rechercher médecin, cabinet, matricule..." type="text"/></div></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm"><a class="px-space-sm py-2 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="vue-d-ensemble" href="#">Vue d'ensemble</a><a class="px-space-sm py-2 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="medecins-et-cabinets" href="#">Médecins &amp; Cabinets</a><a class="px-space-sm py-2 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="candidatures-et-inscriptions" href="#">Candidatures &amp; Inscriptions</a><a class="px-space-sm py-2 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="abonnements-et-finances" href="#">Abonnements &amp; Finances</a><a class="px-space-sm py-2 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="parametres-plateforme-et-hds" href="#">Paramètres Plateforme &amp; HDS</a></nav><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1.5 rounded-full bg-surface-container-low shadow-[0_1px_3px_0_rgba(15,110,106,0.04)]"><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface">HDS Cloud <span class="text-primary font-semibold">99.98% Opérationnel</span></span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden text-right sm:block"><span class="block font-label-md text-label-md text-on-surface leading-tight">Anis Zouari</span><span class="block font-label-sm text-label-sm text-on-surface-variant">Admin Principal</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_1px_3px_0_rgba(15,110,106,0.04)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Command & Breadcrumb Context Bar -->
+<div class="w-full px-gutter-lg pt-space-lg pb-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[15px]">admin_panel_settings</span>
+          SuperAdmin Master
+        </span>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Médecins &amp; Cabinets</span>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="text-primary font-semibold">Répertoire Général des Praticiens</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+          Synchronisation HDS : Instant T (Tunis UTC+1)
+        </span>
+</div>
+</div>
+<!-- Page Title & Header Actions -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md mt-space-xs">
+<div class="max-w-3xl">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-tight">
+          Gestion Globale des Médecins &amp; Cabinets Médicaux
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5">
+          Supervision du parc des 384 praticiens, gestion des licences logicielles, suivi de la facturation et états de service en environnement certifié HDS.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<button class="h-11 px-4 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container transition-all flex items-center gap-2 font-label-lg text-label-lg shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+<span>Exporter le registre (CSV/XLSX)</span>
+</button>
+<button class="h-11 px-5 rounded-lg bg-primary-container hover:bg-primary text-on-primary transition-all flex items-center gap-2 font-label-lg text-label-lg shadow-md" type="button">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>+ Enrôler un Praticien</span>
+<span class="ml-1 px-1.5 py-0.5 rounded bg-primary text-[10px] uppercase font-bold tracking-wider opacity-90">F2</span>
+</button>
+</div>
+</div>
+<!-- High Density KPI Cards Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mt-space-lg">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Praticiens Enregistrés</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">384</span>
+<span class="font-label-sm text-label-sm text-primary flex items-center">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +14 ce mois
+              </span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">stethoscope</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-3 text-[11px] font-medium text-on-surface-variant">
+<span class="text-primary font-semibold">352 Actifs</span>
+<span>•</span>
+<span class="text-secondary font-semibold">21 En retard</span>
+<span>•</span>
+<span class="text-outline font-semibold">11 Suspendus</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-2 flex">
+<div class="bg-primary-container h-full" style="width: 91.6%"></div>
+<div class="bg-secondary-container h-full" style="width: 5.5%"></div>
+<div class="bg-outline-variant h-full" style="width: 2.9%"></div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Répartition Formules</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">72%</span>
+<span class="font-label-sm text-label-sm text-on-surface">Cloud Secure HDS</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">cloud_done</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-medium text-on-surface-variant mt-3">
+<span>276 Cloud SaaS (Tunisie Telecom HDS)</span>
+<span class="font-bold text-on-surface">108 Local</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-2 flex">
+<div class="bg-primary h-full" style="width: 72%"></div>
+<div class="bg-surface-container-highest h-full" style="width: 28%"></div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Revenu Récurrent &amp; Abonnements</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">312</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Annuel (81.2%)</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-medium text-on-surface-variant mt-3">
+<span>72 Praticiens sur facturation mensuelle</span>
+<span class="text-primary font-semibold">MRR 42.8k TND</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-2 flex">
+<div class="bg-tertiary-container h-full" style="width: 81%"></div>
+<div class="bg-tertiary-fixed-dim h-full" style="width: 19%"></div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Dossiers Patients Actifs</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">482.4k</span>
+<span class="font-label-sm text-label-sm text-primary flex items-center">
+<span class="material-symbols-outlined text-[16px]">database</span> HDS Sécurisé
+              </span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">folder_shared</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-medium text-on-surface-variant mt-3">
+<span>Audit d'accès temps réel : 100% journalisé</span>
+<span class="text-primary font-semibold">0 brèche</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden mt-2">
+<div class="bg-primary-container h-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Search & Dynamic Filter Control Panel -->
+<div class="w-full px-gutter-lg mt-space-sm">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<!-- Search row with shortcuts -->
+<div class="flex flex-col lg:flex-row items-center justify-between gap-space-md">
+<div class="relative w-full lg:w-3/5">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full h-11 pl-11 pr-24 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary shadow-inner transition-all" placeholder="Rechercher par nom de praticien, clinique, CNOM, gouvernorat..." type="text" value="Dr."/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 pointer-events-none">
+<kbd class="px-2 py-0.5 text-[10px] font-bold tracking-wider rounded bg-surface-container-highest text-on-surface-variant shadow-sm">CTRL + K</kbd>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm w-full lg:w-auto justify-end">
+<!-- Dropdown Gouvernorat -->
+<div class="relative min-w-[170px]">
+<select class="w-full h-11 px-3 py-2 pr-8 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
+<option>Gouvernorat: Tous (24)</option>
+<option>Tunis (142)</option>
+<option>Sfax (64)</option>
+<option>Sousse (58)</option>
+<option>Ariana (46)</option>
+<option>Nabeul (31)</option>
+<option>Bizerte (22)</option>
+<option>Monastir (21)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[18px]">expand_more</span>
+</div>
+<!-- Dropdown Spécialité -->
+<div class="relative min-w-[170px]">
+<select class="w-full h-11 px-3 py-2 pr-8 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
+<option>Spécialité: Toutes (32)</option>
+<option>Cardiologie &amp; Angiologie</option>
+<option>Ophtalmologie</option>
+<option>Pédiatrie</option>
+<option>Médecine Générale</option>
+<option>Dermatologie</option>
+<option>Chirurgie Orthopédique</option>
+<option>Radiologie &amp; Imagerie</option>
+<option>Gynécologie Obstétrique</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[18px]">expand_more</span>
+</div>
+<!-- Dropdown Tri -->
+<div class="relative min-w-[190px]">
+<select class="w-full h-11 px-3 py-2 pr-8 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md appearance-none focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
+<option>Tri: Connexion récente</option>
+<option>Tri: Volume patients décroissant</option>
+<option>Tri: Ordre alphabétique Dr.</option>
+<option>Tri: Impayés &amp; Échéances</option>
+<option>Tri: Numéro CNOM</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[18px]">swap_vert</span>
+</div>
+</div>
+</div>
+<!-- Filter Badges / Interactive Pills Row -->
+<div class="flex flex-wrap items-center gap-2 pt-2">
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm flex items-center gap-1.5 transition-all" type="button">
+<span>Tous</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-[11px]">384</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" type="button">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Actifs</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-[11px] text-primary font-bold">352</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-error-container/60 hover:bg-error-container text-on-error-container font-label-md text-label-md flex items-center gap-1.5 transition-all" type="button">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span>Impayés / En retard</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error text-on-error text-[11px] font-bold">21</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 transition-all" type="button">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span>Désactivés</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-[11px]">11</span>
+</button>
+<div class="h-4 w-px bg-surface-container-highest mx-1 hidden sm:block"></div>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-primary text-[15px]">cloud</span>
+<span>Cloud Secure</span>
+<span class="text-[11px] text-on-surface-variant font-semibold">276</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-outline text-[15px]">storage</span>
+<span>Stockage Local</span>
+<span class="text-[11px] text-on-surface-variant font-semibold">108</span>
+</button>
+<div class="ml-auto text-on-surface-variant font-label-sm text-label-sm">
+<span>Affichage de <strong class="text-on-surface">1 - 8</strong> sur 384</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Doctor Directory Data Matrix -->
+<div class="w-full px-gutter-lg mt-space-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-visible">
+<!-- Table Top Bulk Action Bar -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm rounded-t-xl">
+<div class="flex items-center gap-3">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary cursor-pointer accent-primary" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tout sélectionner</span>
+</label>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Actions groupées disponibles :</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest text-outline font-label-sm text-label-sm cursor-not-allowed flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[15px]">forward_to_inbox</span> Envoyer Relance
+          </button>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest text-outline font-label-sm text-label-sm cursor-not-allowed flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[15px]">verified_user</span> Renouveler Licence
+          </button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span> Serveur Certifié INPDP &amp; HDS
+          </span>
+</div>
+</div>
+<!-- Responsive Table Container -->
+<div class="overflow-x-auto min-h-[580px]">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md w-12 text-center">
+<span class="sr-only">Select</span>
+</th>
+<th class="py-3 px-space-md min-w-[260px]">Nom du Médecin &amp; Ordre</th>
+<th class="py-3 px-space-md min-w-[210px]">Cabinet / Clinique</th>
+<th class="py-3 px-space-md min-w-[150px]">Formule HDS</th>
+<th class="py-3 px-space-md min-w-[140px]">Facturation</th>
+<th class="py-3 px-space-md min-w-[170px]">Statut Plateforme</th>
+<th class="py-3 px-space-md min-w-[160px]">Volume Patients</th>
+<th class="py-3 px-space-md min-w-[180px]">Dernière Connexion</th>
+<th class="py-3 px-space-md text-right min-w-[80px]">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<!-- ROW 1: Dr. Karim Ben Mahmoud -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full bg-primary-fixed-dim text-on-primary-fixed font-headline-sm text-headline-sm flex items-center justify-center flex-shrink-0 font-bold overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait photographique professionnel d'un médecin cardiologue tunisien portant un stéthoscope et une blouse médicale blanche impeccable dans une clinique moderne à Tunis, éclairage doux, couleurs cliniques douces teal et bleu acier" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdUYFaDkUP2mJpmuhLZktBHG1si2ViyCCV9mOkfYFkRkXMJDfBQfM0UnpmmeTJmh27M1hO067vGmuL1X3CAXZBlxTzPnS3DcePXGvcrfdt24Ao4TSQaAeu-B2pf02zc8-NTGRFNmkRjP11FoxBYrjfLBlRqjRp4_guKDypOgdBdUPViO87PgvI9Qq86xrBPGws_83yiwaSaedgbThd1UrLQspS38EfHAOqdP6YuxDZHKwVGTjrhjlc"/>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Dr. Karim Ben Mahmoud</span>
+<span class="material-symbols-outlined text-[15px] text-primary" title="Compte Certifié">verified</span>
+</div>
+<div class="flex items-center gap-2 text-[12px] text-on-surface-variant mt-0.5">
+<span class="font-semibold text-primary">Cardiologie &amp; Angiologie</span>
+<span>•</span>
+<span class="font-mono bg-surface-container px-1.5 py-0.2 rounded text-[11px]">CNOM #14892</span>
+</div>
+<span class="text-[11px] text-outline flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Berges du Lac 2, Tunis
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Clinique Alyssa</span>
+<span class="text-[12px] text-on-surface-variant block">Centre Médico-Chirurgical, B2</span>
+<span class="text-[11px] text-primary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">badge</span> 2 Secrétaires rattachées
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">cloud_done</span>
+                  Cloud Secure Pro
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Annuel</span>
+<span class="text-[12px] text-on-surface-variant font-mono">1 290 TND / an</span>
+<span class="text-[10px] text-primary uppercase font-bold tracking-wide mt-0.5 block">Payé (Échéance Nov 2025)</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Actif • Opérationnel
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-baseline justify-between text-on-surface">
+<span class="font-bold font-headline-sm text-headline-sm">2 480</span>
+<span class="text-[11px] text-on-surface-variant">patients</span>
+</div>
+<!-- Mini sparkline SVG -->
+<div class="w-28 h-4 mt-1">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0 16 L20 12 L40 14 L60 8 L80 9 L100 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<circle cx="100" cy="3" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Connecté il y a 8 min</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">laptop_mac</span> MacBook Pro • Lac 2
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- ROW 2: Dr. Hichem Baccouche (WITH VISIBLE ACTION POPUP MENU AS REQUIRED) -->
+<tr class="bg-surface-container-low/40 relative">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-headline-sm flex items-center justify-center flex-shrink-0 font-bold overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait d'un docteur ophtalmologiste d'âge moyen dans un cabinet médical équipé de lampes à fente et matériel optique moderne à Sfax, regard bienveillant, environnement professionnel et sérieux" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtZWaK0EfxyGP5jHhJ6QVgCsAuE-vajoemVNcQr4j2nxxMt6_kXoYKj5TB_wkvQPauoBpr2ELOw82B_I3eOMijqgvfXA8Vh85jsktLSScLDQgvxMRGljzFKnxtT1N5avGZgPzy91DRf1JwDvB6EQdMydk1TR_YmNBMEyLH1nS195mz2R-mHhx8QYLFvF5xN6heKJj1HS495xtZrGze0IIXQF7acp9gmrzK66mvGHwi4RduUYBZyaUo"/>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold text-primary">Dr. Hichem Baccouche</span>
+</div>
+<div class="flex items-center gap-2 text-[12px] text-on-surface-variant mt-0.5">
+<span class="font-semibold text-secondary">Ophtalmologie</span>
+<span>•</span>
+<span class="font-mono bg-surface-container px-1.5 py-0.2 rounded text-[11px]">CNOM #09214</span>
+</div>
+<span class="text-[11px] text-outline flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Route El Ain, Sfax
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Cabinet El Bassatine</span>
+<span class="text-[12px] text-on-surface-variant block">Immeuble Le Phare, 3ème étage</span>
+<span class="text-[11px] text-primary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">badge</span> 1 Secrétaire
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">cloud_done</span>
+                  Cloud Secure Pro
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Annuel</span>
+<span class="text-[12px] text-error font-bold font-mono">1 290 TND impayé</span>
+<span class="text-[10px] text-secondary font-bold tracking-wide mt-0.5 block">Relance J+4 envoyée</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                  Paiement en retard • J+4
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-baseline justify-between text-on-surface">
+<span class="font-bold font-headline-sm text-headline-sm">1 940</span>
+<span class="text-[11px] text-on-surface-variant">patients</span>
+</div>
+<div class="w-28 h-4 mt-1">
+<svg class="w-full h-full text-secondary" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0 14 L25 15 L50 9 L75 11 L100 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<circle cx="100" cy="6" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Il y a 2 jours</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">desktop_windows</span> PC Windows • Sfax
+                </span>
+</td>
+<!-- OPEN DROPDOWN MENU CELL -->
+<td class="py-3.5 px-space-md text-right relative">
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center transition-colors ml-auto shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+<!-- Floating Menu Box (Level 2/3 Elevation) -->
+<div class="absolute right-6 top-12 z-40 w-72 rounded-xl bg-surface-container-lowest p-2 shadow-xl border border-surface-container text-left flex flex-col gap-0.5 animate-in fade-in zoom-in-95 duration-150">
+<div class="px-3 py-2 border-b border-surface-container">
+<span class="block font-label-md text-label-md text-on-surface">Options Praticien</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Dr. Hichem Baccouche</span>
+</div>
+<a class="px-3 py-2 rounded-lg hover:bg-surface-container flex items-center gap-2.5 text-on-surface font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-primary">visibility</span>
+<span>Consulter la fiche détaillée</span>
+</a>
+<a class="px-3 py-2 rounded-lg hover:bg-surface-container flex items-center gap-2.5 text-on-surface font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-tertiary">tune</span>
+<span>Modifier le forfait / tarif</span>
+</a>
+<a class="px-3 py-2 rounded-lg hover:bg-surface-container flex items-center gap-2.5 text-secondary font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-secondary">mark_email_unread</span>
+<span>Envoyer une relance (SMS/Email)</span>
+</a>
+<a class="px-3 py-2 rounded-lg hover:bg-surface-container flex items-center gap-2.5 text-on-surface font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-primary-container">download_for_offline</span>
+<span>Télécharger le journal d'audit HDS</span>
+</a>
+<div class="h-px bg-surface-container my-1"></div>
+<a class="px-3 py-2 rounded-lg hover:bg-error-container/40 flex items-center gap-2.5 text-error font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] text-error">lock_person</span>
+<span>Désactiver l'accès / Suspendre</span>
+</a>
+</div>
+</td>
+</tr>
+<!-- ROW 3: Dr. Amina Mansour -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm flex items-center justify-center flex-shrink-0 font-bold overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait photographique net d'une doctoresse tunisienne souriante et élégante avec hijab discret, blouse médicale professionnelle dans un cabinet de cardiologie moderne à Tunis Berges du Lac" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM5w3NzqqoQ0oML-EgQiEk6Qfd52E_cxL4IbSVfKsVN3zQs4W6UiQrCHR5S81FcLZG-FISx4sZq-OYYCJEIQTZALacQcM_E1YMCINyuQKudxl_9Gxm7jgojGatteKZD0tkjxPZmiTA9VN7K63VO_Xay6gMYG0UfesqCotJyujxu1biA5ghSlR34aG_yNKCRBzJvQFwkijrgsR5k_4AZgQUWZjW_kxQ5599sp61B7zlXs4zH-1UrKU_"/>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Dr. Amina Mansour</span>
+<span class="material-symbols-outlined text-[15px] text-primary" title="Compte Certifié">verified</span>
+</div>
+<div class="flex items-center gap-2 text-[12px] text-on-surface-variant mt-0.5">
+<span class="font-semibold text-primary">Cardiologie</span>
+<span>•</span>
+<span class="font-mono bg-surface-container px-1.5 py-0.2 rounded text-[11px]">CNOM #16402</span>
+</div>
+<span class="text-[11px] text-outline flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Berges du Lac 1, Tunis
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Cabinet CardioCare</span>
+<span class="text-[12px] text-on-surface-variant block">Rue du Lac Windermere</span>
+<span class="text-[11px] text-primary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">badge</span> 1 Secrétaire
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">cloud_done</span>
+                  Cloud Secure Pro
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Annuel</span>
+<span class="text-[12px] text-on-surface-variant font-mono">1 290 TND / an</span>
+<span class="text-[10px] text-primary uppercase font-bold tracking-wide mt-0.5 block">Payé (Échéance Mars 2026)</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  Actif • Opérationnel
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-baseline justify-between text-on-surface">
+<span class="font-bold font-headline-sm text-headline-sm">410</span>
+<span class="text-[11px] text-on-surface-variant">patients</span>
+</div>
+<div class="w-28 h-4 mt-1">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0 18 L30 14 L60 10 L80 6 L100 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<circle cx="100" cy="2" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Il y a 3 heures</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">tablet_mac</span> iPad Pro 12.9" • Cabinet
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- ROW 4: Dr. Mehdi Khemir -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant font-headline-sm text-headline-sm flex items-center justify-center flex-shrink-0 font-bold shadow-sm">
+                    MK
+                  </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Dr. Mehdi Khemir</span>
+</div>
+<div class="flex items-center gap-2 text-[12px] text-on-surface-variant mt-0.5">
+<span class="font-semibold text-on-surface">Médecine Générale</span>
+<span>•</span>
+<span class="font-mono bg-surface-container px-1.5 py-0.2 rounded text-[11px]">CNOM #18290</span>
+</div>
+<span class="text-[11px] text-outline flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Nabeul Centre
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Cabinet Nabeul Centre</span>
+<span class="text-[12px] text-on-surface-variant block">Avenue Habib Thameur</span>
+<span class="text-[11px] text-outline flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">person_off</span> Sans secrétaire
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">hard_drive</span>
+                  Stockage Local
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Mensuel</span>
+<span class="text-[12px] text-on-surface-variant font-mono">125 TND / mois</span>
+<span class="text-[10px] text-primary uppercase font-bold tracking-wide mt-0.5 block">Prélèvement OK</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  Actif • Opérationnel
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-baseline justify-between text-on-surface">
+<span class="font-bold font-headline-sm text-headline-sm">980</span>
+<span class="text-[11px] text-on-surface-variant">patients</span>
+</div>
+<div class="w-28 h-4 mt-1">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0 16 L20 15 L40 10 L60 12 L80 8 L100 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<circle cx="100" cy="5" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Hier à 18:30</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">desktop_windows</span> PC Tour Locale • Nabeul
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- ROW 5: Dr. Zeineb Triki (Désactivé) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group opacity-85">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant font-headline-sm text-headline-sm flex items-center justify-center flex-shrink-0 font-bold shadow-sm">
+                    ZT
+                  </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Dr. Zeineb Triki</span>
+</div>
+<div class="flex items-center gap-2 text-[12px] text-on-surface-variant mt-0.5">
+<span class="font-semibold text-on-surface">Dermatologie &amp; Vénérologie</span>
+<span>•</span>
+<span class="font-mono bg-surface-container px-1.5 py-0.2 rounded text-[11px]">CNOM #15112</span>
+</div>
+<span class="text-[11px] text-outline flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Ennasr 2, Ariana
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Polyclinique Ennasr 2</span>
+<span class="text-[12px] text-on-surface-variant block">Avenue Hédi Nouira</span>
+<span class="text-[11px] text-primary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">badge</span> 2 Secrétaires
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">cloud_done</span>
+                  Cloud Secure Pro
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Annuel</span>
+<span class="text-[12px] text-on-surface-variant font-mono">1 290 TND / an</span>
+<span class="text-[10px] text-outline uppercase font-bold tracking-wide mt-0.5 block">Sous séquestre</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                  Désactivé • Assurance RCP expirée
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-baseline justify-between text-on-surface">
+<span class="font-bold font-headline-sm text-headline-sm">1 120</span>
+<span class="text-[11px] text-on-surface-variant">patients</span>
+</div>
+<div class="w-28 h-4 mt-1">
+<svg class="w-full h-full text-outline" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0 10 L100 10" stroke="currentColor" stroke-dasharray="2,2" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Il y a 14 jours</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">person_cancel</span> Session révoquée
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- ROW 6: Dr. Sonia Ben Amor (En retard J+2) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-headline-sm text-headline-sm flex items-center justify-center flex-shrink-0 font-bold shadow-sm">
+                    SB
+                  </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Dr. Sonia Ben Amor</span>
+</div>
+<div class="flex items-center gap-2 text-[12px] text-on-surface-variant mt-0.5">
+<span class="font-semibold text-tertiary">Pédiatrie</span>
+<span>•</span>
+<span class="font-mono bg-surface-container px-1.5 py-0.2 rounded text-[11px]">CNOM #12840</span>
+</div>
+<span class="text-[11px] text-outline flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> El Menzah 6, Tunis
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Centre Médical Menzah 6</span>
+<span class="text-[12px] text-on-surface-variant block">Rue Ahmed Tlili</span>
+<span class="text-[11px] text-primary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">badge</span> 1 Secrétaire
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">hard_drive</span>
+                  Stockage Local
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Annuel</span>
+<span class="text-[12px] text-error font-bold font-mono">1 290 TND impayé</span>
+<span class="text-[10px] text-secondary font-semibold tracking-wide mt-0.5 block">Relance J+2</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                  Paiement en retard • J+2
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-baseline justify-between text-on-surface">
+<span class="font-bold font-headline-sm text-headline-sm">1 650</span>
+<span class="text-[11px] text-on-surface-variant">patients</span>
+</div>
+<div class="w-28 h-4 mt-1">
+<svg class="w-full h-full text-tertiary" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0 16 L20 12 L40 10 L60 8 L80 12 L100 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<circle cx="100" cy="6" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Aujourd'hui à 08:20</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">phone_iphone</span> iPhone 14 Pro • Menzah
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- ROW 7: Dr. Farouk Jaziri -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center flex-shrink-0 font-bold overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Chirurgien orthopédiste expérimenté en tenue de bloc opératoire bleu canard, masque baissé avec sourire confiant, clinique chirurgicale ultra-moderne à Sousse en arrière plan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbc7IUcVW0relVSu21na1tIxC0dRFQJHHaucrtMB6XQAVXKNA-_mumXO3nOq1983fvX904Yc_RKvR22Z7VxvDqp8m8ZEjsdJ0ifNlgUlz4ntcEo8QDSyXRDp2mrkAhlLD2hbhs8qJudrogbq4Dn6vglIp1rfEcL-n0AYSp_FnS4mrvpLUwDTE8EHVeh1WpvD6oyQUHc60MYQUCHAY8r15GTgKN9-afpxMiqsM5pFgfuDA3QllEQaCo"/>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Dr. Farouk Jaziri</span>
+<span class="material-symbols-outlined text-[15px] text-primary" title="Compte Certifié">verified</span>
+</div>
+<div class="flex items-center gap-2 text-[12px] text-on-surface-variant mt-0.5">
+<span class="font-semibold text-primary">Chirurgie Orthopédique</span>
+<span>•</span>
+<span class="font-mono bg-surface-container px-1.5 py-0.2 rounded text-[11px]">CNOM #12044</span>
+</div>
+<span class="text-[11px] text-outline flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Corniche, Sousse
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Clinique Les Oliviers</span>
+<span class="text-[12px] text-on-surface-variant block">Bd. 14 Janvier, Sousse</span>
+<span class="text-[11px] text-primary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">badge</span> 3 Secrétaires rattachées
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">cloud_done</span>
+                  Cloud Secure Pro
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Annuel</span>
+<span class="text-[12px] text-on-surface-variant font-mono">1 290 TND / an</span>
+<span class="text-[10px] text-primary uppercase font-bold tracking-wide mt-0.5 block">Payé (Échéance Janv 2026)</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Actif • Opérationnel
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-baseline justify-between text-on-surface">
+<span class="font-bold font-headline-sm text-headline-sm">3 240</span>
+<span class="text-[11px] text-on-surface-variant">patients</span>
+</div>
+<div class="w-28 h-4 mt-1">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0 16 L20 14 L40 12 L60 7 L80 5 L100 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<circle cx="100" cy="2" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Connecté il y a 25 min</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">laptop_mac</span> MacBook Air M2 • Clinique
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- ROW 8: Dr. Mourad Belhadj (Désactivé) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group opacity-85">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant font-headline-sm text-headline-sm flex items-center justify-center flex-shrink-0 font-bold shadow-sm">
+                    MB
+                  </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Dr. Mourad Belhadj</span>
+</div>
+<div class="flex items-center gap-2 text-[12px] text-on-surface-variant mt-0.5">
+<span class="font-semibold text-on-surface">Radiologie &amp; Imagerie</span>
+<span>•</span>
+<span class="font-mono bg-surface-container px-1.5 py-0.2 rounded text-[11px]">CNOM #07419</span>
+</div>
+<span class="text-[11px] text-outline flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Bizerte Centre
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Centre d'Imagerie du Nord</span>
+<span class="text-[12px] text-on-surface-variant block">Avenue Habib Bourguiba</span>
+<span class="text-[11px] text-outline flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">badge</span> 0 Secrétaire active
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">hard_drive</span>
+                  Stockage Local
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Mensuel</span>
+<span class="text-[12px] text-on-surface-variant font-mono">125 TND / mois</span>
+<span class="text-[10px] text-outline uppercase font-bold tracking-wide mt-0.5 block">Compte suspendu</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">pause_circle</span>
+                  Désactivé • Cessation temporaire
+                </span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-baseline justify-between text-on-surface">
+<span class="font-bold font-headline-sm text-headline-sm">640</span>
+<span class="text-[11px] text-on-surface-variant">patients</span>
+</div>
+<div class="w-28 h-4 mt-1">
+<svg class="w-full h-full text-outline" fill="none" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0 10 L100 10" stroke="currentColor" stroke-dasharray="2,2" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface block">Il y a 45 jours</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">history</span> Dernier archivage Bizerte
+                </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors ml-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer & Detailed Pagination Controls -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-md border-t border-surface-container">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span>Affichage de <strong class="text-on-surface">1 à 8</strong> sur <strong class="text-on-surface">384</strong> praticiens enregistrés</span>
+<span class="hidden sm:inline text-outline-variant">•</span>
+<div class="hidden sm:flex items-center gap-2">
+<span>Éléments par page :</span>
+<select class="px-2 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm focus:ring-1 focus:ring-primary outline-none">
+<option>8</option>
+<option>15</option>
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1 font-label-md text-label-md">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-outline cursor-not-allowed flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Précédent</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-bold shadow-sm" type="button">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface transition-colors" type="button">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface transition-colors" type="button">3</button>
+<span class="px-1 text-on-surface-variant">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface transition-colors" type="button">48</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors flex items-center gap-1" type="button">
+<span>Suivant</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Security, Sovereign Cloud & Compliance Legal Baseline Notice -->
+<div class="w-full px-gutter-lg mt-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">
+            Environnement Souverain de Données de Santé (HDS Tunisie)
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 max-w-4xl">
+            Toutes les transactions, ouvertures de dossiers et modifications de comptes médecins sont scellées et répliquées sur l'infrastructure certifiée INPDP N° 2004-63. Conformité aux protocoles de chiffrement AES-256 GCM &amp; Décret Télésanté N° 2017-321.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-label-sm flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">history_edu</span>
+<span>Journal Système (Syslog HDS)</span>
+</button>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] mt-space-xl"><div class="w-full px-gutter-lg py-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-medium text-on-surface">Cluster HDS Tunisie • Santé Souveraine</span></div><span>•</span><span>Serveur UTC+1 (Tunis)</span><span>•</span><span>Conforme INPDP N° 2004-63</span></div><div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><span class="hover:text-on-surface transition-colors cursor-pointer">Audit Logs</span><span class="hover:text-on-surface transition-colors cursor-pointer">Certifications HDS</span><span class="hover:text-on-surface transition-colors cursor-pointer">MediDesk Ops v4.12.0</span></div></div></footer></body></html>

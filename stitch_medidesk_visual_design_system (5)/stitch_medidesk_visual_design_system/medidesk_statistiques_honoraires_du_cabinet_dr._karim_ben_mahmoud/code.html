@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>MediDesk - Espace Praticien</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#3e4948", "on-primary-fixed": "#00201e", "on-surface": "#121c2a", "background": "#f8f9ff", "on-error": "#ffffff", "tertiary-fixed-dim": "#ffb77d", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#00504d", "secondary-fixed-dim": "#ffb59e", "inverse-on-surface": "#eaf1ff", "surface-container-highest": "#d9e3f6", "surface-tint": "#046a66", "on-secondary-fixed": "#3a0b00", "surface-container-lowest": "#ffffff", "surface-variant": "#d9e3f6", "on-tertiary-container": "#ffd7ba", "on-secondary-container": "#722104", "inverse-surface": "#27313f", "on-tertiary-fixed": "#2f1500", "on-primary-container": "#9dede8", "surface-dim": "#d0dbed", "secondary-container": "#fd8863", "primary-fixed-dim": "#85d4cf", "on-tertiary-fixed-variant": "#6e3900", "on-background": "#121c2a", "primary-container": "#0f6e6a", "on-error-container": "#93000a", "inverse-primary": "#85d4cf", "tertiary-fixed": "#ffdcc3", "outline": "#6e7978", "surface-container-high": "#dee9fc", "tertiary-container": "#965000", "surface-container": "#e6eeff", "tertiary": "#733c00", "surface-container-low": "#eff4ff", "surface": "#f8f9ff", "error": "#ba1a1a", "secondary": "#9f4122", "secondary-fixed": "#ffdbd0", "surface-bright": "#f8f9ff", "on-primary": "#ffffff", "outline-variant": "#bec9c7", "error-container": "#ffdad6", "primary": "#005451", "on-secondary-fixed-variant": "#7f2a0d", "primary-fixed": "#a1f1eb", "on-tertiary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-md": "1.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-lg": "1.5rem", "margin-lg": "2.5rem", "margin-md": "1.5rem", "space-xl": "2.5rem", "gutter": "1rem", "gutter-lg": "2rem", "space-md": "1rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-xl-mobile": [ "Plus Jakarta Sans" ], "headline-xl": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-xl-mobile": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-xl": [ "2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "1.25rem", { "lineHeight": "1.75rem", "fontWeight": "600" } ], "label-lg": [ "0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" } ], "headline-lg": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "headline-sm": [ "1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" } ], "body-sm": [ "0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" } ], "body-lg": [ "1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" } ], "label-sm": [ "0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.03em", "fontWeight": "600" } ], "headline-lg-mobile": [ "1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-md": [ "1rem", { "lineHeight": "1.5rem", "fontWeight": "400" } ], "label-md": [ "0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 w-full px-gutter-lg flex flex-col justify-between pt-space-sm"><div class="flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #0f6e6a
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UgrkqncDWnqETT84tUrNq4ssg9LEpQs_jqO87VWpLkUzJPdhnfOuLHX7GhcRUimQjCA85DLfzkCJXQsif_aQGJdawi9ox2GMFN-JZCIMQgMsgjriEXjpGfEDgsaoYMmnuxd0hzm5EeNDA1He3pUEbO-00mtZ8xoeINDwCQzCVlrrrB7GivyctDU01l-Pqsn4s5MhvXka5_iE2Q7_R2cvKiqjxBQ0A3vN6dHer75N_3rL4E-k2kPGQ-h_M"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">MediDesk</span><span class="font-label-sm text-label-sm text-on-surface-variant">Clinique Alyssa • Cardiologie &amp; Angiologie</span></div><div class="hidden xl:flex items-center gap-space-xs bg-surface-container-low px-3 py-1 rounded-full text-primary font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-primary"></span>Abonnement Pro • Actif</div></div><div class="hidden md:flex flex-1 max-w-md mx-space-lg"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none shadow-[0_1px_3px_rgba(15,110,106,0.05)]" placeholder="Rechercher patient (Nom, CIN, Numéro dossier)..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-lowest p-0.5 rounded-lg shadow-[0_1px_3px_rgba(15,110,106,0.04)]"><button class="px-2 py-1 rounded font-label-sm text-label-sm bg-primary-container text-on-primary">FR</button><button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">عربي</button><button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">EN</button></div><button class="relative w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface shadow-[0_1px_3px_rgba(15,110,106,0.04)]"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold">Dr. Karim Ben Mahmoud</span><span class="font-label-sm text-label-sm text-on-surface-variant">Praticien Titulaire</span></div></div></div></div><nav class="flex items-center gap-space-xs overflow-x-auto pb-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><a class="px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors rounded-lg" data-path="tableau-de-bord" href="#">Tableau de bord</a><a class="px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors rounded-lg" data-path="agenda-et-consultations" href="#">Agenda &amp; Consultations</a><a class="px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors rounded-lg" data-path="salle-d-attente" href="#">Salle d'attente</a><a class="px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors rounded-lg" data-path="dossiers-patients" href="#">Dossiers Patients</a><a class="px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors rounded-lg" data-path="teletransmissions-cnam" href="#">Télétransmissions CNAM</a><a aria-current="page" class="px-3 py-1.5 whitespace-nowrap transition-colors bg-primary-container text-on-primary font-bold rounded-lg" data-path="statistiques-et-honoraires" href="#">Statistiques &amp; Honoraires</a></nav></div></header><main class="w-full pt-28 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Interactive Dashboard Script -->
+<script>
+    function switchFilter(el, label) {
+      document.querySelectorAll('.filter-pill').forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'font-semibold', 'shadow-sm');
+        btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+      });
+      el.classList.add('bg-primary', 'text-on-primary', 'font-semibold', 'shadow-sm');
+      el.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+      
+      const notif = document.getElementById('period-badge');
+      if (notif) notif.textContent = label;
+    }
+
+    function toggleTooltip(id, show) {
+      const tt = document.getElementById(id);
+      if (tt) {
+        if (show) tt.classList.remove('opacity-0', 'pointer-events-none');
+        else tt.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    function showExportToast(type) {
+      const toast = document.getElementById('toast-feedback');
+      const toastText = document.getElementById('toast-text');
+      if (toast && toastText) {
+        toastText.textContent = `Génération de document : ${type} en cours...`;
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-24', 'opacity-0');
+        }, 3200);
+      }
+    }
+  </script>
+<!-- Notification Toast -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast-feedback">
+<div class="flex items-center gap-space-sm bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-xl shadow-xl">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">downloading</span>
+<span class="font-label-md text-label-md" id="toast-text">Exportation lancée</span>
+</div>
+</div>
+<div class="w-full px-gutter-lg py-space-lg flex flex-col gap-space-lg max-w-[1720px] mx-auto">
+<!-- 1. Top Controls Bar -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md pb-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Cabinet de Cardiologie &amp; Angiologie</span>
+<span class="text-outline text-[12px]">•</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Clinique Alyssa, Tunis</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold" id="period-badge">Octobre 2025</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[28px]">query_stats</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">Statistiques &amp; Performance du Cabinet</h1>
+</div>
+</div>
+<!-- Action & Filters Group -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Date-Range Pills Group -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl shadow-sm">
+<button class="filter-pill px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" onclick="switchFilter(this, '7 Derniers Jours')">
+            7 Derniers Jours
+          </button>
+<button class="filter-pill px-3.5 py-1.5 rounded-lg font-label-sm text-label-sm bg-primary text-on-primary font-semibold shadow-sm transition-all" onclick="switchFilter(this, 'Ce Mois-ci (Octobre 2025)')">
+            Ce Mois-ci (Oct. 2025)
+          </button>
+<button class="filter-pill px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" onclick="switchFilter(this, 'Trimestre 4 - 2025')">
+            Trimestre T4
+          </button>
+<button class="filter-pill px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" onclick="switchFilter(this, 'Exercice 2025')">
+            Année 2025
+          </button>
+<div class="h-4 w-px bg-surface-container-highest mx-1"></div>
+<button class="filter-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" onclick="switchFilter(this, 'Période Personnalisée')">
+<span class="material-symbols-outlined text-[15px] text-primary">calendar_month</span>
+            01 Oct - 31 Oct 2025
+          </button>
+</div>
+<!-- Quick Primary Reports -->
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all shadow-sm font-label-sm text-label-sm font-semibold" onclick="showExportToast('Arrêté Fiscal d\'Activité')">
+<span class="material-symbols-outlined text-[17px]">account_balance</span>
+            Arrêté Fiscal
+          </button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all shadow-sm font-label-sm text-label-sm font-semibold" onclick="showExportToast('Rapport de Comparaison N-1')">
+<span class="material-symbols-outlined text-[17px]">compare_arrows</span>
+            Comparer N-1
+          </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container shadow-md transition-all font-label-md text-label-md font-semibold" onclick="showExportToast('Rapport Analytique Mensuel (PDF &amp; Excel)')">
+<span class="material-symbols-outlined text-[18px]">ios_share</span>
+            Exporter Rapport
+          </button>
+</div>
+</div>
+</div>
+<!-- 2. Top KPI Cards Grid (5 Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-space-md">
+<!-- KPI 1: Patients Actifs -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary"></div>
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Patients Actifs</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">1 428</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">dossiers</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="flex items-center text-primary font-label-sm text-label-sm font-bold bg-surface-container-low px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +5.4%
+            </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">+74 nouv. ce mois</span>
+</div>
+</div>
+<!-- Inline Sparkline -->
+<div class="w-full pt-1">
+<svg class="w-full h-8 text-primary overflow-visible" fill="none" viewbox="0 0 100 24">
+<path d="M0 18 Q 15 17, 30 14 T 60 11 T 85 6 L 100 3" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="100" cy="3" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+</div>
+<!-- KPI 2: Consultations du Mois -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary"></div>
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Consultations Mois</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">stethoscope</span>
+</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">218</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">actes</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="flex items-center text-primary font-label-sm text-label-sm font-bold bg-surface-container-low px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +11.2%
+            </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Obj. 200 (109%)</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 mt-2">
+<div class="bg-primary h-1.5 rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- KPI 3: Taux de No-Show -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary-container"></div>
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Taux de No-Show</span>
+<span class="w-8 h-8 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">event_busy</span>
+</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">3.2%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">7 RDV manqués</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="flex items-center text-primary font-label-sm text-label-sm font-bold bg-surface-container-low px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span> -1.4%
+            </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Rappels SMS 24h actifs</span>
+</div>
+</div>
+<!-- Progress mini gauge indicator -->
+<div class="w-full bg-surface-container-high rounded-full h-1.5 mt-2">
+<div class="bg-secondary-container h-1.5 rounded-full" style="width: 16%;"></div>
+</div>
+</div>
+<!-- KPI 4: Temps d'Attente Moyen -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary"></div>
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Attente Salle</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">hourglass_empty</span>
+</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">13</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">minutes</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="flex items-center text-primary font-label-sm text-label-sm font-bold bg-surface-container-low px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span> -4 min
+            </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">vs Nat. 26 min</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 mt-2">
+<div class="bg-primary h-1.5 rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+<!-- KPI 5: Honoraires & Recettes -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary-container"></div>
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">Recettes du Mois</span>
+<span class="w-8 h-8 rounded-lg bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">19 840</span>
+<span class="font-label-md text-label-md font-bold text-primary">TND</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="flex items-center text-primary font-label-sm text-label-sm font-bold bg-surface-container-low px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +14.8%
+            </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Prév. 22 500 TND</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 mt-2">
+<div class="bg-primary-container h-1.5 rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+</div>
+<!-- 3. Main Analytical Grid: 2 Columns (65% / 35%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- LEFT COLUMN: Charts & Revenue Breakdown (8 Cols / ~66%) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Chart 1: Évolution Temporelle des Consultations -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Évolution des Consultations &amp; Actes Spécialisés</h2>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">Octobre 2025</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Suivi journalier du volume d'actes vs médiane historique N-1 (Clinique Alyssa)</p>
+</div>
+<!-- Legend Indicators -->
+<div class="flex items-center gap-space-md self-start sm:self-auto">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Réalisé 2025</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-4 h-0.5 border-b-2 border-dashed border-outline"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Médiane N-1</span>
+</div>
+</div>
+</div>
+<!-- Interactive SVG Area & Line Chart -->
+<div class="relative w-full h-72 pt-4 select-none">
+<!-- Grid Background Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-6">
+<div class="w-full flex items-center justify-between text-on-surface-variant font-label-sm text-[11px]">
+<span class="w-8">16 RDV</span>
+<div class="flex-1 ml-2 border-b border-surface-container-high"></div>
+</div>
+<div class="w-full flex items-center justify-between text-on-surface-variant font-label-sm text-[11px]">
+<span class="w-8">12 RDV</span>
+<div class="flex-1 ml-2 border-b border-surface-container-high"></div>
+</div>
+<div class="w-full flex items-center justify-between text-on-surface-variant font-label-sm text-[11px]">
+<span class="w-8">8 RDV</span>
+<div class="flex-1 ml-2 border-b border-surface-container-high"></div>
+</div>
+<div class="w-full flex items-center justify-between text-on-surface-variant font-label-sm text-[11px]">
+<span class="w-8">4 RDV</span>
+<div class="flex-1 ml-2 border-b border-surface-container-high"></div>
+</div>
+<div class="w-full flex items-center justify-between text-on-surface-variant font-label-sm text-[11px]">
+<span class="w-8">0 RDV</span>
+<div class="flex-1 ml-2 border-b border-surface-container-high"></div>
+</div>
+</div>
+<!-- SVG Curves -->
+<svg class="w-full h-full pb-6 pl-10 pr-2 overflow-visible" preserveaspectratio="none" viewbox="0 0 700 220">
+<defs>
+<!-- Teal Area Gradient -->
+<lineargradient id="tealGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0F6E6A" stop-opacity="0.32"></stop>
+<stop offset="100%" stop-color="#0F6E6A" stop-opacity="0.01"></stop>
+</lineargradient>
+</defs>
+<!-- Dashed Median N-1 curve -->
+<path d="M 10,160 Q 60,150 110,155 T 210,130 T 310,140 T 410,120 T 510,135 T 610,115 L 690,120" fill="none" stroke="#6E7978" stroke-dasharray="5 5" stroke-linecap="round" stroke-width="2"></path>
+<!-- Teal Filled Area -->
+<path d="M 10,150 
+                       C 50,140 70,100 110,100 
+                       C 150,100 170,165 210,165 
+                       C 250,165 270,70 310,65 
+                       C 350,60 370,140 410,135 
+                       C 450,130 470,55 510,50 
+                       C 550,45 570,120 610,115 
+                       C 640,110 660,70 690,60 
+                       L 690,220 L 10,220 Z" fill="url(#tealGrad)"></path>
+<!-- Teal Main Solid Line -->
+<path d="M 10,150 
+                       C 50,140 70,100 110,100 
+                       C 150,100 170,165 210,165 
+                       C 250,165 270,70 310,65 
+                       C 350,60 370,140 410,135 
+                       C 450,130 470,55 510,50 
+                       C 550,45 570,120 610,115 
+                       C 640,110 660,70 690,60" fill="none" stroke="#005451" stroke-linecap="round" stroke-width="3"></path>
+<!-- Significant Data Points -->
+<!-- Point 1: 05 Oct (110, 100) -->
+<circle class="hover:r-6 cursor-pointer transition-all" cx="110" cy="100" fill="#FFFFFF" r="4.5" stroke="#005451" stroke-width="2.5"></circle>
+<!-- Point 2: 14 Oct Peak (310, 65) -->
+<circle class="hover:r-7 cursor-pointer transition-all" cx="310" cy="65" fill="#FFFFFF" r="5" stroke="#005451" stroke-width="3"></circle>
+<!-- Point 3: 23 Oct High Peak (510, 50) -->
+<circle class="hover:r-8 cursor-pointer transition-all" cx="510" cy="50" fill="#005451" r="6" stroke="#FFFFFF" stroke-width="2"></circle>
+<!-- Point 4: 31 Oct (690, 60) -->
+<circle class="hover:r-6 cursor-pointer transition-all" cx="690" cy="60" fill="#FFFFFF" r="4.5" stroke="#005451" stroke-width="2.5"></circle>
+</svg>
+<!-- Peak Highlight Callout Pin (Day 23) -->
+<div class="absolute top-10 left-[70%] transform -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-2.5 py-1.5 rounded-lg shadow-lg text-center pointer-events-none hidden md:block">
+<span class="font-label-sm text-label-sm font-bold block text-primary-fixed">Jeu. 23 Octobre</span>
+<span class="font-label-sm text-label-sm font-normal text-surface-dim">15 actes (Pic écho)</span>
+</div>
+<!-- Horizontal X Axis Labels -->
+<div class="absolute bottom-0 left-10 right-2 flex justify-between text-on-surface-variant font-label-sm text-[11px] pt-1">
+<span>01 Oct</span>
+<span>05 Oct</span>
+<span>10 Oct</span>
+<span>15 Oct (Mi-Mois)</span>
+<span>20 Oct</span>
+<span>25 Oct</span>
+<span>31 Oct</span>
+</div>
+</div>
+<!-- Secondary Breakdown Tags Footer -->
+<div class="mt-space-md pt-space-md bg-surface-container-low rounded-xl p-space-md flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">donut_small</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Ventilation des 218 actes du mois :</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Consultations simples</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">148 (68%)</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Écho-Doppler</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">48 (22%)</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Holter ECG / MAPA</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">22 (10%)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chart 2: Répartition des Encaissements par Mode de Paiement -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Répartition des Encaissements &amp; Prises en Charge</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">19 840 TND Total</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Flux monétaires ventilés par vecteur de règlement et tiers-payant conventionné</p>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mt-2 sm:mt-0">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span>Journal de Caisse Réconcilié</span>
+</div>
+</div>
+<!-- Visual Bar Proportion Track -->
+<div class="w-full h-5 rounded-xl flex overflow-hidden shadow-inner my-space-sm">
+<div class="bg-primary h-full hover:opacity-90 transition-all cursor-pointer" style="width: 42.6%;" title="Espèces: 42.6%"></div>
+<div class="bg-primary-container h-full hover:opacity-90 transition-all cursor-pointer" style="width: 31.5%;" title="Carte Bancaire: 31.5%"></div>
+<div class="bg-secondary-container h-full hover:opacity-90 transition-all cursor-pointer" style="width: 20.9%;" title="CNAM APCI: 20.9%"></div>
+<div class="bg-surface-container-highest h-full hover:opacity-90 transition-all cursor-pointer" style="width: 5.0%;" title="Chèques / Virements: 5.0%"></div>
+</div>
+<!-- Breakdown List Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm pt-space-sm">
+<!-- Mode 1: Espèces -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface font-semibold">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span> Espèces
+                </span>
+<span class="font-label-sm text-label-sm font-bold text-primary bg-surface-container-lowest px-1.5 py-0.5 rounded">42.6%</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">8 450 <span class="text-[12px] font-semibold text-on-surface-variant">TND</span></span>
+<span class="block font-label-sm text-[11px] text-on-surface-variant">Encaissés au guichet</span>
+</div>
+</div>
+<!-- Mode 2: Carte Bancaire -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface font-semibold">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span> TPE / Carte
+                </span>
+<span class="font-label-sm text-label-sm font-bold text-primary-container bg-surface-container-lowest px-1.5 py-0.5 rounded">31.5%</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">6 240 <span class="text-[12px] font-semibold text-on-surface-variant">TND</span></span>
+<span class="block font-label-sm text-[11px] text-on-surface-variant">Réseau GIMTEL Télécollecté</span>
+</div>
+</div>
+<!-- Mode 3: CNAM Tiers-Payant -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface font-semibold">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span> CNAM (APCI)
+                </span>
+<span class="font-label-sm text-label-sm font-bold text-secondary bg-surface-container-lowest px-1.5 py-0.5 rounded">20.9%</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">4 150 <span class="text-[12px] font-semibold text-on-surface-variant">TND</span></span>
+<span class="block font-label-sm text-[11px] text-on-surface-variant">Télétransmission validée</span>
+</div>
+</div>
+<!-- Mode 4: Chèques & Virements -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface font-semibold">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></span> Chèques &amp; Vir.
+                </span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant bg-surface-container-lowest px-1.5 py-0.5 rounded">5.0%</span>
+</div>
+<div class="mt-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">1 000 <span class="text-[12px] font-semibold text-on-surface-variant">TND</span></span>
+<span class="block font-label-sm text-[11px] text-on-surface-variant">Bordereaux en compensation</span>
+</div>
+</div>
+</div>
+<!-- Bottom Settlement Notice Banner -->
+<div class="mt-space-md flex items-center justify-between bg-surface-container-high/60 rounded-xl px-space-md py-space-sm text-on-surface-variant">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+<span class="font-body-sm text-body-sm text-on-surface">
+                Délai moyen de remboursement CNAM constaté ce trimestre : <strong class="text-primary font-semibold">18 jours ouvrés</strong> (Centre régional Tunis Ouest).
+              </span>
+</div>
+<button class="hidden sm:flex items-center gap-1 font-label-sm text-label-sm text-primary font-bold hover:underline" onclick="showExportToast('Dossiers CNAM')">
+              Voir les 14 bordereaux en attente <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Appointment Funnel & Clinical Efficiency (4 Cols / ~34%) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Widget A: Issue des Rendez-vous (Funnel Breakdown) -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between pb-space-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Issue des Rendez-vous</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">240 créneaux programmés sur le mois</p>
+</div>
+<span class="w-9 h-9 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+</span>
+</div>
+<!-- List of Outcomes with Progress Bars -->
+<div class="flex flex-col gap-space-md mt-space-sm">
+<!-- 1. Honorés & Réalisés -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                    Honorés &amp; Réalisés
+                  </span>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">218 RDV</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">92.4%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 92.4%;"></div>
+</div>
+</div>
+<!-- 2. Annulés par Patient > 4h -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                    Annulés avec préavis (&gt; 4h)
+                  </span>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">11 RDV</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold">4.7%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-outline h-2 rounded-full" style="width: 4.7%;"></div>
+</div>
+</div>
+<!-- 3. Déplacés / Urgence cabinet -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+                    Reprogrammés / Urgences
+                  </span>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">4 RDV</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm font-bold">1.7%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-tertiary-container h-2 rounded-full" style="width: 1.7%;"></div>
+</div>
+</div>
+<!-- 4. No-Show Brutal -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                    Non Honorés (No-Show sans motif)
+                  </span>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-secondary">7 RDV</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed/50 text-secondary font-label-sm text-label-sm font-bold">3.2%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2">
+<div class="bg-secondary-container h-2 rounded-full" style="width: 3.2%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Efficiency Note -->
+<div class="mt-space-lg p-space-sm rounded-xl bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              L'anticipation par SMS J-1 et la file d'attente dynamique ont permis de réaffecter <strong class="text-on-surface font-semibold">89%</strong> des créneaux libérés avant la séance.
+            </p>
+</div>
+</div>
+<!-- Widget B: Indicateurs d'Efficience Clinique -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-start justify-between pb-space-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Efficience Clinique &amp; Cabinet</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Normes de pratique &amp; satisfaction</p>
+</div>
+<span class="w-9 h-9 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</span>
+</div>
+<!-- 4 Grid Mini Cards -->
+<div class="grid grid-cols-2 gap-space-sm mt-space-sm">
+<!-- Metric 1: Durée Moyenne Consultation -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-[20px]">timer</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-[10px] font-bold">Standard 20m</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">23 <span class="font-label-md text-label-md font-normal text-on-surface-variant">min</span></span>
+<span class="block font-label-sm text-[11px] text-on-surface-variant leading-tight">Durée moy. / patient</span>
+</div>
+</div>
+<!-- Metric 2: Taux Réaffectation Annulations -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-[20px]">sync</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-[10px] font-bold">Optimal</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">87.5%</span>
+<span class="block font-label-sm text-[11px] text-on-surface-variant leading-tight">Réaffectation créneaux</span>
+</div>
+</div>
+<!-- Metric 3: Note Satisfaction Patients -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">star</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-label-sm text-[10px] font-bold">184 avis</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">4.9<span class="font-label-md text-label-md font-normal text-on-surface-variant">/5</span></span>
+<span class="block font-label-sm text-[11px] text-on-surface-variant leading-tight">Score satisfaction</span>
+</div>
+</div>
+<!-- Metric 4: Ordonnances Sécurisées -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-[20px]">prescriptions</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-[10px] font-bold">QR Code</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">194</span>
+<span class="block font-label-sm text-[11px] text-on-surface-variant leading-tight">Ordonnances délivrées</span>
+</div>
+</div>
+</div>
+<!-- Quick Secretary Shift Indicator -->
+<div class="mt-space-md p-space-sm rounded-xl bg-surface-container-high/40 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary font-label-sm text-label-sm font-bold">
+                SR
+              </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Siwar R. (Secrétariat)</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">Poste Accueil • Téléphone &amp; Caisse</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-[11px] font-semibold">En poste</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Bottom Benchmarking & Quick Actions Strip -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<!-- Insight Text Callout -->
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">insights</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Synthèse de Performance &amp; Conformité</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">Trimestre 4</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 max-w-4xl">
+            Votre volume d'actes d'angio-cardiologie progresse de <strong class="text-primary font-semibold">+14.8%</strong> avec un taux de no-show historiquement bas (3.2%). Vos télétransmissions CNAM affichent <strong class="text-on-surface font-semibold">99.1% de conformité sans rejet</strong> ce mois-ci.
+          </p>
+</div>
+</div>
+<!-- Quick Report Downloads -->
+<div class="flex flex-wrap items-center gap-space-sm pt-2 xl:pt-0">
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold transition-all" onclick="showExportToast('Bilan Comptable Mensuel en PDF')">
+<span class="material-symbols-outlined text-primary text-[18px]">picture_as_pdf</span>
+          Bilan Comptable (PDF)
+        </button>
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold transition-all" onclick="showExportToast('Grand Livre des Recettes (CSV/Excel)')">
+<span class="material-symbols-outlined text-primary text-[18px]">table_view</span>
+          Grand Livre (CSV)
+        </button>
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all font-label-sm text-label-sm font-semibold shadow-sm" onclick="showExportToast('Bordereau Récapitulatif Déclaration CNAM')">
+<span class="material-symbols-outlined text-[18px]">send_and_archive</span>
+          Déclaration CNAM
+        </button>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full px-gutter-lg flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><div class="flex flex-wrap items-center gap-space-md"><span class="flex items-center gap-1 font-semibold text-secondary"><span class="material-symbols-outlined text-[16px]">emergency</span>SAMU : 190</span><span class="flex items-center gap-1 font-semibold text-secondary"><span class="material-symbols-outlined text-[16px]">local_fire_department</span>Prot. Civile : 198</span><span class="hidden lg:inline">|</span><span class="text-on-surface-variant">Clinique Alyssa - Les Berges du Lac, Tunis</span></div><div class="flex flex-wrap items-center gap-space-md"><span class="text-outline">Conformité Santé Numérique : INPDP Loi 2004-63</span><span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-semibold">HDS-TN Certifié</span><span>© 2024 MediDesk Tunisie</span></div></div></footer></body></html>

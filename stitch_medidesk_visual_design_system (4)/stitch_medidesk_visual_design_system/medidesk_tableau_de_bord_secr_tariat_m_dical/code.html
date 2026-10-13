@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary-fixed":"#00201e","tertiary-container":"#965000","secondary-fixed":"#ffdbd0","on-primary":"#ffffff","surface-container-low":"#eff4ff","primary":"#005451","tertiary-fixed":"#ffdcc3","surface-container-highest":"#d9e3f6","tertiary":"#733c00","secondary-fixed-dim":"#ffb59e","on-error-container":"#93000a","primary-fixed":"#a1f1eb","error-container":"#ffdad6","on-secondary-fixed-variant":"#7f2a0d","outline-variant":"#bec9c7","surface-container-high":"#dee9fc","primary-fixed-dim":"#85d4cf","inverse-primary":"#85d4cf","on-background":"#121c2a","outline":"#6e7978","on-tertiary-fixed":"#2f1500","surface-bright":"#f8f9ff","surface":"#f8f9ff","secondary-container":"#fd8863","on-tertiary-fixed-variant":"#6e3900","on-tertiary":"#ffffff","inverse-surface":"#27313f","on-primary-container":"#9dede8","tertiary-fixed-dim":"#ffb77d","on-secondary-fixed":"#3a0b00","surface-container":"#e6eeff","on-primary-fixed-variant":"#00504d","surface-container-lowest":"#ffffff","on-error":"#ffffff","inverse-on-surface":"#eaf1ff","on-surface-variant":"#3e4948","primary-container":"#0f6e6a","on-secondary-container":"#722104","on-tertiary-container":"#ffd7ba","on-surface":"#121c2a","background":"#f8f9ff","surface-variant":"#d9e3f6","on-secondary":"#ffffff","secondary":"#9f4122","surface-dim":"#d0dbed","error":"#ba1a1a","surface-tint":"#046a66"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","margin-lg":"2.5rem","margin-md":"1.5rem","space-xs":"0.25rem","gutter-md":"1.5rem","margin":"1rem","space-md":"1rem","gutter-lg":"2rem","gutter":"1rem","space-sm":"0.5rem","space-xl":"2.5rem"},"fontFamily":{"headline-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"]},"fontSize":{"headline-md":["1.25rem",{"lineHeight":"1.75rem","fontWeight":"600"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","fontWeight":"400"}],"headline-xl":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","fontWeight":"600"}],"headline-lg":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.015em","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"body-sm":["0.875rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"headline-lg-mobile":["1.375rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["1rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"headline-xl-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.01em","fontWeight":"700"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-gutter-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #0f6e6a
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WFStIlxB2FaXASVGdkaJT9w2n4VY5QxAxAh8r_fOmU7RX0IWiuD0tIAgrCx9c1m_Isox7BfjoMSz3wI97tRdACczgMRfHkMIIB0uI7Cr9i1MTMelwVUoo3WuySVu33kodMuAqMPWIVKQIt9nI_eGm4j3Ue7UpyOq15xMem6Yj6z3HevWEMGQhoV5MsP3E0FC1H5s4hPg2LVJQK2hxOMrdm_dnoFpidf75MfzLTx8abdjfcq1mKrC-7m6U"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">MediDesk</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded-lg"><span class="material-symbols-outlined text-primary text-[18px]">apartment</span><span class="font-label-md text-label-md text-on-surface">Clinique Alyssa — Cabinet Médical Central (Tunis)</span></div><div class="relative flex items-center"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg cursor-pointer"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-label-lg text-label-lg text-primary">Dr. Karim Ben Mahmoud</span><span class="font-label-sm text-label-sm text-on-surface-variant">(Cardiologie)</span><span class="material-symbols-outlined text-on-surface-variant text-[18px]">arrow_drop_down</span></div></div></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm"><a aria-current="page" class="px-space-sm py-2 transition-colors bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm" data-path="tableau-de-bord" href="#">Tableau de bord</a><a class="px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg transition-colors" data-path="planning-rendez-vous" href="#">Planning &amp; Rendez-vous</a><a class="px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg transition-colors" data-path="salle-attente" href="#">Salle d'attente</a><a class="px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg transition-colors" data-path="dossiers-patients" href="#">Dossiers Patients</a><a class="px-space-sm py-2 font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg transition-colors" data-path="teletransmissions-cnam" href="#">Télétransmissions CNAM</a></nav><div class="flex items-center gap-space-sm"><div class="relative hidden sm:flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span><input class="h-10 pl-9 pr-3 w-56 lg:w-64 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Rechercher patient, CIN ou téléphone..." type="text"/></div><div class="flex items-center bg-surface-container rounded-lg p-0.5"><button class="px-2 py-1 font-label-sm text-label-sm rounded bg-surface-container-lowest text-primary shadow-sm">FR</button><button class="px-2 py-1 font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface">عربي</button><button class="px-2 py-1 font-label-sm text-label-sm rounded text-on-surface-variant hover:text-on-surface">EN</button></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-secondary text-on-secondary font-label-sm text-[10px]">3</span></button><div class="flex items-center gap-space-xs pl-space-xs"><div class="hidden md:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface">Amel Trabelsi</span><span class="font-label-sm text-label-sm text-on-surface-variant">Secrétariat Principal</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- Top Sub-Bar / Secretary Workplace Context -->
+<section class="w-full px-gutter-lg py-space-md bg-surface-container-lowest shadow-sm mb-space-md">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<!-- Left: Secretary Greeting & Clinic Details -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-space-md">
+<div class="relative">
+<div class="w-14 h-14 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">support_agent</span>
+</div>
+<span class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary ring-2 ring-surface-container-lowest">
+<span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-primary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-on-primary"></span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<h1 class="font-headline-md text-headline-md text-on-surface">Bonjour Amel</h1>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Secrétariat Central</span>
+<span class="font-body-sm text-body-sm text-outline">|</span>
+<span class="font-label-lg text-label-lg text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span> Jeudi 24 Octobre 2024
+            </span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span class="material-symbols-outlined text-primary text-[18px]">local_hospital</span>
+<span>Clinique Alyssa • Cabinet Cardiologie &amp; Soins Spécialisés • RDC Aile B</span>
+</div>
+</div>
+</div>
+<!-- Center-Right: Doctor Switcher Pill & Quick Action Controls -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Doctor Selector Widget -->
+<div class="relative group">
+<button class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all text-left shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm">
+              🩺
+            </div>
+<div class="flex flex-col pr-1">
+<div class="flex items-center gap-1">
+<span class="font-label-lg text-label-lg text-on-surface">Dr. Karim Ben Mahmoud</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">32 consultations prévues aujourd'hui</span>
+</div>
+</button>
+<!-- Dropdown Switcher Menu -->
+<div class="absolute right-0 top-full mt-2 w-72 rounded-xl bg-surface-container-lowest shadow-xl py-space-xs hidden group-hover:block group-focus-within:block z-30">
+<div class="px-space-sm py-1.5 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Changer d'agenda praticien</div>
+<button class="w-full px-space-sm py-2 text-left flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Dr. Karim Ben Mahmoud</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cardiologie interventionnelle</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+</button>
+<button class="w-full px-space-sm py-2 text-left flex items-center justify-between hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Dr. Sonia Cherif</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dermatologie &amp; Vénérologie</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">19 RDV</span>
+</button>
+<div class="h-px bg-surface-container-high my-1"></div>
+<button class="w-full px-space-sm py-2 text-left flex items-center gap-space-xs text-primary hover:bg-surface-container-low font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">view_agenda</span>
+<span>Vue combinée (2 praticiens en simultané)</span>
+</button>
+</div>
+</div>
+<!-- Direct Actions -->
+<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-xl bg-secondary hover:bg-secondary/90 text-on-secondary font-label-lg text-label-lg shadow-sm transition-all transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>+ Sans RDV (Walk-in)</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm transition-all">
+<span class="material-symbols-outlined text-[20px]">calendar_add_on</span>
+<span>+ Nouveau RDV</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-sm py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" title="Écran de diffusion salle d'attente">
+<span class="material-symbols-outlined text-primary text-[20px]">tv</span>
+<span class="hidden md:inline">Écran Salle</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Live Pulse Banner / Triage Alert Ribbon -->
+<div class="w-full px-gutter-lg mb-space-md">
+<div class="w-full bg-gradient-to-r from-primary-container via-primary to-primary-container text-on-primary rounded-xl px-space-md py-2.5 flex flex-wrap items-center justify-between gap-space-sm shadow-md">
+<div class="flex items-center gap-space-sm">
+<span class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary-fixed"></span>
+</span>
+<span class="font-label-lg text-label-lg tracking-wide font-medium">Flash Urgence Salle : Férid Ben Salem (CIN: 08842109) en attente prioritaire pour suspicion d'angor aigu.</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm bg-on-primary/15 px-2 py-0.5 rounded-full text-on-primary">Cabinet 1 : Dr. Ben Mahmoud notifié</span>
+<button class="px-space-sm py-1 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md hover:bg-surface-container-low transition-colors">
+          Faire entrer en priorité
+        </button>
+</div>
+</div>
+</div>
+<!-- Operational KPI & Live Counter Grid (Cards with visual depth) -->
+<section class="w-full px-gutter-lg mb-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Card 1: Salle d'attente en direct (5 cols) -->
+<div class="lg:col-span-5 rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed/20 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">airline_seat_recline_normal</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Salle d'attente en direct</h2>
+</div>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-primary bg-primary-fixed/30 px-2 py-0.5 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+              En temps réel
+            </span>
+</div>
+<!-- Dual Counters -->
+<div class="grid grid-cols-2 gap-space-sm mb-space-md">
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">hourglass_top</span> En attente
+              </span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface">6</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Moy. 18 min</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full w-3/5"></div>
+</div>
+</div>
+<div class="bg-primary/5 rounded-xl p-space-sm flex flex-col">
+<span class="font-label-md text-label-md text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">stethoscope</span> En consultation
+              </span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-primary">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dr. Ben Mahmoud</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full w-4/5 animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Currently inside box -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="Portrait photography of a middle-aged Tunisian woman patient wearing modest clothing and smiling softly in a brightly lit medical clinic office." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7d04W_8p9o2TSxx4fmPKJA0qCkiipLI_gBBNMKvt9vzvr0evpz1pbZ8aAf-E5HlsO1wdV6KxqmYU4tKDepTIuexmb7YH1FhV8gcX7IzAr85PdIuCnT0RUi5xsgOMbMMqIeMk-ggn55Csmg6johy8wVO3eRSXxP-Gle8wYtxO6iJ9eXVvBN4L2tBsOVNeMzp3bc1gzSlwVfTlFnPeSAUokVTmYXtYaqkrxziEGLbo"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Actuellement dans le Cabinet 1</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Yasmine Ben Amor</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Entrée à 10:28 (16 min écoulées) • Suivi HTA</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> En cours
+            </span>
+</div>
+</div>
+<!-- Call Next Patient Button -->
+<button class="w-full py-2.5 px-space-md rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-primary-container shadow-sm transition-all">
+<span>Appeler le patient suivant : Férid Ben Salem</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Card 2: Réservations Visiteurs à confirmer (4 cols) -->
+<div class="lg:col-span-4 rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">notification_important</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Réservations à valider</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold">
+              4 à vérifier
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-snug">
+            Demandes web sans compte patient. Validez par appel ou SMS avant intégration au planning officiel.
+          </p>
+<!-- Guest List Mini Stack -->
+<div class="space-y-space-xs">
+<!-- Guest Item 1 -->
+<div class="p-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Mohamed Hedi Guediche</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary/10 text-secondary font-label-sm text-[10px]">11:30</span>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">phone</span> +216 98 456 123 • <span class="text-secondary font-medium">À appeler</span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-secondary hover:bg-secondary-fixed transition-colors" title="Appeler le patient">
+<span class="material-symbols-outlined text-[16px]">call</span>
+</button>
+<button class="p-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors" title="Confirmer le RDV">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+</div>
+</div>
+<!-- Guest Item 2 -->
+<div class="p-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Sarra Mansour</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">14:15</span>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">sms</span> +216 22 789 012 • <span class="text-outline font-normal">SMS automatique envoyé</span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container transition-colors" title="Historique SMS">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+</button>
+<button class="p-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors" title="Confirmer le RDV">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<a class="mt-space-sm text-center font-label-md text-label-md text-secondary hover:text-on-secondary-fixed-variant font-semibold flex items-center justify-center gap-1" href="#">
+<span>Voir les 4 demandes de réservation en ligne</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- Card 3: Synthèse de la journée (3 cols) -->
+<div class="lg:col-span-3 rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Bilan du jour</h2>
+<span class="material-symbols-outlined text-outline text-[20px]">analytics</span>
+</div>
+<div class="space-y-space-sm mt-space-xs">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md text-on-surface">RDV confirmés</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary">28</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface">Annulations / Déportés</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-secondary">2</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-label-md text-on-surface">Taux de présence est.</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">94%</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-error-container/40 text-on-error-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-error">assignment_late</span>
+<span class="font-label-md text-label-md font-semibold">Dossiers CNAM à clore</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-error">3</span>
+</div>
+</div>
+</div>
+<!-- Inline mini progress SVG -->
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Rythme de consultation</span>
+<span class="text-primary font-bold">11/32 terminés</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Section: Chronological Planning Strip (2-Column Architecture: Schedule Timeline + Secretary Desk Sidebar) -->
+<section class="w-full px-gutter-lg pb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left 8 Columns: Dynamic Schedule Timeline -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Schedule Header with Segmented Filters -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">Planning &amp; Consultations</h2>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-semibold">08:30 - 18:00</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dr. Karim Ben Mahmoud • Cabinet 1 Cardiologie</p>
+</div>
+<!-- Filter Pills -->
+<div class="flex items-center bg-surface-container p-1 rounded-xl gap-0.5">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest font-label-md text-label-md text-primary font-semibold shadow-sm">Tous (32)</button>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">En attente (6)</button>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Terminés (11)</button>
+<button class="px-3 py-1.5 rounded-lg font-label-md text-label-md text-secondary font-semibold hover:bg-surface-container-low transition-colors">Sans RDV (3)</button>
+</div>
+</div>
+<!-- Schedule Slots Strip -->
+<div class="space-y-space-sm">
+<!-- Time slot: 09:00 - 09:30 (Terminé) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative pl-space-lg">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-outline-variant rounded-l-xl"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center min-w-[70px]">
+<span class="font-headline-sm text-headline-sm text-on-surface">09:00</span>
+<span class="font-label-sm text-label-sm text-outline">09:30</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">Ahmed Trabelsi</span>
+<span class="font-label-sm text-label-sm text-outline">(CIN: 04512993)</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Terminé</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Consultation de contrôle HTA + Électrocardiogramme (ECG)</p>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm mt-1 text-primary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">payments</span> Réglé 70 TND (Espèces)</span>
+<span>•</span>
+<span class="text-on-surface-variant">Quittance N° 2024-8891</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 self-end md:self-center">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors">Dossier EMR</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors">Facture</button>
+</div>
+</div>
+</div>
+<!-- Time slot: 09:30 - 10:00 (Terminé - CNAM) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative pl-space-lg">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-outline-variant rounded-l-xl"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center min-w-[70px]">
+<span class="font-headline-sm text-headline-sm text-on-surface">09:30</span>
+<span class="font-label-sm text-label-sm text-outline">10:00</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">Leila Khemir</span>
+<span class="font-label-sm text-label-sm text-outline">(CIN: 07198234)</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Terminé</span>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">APC CNAM Filière Privée</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bilan pré-opératoire cardiologique pour chirurgie ambulatoire</p>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm mt-1 text-primary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">verified</span> Prise en charge CNAM validée en ligne</span>
+<span>•</span>
+<span class="text-on-surface-variant">Ticket modérateur : 15 TND</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 self-end md:self-center">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors">Bordereau CNAM</button>
+</div>
+</div>
+</div>
+<!-- Time slot: 10:30 - 11:00 (Actuellement En Consultation - ACTIVE ROW) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-md relative pl-space-lg ring-2 ring-primary/20">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-primary rounded-l-xl"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center min-w-[70px]">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">10:30</span>
+<span class="font-label-sm text-label-sm text-primary">11:00</span>
+<span class="mt-1 flex h-2.5 w-2.5 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Yasmine Ben Amor</span>
+<span class="font-label-sm text-label-sm text-outline">(CIN: 06214589 • Fiche #8902)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">door_open</span> En consultation (Cabinet 1)
+                    </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Suivi HTA sévère, adaptation trithérapie &amp; Échocardiographie Doppler</p>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm mt-1 text-on-surface-variant">
+<span class="flex items-center gap-1 text-primary font-medium"><span class="material-symbols-outlined text-[15px]">schedule</span> Entrée à 10:28 (16 min)</span>
+<span>•</span>
+<span>Médecin traitant référent : Dr. Ridha Sellami</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center">
+<button class="px-3 py-2 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">edit_note</span> Préparer Facture
+                </button>
+<button class="px-3 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">folder_open</span> Fiche EMR
+                </button>
+</div>
+</div>
+</div>
+<!-- Time slot: 11:00 - 11:15 (Walk-in / Sans RDV - URGENT PRIORITY) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-md relative pl-space-lg ring-2 ring-secondary/30">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-secondary rounded-l-xl"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center min-w-[70px]">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">11:00</span>
+<span class="font-label-sm text-label-sm text-secondary">11:15</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px] mt-1 font-bold uppercase">Sans RDV</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Férid Ben Salem</span>
+<span class="font-label-sm text-label-sm text-outline">(CIN: 08842109 • Nouveau patient)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span> Prioritaire — Palpitations aiguës
+                    </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">En salle d'attente (10:40)</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary font-medium">Motif d'urgence : Épisodes de tachycardie avec sensation de malaise. Constantes prises : TA 155/95, SpO2 97%.</p>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm mt-1 text-on-surface-variant">
+<span class="flex items-center gap-1 text-primary font-semibold"><span class="material-symbols-outlined text-[15px]">done_all</span> Constantes enregistrées</span>
+<span>•</span>
+<span class="text-secondary font-semibold">À faire entrer immédiatement après Mme Ben Amor</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center">
+<button class="px-3.5 py-2 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 font-label-md text-label-md font-bold shadow-sm transition-all flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span> Prêt à entrer
+                </button>
+</div>
+</div>
+</div>
+<!-- Time slot: 11:15 - 11:45 (En attente confirmation visiteur) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative pl-space-lg">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-container rounded-l-xl"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center min-w-[70px]">
+<span class="font-headline-sm text-headline-sm text-on-surface">11:15</span>
+<span class="font-label-sm text-label-sm text-outline">11:45</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">Mohamed Hedi Guediche</span>
+<span class="font-label-sm text-label-sm text-outline">(Tél: +216 98 456 123)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">help</span> En attente validation visiteur
+                    </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Première consultation cardiologique • Prise de contact en ligne sans dossier préalable</p>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm mt-1 text-tertiary">
+<span class="flex items-center gap-1 font-medium"><span class="material-symbols-outlined text-[15px]">ring_volume</span> Rappel requis pour confirmer présence physique</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">call</span> Appeler
+                </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Valider RDV
+                </button>
+</div>
+</div>
+</div>
+<!-- Time slot: 11:45 - 12:15 (Confirmé - Arrivée signalée) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative pl-space-lg">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary rounded-l-xl"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center min-w-[70px]">
+<span class="font-headline-sm text-headline-sm text-on-surface">11:45</span>
+<span class="font-label-sm text-label-sm text-outline">12:15</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">Radhia Chaabane</span>
+<span class="font-label-sm text-label-sm text-outline">(CIN: 05441920)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/40 text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span> Arrivée signalée à 10:50
+                    </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pose et restitution d'enregistrement Holter ECG 24h</p>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm mt-1 text-on-surface-variant">
+<span>Dossier complet • CNAM Prise en charge #CNAM-2024-904</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm">Ouvrir fiche</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 font-label-sm text-label-sm font-semibold">Pointer présence</button>
+</div>
+</div>
+</div>
+<!-- Midday Break Divider -->
+<div class="py-space-xs flex items-center justify-center gap-space-md">
+<div class="h-px bg-surface-container-high flex-1"></div>
+<span class="px-space-md py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">restaurant</span> 12:15 - 14:00 • Pause méridienne &amp; Staff médical de cardiologie
+            </span>
+<div class="h-px bg-surface-container-high flex-1"></div>
+</div>
+<!-- Time slot: 14:00 - 14:30 (Confirmé après-midi) -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative pl-space-lg">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-outline-variant rounded-l-xl"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="flex flex-col items-center min-w-[70px]">
+<span class="font-headline-sm text-headline-sm text-on-surface">14:00</span>
+<span class="font-label-sm text-label-sm text-outline">14:30</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">Moncef Jaziri</span>
+<span class="font-label-sm text-label-sm text-outline">(CIN: 02198004)</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-medium">Confirmé (SMS rappel reçu)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Consultation post-infarctus (Mois +3), titration bêta-bloquants &amp; test de marche</p>
+</div>
+</div>
+<div class="flex items-center gap-1.5 self-end md:self-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm">Fiche Patient</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right 4 Columns: Secretary Cockpit Sidebar & Immediate Tools -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Tool 1: Fast Patient Check-In Box (CIN / QR Code) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">badge</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pointage Rapide Arrivée</h3>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">qr_code_scanner</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+            Numéro de Carte d'Identité Nationale (CIN 8 chiffres) ou scannez le pass patient :
+          </p>
+<div class="space-y-space-sm">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary border-none" placeholder="Ex: 08842109 ou scan QR..." type="text"/>
+<button class="absolute right-2 top-2 p-1.5 text-primary hover:bg-surface-container rounded-md" title="Ouvrir la caméra de scan">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</button>
+</div>
+<button class="w-full py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary-container shadow-sm transition-all">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+<span>Valider la présence en salle</span>
+</button>
+</div>
+</div>
+<!-- Tool 2: Direct Intercom / Note instantanée pour Dr. Ben Mahmoud -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">quick_phrases</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Interphone Cabinet 1</h3>
+</div>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Écran médecin actif
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+            Envoyer une note discrète en incrustation sur le moniteur de consultation :
+          </p>
+<div class="space-y-space-xs">
+<div class="flex flex-wrap gap-1 mb-2">
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high transition-colors text-left" onclick="document.getElementById('intercom-msg').value = 'Prochain patient Férid Ben Salem souffre de palpitations, ECG préliminaire prêt.'">
+                ⚠️ Férid Ben Salem : Palpitations aiguës
+              </button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high transition-colors text-left" onclick="document.getElementById('intercom-msg').value = 'Appel extérieur urgent du Dr. Sellami en ligne 2.'">
+                📞 Dr. Sellami en ligne
+              </button>
+</div>
+<textarea class="w-full p-2.5 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary resize-none" id="intercom-msg" placeholder="Saisir un message pour Dr. Ben Mahmoud..." rows="3"></textarea>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-outline font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">lock</span> Chiffré de bout en bout
+              </div>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1 hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">send</span> Transmettre
+              </button>
+</div>
+</div>
+</div>
+<!-- Tool 3: Télétransmissions CNAM & Intégration Clinique -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">health_and_safety</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Portail CNAM &amp; Mutuelles</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold">En ligne</span>
+</div>
+<div class="space-y-space-sm mt-space-xs">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Passerelle CNAM Tunisie</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Filière Privée &amp; Maladie Chronique (AP1)</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">3 Dossiers en attente de visa</span>
+<span class="font-label-sm text-label-sm text-error">Rejet potentiel sur Fiche #8791 (Manque code AP2)</span>
+</div>
+<button class="px-2 py-1 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+                Corriger
+              </button>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Synchroniser les prises en charge du jour</span>
+</button>
+</div>
+</div>
+<!-- Tool 4: Lignes d'urgence & Contacts Utiles -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">contacts</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Urgences &amp; Renfort</h4>
+</div>
+<div class="space-y-1.5">
+<div class="flex items-center justify-between py-1 border-b border-surface-container">
+<span class="font-body-sm text-body-sm text-on-surface-variant">SAMU Tunis</span>
+<span class="font-label-md text-label-md text-secondary font-bold">190</span>
+</div>
+<div class="flex items-center justify-between py-1 border-b border-surface-container">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Standard Clinique Alyssa</span>
+<span class="font-label-md text-label-md text-on-surface">+216 71 890 000</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Laboratoire d'analyses (RDC)</span>
+<span class="font-label-md text-label-md text-on-surface">Poste 142</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_4px_rgba(0,0,0,0.03)] py-space-md"><div class="w-full px-gutter-lg flex flex-col md:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm font-label-md text-label-md text-on-surface-variant"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-primary text-[16px]">verified_user</span>Conformité Données Santé (HDS) &amp; INPDP Tunisie (Loi 2004-63)</span><span>•</span><span>Plateforme certifiée Médicale Pro</span></div><div class="flex items-center gap-space-md font-label-md text-label-md"><div class="flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-error-container text-on-error-container"><span class="material-symbols-outlined text-[16px]">emergency</span><span class="font-label-md text-label-md">Urgences SAMU : 190 | Protection Civile : 198</span></div><span class="text-on-surface-variant">© 2025 MediDesk Santé. Tous droits réservés.</span></div></div></footer></body></html>

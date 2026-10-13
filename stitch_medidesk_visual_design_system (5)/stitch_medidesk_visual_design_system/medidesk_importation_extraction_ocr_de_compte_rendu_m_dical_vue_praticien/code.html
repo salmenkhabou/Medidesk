@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>MediDesk - Espace Praticien</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#3e4948", "on-primary-fixed": "#00201e", "on-surface": "#121c2a", "background": "#f8f9ff", "on-error": "#ffffff", "tertiary-fixed-dim": "#ffb77d", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#00504d", "secondary-fixed-dim": "#ffb59e", "inverse-on-surface": "#eaf1ff", "surface-container-highest": "#d9e3f6", "surface-tint": "#046a66", "on-secondary-fixed": "#3a0b00", "surface-container-lowest": "#ffffff", "surface-variant": "#d9e3f6", "on-tertiary-container": "#ffd7ba", "on-secondary-container": "#722104", "inverse-surface": "#27313f", "on-tertiary-fixed": "#2f1500", "on-primary-container": "#9dede8", "surface-dim": "#d0dbed", "secondary-container": "#fd8863", "primary-fixed-dim": "#85d4cf", "on-tertiary-fixed-variant": "#6e3900", "on-background": "#121c2a", "primary-container": "#0f6e6a", "on-error-container": "#93000a", "inverse-primary": "#85d4cf", "tertiary-fixed": "#ffdcc3", "outline": "#6e7978", "surface-container-high": "#dee9fc", "tertiary-container": "#965000", "surface-container": "#e6eeff", "tertiary": "#733c00", "surface-container-low": "#eff4ff", "surface": "#f8f9ff", "error": "#ba1a1a", "secondary": "#9f4122", "secondary-fixed": "#ffdbd0", "surface-bright": "#f8f9ff", "on-primary": "#ffffff", "outline-variant": "#bec9c7", "error-container": "#ffdad6", "primary": "#005451", "on-secondary-fixed-variant": "#7f2a0d", "primary-fixed": "#a1f1eb", "on-tertiary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-md": "1.5rem", "space-xs": "0.25rem", "margin": "1rem", "space-lg": "1.5rem", "margin-lg": "2.5rem", "margin-md": "1.5rem", "space-xl": "2.5rem", "gutter": "1rem", "gutter-lg": "2rem", "space-md": "1rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-xl-mobile": [ "Plus Jakarta Sans" ], "headline-xl": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-xl-mobile": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-xl": [ "2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-md": [ "1.25rem", { "lineHeight": "1.75rem", "fontWeight": "600" } ], "label-lg": [ "0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" } ], "headline-lg": [ "1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "headline-sm": [ "1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" } ], "body-sm": [ "0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" } ], "body-lg": [ "1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" } ], "label-sm": [ "0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.03em", "fontWeight": "600" } ], "headline-lg-mobile": [ "1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-md": [ "1rem", { "lineHeight": "1.5rem", "fontWeight": "400" } ], "label-md": [ "0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 w-full px-gutter-lg flex flex-col justify-between pt-space-sm"><div class="flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #0f6e6a
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UgrkqncDWnqETT84tUrNq4ssg9LEpQs_jqO87VWpLkUzJPdhnfOuLHX7GhcRUimQjCA85DLfzkCJXQsif_aQGJdawi9ox2GMFN-JZCIMQgMsgjriEXjpGfEDgsaoYMmnuxd0hzm5EeNDA1He3pUEbO-00mtZ8xoeINDwCQzCVlrrrB7GivyctDU01l-Pqsn4s5MhvXka5_iE2Q7_R2cvKiqjxBQ0A3vN6dHer75N_3rL4E-k2kPGQ-h_M"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">MediDesk</span><span class="font-label-sm text-label-sm text-on-surface-variant">Clinique Alyssa • Cardiologie &amp; Angiologie</span></div><div class="hidden xl:flex items-center gap-space-xs bg-surface-container-low px-3 py-1 rounded-full text-primary font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-primary"></span>Abonnement Pro • Actif</div></div><div class="hidden md:flex flex-1 max-w-md mx-space-lg"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-4 py-1.5 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none shadow-[0_1px_3px_rgba(15,110,106,0.05)]" placeholder="Rechercher patient (Nom, CIN, Numéro dossier)..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-lowest p-0.5 rounded-lg shadow-[0_1px_3px_rgba(15,110,106,0.04)]"><button class="px-2 py-1 rounded font-label-sm text-label-sm bg-primary-container text-on-primary">FR</button><button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">عربي</button><button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">EN</button></div><button class="relative w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface shadow-[0_1px_3px_rgba(15,110,106,0.04)]"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold">Dr. Karim Ben Mahmoud</span><span class="font-label-sm text-label-sm text-on-surface-variant">Praticien Titulaire</span></div></div></div></div><nav class="flex items-center gap-space-xs overflow-x-auto pb-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><a class="px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors rounded-lg" data-path="tableau-de-bord" href="#">Tableau de bord</a><a class="px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors rounded-lg" data-path="agenda-et-consultations" href="#">Agenda &amp; Consultations</a><a class="px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors rounded-lg" data-path="salle-d-attente" href="#">Salle d'attente</a><a aria-current="page" class="px-3 py-1.5 whitespace-nowrap transition-colors bg-primary-container text-on-primary font-bold rounded-lg" data-path="dossiers-patients" href="#">Dossiers Patients</a><a class="px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors rounded-lg" data-path="teletransmissions-cnam" href="#">Télétransmissions CNAM</a><a class="px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high whitespace-nowrap transition-colors rounded-lg" data-path="statistiques-et-honoraires" href="#">Statistiques &amp; Honoraires</a></nav></div></header><main class="w-full pt-28 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<div class="w-full px-gutter-lg py-space-md flex flex-col gap-space-lg max-w-[1680px] mx-auto">
+<!-- Top Navigation & Patient Banner Bar -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-space-sm">
+<a class="inline-flex items-center gap-space-xs font-label-md text-label-md text-primary hover:text-primary-container font-semibold transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Retour au dossier (#TN-8412 • Mohamed Hédi Guediche)
+        </a>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>Moteur OCR BioVision v4.2 Actif</span>
+<span class="text-outline-variant">•</span>
+<span>Dernière synchro labo : Aujourd'hui 08:32</span>
+</div>
+</div>
+<!-- Patient Header Banner -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary font-headline-sm text-headline-sm font-bold">
+            MH
+          </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">M. Mohamed Hédi Guediche</span>
+<span class="bg-surface-container px-2.5 py-0.5 rounded-full font-label-sm text-label-sm text-on-surface-variant">68 ans • Né le 14/05/1957</span>
+<span class="bg-surface-container px-2.5 py-0.5 rounded-full font-label-sm text-label-sm text-on-surface-variant">CIN: 08742911</span>
+<span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">APCI 100% • Cardiopathie Ischémique</span>
+</div>
+<div class="flex items-center gap-space-md mt-1 font-body-sm text-body-sm text-on-surface-variant flex-wrap">
+<span class="flex items-center gap-1 text-secondary font-semibold">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+                Allergies : Produits de contraste iodés
+              </span>
+<span class="text-outline-variant">|</span>
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[16px]">block</span>
+                Intolérance avérée aux statines (Myalgies sévères)
+              </span>
+<span class="text-outline-variant">|</span>
+<span class="text-on-surface-variant">Traitement actuel : Kardégic 75, Bipreterax 5/1.25mg</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end lg:self-center">
+<button class="px-3 py-2 rounded-lg bg-surface-container font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">history</span>
+            Historique Biologique
+          </button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-semibold hover:bg-surface-container flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">monitoring</span>
+            Courbes des Constantes
+          </button>
+</div>
+</div>
+</div>
+<!-- Title and Subtitle -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm tracking-wider uppercase font-bold">Module IA Certifié HDS</span>
+<span class="font-label-md text-label-md text-outline">Ref: IMP-TN-2025-089</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">Importation &amp; Numérisation OCR de Compte-rendu Médical</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">Extraction automatisée par vision artificielle et traitement du langage clinique. Veuillez contrôler, corriger si nécessaire, puis valider les constantes avant intégration aux courbes cardiologiques et au dossier médical partagé.</p>
+</div>
+<!-- Dropzone & Active File Card -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-space-md">
+<!-- Active Loaded File Card (Spans 2 cols on xl) -->
+<div class="xl:col-span-2 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-start justify-between flex-wrap gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-14 rounded-lg bg-secondary-fixed flex flex-col items-center justify-center text-on-secondary-fixed shadow-sm">
+<span class="material-symbols-outlined text-[24px]">picture_as_pdf</span>
+<span class="text-[9px] font-bold tracking-wider">PDF</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Bilan_Biologique_Post_Stent_Octobre2025.pdf</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                  Extraction OCR IA terminée (98.4% de confiance)
+                </span>
+</div>
+<div class="flex items-center gap-space-md mt-1 text-on-surface-variant font-label-sm text-label-sm flex-wrap">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">domain</span>Labo Bio-Alyssa - Les Berges du Lac, Tunis</span>
+<span>•</span>
+<span>24/10/2025 à 08:30</span>
+<span>•</span>
+<span>Poids : 2.4 Mo</span>
+<span>•</span>
+<span class="text-primary font-semibold">1 page numérisée (300 DPI)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+              Remplacer
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">post_add</span>
+              Ajouter une page
+            </button>
+</div>
+</div>
+<!-- Extraction summary mini-bar -->
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span>
+              Bilan lipidique, métabolique et fonction rénale détectés
+            </span>
+<span class="hidden md:inline text-outline-variant">|</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Signé électroniquement par Dr. Selim Triki (Biologiste)</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+<span>Intégrité cryptographique vérifiée</span>
+</div>
+</div>
+</div>
+<!-- Dropzone Alternative / Ingestion Tile -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col items-center justify-center text-center gap-2 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[22px]">cloud_upload</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Déposer un autre document</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PDF, JPEG, PNG, DICOM (Coro/Écho) jusqu'à 25 Mo</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Parcourir les fichiers locaux</span>
+</div>
+</div>
+<!-- MAIN SPLIT WORKSPACE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (6 cols): THE SCANNED DOCUMENT VIEWER -->
+<div class="lg:col-span-6 flex flex-col gap-space-sm bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<!-- Viewer Toolbar -->
+<div class="flex items-center justify-between pb-space-sm flex-wrap gap-space-xs">
+<div class="flex items-center gap-1 bg-surface-container rounded-lg p-1">
+<button class="w-8 h-8 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface hover:text-primary shadow-xs" title="Zoom arrière">
+<span class="material-symbols-outlined text-[18px]">zoom_out</span>
+</button>
+<span class="px-2 font-label-sm text-label-sm text-on-surface font-semibold">100%</span>
+<button class="w-8 h-8 rounded bg-surface-container-lowest flex items-center justify-center text-on-surface hover:text-primary shadow-xs" title="Zoom avant">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container-highest flex items-center justify-center text-on-surface-variant" title="Ajuster">
+<span class="material-symbols-outlined text-[18px]">fit_screen</span>
+</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container-highest flex items-center justify-center text-on-surface-variant" title="Pivoter">
+<span class="material-symbols-outlined text-[18px]">rotate_right</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-high flex items-center gap-1" id="toggle-contrast-btn" onclick="toggleDocContrast()">
+<span class="material-symbols-outlined text-[16px]">contrast</span>
+              Rehausser contraste
+            </button>
+<button class="px-2.5 py-1.5 rounded-lg bg-primary/10 font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1" id="toggle-ocr-boxes" onclick="toggleOcrBoxes()">
+<span class="material-symbols-outlined text-[16px]">crop_free</span>
+              Surligner détections OCR [ON]
+            </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant" title="Plein écran">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Document Viewer Canvas -->
+<div class="relative w-full bg-[#f2f4f8] rounded-lg p-space-md flex justify-center overflow-auto min-h-[780px] shadow-inner select-none transition-all" id="document-canvas-container">
+<!-- Realistic Medical Lab Report Sheet -->
+<div class="w-full max-w-[580px] bg-white rounded-md shadow-md p-6 flex flex-col gap-4 text-[#1e293b] font-sans relative" id="medical-sheet">
+<!-- Document Header -->
+<div class="flex items-start justify-between pb-3 border-b border-[#e2e8f0]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold text-lg">
+<span class="material-symbols-outlined text-[24px]">biotech</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold uppercase tracking-wider text-primary">Laboratoire d'Analyses Médicales Bio-Alyssa</span>
+<span class="text-[11px] text-[#64748b]">Centre Médical Alyssa • Les Berges du Lac 2, Tunis</span>
+<span class="text-[10px] text-[#94a3b8]">Tél: +216 71 860 000 • Code Agrément: MS-TN-4491</span>
+</div>
+</div>
+<div class="text-right flex flex-col">
+<span class="text-[10px] font-mono text-[#64748b]">Réf: #BIO-2025-9921</span>
+<span class="text-[10px] text-[#0f6e6a] font-semibold">Télétransmission CNAM OK</span>
+<span class="text-[9px] text-[#94a3b8]">Émis le 24/10/2025 à 08:14</span>
+</div>
+</div>
+<!-- Patient & Prescriber Banner -->
+<div class="bg-[#f8fafc] rounded p-2.5 grid grid-cols-2 gap-2 text-[11px] leading-tight">
+<div>
+<span class="text-[#64748b] block text-[9px] uppercase font-bold">Patient :</span>
+<span class="font-bold text-[#0f172a]">M. Mohamed Hédi GUEDICHE</span>
+<span class="block text-[#475569]">68 ans • H • CIN: 08742911</span>
+<span class="block text-[#475569]">Matricule CNAM: 10488290-01 (APCI)</span>
+</div>
+<div>
+<span class="text-[#64748b] block text-[9px] uppercase font-bold">Médecin Prescripteur :</span>
+<span class="font-semibold text-[#0f172a]">Dr. Karim BEN MAHMOUD</span>
+<span class="block text-[#475569]">Cardiologie &amp; Angiologie Interventionnelle</span>
+<span class="block text-[#475569]">Renseignement : Bilan de contrôle M+6 post-stent</span>
+</div>
+</div>
+<!-- Laboratory Results Table with Interactive OCR Bounding Highlights -->
+<div class="flex flex-col gap-3 text-[11px]">
+<!-- Section: BIOCHIMIE SANGUINE -->
+<div class="flex flex-col gap-1">
+<div class="bg-[#f1f5f9] px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-[#334155] flex justify-between">
+<span>Biochimie Sanguine &amp; Bilan Lipidique</span>
+<span class="font-normal text-[9px]">Sérum - Prélèvement à jeun (12h)</span>
+</div>
+<!-- Table Header -->
+<div class="grid grid-cols-12 px-2 py-0.5 text-[9px] text-[#64748b] font-bold uppercase">
+<span class="col-span-5">Paramètre analysé</span>
+<span class="col-span-3 text-right">Résultat</span>
+<span class="col-span-4 text-right">Valeurs de Référence</span>
+</div>
+<!-- Row 1: Glycémie -->
+<div class="relative grid grid-cols-12 items-center px-2 py-1 rounded transition-colors group hover:bg-[#f8fafc]">
+<div class="col-span-5 font-medium text-[#1e293b]">Glycémie à jeun</div>
+<div class="col-span-3 text-right font-bold text-[#0f6e6a]">0.95 g/L</div>
+<div class="col-span-4 text-right text-[#64748b] text-[10px]">0.70 - 1.10 g/L</div>
+<!-- OCR Bounding Box Overlay -->
+<div class="ocr-box absolute inset-0 bg-[#0f6e6a]/10 rounded pointer-events-none flex items-start justify-end pr-1">
+<span class="text-[8px] bg-primary text-white font-bold px-1 rounded-xs -mt-1.5 shadow-xs">OCR #1 • Conf: 99%</span>
+</div>
+</div>
+<!-- Row 2: Cholestérol Total -->
+<div class="relative grid grid-cols-12 items-center px-2 py-1 rounded transition-colors group hover:bg-[#f8fafc]">
+<div class="col-span-5 font-medium text-[#1e293b]">Cholestérol Total</div>
+<div class="col-span-3 text-right font-bold text-[#0f6e6a]">1.42 g/L</div>
+<div class="col-span-4 text-right text-[#64748b] text-[10px]">1.50 - 2.00 g/L</div>
+<div class="ocr-box absolute inset-0 bg-[#0f6e6a]/10 rounded pointer-events-none flex items-start justify-end pr-1">
+<span class="text-[8px] bg-primary text-white font-bold px-1 rounded-xs -mt-1.5 shadow-xs">OCR #2 • Conf: 99%</span>
+</div>
+</div>
+<!-- Row 3: Triglycérides -->
+<div class="relative grid grid-cols-12 items-center px-2 py-1 rounded transition-colors group hover:bg-[#f8fafc]">
+<div class="col-span-5 font-medium text-[#1e293b]">Triglycérides</div>
+<div class="col-span-3 text-right font-bold text-[#0f6e6a]">1.15 g/L</div>
+<div class="col-span-4 text-right text-[#64748b] text-[10px]">0.50 - 1.50 g/L</div>
+<div class="ocr-box absolute inset-0 bg-[#0f6e6a]/10 rounded pointer-events-none flex items-start justify-end pr-1">
+<span class="text-[8px] bg-primary text-white font-bold px-1 rounded-xs -mt-1.5 shadow-xs">OCR #3 • Conf: 97%</span>
+</div>
+</div>
+<!-- Row 4: LDL-Cholestérol (Crucial) -->
+<div class="relative grid grid-cols-12 items-center px-2 py-1.5 rounded transition-colors bg-surface-container-high/40">
+<div class="col-span-5 font-bold text-[#0f6e6a] flex items-center gap-1">
+<span>LDL-Cholestérol (Friedewald)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+</div>
+<div class="col-span-3 text-right font-bold text-[#0f6e6a] text-[12px]">0.68 g/L</div>
+<div class="col-span-4 text-right text-[#0f6e6a] text-[9.5px] font-semibold">Cible &lt; 0.70 g/L (Très haut risque)</div>
+<div class="ocr-box absolute inset-0 bg-[#0f6e6a]/15 rounded pointer-events-none flex items-start justify-end pr-1">
+<span class="text-[8px] bg-primary text-white font-bold px-1 rounded-xs -mt-1.5 shadow-xs">OCR #4 • Conf: 99% (Cible Atteinte)</span>
+</div>
+</div>
+<!-- Row 5: HbA1c -->
+<div class="relative grid grid-cols-12 items-center px-2 py-1 rounded transition-colors group hover:bg-[#f8fafc]">
+<div class="col-span-5 font-medium text-[#1e293b]">Hémoglobine Glyquée (HbA1c)</div>
+<div class="col-span-3 text-right font-bold text-[#0f6e6a]">5.8 %</div>
+<div class="col-span-4 text-right text-[#64748b] text-[10px]">4.0 - 6.0 % (Non diabétique)</div>
+<div class="ocr-box absolute inset-0 bg-[#0f6e6a]/10 rounded pointer-events-none flex items-start justify-end pr-1">
+<span class="text-[8px] bg-primary text-white font-bold px-1 rounded-xs -mt-1.5 shadow-xs">OCR #5 • Conf: 98%</span>
+</div>
+</div>
+</div>
+<!-- Section: FONCTION RÉNALE & IONOGRAMME -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="bg-[#f1f5f9] px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-[#334155] flex justify-between">
+<span>Fonction Rénale &amp; Électrolytes</span>
+<span class="text-[9px] text-[#dc2626] font-semibold">Surveillance traitement Bipreterax</span>
+</div>
+<!-- Row 6: Créatinine -->
+<div class="relative grid grid-cols-12 items-center px-2 py-1 rounded transition-colors group hover:bg-[#f8fafc]">
+<div class="col-span-5 font-medium text-[#1e293b]">Créatinine sérique</div>
+<div class="col-span-3 text-right font-bold text-[#0f6e6a]">88 µmol/L</div>
+<div class="col-span-4 text-right text-[#64748b] text-[10px]">62 - 106 µmol/L (9.9 mg/L)</div>
+<div class="ocr-box absolute inset-0 bg-[#0f6e6a]/10 rounded pointer-events-none flex items-start justify-end pr-1">
+<span class="text-[8px] bg-primary text-white font-bold px-1 rounded-xs -mt-1.5 shadow-xs">OCR #6 • Conf: 99%</span>
+</div>
+</div>
+<!-- Row 7: DFG CKD-EPI -->
+<div class="relative grid grid-cols-12 items-center px-2 py-1 rounded transition-colors group hover:bg-[#f8fafc]">
+<div class="col-span-5 font-medium text-[#1e293b]">Débit Filtration Glomérulaire (DFG)</div>
+<div class="col-span-3 text-right font-bold text-[#0f6e6a]">78 mL/min/1.73m²</div>
+<div class="col-span-4 text-right text-[#64748b] text-[10px]">&gt; 60 mL/min (Stade 2 léger)</div>
+<div class="ocr-box absolute inset-0 bg-[#0f6e6a]/10 rounded pointer-events-none flex items-start justify-end pr-1">
+<span class="text-[8px] bg-primary text-white font-bold px-1 rounded-xs -mt-1.5 shadow-xs">OCR #7 • Conf: 98%</span>
+</div>
+</div>
+<!-- Row 8: Potassium -->
+<div class="relative grid grid-cols-12 items-center px-2 py-1 rounded transition-colors group hover:bg-[#f8fafc]">
+<div class="col-span-5 font-medium text-[#1e293b]">Potassium sérique (K+)</div>
+<div class="col-span-3 text-right font-bold text-[#0f6e6a]">4.3 mEq/L</div>
+<div class="col-span-4 text-right text-[#64748b] text-[10px]">3.5 - 5.0 mEq/L</div>
+<div class="ocr-box absolute inset-0 bg-[#0f6e6a]/10 rounded pointer-events-none flex items-start justify-end pr-1">
+<span class="text-[8px] bg-primary text-white font-bold px-1 rounded-xs -mt-1.5 shadow-xs">OCR #8 • Conf: 99%</span>
+</div>
+</div>
+</div>
+<!-- Section: HÉMATOLOGIE RAPIDE -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="bg-[#f1f5f9] px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider text-[#334155] flex justify-between">
+<span>Hématologie (Contrôle antiagrégation)</span>
+<span class="font-normal text-[9px]">Numération Automate Sysmex</span>
+</div>
+<!-- Row 9: Hémoglobine -->
+<div class="relative grid grid-cols-12 items-center px-2 py-1 rounded transition-colors group hover:bg-[#f8fafc]">
+<div class="col-span-5 font-medium text-[#1e293b]">Hémoglobine (Hb)</div>
+<div class="col-span-3 text-right font-bold text-[#0f6e6a]">13.8 g/dL</div>
+<div class="col-span-4 text-right text-[#64748b] text-[10px]">13.0 - 17.5 g/dL</div>
+<div class="ocr-box absolute inset-0 bg-[#0f6e6a]/10 rounded pointer-events-none flex items-start justify-end pr-1">
+<span class="text-[8px] bg-primary text-white font-bold px-1 rounded-xs -mt-1.5 shadow-xs">OCR #9 • Conf: 97%</span>
+</div>
+</div>
+<!-- Row 10: Plaquettes -->
+<div class="relative grid grid-cols-12 items-center px-2 py-1 rounded transition-colors group hover:bg-[#f8fafc]">
+<div class="col-span-5 font-medium text-[#1e293b]">Numération des Plaquettes</div>
+<div class="col-span-3 text-right font-bold text-[#0f6e6a]">245 000 /mm³</div>
+<div class="col-span-4 text-right text-[#64748b] text-[10px]">150 000 - 400 000 /mm³</div>
+</div>
+</div>
+</div>
+<!-- Realistic Lab Footer Signature -->
+<div class="mt-auto pt-3 border-t border-[#e2e8f0] flex items-center justify-between text-[9px] text-[#64748b]">
+<div class="flex flex-col">
+<span>Validation analytique conforme aux normes ISO 15189</span>
+<span class="italic text-[#94a3b8]">Document crypté avec horodatage certifié ANCE Tunisie</span>
+</div>
+<div class="text-right">
+<span class="font-bold text-[#0f172a] block">Dr. Selim TRIKI</span>
+<span>Signature Électronique Certifiée</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+            Page 1 sur 1 • Recto • Document certifié conforme par le laboratoire émetteur
+          </span>
+<span class="font-mono text-[11px] text-outline">MD5: 8a4f91b7d302c1149e</span>
+</div>
+</div>
+<!-- RIGHT COLUMN (6 cols): AUTOMATICALLY EXTRACTED KEY VALUES & DOCTOR REVISION PANEL -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<!-- Header summary of extracted items -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">fact_check</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Valeurs Extraites &amp; Correspondances Dossier</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">9 constantes identifiées • <span class="text-primary font-semibold">1 objectif clinique cardiovasculaire atteint</span></span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span>
+            Ajouter une constante manuelle
+          </button>
+</div>
+<!-- CATEGORY 1: LIPIDOLOGIE & BILAN MÉTABOLIQUE -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wide">1. Lipidologie &amp; Bilan Métabolique</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-2 py-0.5 rounded-full font-semibold">3 paramètres corrélés</span>
+</div>
+<!-- Item Card 1: LDL-Cholestérol (Highlighted as Priority) -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-2 transition-all" id="card-ldl">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-md text-label-md text-on-surface font-bold">LDL-Cholestérol</span>
+<span class="font-mono text-label-sm text-label-sm text-outline">(Formule de Friedewald)</span>
+<span class="bg-[#ECFDF5] text-[#16A34A] px-2 py-0.5 rounded-full text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16A34A]"></span>
+                    Cible atteinte (&lt; 0.70 g/L)
+                  </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Valeur détectée dans le document : <strong class="text-on-surface font-mono">0.68 g/L</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-md hover:bg-surface-container-high text-on-surface-variant" onclick="editValue('card-ldl')" title="Modifier">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 py-1 rounded-md bg-primary text-on-primary font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow-xs hover:bg-primary-container" onclick="confirmValue('card-ldl')">
+<span class="material-symbols-outlined text-[16px]">check</span>
+                  Valider
+                </button>
+</div>
+</div>
+<!-- Metadata row & destination dropdown -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 font-label-sm text-label-sm">
+<div class="bg-surface-container-lowest rounded p-2 flex flex-col">
+<span class="text-outline">Valeur à injecter :</span>
+<span class="font-bold text-primary font-mono text-body-md">0.68 g/L</span>
+</div>
+<div class="bg-surface-container-lowest rounded p-2 flex flex-col">
+<span class="text-outline">Cible Cardiopathie :</span>
+<span class="font-semibold text-on-surface">&lt; 0.70 g/L (Très haut risque)</span>
+</div>
+<div class="bg-surface-container-lowest rounded p-2 flex flex-col">
+<span class="text-outline">Destination dans le dossier :</span>
+<select class="bg-transparent font-semibold text-primary focus:outline-none cursor-pointer">
+<option selected="">Courbe LDL Cardiovasculaire</option>
+<option>Constante libre</option>
+<option>Pièce jointe simple</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Item Card 2: Glycémie à jeun -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-2 transition-all" id="card-glyc">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-md text-label-md text-on-surface font-bold">Glycémie à jeun</span>
+<span class="bg-[#ECFDF5] text-[#16A34A] px-2 py-0.5 rounded-full text-label-sm font-semibold">Normal (0.70 - 1.10 g/L)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Texte brut OCR : <span class="font-mono text-on-surface">"Glycémie à jeun ... 0.95 g/L"</span></span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-md hover:bg-surface-container-high text-on-surface-variant" onclick="editValue('card-glyc')" title="Modifier">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 py-1 rounded-md bg-primary text-on-primary font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow-xs hover:bg-primary-container" onclick="confirmValue('card-glyc')">
+<span class="material-symbols-outlined text-[16px]">check</span>
+                  Valider
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 font-label-sm text-label-sm">
+<div class="bg-surface-container-lowest rounded p-2 flex flex-col">
+<span class="text-outline">Valeur validée :</span>
+<span class="font-bold text-on-surface font-mono text-body-md">0.95 g/L</span>
+</div>
+<div class="bg-surface-container-lowest rounded p-2 flex flex-col">
+<span class="text-outline">Variation antérieure :</span>
+<span class="font-semibold text-on-surface-variant">-0.04 g/L vs Mai 2025</span>
+</div>
+<div class="bg-surface-container-lowest rounded p-2 flex flex-col">
+<span class="text-outline">Destination :</span>
+<span class="font-semibold text-primary">Suivi Métabolique &amp; Diabète</span>
+</div>
+</div>
+</div>
+<!-- Item Card 3: Cholestérol Total & HbA1c (Grouped row) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between gap-1.5" id="card-chol-tot">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Cholestérol Total</span>
+<span class="bg-[#ECFDF5] text-[#16A34A] px-2 py-0.5 rounded-full text-label-sm font-semibold">1.42 g/L</span>
+</div>
+<div class="flex items-center justify-between text-label-sm text-outline">
+<span>Réf: 1.50 - 2.00 g/L</span>
+<button class="text-primary font-semibold hover:underline flex items-center gap-0.5" onclick="confirmValue('card-chol-tot')">
+<span class="material-symbols-outlined text-[14px]">check</span> Confirmer
+                </button>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between gap-1.5" id="card-hba1c">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">HbA1c (Hémoglobine glyquée)</span>
+<span class="bg-[#ECFDF5] text-[#16A34A] px-2 py-0.5 rounded-full text-label-sm font-semibold">5.8 %</span>
+</div>
+<div class="flex items-center justify-between text-label-sm text-outline">
+<span>Réf: &lt; 6.0% (Euglycémie)</span>
+<button class="text-primary font-semibold hover:underline flex items-center gap-0.5" onclick="confirmValue('card-hba1c')">
+<span class="material-symbols-outlined text-[14px]">check</span> Confirmer
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- CATEGORY 2: FONCTION RÉNALE & IONOGRAMME (Vigilance Thérapeutique) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wide">2. Fonction Rénale &amp; Ionogramme</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-fixed text-on-secondary-fixed px-2.5 py-0.5 rounded-full font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pill</span>
+              Vigilance Bipreterax (Périndopril/Indapamide)
+            </span>
+</div>
+<!-- Item Card 4: Créatinine & DFG (CKD-EPI) -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-2 transition-all" id="card-creat">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-md text-label-md text-on-surface font-bold">Créatinine Sérique &amp; DFG Estimé</span>
+<span class="bg-[#ECFDF5] text-[#16A34A] px-2 py-0.5 rounded-full text-label-sm font-semibold">Fonction stable</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Détection automatique : <strong class="font-mono text-on-surface">88 µmol/L</strong> • DFG calculé (CKD-EPI) : <strong class="font-mono text-on-surface">78 mL/min/1.73m²</strong></span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-md hover:bg-surface-container-high text-on-surface-variant" onclick="editValue('card-creat')" title="Modifier">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 py-1 rounded-md bg-primary text-on-primary font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow-xs hover:bg-primary-container" onclick="confirmValue('card-creat')">
+<span class="material-symbols-outlined text-[16px]">check</span>
+                  Valider
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 font-label-sm text-label-sm">
+<div class="bg-surface-container-lowest rounded p-2 flex flex-col">
+<span class="text-outline">Créatininémie :</span>
+<span class="font-bold text-on-surface font-mono text-body-md">88 µmol/L <span class="text-outline font-normal text-label-sm">(62-106)</span></span>
+</div>
+<div class="bg-surface-container-lowest rounded p-2 flex flex-col">
+<span class="text-outline">Clairance DFG :</span>
+<span class="font-bold text-primary font-mono text-body-md">78 mL/min</span>
+</div>
+<div class="bg-surface-container-lowest rounded p-2 flex flex-col">
+<span class="text-outline">Action clinique :</span>
+<span class="font-semibold text-on-surface">Maintien de la posologie</span>
+</div>
+</div>
+</div>
+<!-- Item Card 5: Potassium (K+) -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-2 transition-all" id="card-potassium">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-md text-label-md text-on-surface font-bold">Potassium Sérique (K+)</span>
+<span class="bg-[#ECFDF5] text-[#16A34A] px-2 py-0.5 rounded-full text-label-sm font-semibold">4.3 mEq/L (Normal)</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Absence d'hyperkaliémie sous IEC</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Plage cible sous diurétique/IEC : 3.8 - 4.8 mEq/L</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-md hover:bg-surface-container-high text-on-surface-variant" onclick="editValue('card-potassium')" title="Modifier">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 py-1 rounded-md bg-primary text-on-primary font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow-xs hover:bg-primary-container" onclick="confirmValue('card-potassium')">
+<span class="material-symbols-outlined text-[16px]">check</span>
+                  Valider
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- CATEGORY 3: HÉMATOLOGIE & TOLÉRANCE DU DOUBLE TRAITEMENT -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wide">3. Hématologie &amp; Antiagrégation</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tolérance Kardégic 75</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between gap-1.5" id="card-hb">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Hémoglobine (Hb)</span>
+<span class="bg-[#ECFDF5] text-[#16A34A] px-2 py-0.5 rounded-full text-label-sm font-semibold">13.8 g/dL</span>
+</div>
+<div class="flex items-center justify-between text-label-sm text-outline">
+<span>Réf: 13.0 - 17.5 • Pas d'anémie</span>
+<button class="text-primary font-semibold hover:underline flex items-center gap-0.5" onclick="confirmValue('card-hb')">
+<span class="material-symbols-outlined text-[14px]">check</span> Confirmer
+                </button>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col justify-between gap-1.5" id="card-plaq">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Plaquettes Sanguines</span>
+<span class="bg-[#ECFDF5] text-[#16A34A] px-2 py-0.5 rounded-full text-label-sm font-semibold">245 000 /mm³</span>
+</div>
+<div class="flex items-center justify-between text-label-sm text-outline">
+<span>Réf: 150 000 - 400 000</span>
+<button class="text-primary font-semibold hover:underline flex items-center gap-0.5" onclick="confirmValue('card-plaq')">
+<span class="material-symbols-outlined text-[14px]">check</span> Confirmer
+                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-interaction / Confirmation banner -->
+<div class="bg-primary/5 rounded-xl p-space-md flex flex-col md:flex-row items-center justify-between gap-space-md" id="status-live-pill">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[22px]">insights</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Impact direct sur la trajectoire clinique :</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">La baisse du LDL à <strong>0.68 g/L</strong> valide l'adhérence au traitement diététique et la stratégie non-statinique chez ce coronarien intolérant.</span>
+</div>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-primary font-semibold">
+<span class="material-symbols-outlined text-[18px]">auto_graph</span>
+        Projection : Risque cardiovasculaire à 10 ans réévalué de 24% à 16%
+      </div>
+</div>
+</div>
+<!-- Sticky Bottom Doctor Action Bar -->
+<div class="sticky bottom-0 z-40 w-full bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.06)] py-space-md px-gutter-lg mt-space-lg">
+<div class="max-w-[1680px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-space-md">
+<!-- Left: Clinical Options & Patient Communications -->
+<div class="flex items-center gap-space-md flex-wrap">
+<label class="flex items-center gap-2 cursor-pointer font-label-md text-label-md text-on-surface select-none">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+<span>Notifier le patient par SMS &amp; Espace Patient</span>
+</label>
+<span class="hidden sm:inline text-outline-variant">•</span>
+<label class="flex items-center gap-2 cursor-pointer font-label-md text-label-md text-on-surface select-none">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px]">priority_high</span>
+            Marquer comme pièce de référence (Post-Stent M+6)
+          </span>
+</label>
+</div>
+<!-- Center: Validation Counter -->
+<div class="flex items-center gap-2 bg-surface-container px-3.5 py-1.5 rounded-full font-label-md text-label-md text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-semibold" id="validation-counter">7 valeurs confirmées sur 9</span>
+<span class="text-outline-variant">|</span>
+<span class="text-on-surface-variant font-normal">Prêt pour injection EMR</span>
+</div>
+<!-- Right: Main Call to Actions -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-colors">
+          Ignorer / Annuler
+        </button>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container transition-colors">
+          Archiver brut sans extraire
+        </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-bold shadow-md flex items-center gap-2 transition-transform active:scale-95" onclick="handleFinalValidation()">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+          Valider l'extraction &amp; Mettre à jour le dossier (#TN-8412)
+          <span class="ml-1 text-[11px] bg-white/20 px-1.5 py-0.5 rounded uppercase font-mono">F5</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed top-32 right-6 z-50 transform translate-y-4 opacity-0 pointer-events-none transition-all duration-300 bg-surface-container-lowest text-on-surface p-4 rounded-xl shadow-xl flex items-center gap-3" id="toast">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">done_all</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold">Données synchronisées !</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Les courbes de constantes du patient ont été recalculées avec succès.</span>
+</div>
+</div>
+</div>
+<script>
+  let ocrBoxesVisible = true;
+  let docContrastActive = false;
+  let confirmedCount = 7;
+
+  function toggleOcrBoxes() {
+    ocrBoxesVisible = !ocrBoxesVisible;
+    const boxes = document.querySelectorAll('.ocr-box');
+    const btn = document.getElementById('toggle-ocr-boxes');
+    
+    boxes.forEach(box => {
+      box.style.display = ocrBoxesVisible ? 'flex' : 'none';
+    });
+
+    if (ocrBoxesVisible) {
+      btn.className = "px-2.5 py-1.5 rounded-lg bg-primary/10 font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1";
+      btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">crop_free</span> Surligner détections OCR [ON]`;
+    } else {
+      btn.className = "px-2.5 py-1.5 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-high flex items-center gap-1";
+      btn.innerHTML = `<span class="material-symbols-outlined text-[16px]">crop_free</span> Surligner détections OCR [OFF]`;
+    }
+  }
+
+  function toggleDocContrast() {
+    docContrastActive = !docContrastActive;
+    const sheet = document.getElementById('medical-sheet');
+    const btn = document.getElementById('toggle-contrast-btn');
+    
+    if (docContrastActive) {
+      sheet.style.filter = "contrast(1.35) brightness(0.98)";
+      btn.classList.add('bg-primary-container', 'text-on-primary');
+      btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+    } else {
+      sheet.style.filter = "none";
+      btn.classList.remove('bg-primary-container', 'text-on-primary');
+      btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+    }
+  }
+
+  function confirmValue(cardId) {
+    const card = document.getElementById(cardId);
+    if (!card) return;
+    
+    card.classList.remove('bg-surface-container-low');
+    card.classList.add('bg-[#ECFDF5]');
+    
+    const confirmBtn = card.querySelector('button[onclick^="confirmValue"]');
+    if (confirmBtn) {
+      confirmBtn.innerHTML = `<span class="material-symbols-outlined text-[16px]">verified</span> Validé`;
+      confirmBtn.classList.add('bg-primary', 'text-on-primary');
+      confirmBtn.disabled = true;
+    }
+
+    if (confirmedCount < 9) {
+      confirmedCount++;
+      const counterEl = document.getElementById('validation-counter');
+      if (counterEl) {
+        counterEl.innerText = `${confirmedCount} valeurs confirmées sur 9`;
+      }
+    }
+  }
+
+  function editValue(cardId) {
+    const newVal = prompt("Corriger la valeur clinique détectée par l'OCR :");
+    if (newVal !== null && newVal.trim() !== "") {
+      const card = document.getElementById(cardId);
+      const valEl = card.querySelector('.font-mono.text-body-md');
+      if (valEl) {
+        valEl.innerText = newVal;
+      }
+      confirmValue(cardId);
+    }
+  }
+
+  function handleFinalValidation() {
+    const toast = document.getElementById('toast');
+    toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 4000);
+  }
+
+  // Keyboard shortcut listener for F5 validation
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'F5') {
+      e.preventDefault();
+      handleFinalValidation();
+    }
+  });
+</script></main><footer class="w-full bg-surface-container-low py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full px-gutter-lg flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><div class="flex flex-wrap items-center gap-space-md"><span class="flex items-center gap-1 font-semibold text-secondary"><span class="material-symbols-outlined text-[16px]">emergency</span>SAMU : 190</span><span class="flex items-center gap-1 font-semibold text-secondary"><span class="material-symbols-outlined text-[16px]">local_fire_department</span>Prot. Civile : 198</span><span class="hidden lg:inline">|</span><span class="text-on-surface-variant">Clinique Alyssa - Les Berges du Lac, Tunis</span></div><div class="flex flex-wrap items-center gap-space-md"><span class="text-outline">Conformité Santé Numérique : INPDP Loi 2004-63</span><span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-semibold">HDS-TN Certifié</span><span>© 2024 MediDesk Tunisie</span></div></div></footer></body></html>

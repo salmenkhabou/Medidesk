@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>MediDesk SuperAdmin Console</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary": "#ffffff", "primary-container": "#0f6e6a", "surface-variant": "#d9e3f6", "surface-container-low": "#eff4ff", "on-tertiary-fixed-variant": "#6e3900", "outline": "#6e7978", "tertiary-fixed": "#ffdcc3", "on-primary-fixed-variant": "#00504d", "surface-bright": "#f8f9ff", "primary-fixed-dim": "#85d4cf", "surface-container-high": "#dee9fc", "error": "#ba1a1a", "on-tertiary-fixed": "#2f1500", "surface-container": "#e6eeff", "surface-dim": "#d0dbed", "primary-fixed": "#a1f1eb", "on-secondary-container": "#722104", "on-tertiary": "#ffffff", "secondary": "#9f4122", "tertiary-container": "#965000", "inverse-surface": "#27313f", "on-secondary-fixed-variant": "#7f2a0d", "background": "#f8f9ff", "on-secondary-fixed": "#3a0b00", "outline-variant": "#bec9c7", "on-background": "#121c2a", "on-secondary": "#ffffff", "secondary-fixed-dim": "#ffb59e", "secondary-container": "#fd8863", "primary": "#005451", "on-surface-variant": "#3e4948", "secondary-fixed": "#ffdbd0", "error-container": "#ffdad6", "surface-tint": "#046a66", "inverse-primary": "#85d4cf", "tertiary-fixed-dim": "#ffb77d", "on-primary-fixed": "#00201e", "on-tertiary-container": "#ffd7ba", "inverse-on-surface": "#eaf1ff", "tertiary": "#733c00", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "on-surface": "#121c2a", "surface-container-highest": "#d9e3f6", "on-error-container": "#93000a", "surface": "#f8f9ff", "on-primary-container": "#9dede8" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2.5rem", "space-lg": "1.5rem", "margin-md": "1.5rem", "margin-lg": "2.5rem", "gutter": "1rem", "space-md": "1rem", "gutter-md": "1.5rem", "space-sm": "0.5rem", "margin": "1rem", "gutter-lg": "2rem", "space-xs": "0.25rem" }, "fontFamily": { "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"] }, "fontSize": { "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }], "headline-xl-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.03em", "fontWeight": "600" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }], "headline-lg-mobile": ["1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "fontWeight": "600" }], "headline-sm": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 w-full px-gutter-lg flex flex-col justify-between"><div class="h-16 flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #0f6e6a
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UgrkqncDWnqETT84tUrNq4ssg9LEpQs_jqO87VWpLkUzJPdhnfOuLHX7GhcRUimQjCA85DLfzkCJXQsif_aQGJdawi9ox2GMFN-JZCIMQgMsgjriEXjpGfEDgsaoYMmnuxd0hzm5EeNDA1He3pUEbO-00mtZ8xoeINDwCQzCVlrrrB7GivyctDU01l-Pqsn4s5MhvXka5_iE2Q7_R2cvKiqjxBQ0A3vN6dHer75N_3rL4E-k2kPGQ-h_M"/><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">MediDesk</span><span class="px-space-xs py-0.5 rounded bg-primary-container font-label-sm text-label-sm text-on-primary font-bold uppercase tracking-wider">SUPERADMIN MASTER</span></div></div><div class="flex-1 max-w-md mx-space-md"><div class="relative flex items-center w-full bg-surface-container-low rounded-lg px-space-md py-space-xs"><span class="material-symbols-outlined text-outline mr-space-sm text-[20px]">search</span><input class="w-full bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface placeholder:text-outline" placeholder="Rechercher médecin, cabinet, matricule..." type="text"/><span class="px-space-xs py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant font-medium tracking-wide">CTRL+K</span></div></div><div class="flex items-center gap-gutter"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-1.5 rounded-full"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-md text-label-md text-primary font-medium">HDS Cloud 99.98% Opérationnel</span></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold">Anis Zouari</span><span class="font-label-sm text-label-sm text-on-surface-variant">Admin Principal</span></div><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span></div></div></div></div><div class="h-12 flex items-center justify-between"><nav class="flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary rounded-lg font-semibold"><a class="px-space-md py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="vue-d-ensemble" href="#">Vue d'ensemble</a><a class="px-space-md py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="medecins-cabinets" href="#">Médecins &amp; Cabinets</a><a class="px-space-md py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="candidatures-inscriptions" href="#">Candidatures &amp; Inscriptions</a><a class="px-space-md py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="abonnements-finances" href="#">Abonnements &amp; Finances</a><a class="px-space-md py-2 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="parametres-plateforme-hds" href="#">Paramètres Plateforme &amp; HDS</a></nav><div class="flex items-center gap-space-xs text-outline"><span class="material-symbols-outlined text-[18px]">sync</span><span class="font-label-sm text-label-sm text-on-surface-variant">Synchro HDS : Instant T (Tunis UTC+1) • Certifié INPDP</span></div></div></div><div class="w-full bg-surface-container-low px-gutter-lg py-1.5 flex items-center justify-between"><div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant"><span class="text-outline">SuperAdmin Master</span><span>›</span><span class="text-outline">Abonnements &amp; Finances</span><span>›</span><span class="text-primary font-semibold">Paramètres Généraux du Catalogue &amp; Grille Tarifaire</span></div><div class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span>Environnement Certifié INPDP N° 2004-63</span></div></div></header><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<!-- Dynamic Sub-bar for Tab Switching Context & Live Warehouse Health -->
+<section class="w-full px-gutter-lg py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-wider uppercase">Pipeline BI Temps Réel Actif</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">|</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">cloud_done</span>
+        Données consolidées il y a 12 min • Entrepôt BigQuery HDS Clustered (Tunis)
+      </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-highest font-label-sm text-label-sm text-on-surface-variant font-medium">Node: tn-north-c1</span>
+<span class="px-space-xs py-0.5 rounded-full bg-primary-fixed font-label-sm text-label-sm text-on-primary-fixed font-semibold">Chiffrement AES-256 GCM</span>
+</div>
+</section>
+<!-- Main Viewport Canvas -->
+<div class="w-full px-gutter-lg py-space-lg flex flex-col gap-space-lg">
+<!-- Header Section with Global Filters & Report Action -->
+<header class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-lg pb-space-xs">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-primary-container font-label-sm text-label-sm text-on-primary uppercase tracking-wider font-semibold">BI &amp; Observatoire National</span>
+<span class="font-label-sm text-label-sm text-outline">•</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Agrégation Multi-Cabinets v4.2</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Analytique Avancée &amp; Métriques de Croissance Nationale</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Observatoire analytique du réseau des <span class="font-semibold text-primary">384 praticiens enrôlés</span>, flux de réservations nationales, ventilation du revenu récurrent et cartographie territoriale HDS.
+        </p>
+</div>
+<!-- Controls & Export Toolbar -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Date Selector Pills -->
+<div class="flex items-center bg-surface-container-low rounded-lg p-1">
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" onclick="setActiveTime(this, '7j')">7j</button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" onclick="setActiveTime(this, '30j')">30j</button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" onclick="setActiveTime(this, 'Q3')">Trimestre Q3</button>
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-primary font-bold shadow-sm" onclick="setActiveTime(this, '12m')">12 Mois (Nov 24 - Oct 25)</button>
+<button class="px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" onclick="setActiveTime(this, 'custom')">Personnalisé</button>
+</div>
+<!-- Filter Dropdown Simulation -->
+<div class="relative">
+<button class="h-11 px-space-md bg-surface-container-lowest rounded-lg font-label-lg text-label-lg text-on-surface flex items-center gap-space-xs shadow-sm hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px] text-primary">filter_alt</span>
+<span>Toutes Régions &amp; Spécialités</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</button>
+</div>
+<!-- Primary Export Action -->
+<button class="h-11 px-space-lg bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg flex items-center gap-space-xs hover:opacity-95 active:scale-[0.99] transition-all shadow-md" id="exportReportBtn">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Exporter le rapport (CSV / PDF)</span>
+</button>
+</div>
+</header>
+<!-- Synthetic KPI Cards Row (4 Columns) -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Praticiens Actifs</span>
+<div class="w-8 h-8 rounded-lg bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">medical_services</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface">384</span>
+<span class="font-label-md text-label-md text-primary font-bold flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>+18.4% YoY
+          </span>
+</div>
+<div class="mt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>+14 recrutements ce mois</span>
+<span class="text-primary font-semibold">Taux rétention 98.7%</span>
+</div>
+<!-- Micro bar indicator -->
+<div class="w-full h-1 bg-surface-container-low rounded-full mt-space-sm overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 76%;"></div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Arrêté MRR Global</span>
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface">42 850 <span class="text-headline-md font-normal text-on-surface-variant">TND</span></span>
+<span class="font-label-md text-label-md text-primary font-bold flex items-center">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>+4.2% m/m
+          </span>
+</div>
+<div class="mt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>ARPU moyen 111.6 TND / praticien</span>
+<span class="text-secondary font-semibold">LTV ~3 480 TND</span>
+</div>
+<div class="w-full h-1 bg-surface-container-low rounded-full mt-space-sm overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 84%;"></div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Volume RDV (12 Mois)</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">event_available</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface">184 620</span>
+<span class="font-label-md text-label-md text-primary font-bold flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>+32.1% YoY
+          </span>
+</div>
+<div class="mt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Complétion 94.8%</span>
+<span class="text-primary font-semibold">No-show: 4.8% (record bas)</span>
+</div>
+<div class="w-full h-1 bg-surface-container-low rounded-full mt-space-sm overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 94.8%;"></div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Maillage Territorial</span>
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed/50 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">map</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl text-on-surface">18 <span class="text-headline-md font-normal text-on-surface-variant">/ 24</span></span>
+<span class="font-label-md text-label-md text-tertiary font-bold flex items-center">
+            75% Territoire
+          </span>
+</div>
+<div class="mt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Pénétration Grand Tunis : 62%</span>
+<span class="text-primary font-semibold">Expansion Sahel +24%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-low rounded-full mt-space-sm overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+</section>
+<!-- Visualizations Mosaic: Row 1 (Acquisition Timeline & Plan Revenue Breakdown) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Graph 1: Doctor Signups Over Time (7 Cols) -->
+<section class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Acquisition &amp; Croissance des Médecins</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed font-label-sm text-label-sm text-on-primary-fixed font-semibold">Q3 Record (+83)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Évolution mensuelle des nouvelles adhésions vs base cumulée</span>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-primary"></span> Inscriptions / mois</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-1 rounded-sm bg-secondary"></span> Tendance cumulée</span>
+</div>
+</div>
+<!-- Inline SVG Growth Chart -->
+<div class="w-full relative h-64 flex flex-col justify-end">
+<svg class="w-full h-56 overflow-visible" preserveaspectratio="none" viewbox="0 0 650 200">
+<defs>
+<lineargradient id="tealFade" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#0f6e6a" stop-opacity="0.28"></stop>
+<stop offset="100%" stop-color="#0f6e6a" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="650" y1="180" y2="180"></line>
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="650" y1="135" y2="135"></line>
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="650" y1="90" y2="90"></line>
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="650" y1="45" y2="45"></line>
+<!-- Smooth Area & Path (12 months: Nov 24 to Oct 25) values: 8, 11, 14, 12, 19, 22, 26, 24, 28, 31, 35, 42 -->
+<!-- Scaled Y mapping: 8 -> 168, 42 -> 35 -->
+<path d="M 15 168 Q 65 158 115 147 T 215 152 T 315 125 T 415 95 T 515 78 T 635 32 L 635 180 L 15 180 Z" fill="url(#tealFade)"></path>
+<path d="M 15 168 Q 65 158 115 147 T 215 152 T 315 125 T 415 95 T 515 78 T 635 32" fill="none" stroke="#005451" stroke-linecap="round" stroke-width="3"></path>
+<!-- Monthly Data Points -->
+<circle class="transition-transform hover:scale-150" cx="15" cy="168" fill="#005451" r="4"></circle>
+<circle cx="70" cy="158" fill="#005451" r="4"></circle>
+<circle cx="125" cy="147" fill="#005451" r="4"></circle>
+<circle cx="180" cy="152" fill="#005451" r="4"></circle>
+<circle cx="235" cy="132" fill="#005451" r="4"></circle>
+<circle cx="290" cy="122" fill="#005451" r="4"></circle>
+<circle cx="345" cy="106" fill="#005451" r="4"></circle>
+<circle cx="400" cy="112" fill="#005451" r="4"></circle>
+<circle cx="455" cy="98" fill="#005451" r="4"></circle>
+<circle cx="510" cy="88" fill="#005451" r="4"></circle>
+<circle cx="565" cy="68" fill="#005451" r="4"></circle>
+<circle cx="635" cy="32" fill="#9f4122" r="5" stroke="#ffffff" stroke-width="2"></circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="flex justify-between font-label-sm text-label-sm text-outline pt-2">
+<span>Nov 24 (8)</span>
+<span>Jan 25 (14)</span>
+<span>Mar (19)</span>
+<span>Mai (26)</span>
+<span>Juil (28)</span>
+<span>Sep (35)</span>
+<span class="text-primary font-bold">Oct 25 (42)</span>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">auto_graph</span>
+<span>Accélération trimestrielle : <strong>+42%</strong> vs Q3 2024 grâce à l'intégration télé-prescription CNAM.</span>
+</div>
+<span class="font-semibold text-secondary">Objectif 500 Praticiens : S1 2026</span>
+</div>
+</section>
+<!-- Graph 2: Revenue Breakdown by SaaS Plan (5 Cols) -->
+<section class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col mb-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Ventilation du Revenu (MRR)</h2>
+<span class="font-label-sm text-label-sm text-outline font-mono">42 850 TND / m</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Répartition par formule contractuelle et modules à valeur ajoutée</p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md my-space-sm">
+<!-- Interactive Donut Representation -->
+<div class="relative w-40 h-40 flex items-center justify-center shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<!-- Background Ring -->
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#eff4ff" stroke-dasharray="100, 100" stroke-width="4.2"></path>
+<!-- Cloud Secure Pro (74.2%) -->
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#005451" stroke-dasharray="74.2, 100" stroke-linecap="round" stroke-width="4.2"></path>
+<!-- Stockage Local (21.6%) offset 74.2 -->
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#9f4122" stroke-dasharray="21.6, 100" stroke-dashoffset="-74.2" stroke-width="4.2"></path>
+<!-- Modules & Pass CNAM (4.2%) offset 95.8 -->
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#fd8863" stroke-dasharray="4.2, 100" stroke-dashoffset="-95.8" stroke-width="4.2"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">74.2%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cloud Pro</span>
+</div>
+</div>
+<!-- Breakdown List -->
+<div class="flex flex-col gap-space-xs w-full">
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-primary shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Cloud Secure Pro</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">269 praticiens • 125 TND/m</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface font-bold">31 795 TND</span>
+<span class="block font-label-sm text-label-sm text-primary">74.2%</span>
+</div>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-secondary shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Stockage Local</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">115 praticiens • 89 TND/m</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface font-bold">9 255 TND</span>
+<span class="block font-label-sm text-label-sm text-secondary">21.6%</span>
+</div>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-secondary-container shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Pass CNAM &amp; SMS</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Packs volumétriques</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-on-surface font-bold">1 800 TND</span>
+<span class="block font-label-sm text-label-sm text-on-secondary-container">4.2%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Conversion Highlight Box -->
+<div class="mt-space-xs p-space-sm bg-surface-container rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">published_with_changes</span>
+<span class="font-label-sm text-label-sm text-on-surface">Taux de migration Local → Cloud après 6 mois</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-primary">28.0%</span>
+</div>
+</section>
+</div>
+<!-- Visualizations Mosaic: Row 2 (Geographic Territorial Map & Medical Specialties) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Graph 3: Territorial Distribution (5 Cols) -->
+<section class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col mb-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Répartition Territoriale</h2>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed font-label-sm text-label-sm text-on-secondary-fixed font-semibold">Sfax : +45% en 2025</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Présence des cabinets médicaux par gouvernorat &amp; métropole</p>
+</div>
+<!-- Geographic Progress Bars -->
+<div class="flex flex-col gap-space-sm my-space-xs">
+<!-- Tunis -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium">Tunis &amp; Banlieue Nord (Lac, Marsa, Ennasr)</span>
+<span class="font-bold text-on-surface">142 cabinets <span class="text-outline font-normal">(37.0%)</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 37%;"></div>
+</div>
+</div>
+<!-- Sousse -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium">Sousse &amp; Sahel (Monastir, Mahdia)</span>
+<span class="font-bold text-on-surface">88 cabinets <span class="text-outline font-normal">(23.0%)</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 23%;"></div>
+</div>
+</div>
+<!-- Sfax -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium">Sfax Métropole</span>
+<span class="font-bold text-secondary">64 cabinets <span class="text-outline font-normal">(16.7%)</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 16.7%;"></div>
+</div>
+</div>
+<!-- Nabeul -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium">Nabeul &amp; Cap Bon (Hammamet)</span>
+<span class="font-bold text-on-surface">38 cabinets <span class="text-outline font-normal">(9.9%)</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary-fixed-dim rounded-full" style="width: 9.9%;"></div>
+</div>
+</div>
+<!-- Bizerte -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium">Bizerte &amp; Nord</span>
+<span class="font-bold text-on-surface">26 cabinets <span class="text-outline font-normal">(6.8%)</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant rounded-full" style="width: 6.8%;"></div>
+</div>
+</div>
+<!-- Intérieur -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium">Intérieur (Kairouan, Gabès, Gafsa)</span>
+<span class="font-bold text-on-surface">26 cabinets <span class="text-outline font-normal">(6.8%)</span></span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim rounded-full" style="width: 6.8%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Source : Registre Cartographique Ordre des Médecins 2025</span>
+<a class="text-primary font-semibold hover:underline flex items-center gap-0.5" href="#">
+            Ouvrir SIG HDS <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Graph 4: Medical Specialties Breakdown (7 Cols) -->
+<section class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Spécialités Médicales les Plus Représentées</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Praticiens enrôlés et dossiers patients actifs associés</p>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium px-2 py-1 bg-surface-container-low rounded">
+            Total : 184k patients suivis
+          </span>
+</div>
+<!-- Ordered Specialties Grid/Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="font-label-sm text-label-sm text-outline border-b border-surface-container-high pb-2">
+<th class="py-2 font-semibold">Discipline Médicale</th>
+<th class="py-2 font-semibold text-center">Part Réseau</th>
+<th class="py-2 font-semibold text-center">Praticiens</th>
+<th class="py-2 font-semibold text-right">Patients Rattachés</th>
+<th class="py-2 font-semibold text-right">Activité / Mois</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y divide-surface-container-low">
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-2.5 flex items-center gap-space-xs font-medium text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Médecine Générale &amp; Famille
+                </td>
+<td class="py-2.5 text-center font-semibold text-primary">21.9%</td>
+<td class="py-2.5 text-center font-bold text-on-surface">84</td>
+<td class="py-2.5 text-right font-mono text-on-surface">54 200</td>
+<td class="py-2.5 text-right"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-primary font-semibold">Très Élevée</span></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-2.5 flex items-center gap-space-xs font-medium text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Cardiologie &amp; Maladies Vasculaires
+                </td>
+<td class="py-2.5 text-center font-semibold text-secondary">16.1%</td>
+<td class="py-2.5 text-center font-bold text-on-surface">62</td>
+<td class="py-2.5 text-right font-mono text-on-surface">36 450</td>
+<td class="py-2.5 text-right"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-primary font-semibold">Très Élevée</span></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-2.5 flex items-center gap-space-xs font-medium text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Pédiatrie &amp; Néonatalogie
+                </td>
+<td class="py-2.5 text-center font-semibold text-primary-container">12.5%</td>
+<td class="py-2.5 text-center font-bold text-on-surface">48</td>
+<td class="py-2.5 text-right font-mono text-on-surface">29 800</td>
+<td class="py-2.5 text-right"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-semibold">Régulière</span></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-2.5 flex items-center gap-space-xs font-medium text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span> Gynécologie-Obstétrique
+                </td>
+<td class="py-2.5 text-center font-semibold text-secondary-container">11.5%</td>
+<td class="py-2.5 text-center font-bold text-on-surface">44</td>
+<td class="py-2.5 text-right font-mono text-on-surface">24 100</td>
+<td class="py-2.5 text-right"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-semibold">Régulière</span></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-2.5 flex items-center gap-space-xs font-medium text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span> Ophtalmologie
+                </td>
+<td class="py-2.5 text-center font-semibold text-primary">9.4%</td>
+<td class="py-2.5 text-center font-bold text-on-surface">36</td>
+<td class="py-2.5 text-right font-mono text-on-surface">17 600</td>
+<td class="py-2.5 text-right"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-semibold">Moyenne</span></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-2.5 flex items-center gap-space-xs font-medium text-on-surface">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Dermatologie &amp; Vénérologie
+                </td>
+<td class="py-2.5 text-center font-semibold text-tertiary">8.3%</td>
+<td class="py-2.5 text-center font-bold text-on-surface">32</td>
+<td class="py-2.5 text-right font-mono text-on-surface">11 200</td>
+<td class="py-2.5 text-right"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-semibold">Moyenne</span></td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-2.5 flex items-center gap-space-xs font-medium text-on-surface">
+<span class="w-2 h-2 rounded-full bg-outline"></span> Autres spécialités (ORL, Traumato...)
+                </td>
+<td class="py-2.5 text-center font-semibold text-outline">20.3%</td>
+<td class="py-2.5 text-center font-bold text-on-surface">78</td>
+<td class="py-2.5 text-right font-mono text-on-surface">11 270</td>
+<td class="py-2.5 text-right"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-outline font-semibold">Divers</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Graph 5: Appointment Volume Trend & Teleconsultations Bi-Curve -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Tendance Globale du Volume de Rendez-vous &amp; Absentéisme</h2>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed font-label-sm text-label-sm text-on-primary-fixed font-bold">No-show -47% YoY</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Comparaison Consultations en Cabinet vs Téléconsultations chiffrées HDS (12 mois)</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-md font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded bg-primary"></span>
+<span class="text-on-surface font-medium">Présentiel Cabinet (88.4%)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded bg-secondary"></span>
+<span class="text-on-surface font-medium">Téléconsultation Sécurisée (11.6%)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-error font-medium">Taux Absentéisme (4.8% en Oct 25)</span>
+</div>
+</div>
+</div>
+<!-- Complex Multi-Metric Bar & Line Combination Chart -->
+<div class="w-full relative h-72 flex flex-col justify-end pt-4">
+<!-- SVG Canvas -->
+<svg class="w-full h-60 overflow-visible" preserveaspectratio="none" viewbox="0 0 1000 240">
+<!-- Horizontal Grid Guides -->
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="1000" y1="200" y2="200"></line>
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="1000" y1="150" y2="150"></line>
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="1000" y1="100" y2="100"></line>
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="1000" y1="50" y2="50"></line>
+<!-- Bars for 12 months (width 32, clustered) -->
+<!-- M1 (Nov) : 10.5k cabinet, 0.9k tele -->
+<rect fill="#005451" height="90" rx="3" width="28" x="25" y="110"></rect>
+<rect fill="#9f4122" height="10" rx="2" width="28" x="25" y="98"></rect>
+<!-- M2 (Dec) -->
+<rect fill="#005451" height="102" rx="3" width="28" x="105" y="98"></rect>
+<rect fill="#9f4122" height="11" rx="2" width="28" x="105" y="85"></rect>
+<!-- M3 (Jan) -->
+<rect fill="#005451" height="112" rx="3" width="28" x="185" y="88"></rect>
+<rect fill="#9f4122" height="12" rx="2" width="28" x="185" y="74"></rect>
+<!-- M4 (Fev) -->
+<rect fill="#005451" height="108" rx="3" width="28" x="265" y="92"></rect>
+<rect fill="#9f4122" height="13" rx="2" width="28" x="265" y="77"></rect>
+<!-- M5 (Mar) -->
+<rect fill="#005451" height="120" rx="3" width="28" x="345" y="80"></rect>
+<rect fill="#9f4122" height="14" rx="2" width="28" x="345" y="64"></rect>
+<!-- M6 (Avr) -->
+<rect fill="#005451" height="125" rx="3" width="28" x="425" y="75"></rect>
+<rect fill="#9f4122" height="15" rx="2" width="28" x="425" y="58"></rect>
+<!-- M7 (Mai) -->
+<rect fill="#005451" height="132" rx="3" width="28" x="505" y="68"></rect>
+<rect fill="#9f4122" height="16" rx="2" width="28" x="505" y="50"></rect>
+<!-- M8 (Jun) -->
+<rect fill="#005451" height="138" rx="3" width="28" x="585" y="62"></rect>
+<rect fill="#9f4122" height="18" rx="2" width="28" x="585" y="42"></rect>
+<!-- M9 (Jul) -->
+<rect fill="#005451" height="130" rx="3" width="28" x="665" y="70"></rect>
+<rect fill="#9f4122" height="17" rx="2" width="28" x="665" y="51"></rect>
+<!-- M10 (Aou) -->
+<rect fill="#005451" height="118" rx="3" width="28" x="745" y="82"></rect>
+<rect fill="#9f4122" height="17" rx="2" width="28" x="745" y="63"></rect>
+<!-- M11 (Sep) -->
+<rect fill="#005451" height="148" rx="3" width="28" x="825" y="52"></rect>
+<rect fill="#9f4122" height="20" rx="2" width="28" x="825" y="30"></rect>
+<!-- M12 (Oct) -->
+<rect fill="#005451" height="160" rx="3" width="28" x="905" y="40"></rect>
+<rect fill="#9f4122" height="22" rx="2" width="28" x="905" y="16"></rect>
+<!-- Absenteeism Curve Line overlay (down from 9.1% to 4.8%) -->
+<path d="M 39 120 Q 185 140 345 160 T 665 178 T 919 192" fill="none" stroke="#ba1a1a" stroke-dasharray="4 4" stroke-width="2.5"></path>
+<circle cx="39" cy="120" fill="#ba1a1a" r="4"></circle>
+<circle cx="345" cy="160" fill="#ba1a1a" r="4"></circle>
+<circle cx="665" cy="178" fill="#ba1a1a" r="4"></circle>
+<circle cx="919" cy="192" fill="#ba1a1a" r="5" stroke="#ffffff" stroke-width="2"></circle>
+</svg>
+<!-- Months Labels -->
+<div class="grid grid-cols-12 text-center font-label-sm text-label-sm text-outline pt-2">
+<span>Nov 24</span>
+<span>Déc</span>
+<span>Jan 25</span>
+<span>Fév</span>
+<span>Mar</span>
+<span>Avr</span>
+<span>Mai</span>
+<span>Juin</span>
+<span>Juil</span>
+<span>Août</span>
+<span>Sep</span>
+<span class="font-bold text-primary">Oct 25</span>
+</div>
+</div>
+<!-- Insight Sub-strip -->
+<div class="mt-space-md pt-space-sm border-t border-surface-container-high flex flex-wrap items-center justify-between gap-space-sm font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">insights</span>
+<span><strong>Automatisation des rappels SMS/WhatsApp :</strong> réduction de 430 heures de créneaux perdus par mois à l'échelle nationale.</span>
+</div>
+<div class="flex items-center gap-space-xs text-outline">
+<span>Taux de satisfaction post-consultation :</span>
+<strong class="text-primary">4.91 / 5.0 (34 890 avis vérifiés)</strong>
+</div>
+</div>
+</section>
+<!-- Bottom Management Panel: Quarterly Performance Audit & Governance Exports -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Synthèse Trimestrielle des Performances Plateforme</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Conformité déontologique INPDP, SLA serveurs &amp; flux financiers consolidés</span>
+</div>
+<!-- Multi-format Export Actions -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">table_view</span>
+<span>Export XLSX Consolidation</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">picture_as_pdf</span>
+<span>PDF Rapport Direction</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">webhook</span>
+<span>API Webhook BI / ETL</span>
+</button>
+</div>
+</div>
+<!-- Table of Quarters -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="font-label-sm text-label-sm text-outline border-b border-surface-container-high pb-2">
+<th class="py-2.5 font-semibold">Période Fiscale</th>
+<th class="py-2.5 font-semibold">Praticiens Fin Période</th>
+<th class="py-2.5 font-semibold">Chiffre d'Affaires Net</th>
+<th class="py-2.5 font-semibold">Volume Consultations</th>
+<th class="py-2.5 font-semibold">Disponibilité HDS (SLA)</th>
+<th class="py-2.5 font-semibold">Audit Déontologique &amp; INPDP</th>
+<th class="py-2.5 font-semibold text-right">Action</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y divide-surface-container-low">
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-3 font-semibold text-on-surface">T3 2025 (Juil - Sep)</td>
+<td class="py-3 font-mono text-on-surface">364 <span class="text-label-sm text-primary font-bold">(+83)</span></td>
+<td class="py-3 font-mono font-semibold text-on-surface">124 800 TND</td>
+<td class="py-3 font-mono text-on-surface">52 140 RDV</td>
+<td class="py-3 font-mono text-primary font-semibold">99.99%</td>
+<td class="py-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span> Certifié Conforme
+                </span>
+</td>
+<td class="py-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container-high text-primary transition-colors" title="Télécharger extrait comptable">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-3 font-semibold text-on-surface">T2 2025 (Avr - Juin)</td>
+<td class="py-3 font-mono text-on-surface">281 <span class="text-label-sm text-primary font-bold">(+67)</span></td>
+<td class="py-3 font-mono font-semibold text-on-surface">98 450 TND</td>
+<td class="py-3 font-mono text-on-surface">46 800 RDV</td>
+<td class="py-3 font-mono text-primary font-semibold">99.98%</td>
+<td class="py-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span> Certifié Conforme
+                </span>
+</td>
+<td class="py-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container-high text-primary transition-colors" title="Télécharger extrait comptable">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-3 font-semibold text-on-surface">T1 2025 (Jan - Mar)</td>
+<td class="py-3 font-mono text-on-surface">214 <span class="text-label-sm text-primary font-bold">(+45)</span></td>
+<td class="py-3 font-mono font-semibold text-on-surface">74 200 TND</td>
+<td class="py-3 font-mono text-on-surface">39 420 RDV</td>
+<td class="py-3 font-mono text-primary font-semibold">99.96%</td>
+<td class="py-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span> Certifié Conforme
+                </span>
+</td>
+<td class="py-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container-high text-primary transition-colors" title="Télécharger extrait comptable">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="py-3 font-semibold text-on-surface">T4 2024 (Oct - Déc)</td>
+<td class="py-3 font-mono text-on-surface">169 <span class="text-label-sm text-primary font-bold">(+31)</span></td>
+<td class="py-3 font-mono font-semibold text-on-surface">58 100 TND</td>
+<td class="py-3 font-mono text-on-surface">31 200 RDV</td>
+<td class="py-3 font-mono text-primary font-semibold">99.95%</td>
+<td class="py-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span> Certifié Conforme
+                </span>
+</td>
+<td class="py-3 text-right">
+<button class="p-1 rounded hover:bg-surface-container-high text-primary transition-colors" title="Télécharger extrait comptable">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Legal & Security Footnote -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm text-outline font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">security</span>
+<span>Traçabilité cryptographique conforme aux spécifications d'audit de l'Instance Nationale de Protection des Données Personnelles (Loi n° 2004-63).</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface font-semibold shrink-0">
+<span>Clé d'intégrité SHA-256 :</span>
+<span class="font-mono text-xs bg-surface-container px-2 py-0.5 rounded">9f8e...4b21</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Client-side Interactive Behaviors -->
+<script>
+    function setActiveTime(element, period) {
+      const parent = element.parentElement;
+      const buttons = parent.querySelectorAll('button');
+      buttons.forEach(btn => {
+        btn.className = 'px-space-sm py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors';
+      });
+      element.className = 'px-space-sm py-1 rounded bg-surface-container-lowest text-primary font-bold shadow-sm';
+      
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-lg shadow-xl font-label-sm text-label-sm flex items-center gap-2 transition-all transform duration-300';
+      toast.innerHTML = '<span class="material-symbols-outlined text-[18px] text-primary-fixed">sync</span> Calcul de la consolidation pour : ' + period + '...';
+      document.body.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+      }, 1500);
+    }
+
+    document.getElementById('exportReportBtn')?.addEventListener('click', () => {
+      const btn = document.getElementById('exportReportBtn');
+      const originalHtml = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span> <span>Génération du rapport...</span>';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span> <span>Téléchargement lancé</span>';
+        setTimeout(() => {
+          btn.innerHTML = originalHtml;
+          btn.disabled = false;
+        }, 2000);
+      }, 1200);
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-space-lg"><div class="w-full px-gutter-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-label-sm text-label-sm text-on-surface-variant"><div>Cluster HDS Tunisie • Santé Souveraine • Serveur UTC+1 (Tunis) • Conforme INPDP N° 2004-63</div><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" data-path="audit-logs" href="#">Audit Logs</a><span class="text-outline-variant">|</span><a class="hover:text-on-surface transition-colors" data-path="certifications-hds" href="#">Certifications HDS</a><span class="text-outline-variant">|</span><span class="text-outline">MediDesk Ops v4.12.0</span></div></div></footer></body></html>

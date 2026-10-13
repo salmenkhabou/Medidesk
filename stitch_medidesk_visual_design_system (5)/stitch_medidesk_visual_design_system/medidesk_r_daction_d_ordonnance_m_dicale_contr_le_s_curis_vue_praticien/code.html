@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#733c00", "tertiary-container": "#965000", "surface-container-lowest": "#ffffff", "surface-bright": "#f8f9ff", "on-primary-fixed-variant": "#00504d", "primary-container": "#0f6e6a", "on-secondary-container": "#722104", "inverse-primary": "#85d4cf", "surface-container-highest": "#d9e3f6", "on-secondary-fixed-variant": "#7f2a0d", "on-primary-fixed": "#00201e", "surface-container": "#e6eeff", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "surface-container-low": "#eff4ff", "on-primary-container": "#9dede8", "error-container": "#ffdad6", "outline-variant": "#bec9c7", "tertiary-fixed": "#ffdcc3", "on-tertiary-fixed-variant": "#6e3900", "secondary-fixed": "#ffdbd0", "background": "#f8f9ff", "on-surface": "#121c2a", "primary": "#005451", "tertiary-fixed-dim": "#ffb77d", "surface-variant": "#d9e3f6", "secondary": "#9f4122", "on-secondary-fixed": "#3a0b00", "secondary-container": "#fd8863", "inverse-on-surface": "#eaf1ff", "on-tertiary-container": "#ffd7ba", "on-primary": "#ffffff", "on-surface-variant": "#3e4948", "primary-fixed": "#a1f1eb", "on-error": "#ffffff", "on-background": "#121c2a", "on-secondary": "#ffffff", "error": "#ba1a1a", "surface-dim": "#d0dbed", "surface-tint": "#046a66", "secondary-fixed-dim": "#ffb59e", "surface": "#f8f9ff", "surface-container-high": "#dee9fc", "inverse-surface": "#27313f", "primary-fixed-dim": "#85d4cf", "on-tertiary-fixed": "#2f1500", "outline": "#6e7978" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-lg": "2rem", "margin": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-xl": "2.5rem", "margin-lg": "2.5rem", "space-lg": "1.5rem", "margin-md": "1.5rem", "gutter-md": "1.5rem", "gutter": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "label-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"] }, "fontSize": { "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.03em", "fontWeight": "600" }], "headline-lg-mobile": ["1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }], "headline-xl-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }], "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "fontWeight": "600" }], "headline-xl": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 w-full px-gutter-lg flex flex-col justify-between pt-space-sm"><div class="flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #0f6e6a - Font: plusJakartaSans - Mode: light - Roundness: rounded-md" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UgrkqncDWnqETT84tUrNq4ssg9LEpQs_jqO87VWpLkUzJPdhnfOuLHX7GhcRUimQjCA85DLfzkCJXQsif_aQGJdawi9ox2GMFN-JZCIMQgMsgjriEXjpGfEDgsaoYMmnuxd0hzm5EeNDA1He3pUEbO-00mtZ8xoeINDwCQzCVlrrrB7GivyctDU01l-Pqsn4s5MhvXka5_iE2Q7_R2cvKiqjxBQ0A3vN6dHer75N_3rL4E-k2kPGQ-h_M"/><div class="flex flex-col"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary leading-none">MediDesk</span><span class="font-label-sm text-label-sm px-space-sm py-space-xs rounded-full bg-surface-container-high text-on-surface-variant font-medium">Clinique Alyssa</span></div><span class="font-label-md text-label-md text-on-surface-variant mt-0.5">Dr. Karim Ben Mahmoud • Cardiologie &amp; Angiologie</span></div></div><div class="flex-1 max-w-xl mx-space-lg"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-md text-outline select-none pointer-events-none text-[20px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-container-lowest rounded-lg text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Rechercher patient par Nom, Dossier #, ou CIN..." type="search"/></div></div><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm"><span class="w-2 h-2 rounded-full bg-primary"></span>Abonnement Pro • Actif</span><div class="flex items-center p-0.5 rounded-lg bg-surface-container"><button class="px-space-sm py-0.5 rounded font-label-sm text-label-sm font-semibold bg-surface-container-lowest text-primary shadow-sm" type="button">FR</button><button class="px-space-sm py-0.5 rounded font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors" type="button">عربي</button><button class="px-space-sm py-0.5 rounded font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors" type="button">EN</button></div><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col text-left"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Dr. Ben Mahmoud</span><span class="font-label-sm text-label-sm text-on-surface-variant">Médecin Spécialiste</span></div></div></div></div><nav class="flex items-center gap-space-xs h-11" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="px-space-md py-1.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="tableau-de-bord" href="#">Tableau de bord</a><a class="px-space-md py-1.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="agenda-et-consultations" href="#">Agenda &amp; Consultations</a><a class="px-space-md py-1.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="salle-d-attente" href="#">Salle d'attente</a><a class="px-space-md py-1.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dossiers-patients" href="#">Dossiers Patients</a><a class="px-space-md py-1.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="teletransmissions-cnam" href="#">Télétransmissions CNAM</a><a class="px-space-md py-1.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="statistiques-et-honoraires" href="#">Statistiques &amp; Honoraires</a></nav></div></header><main class="w-full pt-28 bg-surface px-gutter-lg pb-space-xl"><div class="flex flex-col w-full">
+<!-- CONTEXT & HEADER STRIP -->
+<section class="w-full pb-space-lg">
+<!-- Breadcrumb & Immediate Patient Record Anchor -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-sm">
+<a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-primary-container transition-colors group" href="#">
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:-translate-x-0.5">arrow_back</span>
+<span>Retour à la consultation (<strong class="font-bold">#TN-8412</strong> • Mohamed Hédi Guediche)</span>
+</a>
+<div class="flex items-center gap-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-md py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Ordonnance #RX-2025-1042 • En cours
+        </span>
+<span class="font-label-sm text-label-sm text-outline">Poste de consultation 02 • Lac 2</span>
+</div>
+</div>
+<!-- Main Title & Meta Ribbon -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Rédaction d'Ordonnance Médicale Sécurisée</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-container/10 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+            Vérification Thériaque / Vidal v2025.4
+          </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-1.5 text-on-surface font-semibold">
+<span class="material-symbols-outlined text-primary text-[18px]">account_circle</span>
+            Mohamed Hédi Guediche (68 ans • 14/05/1957)
+          </span>
+<span class="text-outline-variant">•</span>
+<span>Dossier #TN-8412</span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+            APCI 100% — Cardiopathie Ischémique
+          </span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+            ClCr: 62 ml/min (Modérée)
+          </span>
+</div>
+</div>
+<!-- Quick Action Utilities -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Historique [F3]</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">library_books</span>
+<span>Protocoles types</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Modèle d'en-tête</span>
+</button>
+</div>
+</div>
+</section>
+<!-- TWO-COLUMN WORKSPACE: 58% BUILDER & SAFETY ENGINE / 42% A4 PAPER PREVIEW -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start pb-space-xl">
+<!-- ========================================================= -->
+<!-- LEFT COLUMN (58%): Builder, Warnings, Medication Cards     -->
+<!-- ========================================================= -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg min-w-0">
+<!-- 1. SEARCH & THERAPEUTIC DICTIONARY AUTOCOMPLETE -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">medication</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Ajouter une molécule ou spécialité</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Raccourci: [F2] ou [Ctrl+K]</span>
+</div>
+<!-- Search Input Bar -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[22px]">search</span>
+<input class="w-full h-12 pl-12 pr-28 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary shadow-inner" id="drug-search-input" placeholder="Rechercher une molécule (DCI), nom commercial, dosage... (ex: Kardégic, Bipreterax)" type="text" value="Atorvastatine"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 h-8 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors flex items-center gap-1" type="button">
+<span>Chercher</span>
+</button>
+</div>
+<!-- Quick Therapeutic Category Pills -->
+<div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+<span class="font-label-sm text-label-sm text-outline mr-1">Filtres rapides:</span>
+<button class="px-2.5 py-1 rounded-full bg-primary-container/10 text-primary font-label-sm text-label-sm font-semibold hover:bg-primary hover:text-on-primary transition-colors" type="button">Cardiologie</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors" type="button">Antihypertenseurs</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors" type="button">Anticoagulants / AAP</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors" type="button">Hypolipémiants</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors" type="button">Diurétiques</button>
+</div>
+<!-- Simulated Active Dropdown Flyout for "Atorvastatine" showing contraindication state -->
+<div class="p-space-md rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Résultats du dictionnaire pharmaceutique national (Tunisie / PCT)</span>
+<span class="font-label-sm text-label-sm text-error flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[15px]">report_problem</span>
+              1 Alerte d'intolérance
+            </span>
+</div>
+<!-- Suggested item 1: Contradicted -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center justify-between gap-space-md hover:bg-error-container/20 transition-colors">
+<div class="flex items-start gap-3 min-w-0">
+<span class="material-symbols-outlined text-error mt-0.5 text-[20px]">block</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Tahor (Atorvastatine calcique) 20 mg</span>
+<span class="px-2 py-0.5 rounded text-[11px] bg-error-container text-on-error-container font-semibold">CI Allergie</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Boîte de 30 comprimés pelliculés • DCI: Atorvastatine • Remboursable CNAM 80%</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-error font-bold whitespace-nowrap">Non recommandé</span>
+</div>
+<!-- Suggested item 2: Safe alternative -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center justify-between gap-space-md hover:bg-primary-container/15 transition-colors">
+<div class="flex items-start gap-3 min-w-0">
+<span class="material-symbols-outlined text-primary mt-0.5 text-[20px]">check_circle</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Ezetrol (Ézétimibe) 10 mg</span>
+<span class="px-2 py-0.5 rounded text-[11px] bg-primary-fixed text-on-primary-fixed font-semibold">Alternative Sûre</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Boîte de 28 comprimés • Inhibiteur d'absorption du cholestérol • Prise en charge APCI</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold hover:bg-primary-container transition-colors shrink-0" type="button">
+              Sélectionner
+            </button>
+</div>
+</div>
+</div>
+<!-- 2. CRITICAL SOFT RED WARNING BANNER -->
+<div class="p-space-lg rounded-xl bg-error-container/30 text-on-surface shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-error text-on-error flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">gpp_maybe</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm uppercase font-bold tracking-wider">Alerte Prioritaire</span>
+<h3 class="font-headline-sm text-headline-sm text-error font-bold">Risque d'interaction &amp; contre-indication allergique détectés</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1 leading-relaxed">
+              Le moteur de sécurité thérapeutique a croisé le dossier pharmacologique du patient Mohamed Hédi Guediche avec les lignes d'ordonnance saisies.
+            </p>
+</div>
+</div>
+<!-- Alert Items Cards -->
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Sub-warning 1: Statin Allergy -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-[20px] mt-0.5">do_not_disturb_on</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-error">Contre-indication formelle : Statines (Antécédent de Rhabdomyolyse)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Épisode documenté en 2021 avec CPK à 15x la normale sous Atorvastatine. Prescription de statines proscrite.
+                </span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end md:self-center">
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold hover:bg-primary-container transition-colors shadow-sm" type="button">
+                Remplacer par Ézétimibe 10 mg
+              </button>
+</div>
+</div>
+<!-- Sub-warning 2: Interaction Kardegic + potential NSAID -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">warning</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-secondary">Interaction Niveau 3 : Kardégic 75 mg (Acide Acétylsalicylique)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Risque hémorragique digestif majoré en cas de co-prescription d'AINS ou anticoagulants oraux. Précautions de prise stipulées.
+                </span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end md:self-center">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors" type="button">
+                Notifier &amp; valider
+              </button>
+</div>
+</div>
+</div>
+<!-- Alert Bottom Bar Actions -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Base médicamenteuse : Pharmacopée Tunisienne / Vidal Expert 2025</span>
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-transparent text-error font-label-sm text-label-sm hover:bg-error-container/40 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+<span>Forcer l'ordonnance sous responsabilité médicale [Motif requis]</span>
+</button>
+</div>
+</div>
+<!-- 3. CURRENT PRESCRIPTION LINES (MÉDICAMENTS AJOUTÉS) -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">3</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Lignes de prescription actives</h2>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Durée standard de traitement: <strong class="text-on-surface font-bold">3 Mois (QSP 90j)</strong></span>
+</div>
+<!-- CARD 1: KARDÉGIC 75 MG -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md relative overflow-hidden group">
+<!-- Left Teal Edge Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<!-- Card Header -->
+<div class="flex flex-wrap items-start justify-between gap-space-sm pl-2">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab active:cursor-grabbing text-[22px] mt-1 select-none">drag_indicator</span>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">1. Kardégic 75 mg</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Poudre en sachet</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/15 text-primary font-label-sm text-label-sm font-semibold">APCI 100%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  DCI: Acétylsalicylate de lysine • Antiagrégant plaquettaire cardio-vasculaire
+                </span>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Dupliquer la posologie" type="button">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Supprimer de l'ordonnance" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Posology Grid Fields -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pl-2">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Dose par prise</label>
+<div class="flex items-center h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<input class="w-full bg-transparent focus:outline-none font-semibold" type="text" value="1 sachet"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Moment de prise</label>
+<select class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary">
+<option selected="">1 fois/jour au déjeuner</option>
+<option>1 fois/jour le matin</option>
+<option>1 fois/jour le soir</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Durée totale (QSP)</label>
+<div class="flex items-center h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<input class="w-full bg-transparent focus:outline-none font-semibold" type="text" value="3 mois (90 sachets)"/>
+</div>
+</div>
+</div>
+<!-- Specific Instructions & Switches -->
+<div class="flex flex-col gap-space-xs pl-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Instructions au patient &amp; Précautions d'emploi</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary" type="text" value="À dissoudre dans un grand verre d'eau au cours du repas de midi. Ne pas associer à des anti-inflammatoires (AINS)."/>
+</div>
+<!-- Bottom Meta Controls -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs pl-2">
+<div class="flex items-center gap-space-md">
+<label class="inline-flex items-center gap-2 cursor-pointer font-label-md text-label-md text-on-surface">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<span>Renouvelable 2 fois</span>
+</label>
+<label class="inline-flex items-center gap-2 cursor-pointer font-label-md text-label-md text-on-surface-variant">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<span>Non substituable</span>
+</label>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Code PCT: 104592 • Remboursement intégral</span>
+</div>
+</div>
+<!-- CARD 2: BIPRETERAX 5 MG / 1.25 MG -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md relative overflow-hidden group">
+<!-- Left Teal Edge Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<!-- Card Header -->
+<div class="flex flex-wrap items-start justify-between gap-space-sm pl-2">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab active:cursor-grabbing text-[22px] mt-1 select-none">drag_indicator</span>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">2. Bipreterax 5 mg / 1.25 mg</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Comprimé pelliculé sécable</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Non Substituable</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  DCI: Périndopril arginine / Indapamide • Antihypertenseur combiné IEC + Diurétique
+                </span>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Dupliquer la posologie" type="button">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Supprimer de l'ordonnance" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Posology Grid Fields -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pl-2">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Dose par prise</label>
+<div class="flex items-center h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<input class="w-full bg-transparent focus:outline-none font-semibold" type="text" value="1 comprimé"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Moment de prise</label>
+<select class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary">
+<option selected="">Le matin à jeun</option>
+<option>Le matin au réveil</option>
+<option>Au petit-déjeuner</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Durée totale (QSP)</label>
+<div class="flex items-center h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<input class="w-full bg-transparent focus:outline-none font-semibold" type="text" value="3 mois (90 comprimés)"/>
+</div>
+</div>
+</div>
+<!-- Specific Instructions & Switches -->
+<div class="flex flex-col gap-space-xs pl-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Instructions au patient &amp; Précautions d'emploi</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary" type="text" value="Prendre le matin avant le petit-déjeuner. Contrôle régulier de la kaliémie et créatininémie sous 6 semaines."/>
+</div>
+<!-- Bottom Meta Controls -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs pl-2">
+<div class="flex items-center gap-space-md">
+<label class="inline-flex items-center gap-2 cursor-pointer font-label-md text-label-md text-on-surface">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<span>Renouvelable 2 fois</span>
+</label>
+<label class="inline-flex items-center gap-2 cursor-pointer font-label-md text-label-md text-on-surface font-semibold">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<span class="text-secondary">Non substituable (Mention expresse)</span>
+</label>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Prise de sang de contrôle prescrite</span>
+</div>
+</div>
+<!-- CARD 3: BISOPROLOL (CARDENSIEL) 2.5 MG -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md relative overflow-hidden group">
+<!-- Left Teal Edge Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<!-- Card Header -->
+<div class="flex flex-wrap items-start justify-between gap-space-sm pl-2">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-outline cursor-grab active:cursor-grabbing text-[22px] mt-1 select-none">drag_indicator</span>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">3. Cardensiel (Bisoprolol) 2.5 mg</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Comprimé sécable</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/15 text-primary font-label-sm text-label-sm font-semibold">APCI 100%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  DCI: Fumarate de bisoprolol • Bêtabloquant cardio-sélectif • Cible FC: 55-65 bpm
+                </span>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Dupliquer la posologie" type="button">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-error hover:bg-error-container/30 transition-colors" title="Supprimer de l'ordonnance" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Posology Grid Fields -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pl-2">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Dose par prise</label>
+<div class="flex items-center h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<input class="w-full bg-transparent focus:outline-none font-semibold" type="text" value="1 comprimé"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Moment de prise</label>
+<select class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary">
+<option selected="">Le matin au réveil</option>
+<option>Au milieu du déjeuner</option>
+<option>Le soir</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Durée totale (QSP)</label>
+<div class="flex items-center h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm">
+<input class="w-full bg-transparent focus:outline-none font-semibold" type="text" value="3 mois (90 comprimés)"/>
+</div>
+</div>
+</div>
+<!-- Specific Instructions & Switches -->
+<div class="flex flex-col gap-space-xs pl-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Instructions au patient &amp; Précautions d'emploi</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary" type="text" value="Ne pas interrompre brutalement sans avis cardiologique. Auto-surveillance de la fréquence cardiaque au repos."/>
+</div>
+<!-- Bottom Meta Controls -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs pl-2">
+<div class="flex items-center gap-space-md">
+<label class="inline-flex items-center gap-2 cursor-pointer font-label-md text-label-md text-on-surface">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<span>Renouvelable 2 fois</span>
+</label>
+<label class="inline-flex items-center gap-2 cursor-pointer font-label-md text-label-md text-on-surface-variant">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<span>Non substituable</span>
+</label>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Électrocardiogramme stable à l'admission</span>
+</div>
+</div>
+<!-- Add Actions Row -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<button class="flex-1 inline-flex items-center justify-center gap-2 py-3 px-space-md rounded-xl bg-surface-container-lowest text-primary font-label-lg text-label-lg font-bold shadow-sm hover:bg-surface-container transition-all border border-dashed border-primary/40" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Ajouter un médicament ou dispositif médical [F2]</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 py-3 px-space-md rounded-xl bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md font-semibold shadow-sm hover:bg-surface-container transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">nature_people</span>
+<span>Conseil hygiéno-diététique</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ========================================================= -->
+<!-- RIGHT COLUMN (42%): Real A4 Prescription Preview Sheet     -->
+<!-- ========================================================= -->
+<div class="lg:col-span-5 flex flex-col gap-space-md lg:sticky lg:top-32">
+<!-- Preview Header Controls Strip -->
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">visibility</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Aperçu direct (Feuille A4)</h2>
+</div>
+<div class="flex items-center gap-1 bg-surface-container p-0.5 rounded-lg">
+<button class="px-2 py-1 rounded font-label-sm text-label-sm font-bold bg-surface-container-lowest text-primary shadow-sm" type="button">100%</button>
+<button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" type="button">Plein écran</button>
+</div>
+</div>
+<!-- THE SIMULATED PHYSICAL A4 PAPER -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-xl p-space-lg text-on-surface flex flex-col gap-space-lg relative border-t-4 border-t-primary min-h-[760px] select-text">
+<!-- Watermark / Micro background seal -->
+<div class="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none opacity-[0.03] select-none">
+<span class="material-symbols-outlined text-[320px]">cardiology</span>
+</div>
+<!-- 1. OFFICIAL CLINIC LETTERHEAD -->
+<div class="flex items-start justify-between gap-space-md pb-space-md border-b-2 border-surface-container">
+<!-- Doctor / Clinic Info Left -->
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">Dr. Karim BEN MAHMOUD</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Spécialiste en Cardiologie &amp; Maladies Vasculaires</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ancien Chef de Clinique des Hôpitaux de Tunis</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Diplôme National de Docteur en Médecine • Ordre N° 14820</span>
+<div class="flex flex-col text-[11px] text-outline mt-1 font-mono leading-tight">
+<span>Centre Médical Alyssa, Les Berges du Lac 2 — 1053 Tunis</span>
+<span>Tél: +216 71 888 999 • Urgences: +216 98 222 333</span>
+</div>
+</div>
+<!-- Official Document QR + Date Right -->
+<div class="flex flex-col items-end text-right shrink-0">
+<!-- Simulated QR Code SVG -->
+<div class="w-16 h-16 bg-surface-container-low p-1.5 rounded-lg flex items-center justify-center shadow-inner mb-1">
+<svg class="w-full h-full text-on-surface" fill="currentColor" viewbox="0 0 100 100">
+<rect fill="currentColor" height="30" width="30" x="0" y="0"></rect>
+<rect fill="white" height="20" width="20" x="5" y="5"></rect>
+<rect fill="currentColor" height="10" width="10" x="10" y="10"></rect>
+<rect fill="currentColor" height="30" width="30" x="70" y="0"></rect>
+<rect fill="white" height="20" width="20" x="75" y="5"></rect>
+<rect fill="currentColor" height="10" width="10" x="80" y="10"></rect>
+<rect fill="currentColor" height="30" width="30" x="0" y="70"></rect>
+<rect fill="white" height="20" width="20" x="5" y="75"></rect>
+<rect fill="currentColor" height="10" width="10" x="10" y="80"></rect>
+<rect fill="currentColor" height="20" width="10" x="40" y="10"></rect>
+<rect fill="currentColor" height="20" width="20" x="40" y="40"></rect>
+<rect fill="currentColor" height="10" width="20" x="70" y="40"></rect>
+<rect fill="currentColor" height="15" width="15" x="40" y="70"></rect>
+<rect fill="currentColor" height="20" width="10" x="70" y="70"></rect>
+</svg>
+</div>
+<span class="font-mono text-[10px] text-outline">RX-2025-1042</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold mt-1">Tunis, le 26 Octobre 2025</span>
+</div>
+</div>
+<!-- 2. PATIENT DETAILS BOX -->
+<div class="p-space-sm rounded-lg bg-surface-container-low/70 flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Patient :</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Mohamed Hédi GUEDICHE</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">
+              Âge: <strong class="text-on-surface font-semibold">68 ans</strong> (Né le 14/05/1957) • Sexe: M • Poids: 76 kg
+            </span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-primary font-bold">CNAM Filière Privée (APCI)</span>
+<span class="font-mono text-[11px] text-on-surface-variant">Identifiant: 12489032-01</span>
+</div>
+</div>
+<!-- 3. PRESCRIPTION ITEMS BODY -->
+<div class="flex flex-col gap-space-md py-space-sm flex-1">
+<!-- Prescription Item 1 -->
+<div class="flex flex-col gap-0.5">
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">1. KARDÉGIC 75 mg, poudre pour solution buvable</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">QSP 3 MOIS</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface pl-4 italic">
+              — 1 sachet par jour à midi, au milieu du repas, à dissoudre dans un verre d'eau.
+            </p>
+<span class="font-label-sm text-label-sm text-outline pl-4">Mention : Renouvelable deux (2) fois.</span>
+</div>
+<!-- Prescription Item 2 -->
+<div class="flex flex-col gap-0.5">
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">2. BIPRETERAX 5 mg / 1.25 mg, comprimés pelliculés</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">QSP 3 MOIS</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface pl-4 italic">
+              — 1 comprimé chaque matin à jeun avant le petit-déjeuner.
+            </p>
+<span class="font-label-sm text-label-sm text-secondary font-bold pl-4">Mention expresse : NON SUBSTITUABLE. Renouvelable 2 fois.</span>
+</div>
+<!-- Prescription Item 3 -->
+<div class="flex flex-col gap-0.5">
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">3. CARDENSIEL (Bisoprolol) 2.5 mg, comprimés sécables</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">QSP 3 MOIS</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface pl-4 italic">
+              — 1 comprimé le matin au réveil avec un verre d'eau.
+            </p>
+<span class="font-label-sm text-label-sm text-outline pl-4">Ne pas interrompre sans avis formel. Renouvelable 2 fois.</span>
+</div>
+<!-- Hygienic Recommendation Notice -->
+<div class="flex flex-col gap-0.5 mt-space-sm pt-space-sm border-t border-surface-container">
+<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wider">Règles hygiéno-diététiques associées :</span>
+<p class="font-body-sm text-body-sm text-on-surface pl-4 italic">
+              Régime hyposodé modéré (&lt; 5 g sel/jour). Maintien d'une marche active d'au moins 40 minutes 3 fois par semaine. Hydratation régulière.
+            </p>
+</div>
+</div>
+<!-- 4. OFFICIAL STAMP & E-SIGNATURE FOOTER -->
+<div class="pt-space-md border-t-2 border-surface-container flex items-end justify-between gap-space-md mt-auto">
+<!-- Legal Security Disclaimer -->
+<div class="flex flex-col gap-1 max-w-[210px]">
+<span class="font-mono text-[9px] text-outline leading-tight">
+              Ordonnance médicale sécurisée émise conformément aux décrets de santé publique de la République Tunisienne &amp; directives INPDP.
+            </span>
+<div class="inline-flex items-center gap-1 text-[10px] text-primary font-bold">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+              Horodatage certifié TunTrust
+            </div>
+</div>
+<!-- Circular Clinic Stamp Simulation & Digital Signature -->
+<div class="flex items-center gap-space-sm">
+<!-- Simulated Stamp -->
+<div class="w-24 h-24 rounded-full border-2 border-primary/40 flex flex-col items-center justify-center text-center p-1 text-primary rotate-[-6deg] select-none">
+<span class="font-mono text-[8px] font-bold uppercase leading-none">Rép. Tunisienne</span>
+<span class="font-headline-sm text-[10px] font-bold leading-tight my-0.5">Dr. K. BEN MAHMOUD</span>
+<span class="font-mono text-[7.5px] leading-none">Ordre Méd. N° 14820</span>
+<span class="font-mono text-[7px] text-outline">Clinique Alyssa</span>
+</div>
+<!-- Signature & Ribbon -->
+<div class="flex flex-col items-end">
+<!-- Cursive signature preview -->
+<div class="font-serif italic text-2xl text-primary font-bold tracking-wider -rotate-3 pr-2">
+                K. Ben Mahmoud
+              </div>
+<div class="mt-1 px-2.5 py-1 rounded bg-primary-container text-on-primary font-label-sm text-[10px] font-semibold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+                Signé e-ID LuxTrust/HDS
+              </div>
+<span class="font-mono text-[9px] text-outline mt-0.5">26/10/2025 à 11:34:22 UTC+1</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================= -->
+<!-- BOTTOM STICKY SECURE ACTION BAR                            -->
+<!-- ========================================================= -->
+<div class="sticky bottom-4 z-40 w-full mt-space-md p-space-md rounded-xl bg-surface-container-lowest/95 backdrop-blur-md shadow-2xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Left Autosave Status & Keyboard Shortcuts Indicator -->
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Brouillon sécurisé synchronisé</span>
+<span class="font-mono text-[11px] text-outline">(Dernier enregistrement: 11:34:12)</span>
+</div>
+<div class="hidden xl:flex items-center gap-2 text-outline font-label-sm text-label-sm">
+<span class="text-outline-variant">•</span>
+<span><kbd class="px-1.5 py-0.5 rounded bg-surface-container font-mono text-[11px] text-on-surface">Ctrl+S</kbd> Sauvegarder</span>
+<span><kbd class="px-1.5 py-0.5 rounded bg-surface-container font-mono text-[11px] text-on-surface">F5</kbd> Délivrer &amp; Imprimer</span>
+<span><kbd class="px-1.5 py-0.5 rounded bg-surface-container font-mono text-[11px] text-on-surface">F8</kbd> SMS Patient</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm w-full md:w-auto justify-end">
+<!-- Save draft -->
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-colors" type="button">
+        Enregistrer brouillon
+      </button>
+<!-- Attach to file -->
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-colors" type="button">
+        Vers dossier sans imprimer
+      </button>
+<!-- Portal & SMS -->
+<button class="inline-flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">send_to_mobile</span>
+<span>Portail Patient / SMS</span>
+</button>
+<!-- PRIMARY KEY ACTION BUTTON -->
+<button class="inline-flex items-center gap-2.5 px-space-lg py-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-bold shadow-lg hover:bg-primary-container transition-all hover:scale-[1.01] active:scale-[0.99]" type="button">
+<span class="material-symbols-outlined text-[22px]">print</span>
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Délivrer, Signer &amp; Imprimer [F5]</span>
+</button>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] mt-auto"><div class="w-full px-gutter-lg py-space-md flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-wrap items-center gap-space-lg text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[20px]">emergency</span><span class="font-label-sm text-label-sm text-on-surface-variant">Urgences Médicales:</span><span class="font-label-md text-label-md font-bold text-on-surface">SAMU 190</span><span class="text-outline-variant">•</span><span class="font-label-md text-label-md font-bold text-on-surface">Prot. Civile 198</span></div><div class="hidden lg:flex items-center gap-space-xs text-outline"><span class="text-label-sm font-label-sm">• Clinique Alyssa - Plateau Technique Cardio-Vasculaire</span></div></div><div class="flex flex-wrap items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm"><span>© 2025 MediDesk Systèmes Médicaux</span><span class="text-outline-variant">•</span><span>Conforme INPDP Décret 2004-63</span><span class="text-outline-variant">•</span><span>Hébergement Données de Santé (HDS-TN)</span></div></div></footer></body></html>

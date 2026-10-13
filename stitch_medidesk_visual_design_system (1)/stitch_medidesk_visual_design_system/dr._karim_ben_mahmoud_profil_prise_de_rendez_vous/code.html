@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-lowest":"#ffffff","on-background":"#121c2a","surface-container-low":"#eff4ff","outline":"#6e7978","surface-bright":"#f8f9ff","background":"#f8f9ff","on-primary-container":"#9dede8","inverse-primary":"#85d4cf","secondary":"#9f4122","on-error-container":"#93000a","primary-fixed":"#a1f1eb","on-surface-variant":"#3e4948","on-primary":"#ffffff","tertiary-container":"#965000","secondary-container":"#fd8863","error-container":"#ffdad6","surface-variant":"#d9e3f6","on-secondary-fixed-variant":"#7f2a0d","surface-dim":"#d0dbed","primary-fixed-dim":"#85d4cf","secondary-fixed-dim":"#ffb59e","surface-container-highest":"#d9e3f6","surface":"#f8f9ff","surface-container":"#e6eeff","on-surface":"#121c2a","tertiary-fixed-dim":"#ffb77d","error":"#ba1a1a","tertiary-fixed":"#ffdcc3","on-error":"#ffffff","on-secondary":"#ffffff","primary":"#005451","on-tertiary":"#ffffff","on-secondary-container":"#722104","on-tertiary-container":"#ffd7ba","secondary-fixed":"#ffdbd0","outline-variant":"#bec9c7","on-tertiary-fixed-variant":"#6e3900","inverse-on-surface":"#eaf1ff","surface-tint":"#046a66","on-primary-fixed":"#00201e","inverse-surface":"#27313f","primary-container":"#0f6e6a","on-secondary-fixed":"#3a0b00","tertiary":"#733c00","on-primary-fixed-variant":"#00504d","surface-container-high":"#dee9fc","on-tertiary-fixed":"#2f1500"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","margin":"1rem","margin-md":"1.5rem","space-xs":"0.25rem","space-xl":"2.5rem","gutter-lg":"2rem","space-sm":"0.5rem","space-md":"1rem","space-lg":"1.5rem","gutter-md":"1.5rem","margin-lg":"2.5rem"},"fontFamily":{"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"]},"fontSize":{"headline-sm":["1.125rem",{"lineHeight":"1.5rem","fontWeight":"600"}],"body-sm":["0.875rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"headline-lg-mobile":["1.375rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.01em","fontWeight":"700"}],"body-md":["1rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","fontWeight":"400"}],"headline-lg":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.015em","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"headline-md":["1.25rem",{"lineHeight":"1.75rem","fontWeight":"600"}],"headline-xl":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" data-path="trouver-un-medecin" href="#"><img alt="Brand logo. - Primary color: #0f6e6a
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WFStIlxB2FaXASVGdkaJT9w2n4VY5QxAxAh8r_fOmU7RX0IWiuD0tIAgrCx9c1m_Isox7BfjoMSz3wI97tRdACczgMRfHkMIIB0uI7Cr9i1MTMelwVUoo3WuySVu33kodMuAqMPWIVKQIt9nI_eGm4j3Ue7UpyOq15xMem6Yj6z3HevWEMGQhoV5MsP3E0FC1H5s4hPg2LVJQK2hxOMrdm_dnoFpidf75MfzLTx8abdjfcq1mKrC-7m6U"/><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">MediDesk</span></a><nav class="hidden lg:flex items-center gap-space-lg ml-space-lg" data-active-classes="text-primary font-semibold"><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="trouver-un-medecin" href="#">Trouver un Médecin</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="tarifs" href="#">Tarifs</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="pour-les-medecins" href="#">Pour les Médecins</a></nav></div><div class="flex items-center gap-space-sm sm:gap-space-md"><div class="hidden sm:flex items-center bg-surface-container-low p-1 rounded-lg"><button class="px-space-sm py-1 font-label-sm text-label-sm rounded-lg bg-surface-container-lowest text-primary shadow-sm font-semibold" type="button">FR</button><button class="px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">عربي</button><button class="px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">EN</button></div><a class="hidden md:inline-flex items-center justify-center px-space-md py-2.5 rounded-lg font-label-lg text-label-lg text-primary hover:bg-surface-container-low transition-colors" data-path="connexion" href="#">Connexion</a><a class="inline-flex items-center justify-center px-space-md py-2.5 rounded-lg font-label-lg text-label-lg bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm" data-path="prendre-rendez-vous" href="#">Prendre rendez-vous</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Subtle Background Ambient Accents -->
+<div class="relative w-full max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-md">
+<!-- 1. Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant mb-space-md">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+        Accueil
+      </a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Cardiologues à Tunis</a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Les Berges du Lac</a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="text-on-surface font-semibold truncate">Dr. Karim Ben Mahmoud</span>
+</nav>
+<!-- 2. Header / Practitioner Hero Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg lg:p-space-xl shadow-sm mb-space-lg relative overflow-hidden">
+<!-- Decorative Mediterranean-clinical aura glow -->
+<div class="absolute -right-16 -top-16 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/3 -bottom-20 w-64 h-64 bg-secondary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start relative z-10">
+<!-- Left: Doctor Portrait & Identity Status -->
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-center sm:items-start lg:items-center text-center sm:text-left lg:text-center gap-space-md">
+<div class="relative">
+<div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden p-1 bg-surface-container-low shadow-sm">
+<img class="w-full h-full object-cover rounded-full" data-alt="Professional portrait of Dr Karim Ben Mahmoud, an experienced North African male cardiologist in a modern bright white medical clinic, wearing crisp white coat with a high-end stethoscope, warm welcoming demeanor, soft clinical natural window lighting, clean mint teal and slate aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxhciJBm7_6kXl0aL645JRnqCUGcEw1dxAeXeJmBn23ro9SdTQF730coXnOmejyIttfUU8dIaWjYO7-YdqUFfVn4I3JEwbeylJfE1uv-pcQIFIkCyTZv25vaG3Y6CjcZTiTJKq72eKd3oRVgm00b_EgTV13CtCxRiPZte7yEht_v9QRAiT4woBnG0pi60hkXhoTI7GA8XTjGgZX4gYAg32IbFmcYhrM83iibgMv5RIESqyO6rDxses"/>
+</div>
+<span class="absolute bottom-1 right-1 flex items-center justify-center w-7 h-7 bg-primary text-on-primary rounded-full shadow-md" title="Praticien certifié CNOM">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<div class="flex items-center justify-center sm:justify-start lg:justify-center gap-space-xs flex-wrap">
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">
+                CNOM #18452
+              </span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-low text-primary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+                Conventionné CNAM
+              </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">
+              Dr. Karim Ben Mahmoud
+            </h1>
+<p class="font-label-lg text-label-lg text-primary font-medium">
+              Cardiologue &amp; Maladies Vasculaires
+            </p>
+<!-- Review highlight pill -->
+<div class="flex items-center justify-center sm:justify-start lg:justify-center gap-space-xs mt-space-xs bg-surface-container-low/70 py-1 px-space-sm rounded-lg self-center sm:self-start lg:self-center">
+<div class="flex text-tertiary-container items-center">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(148 avis vérifiés)</span>
+</div>
+</div>
+</div>
+<!-- Middle: Bio, Specialties & Practical Badges -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Parcours &amp; Spécialités</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              Ancien Chef de Clinique aux <strong class="text-on-surface font-semibold">Hôpitaux de Paris (AP-HP)</strong>. Spécialiste reconnu en échocardiographie Doppler tissulaire, prise en charge de l'hypertension artérielle résistante (HTA), bilan coronarien et cardiologie sportive préventive.
+            </p>
+</div>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">Échocardiographie</span>
+<span class="px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">Holter ECG / MAPA</span>
+<span class="px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">Épreuve d'effort</span>
+<span class="px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">Cardio-pédiatrie (+6 ans)</span>
+</div>
+<!-- Modalities and Languages matrix -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">translate</span>
+                Langues parlées
+              </span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Français, Arabe (تونسي), Anglais</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">devices</span>
+                Modes d'accès
+              </span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Cabinet &amp; Vidéo-consultation</span>
+</div>
+</div>
+</div>
+<!-- Right: Location Interactive Preview Card -->
+<div class="lg:col-span-4 bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between h-full gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">domain</span>
+                Cabinet Privé
+              </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant bg-surface-container-lowest px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-primary">accessible</span>
+                Accès PMR
+              </span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Les Berges du Lac I</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Immeuble Carthage Médical, 3<sup>ème</sup> étage (Ascenseur)<br/>
+              Rue du Lac de Constance, 1053 Tunis
+            </p>
+</div>
+<!-- Static Map Widget Mockup -->
+<div class="relative w-full h-28 rounded-lg overflow-hidden shadow-inner flex items-end p-space-xs" data-location="Les Berges du Lac, Tunis, Tunisia" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9uwUpUOZNTALkdrUqd2-ywUs3mE-m7GNwdlOLDrB0yXsxLaoeHdPOGqn0lNf3_vMnzv5mtZNL6CEHJrFUC_H1DomRvxlrLS5fgXiMT2bMkwWuodFBEayI7LPSvs7PXRR8KdHFBIKsxigDkzPQIbWdokVcbDQ_1LnUElMQXJgVe9EDBIfduDHq0ehT0moy3YstODlK4UFgHu2X0mKNJQnFwDQRFz8P157lc3tp5HmBadQnGeSHUMVv'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+<div class="relative z-10 flex items-center justify-between w-full text-surface-container-lowest">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label-sm text-label-sm font-semibold text-white drop-shadow">Lac 1 (Proche Clinique Hannibal)</span>
+</div>
+<a class="px-space-xs py-1 rounded bg-surface-container-lowest/90 text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container-lowest transition-colors flex items-center gap-0.5" href="#map-details">
+<span>Itinéraire</span>
+<span class="material-symbols-outlined text-[14px]">near_me</span>
+</a>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">local_parking</span>
+              Parking sous-sol réservé
+            </span>
+<span class="text-primary font-semibold">Tél: 71 880 900</span>
+</div>
+</div>
+</div>
+</div>
+<!-- MAIN BOOKING WORKFLOW CONTAINER -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg lg:p-space-xl shadow-sm mb-space-xl">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-lg pb-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm">1</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Sélectionnez le motif et votre horaire</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 ml-8">Réservation immédiate et sans frais d'avance. Confirmation SMS &amp; WhatsApp instantanée.</p>
+</div>
+<div class="flex items-center gap-space-xs ml-8 md:ml-0">
+<span class="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Créneau garanti sans attente excessive</span>
+</div>
+</div>
+<!-- 3. Consultation Motive / Reason Selector -->
+<div class="mb-space-lg">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-bold mb-space-sm">
+          Motif de la consultation :
+        </label>
+<!-- Dynamic Motif Pills -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-sm" id="motive-selector">
+<!-- Motive 1: Active by default -->
+<button class="motive-btn text-left p-space-sm md:p-space-md rounded-xl bg-primary text-on-primary shadow-sm flex flex-col justify-between transition-all group" data-motive-id="c-cardio" data-price="70 TND" data-title="Première consultation de Cardiologie" type="button">
+<div class="flex items-start justify-between w-full">
+<span class="font-headline-sm text-headline-sm font-semibold">Première consultation de Cardiologie</span>
+<span class="material-symbols-outlined text-[20px] text-on-primary check-icon">check_circle</span>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<span class="font-body-sm text-body-sm opacity-90">Bilan initial &amp; ECG inclus</span>
+<span class="font-headline-sm text-headline-sm font-bold bg-primary-container px-2 py-0.5 rounded-lg text-on-primary-container">70 TND</span>
+</div>
+</button>
+<!-- Motive 2 -->
+<button class="motive-btn text-left p-space-sm md:p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface transition-all flex flex-col justify-between group" data-motive-id="c-suivi" data-price="50 TND" data-title="Consultation de suivi / Contrôle" type="button">
+<div class="flex items-start justify-between w-full">
+<span class="font-headline-sm text-headline-sm font-semibold">Consultation de suivi / Contrôle</span>
+<span class="material-symbols-outlined text-[20px] text-outline-variant check-icon hidden">check_circle</span>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ajustement traitement &amp; tension</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">50 TND</span>
+</div>
+</button>
+<!-- Motive 3 -->
+<button class="motive-btn text-left p-space-sm md:p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface transition-all flex flex-col justify-between group" data-motive-id="c-echo" data-price="120 TND" data-title="Échographie Cardiaque Doppler" type="button">
+<div class="flex items-start justify-between w-full">
+<span class="font-headline-sm text-headline-sm font-semibold">Échographie Cardiaque Doppler</span>
+<span class="material-symbols-outlined text-[20px] text-outline-variant check-icon hidden">check_circle</span>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Imagerie ultrasonore haute définition</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">120 TND</span>
+</div>
+</button>
+<!-- Motive 4 -->
+<button class="motive-btn text-left p-space-sm md:p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface transition-all flex flex-col justify-between group" data-motive-id="c-holter" data-price="90 TND" data-title="Bilan d'Hypertension &amp; Pose Holter" type="button">
+<div class="flex items-start justify-between w-full">
+<span class="font-headline-sm text-headline-sm font-semibold">Bilan d'Hypertension &amp; Pose Holter</span>
+<span class="material-symbols-outlined text-[20px] text-outline-variant check-icon hidden">check_circle</span>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Enregistrement ambulatoire 24h</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">90 TND</span>
+</div>
+</button>
+<!-- Motive 5 -->
+<button class="motive-btn text-left p-space-sm md:p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface transition-all flex flex-col justify-between group" data-motive-id="c-tele" data-price="60 TND" data-title="Téléconsultation vidéo sécurisée" type="button">
+<div class="flex items-start justify-between w-full">
+<span class="font-headline-sm text-headline-sm font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">videocam</span>
+                Téléconsultation vidéo
+              </span>
+<span class="material-symbols-outlined text-[20px] text-outline-variant check-icon hidden">check_circle</span>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ordonnance numérique signée</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">60 TND</span>
+</div>
+</button>
+</div>
+</div>
+<!-- 4. Horizontal Date Picker (Next 14 Days) -->
+<div class="mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-bold">
+              Date du rendez-vous :
+            </label>
+<span class="font-label-md text-label-md text-primary font-semibold" id="active-month-label">Octobre - Novembre 2024</span>
+</div>
+<!-- Carousel Controls -->
+<div class="flex items-center gap-space-xs">
+<button aria-label="Jours précédents" class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors disabled:opacity-40" id="cal-prev" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button aria-label="Jours suivants" class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors" id="cal-next" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- 14-day horizontal scroll strip -->
+<div class="flex gap-space-xs overflow-x-auto pb-2 scroll-smooth" id="date-strip-container">
+<!-- Day 1: Selected / Aujourd'hui -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-primary text-on-primary flex flex-col items-center justify-center gap-1 shadow-sm transition-transform active:scale-95" data-date-str="Aujourd'hui, 23 Octobre" type="button">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-primary-container">Aujourd'hui</span>
+<span class="font-headline-lg text-headline-lg font-bold">23</span>
+<span class="font-label-sm text-label-sm opacity-90">Mer</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container mt-0.5"></span>
+</button>
+<!-- Day 2 -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center justify-center gap-1 transition-transform active:scale-95" data-date-str="Jeudi 24 Octobre" type="button">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Jeu</span>
+<span class="font-headline-lg text-headline-lg font-bold">24</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+<!-- Day 3 -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center justify-center gap-1 transition-transform active:scale-95" data-date-str="Vendredi 25 Octobre" type="button">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Ven</span>
+<span class="font-headline-lg text-headline-lg font-bold">25</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+<!-- Day 4: Samedi -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center justify-center gap-1 transition-transform active:scale-95" data-date-str="Samedi 26 Octobre" type="button">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Sam</span>
+<span class="font-headline-lg text-headline-lg font-bold">26</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+<!-- Day 5: Dimanche (Fermé) -->
+<button class="shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low/40 text-outline-variant flex flex-col items-center justify-center gap-1 cursor-not-allowed opacity-60" disabled="" type="button">
+<span class="font-label-sm text-label-sm font-medium">Dim</span>
+<span class="font-headline-lg text-headline-lg font-bold">27</span>
+<span class="font-label-sm text-label-sm">Fermé</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant/40 mt-0.5"></span>
+</button>
+<!-- Day 6 -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center justify-center gap-1 transition-transform active:scale-95" data-date-str="Lundi 28 Octobre" type="button">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Lun</span>
+<span class="font-headline-lg text-headline-lg font-bold">28</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+<!-- Day 7 -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center justify-center gap-1 transition-transform active:scale-95" data-date-str="Mardi 29 Octobre" type="button">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Mar</span>
+<span class="font-headline-lg text-headline-lg font-bold">29</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+<!-- Day 8 -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center justify-center gap-1 transition-transform active:scale-95" data-date-str="Mercredi 30 Octobre" type="button">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Mer</span>
+<span class="font-headline-lg text-headline-lg font-bold">30</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+<!-- Day 9 -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center justify-center gap-1 transition-transform active:scale-95" data-date-str="Jeudi 31 Octobre" type="button">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Jeu</span>
+<span class="font-headline-lg text-headline-lg font-bold">31</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+<!-- Day 10 -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center justify-center gap-1 transition-transform active:scale-95" data-date-str="Vendredi 1 Novembre" type="button">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Ven</span>
+<span class="font-headline-lg text-headline-lg font-bold">01</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nov</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+<!-- Day 11 -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center justify-center gap-1 transition-transform active:scale-95" data-date-str="Samedi 2 Novembre" type="button">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Sam</span>
+<span class="font-headline-lg text-headline-lg font-bold">02</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nov</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+<!-- Day 12: Dimanche -->
+<button class="shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low/40 text-outline-variant flex flex-col items-center justify-center gap-1 cursor-not-allowed opacity-60" disabled="" type="button">
+<span class="font-label-sm text-label-sm font-medium">Dim</span>
+<span class="font-headline-lg text-headline-lg font-bold">03</span>
+<span class="font-label-sm text-label-sm">Fermé</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant/40 mt-0.5"></span>
+</button>
+<!-- Day 13 -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center justify-center gap-1 transition-transform active:scale-95" data-date-str="Lundi 4 Novembre" type="button">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Lun</span>
+<span class="font-headline-lg text-headline-lg font-bold">04</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nov</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+<!-- Day 14 -->
+<button class="date-card shrink-0 w-24 py-3 px-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex flex-col items-center justify-center gap-1 transition-transform active:scale-95" data-date-str="Mardi 5 Novembre" type="button">
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Mar</span>
+<span class="font-headline-lg text-headline-lg font-bold">05</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Nov</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></span>
+</button>
+</div>
+</div>
+<!-- 5. Grid of Available Time Slots for Selected Day -->
+<div class="bg-surface-container-low/50 rounded-xl p-space-md md:p-space-lg">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_clock</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+              Créneaux horaires pour le <span class="text-primary font-bold" id="current-day-heading">Mercredi 23 Octobre</span>
+</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Heure de Tunis (UTC+1)</span>
+</div>
+<!-- Time Slot Grid Containers: Matin & Après-Midi -->
+<div class="flex flex-col gap-space-lg">
+<!-- Matin -->
+<div>
+<div class="flex items-center gap-2 mb-space-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary">wb_sunny</span>
+<span class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wide">Matin (09:00 - 12:30)</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-space-sm">
+<!-- 09:00 (Pris) -->
+<div class="py-2.5 px-3 rounded-lg bg-surface-container-high/60 text-outline-variant text-center cursor-not-allowed select-none flex items-center justify-center gap-1">
+<span class="font-label-md text-label-md line-through">09:00</span>
+</div>
+<!-- 09:30 (Pris) -->
+<div class="py-2.5 px-3 rounded-lg bg-surface-container-high/60 text-outline-variant text-center cursor-not-allowed select-none flex items-center justify-center gap-1">
+<span class="font-label-md text-label-md line-through">09:30</span>
+</div>
+<!-- 10:00 (Libre) -->
+<button class="time-slot-btn py-2.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-headline-sm text-headline-sm font-semibold text-center transition-all shadow-sm" data-time="10:00" type="button">
+                10:00
+              </button>
+<!-- 10:30 (Libre) -->
+<button class="time-slot-btn py-2.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-headline-sm text-headline-sm font-semibold text-center transition-all shadow-sm" data-time="10:30" type="button">
+                10:30
+              </button>
+<!-- 11:00 (Pris) -->
+<div class="py-2.5 px-3 rounded-lg bg-surface-container-high/60 text-outline-variant text-center cursor-not-allowed select-none flex items-center justify-center gap-1">
+<span class="font-label-md text-label-md line-through">11:00</span>
+</div>
+<!-- 11:30 (Libre) -->
+<button class="time-slot-btn py-2.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-headline-sm text-headline-sm font-semibold text-center transition-all shadow-sm" data-time="11:30" type="button">
+                11:30
+              </button>
+<!-- 12:00 (Pris) -->
+<div class="py-2.5 px-3 rounded-lg bg-surface-container-high/60 text-outline-variant text-center cursor-not-allowed select-none flex items-center justify-center gap-1">
+<span class="font-label-md text-label-md line-through">12:00</span>
+</div>
+</div>
+</div>
+<!-- Après-midi -->
+<div>
+<div class="flex items-center gap-2 mb-space-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">wb_twilight</span>
+<span class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wide">Après-midi (14:00 - 18:00)</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-space-sm">
+<!-- 14:00 (Libre) -->
+<button class="time-slot-btn py-2.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-headline-sm text-headline-sm font-semibold text-center transition-all shadow-sm" data-time="14:00" type="button">
+                14:00
+              </button>
+<!-- 14:30 (Libre) -->
+<button class="time-slot-btn py-2.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-headline-sm text-headline-sm font-semibold text-center transition-all shadow-sm" data-time="14:30" type="button">
+                14:30
+              </button>
+<!-- 15:15 (SÉLECTIONNÉ par défaut) -->
+<button class="time-slot-btn selected-slot py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-headline-sm text-headline-sm font-bold text-center transition-all shadow-md flex items-center justify-center gap-1 scale-105" data-time="15:15" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+                15:15
+              </button>
+<!-- 15:45 (Pris) -->
+<div class="py-2.5 px-3 rounded-lg bg-surface-container-high/60 text-outline-variant text-center cursor-not-allowed select-none flex items-center justify-center">
+<span class="font-label-md text-label-md line-through">15:45</span>
+</div>
+<!-- 16:15 (Libre) -->
+<button class="time-slot-btn py-2.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-headline-sm text-headline-sm font-semibold text-center transition-all shadow-sm" data-time="16:15" type="button">
+                16:15
+              </button>
+<!-- 16:45 (Pris) -->
+<div class="py-2.5 px-3 rounded-lg bg-surface-container-high/60 text-outline-variant text-center cursor-not-allowed select-none flex items-center justify-center">
+<span class="font-label-md text-label-md line-through">16:45</span>
+</div>
+<!-- 17:15 (Libre) -->
+<button class="time-slot-btn py-2.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-headline-sm text-headline-sm font-semibold text-center transition-all shadow-sm" data-time="17:15" type="button">
+                17:15
+              </button>
+<!-- 17:45 (Libre) -->
+<button class="time-slot-btn py-2.5 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-headline-sm text-headline-sm font-semibold text-center transition-all shadow-sm" data-time="17:45" type="button">
+                17:45
+              </button>
+</div>
+</div>
+</div>
+<!-- Urgent Notice Box -->
+<div class="mt-space-md p-space-sm rounded-lg bg-secondary-container/15 flex items-start gap-space-xs text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px] text-secondary shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm">
+<strong>Urgence cardiologique :</strong> Pour une douleur thoracique aiguë constrictive ou essoufflement brutal, contactez immédiatement le SAMU Tunisie au <strong>190</strong> ou rendez-vous aux urgences cardiologiques les plus proches.
+          </p>
+</div>
+</div>
+</div>
+<!-- 6. Doctor Information Tabs below the booking grid -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm mb-space-xl overflow-hidden">
+<!-- Tab Navigation Header -->
+<div class="flex items-center border-b border-surface-container-high px-space-md md:px-space-lg bg-surface-container-low/30 overflow-x-auto">
+<button class="tab-button px-space-md py-space-md font-label-lg text-label-lg font-semibold text-primary border-b-2 border-primary transition-colors flex items-center gap-1.5 shrink-0" data-tab-target="tab-parcours" type="button">
+<span class="material-symbols-outlined text-[18px]">school</span>
+          Présentation &amp; Parcours
+        </button>
+<button class="tab-button px-space-md py-space-md font-label-lg text-label-lg font-medium text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5 shrink-0" data-tab-target="tab-tarifs" type="button">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+          Tarifs &amp; Prise en charge CNAM
+        </button>
+<button class="tab-button px-space-md py-space-md font-label-lg text-label-lg font-medium text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5 shrink-0" data-tab-target="tab-acces" type="button">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+          Accès &amp; Coordonnées
+        </button>
+<button class="tab-button px-space-md py-space-md font-label-lg text-label-lg font-medium text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5 shrink-0" data-tab-target="tab-avis" type="button">
+<span class="material-symbols-outlined text-[18px]">reviews</span>
+          Avis Patients vérifiés (148)
+        </button>
+</div>
+<!-- Tab Content Area -->
+<div class="p-space-md md:p-space-lg lg:p-space-xl">
+<!-- TAB 1: Présentation & Parcours -->
+<div class="tab-pane flex flex-col gap-space-lg" id="tab-parcours">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+<!-- Column 1: Diplômes & Titres -->
+<div class="flex flex-col gap-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">workspace_premium</span>
+                Diplômes &amp; Formations Hospitalières
+              </h3>
+<div class="flex flex-col gap-space-sm pl-2">
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Diplôme d'État de Docteur en Médecine</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Faculté de Médecine de Paris VI - Pierre et Marie Curie</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Ancien Chef de Clinique Assistant (CCA)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hôpital Européen Georges-Pompidou (HEGP), Service de Cardiologie, Paris</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Diplôme Inter-Universitaire (DIU) d'Échocardiographie</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Université Paris Descartes - Spécialisation Écho-Doppler avancé</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Agrément National Conseil de l'Ordre des Médecins de Tunisie</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inscrit sous le N° 18452 - Spécialité Pathologies Cardio-Vasculaires</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2: Affiliations & Approche Médicale -->
+<div class="flex flex-col gap-space-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">psychology_alt</span>
+                Philosophie de Pratique &amp; Équipements
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Le Dr. Ben Mahmoud place l'écoute attentive et la cardiologie préventive au cœur de sa démarche diagnostique. Le cabinet est équipé d'une plateforme d'imagerie ultrasonore de dernière génération (GE Vivid E95), d'électrocardiogrammes 12 dérivations instantanés et d'enregistreurs Holter numériques compacts pour un dépistage précis et sans stress.
+              </p>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase">Sociétés Savantes</span>
+<p class="font-body-sm text-body-sm text-on-surface">Membre de la Société Tunisienne de Cardiologie et de Chirurgie Cardio-Vasculaire (STCCCV) et de la Société Européenne de Cardiologie (ESC).</p>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2: Tarifs & Prise en charge CNAM -->
+<div class="tab-pane hidden flex flex-col gap-space-md" id="tab-tarifs">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Grille des Honoraires Médicaux</h3>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-body-md text-body-md text-on-surface">Première consultation cardiologique + ECG</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">70 TND</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-body-md text-body-md text-on-surface">Consultation de contrôle (moins de 3 mois)</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">50 TND</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-body-md text-body-md text-on-surface">Échocardiographie Trans-thoracique (ETT) Doppler</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">120 TND</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-body-md text-body-md text-on-surface">Pose &amp; Analyse Enregistreur Holter Tensionnel (MAPA)</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">90 TND</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-body-md text-body-md text-on-surface">Téléconsultation vidéo sécurisée</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">60 TND</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Prise en charge CNAM &amp; Paiements</h3>
+<div class="p-space-md rounded-xl bg-surface-container-high/40 flex flex-col gap-space-xs">
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">health_and_safety</span>
+<span>Conventionné avec la CNAM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Praticien conventionné en <strong>Filière Privée</strong> et <strong>Médecin de Famille</strong>. Délivrance immédiate de feuilles de soins pour le remboursement CNAM ou mutuelles privées (Assurances Maghrebia, GAT, STAR, COMAR, etc.). Prise en charge intégrale des affections de longue durée (APCI HTA / Coronaropathies).
+                </p>
+</div>
+<div class="mt-space-xs">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">Moyens de règlement acceptés au cabinet :</span>
+<div class="flex flex-wrap gap-space-xs mt-space-xs">
+<span class="px-space-sm py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface">Espèces (TND)</span>
+<span class="px-space-sm py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface">Carte Bancaire (TPE)</span>
+<span class="px-space-sm py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface">Chèques bancaires</span>
+<span class="px-space-sm py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface">Paiement Mobile D17</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 3: Accès & Coordonnées -->
+<div class="tab-pane hidden flex flex-col gap-space-md" id="tab-acces">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+<div class="flex flex-col gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Horaires d'ouverture du cabinet</h3>
+<div class="flex flex-col gap-space-xs mt-space-sm font-body-sm text-body-sm">
+<div class="flex justify-between py-1 border-b border-surface-container-high">
+<span class="font-medium text-on-surface">Lundi au Vendredi</span>
+<span class="text-on-surface font-semibold">08:30 — 17:30</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-high">
+<span class="font-medium text-on-surface">Samedi</span>
+<span class="text-on-surface font-semibold">08:30 — 13:00</span>
+</div>
+<div class="flex justify-between py-1 text-on-surface-variant">
+<span>Dimanche &amp; Jours fériés</span>
+<span class="font-semibold text-secondary">Fermé</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Contact direct secrétariat</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Pour les prises de rendez-vous d'examens spécialisés ou transmission de dossiers urgents :
+                </p>
+<div class="flex items-center gap-space-sm mt-space-xs">
+<span class="px-space-md py-2 rounded-lg bg-surface-container font-label-lg text-label-lg text-primary font-bold">
+                    +216 71 880 900
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mme. Leila S. (Assistante médicale)</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Repères &amp; Accompagnement mobilité</h3>
+<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">check_circle</span>
+<span><strong>Immeuble Carthage Médical :</strong> Situé face au centre d'affaires, à 200m de l'ambassade du Canada.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">elevator</span>
+<span><strong>Ascenseur brancardable :</strong> Accès direct au 3ème étage sans aucune marche, idéal fauteuils roulants et personnes âgées.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">local_parking</span>
+<span><strong>Stationnement :</strong> Parking gratuit réservé aux patients au sous-sol (-1) avec interphone MediDesk.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- TAB 4: Avis des patients vérifiés -->
+<div class="tab-pane hidden flex flex-col gap-space-md" id="tab-avis">
+<!-- Rating summary row -->
+<div class="flex flex-col md:flex-row items-center gap-space-lg p-space-md rounded-xl bg-surface-container-low/70">
+<div class="flex flex-col items-center justify-center text-center pr-0 md:pr-space-lg md:border-r border-surface-container-high">
+<span class="font-headline-xl text-headline-xl font-bold text-on-surface">4.9</span>
+<div class="flex text-tertiary-container my-1">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Basé sur 148 avis certifiés</span>
+</div>
+<!-- Authentic metrics -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm w-full">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ponctualité</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">4.9 / 5</span>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-1 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 98%"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Écoute &amp; Explications</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">5.0 / 5</span>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-1 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hygiène &amp; Propreté</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">4.9 / 5</span>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-1 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 97%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3 Patient Testimonial Cards -->
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center font-label-md text-label-md">
+                    MT
+                  </div>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface">Mounir T.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-2">• Visité pour Écho-doppler</span>
+</div>
+</div>
+<div class="flex items-center text-tertiary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                « Médecin d'une bienveillance exceptionnelle. Dr Karim a pris le temps d'expliquer chaque cliché de l'échographie avec un schéma très clair. Accueil au secrétariat impeccable et aucun retard sur l'horaire convenu. Je recommande les yeux fermés. »
+              </p>
+<span class="font-label-sm text-label-sm text-outline-variant">Il y a 4 jours • Rendez-vous honoré via MediDesk</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-secondary-container/30 text-secondary font-bold flex items-center justify-center font-label-md text-label-md">
+                    SB
+                  </div>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface">Sihem B.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-2">• Visité pour Hypertension (HTA)</span>
+</div>
+</div>
+<div class="flex items-center text-tertiary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                « Très professionnel et rigoureux dans l'analyse de ma tension. Feuille de soin CNAM remplie sur le champ avec télétransmission rapide. Cabinet très propre et accessible avec parking privatif très pratique aux Berges du Lac. »
+              </p>
+<span class="font-label-sm text-label-sm text-outline-variant">Il y a 2 semaines • Rendez-vous honoré via MediDesk</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center font-label-md text-label-md">
+                    AH
+                  </div>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface">Anis H.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-2">• Première consultation cardiologique</span>
+</div>
+</div>
+<div class="flex items-center text-tertiary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                « Un grand praticien qui sait rassurer son patient. Après des palpitations inquiétantes, l'ECG et le bilan complet m'ont totalement rassuré. Prise en charge par la secrétaire Leila très professionnelle. »
+              </p>
+<span class="font-label-sm text-label-sm text-outline-variant">Il y a 1 mois • Rendez-vous honoré via MediDesk</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 7. Sticky "Continue Booking" Bar (Bottom of Screen) -->
+<div class="sticky bottom-0 left-0 w-full z-40 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.06)]">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-sm md:py-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm">
+<!-- Selected consultation recap -->
+<div class="flex items-center gap-space-sm w-full md:w-auto">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">event_available</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="recap-datetime">
+              Mercredi 23 Octobre à 15:15
+            </span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant hidden sm:inline-block"></span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="recap-price">
+              70 TND
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+<span id="recap-motive">Première consultation de Cardiologie</span> • Cabinet Les Berges du Lac
+          </p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center justify-end gap-space-sm w-full md:w-auto shrink-0">
+<button class="hidden sm:inline-flex px-space-md py-2.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="document.getElementById('motive-selector').scrollIntoView({behavior: 'smooth'})" type="button">
+          Modifier le créneau
+        </button>
+<div class="flex flex-col items-center sm:items-end w-full sm:w-auto">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-lg font-label-lg text-label-lg bg-secondary text-on-secondary hover:bg-on-secondary-container transition-all shadow-md active:scale-98" id="btn-continue-booking" type="button">
+<span>Continuer la réservation</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Gratuit • Sans paiement immédiat</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Client-side Script for Doctor Booking Matrix -->
+<script>
+    (function() {
+      // Booking state
+      let selectedMotiveTitle = "Première consultation de Cardiologie";
+      let selectedMotivePrice = "70 TND";
+      let selectedDateStr = "Mercredi 23 Octobre";
+      let selectedTime = "15:15";
+
+      const recapDatetime = document.getElementById('recap-datetime');
+      const recapPrice = document.getElementById('recap-price');
+      const recapMotive = document.getElementById('recap-motive');
+      const currentDayHeading = document.getElementById('current-day-heading');
+
+      function updateRecap() {
+        if (recapDatetime) {
+          recapDatetime.textContent = selectedDateStr + ' à ' + selectedTime;
+        }
+        if (recapPrice) {
+          recapPrice.textContent = selectedMotivePrice;
+        }
+        if (recapMotive) {
+          recapMotive.textContent = selectedMotiveTitle;
+        }
+        if (currentDayHeading) {
+          currentDayHeading.textContent = selectedDateStr;
+        }
+      }
+
+      // Motive selection
+      const motiveButtons = document.querySelectorAll('.motive-btn');
+      motiveButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          motiveButtons.forEach(b => {
+            b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+            b.classList.add('bg-surface-container-low', 'text-on-surface');
+            const check = b.querySelector('.check-icon');
+            if (check) check.classList.add('hidden');
+            const priceTag = b.querySelector('span:last-child');
+            if (priceTag) {
+              priceTag.classList.remove('bg-primary-container', 'text-on-primary-container');
+              priceTag.classList.add('text-primary');
+            }
+          });
+
+          btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+          btn.classList.remove('bg-surface-container-low', 'text-on-surface');
+          const activeCheck = btn.querySelector('.check-icon');
+          if (activeCheck) activeCheck.classList.remove('hidden');
+
+          const activePriceTag = btn.querySelector('span:last-child');
+          if (activePriceTag) {
+            activePriceTag.classList.add('bg-primary-container', 'text-on-primary-container');
+            activePriceTag.classList.remove('text-primary');
+          }
+
+          selectedMotiveTitle = btn.getAttribute('data-title') || selectedMotiveTitle;
+          selectedMotivePrice = btn.getAttribute('data-price') || selectedMotivePrice;
+          updateRecap();
+        });
+      });
+
+      // Date Card selection
+      const dateCards = document.querySelectorAll('.date-card');
+      dateCards.forEach(card => {
+        card.addEventListener('click', () => {
+          dateCards.forEach(c => {
+            c.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+            c.classList.add('bg-surface-container-low', 'text-on-surface');
+            const dayText = c.querySelector('span:first-child');
+            if (dayText) dayText.classList.remove('text-on-primary-container');
+          });
+
+          card.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+          card.classList.remove('bg-surface-container-low', 'text-on-surface');
+          const activeDayText = card.querySelector('span:first-child');
+          if (activeDayText) activeDayText.classList.add('text-on-primary-container');
+
+          selectedDateStr = card.getAttribute('data-date-str') || selectedDateStr;
+          updateRecap();
+        });
+      });
+
+      // Time Slot selection
+      const slotButtons = document.querySelectorAll('.time-slot-btn');
+      slotButtons.forEach(slot => {
+        slot.addEventListener('click', () => {
+          slotButtons.forEach(s => {
+            s.classList.remove('bg-secondary', 'text-on-secondary', 'font-bold', 'scale-105', 'selected-slot');
+            s.classList.add('bg-surface-container-lowest', 'text-primary', 'font-semibold');
+            const check = s.querySelector('.material-symbols-outlined');
+            if (check) check.remove();
+          });
+
+          slot.classList.add('bg-secondary', 'text-on-secondary', 'font-bold', 'scale-105', 'selected-slot');
+          slot.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-semibold');
+          
+          if (!slot.querySelector('.material-symbols-outlined')) {
+            const check = document.createElement('span');
+            check.className = 'material-symbols-outlined text-[16px] mr-1';
+            check.textContent = 'check';
+            slot.prepend(check);
+          }
+
+          selectedTime = slot.getAttribute('data-time') || selectedTime;
+          updateRecap();
+        });
+      });
+
+      // Calendar horizontal scroll chevrons
+      const container = document.getElementById('date-strip-container');
+      const prevBtn = document.getElementById('cal-prev');
+      const nextBtn = document.getElementById('cal-next');
+
+      if (prevBtn && container) {
+        prevBtn.addEventListener('click', () => {
+          container.scrollBy({ left: -240, behavior: 'smooth' });
+        });
+      }
+      if (nextBtn && container) {
+        nextBtn.addEventListener('click', () => {
+          container.scrollBy({ left: 240, behavior: 'smooth' });
+        });
+      }
+
+      // Information Tabs switcher
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-tab-target');
+
+          tabButtons.forEach(b => {
+            b.classList.remove('text-primary', 'border-b-2', 'border-primary', 'font-semibold');
+            b.classList.add('text-on-surface-variant', 'font-medium');
+          });
+
+          btn.classList.add('text-primary', 'border-b-2', 'border-primary', 'font-semibold');
+          btn.classList.remove('text-on-surface-variant', 'font-medium');
+
+          tabPanes.forEach(pane => {
+            if (pane.id === targetId) {
+              pane.classList.remove('hidden');
+            } else {
+              pane.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // Continue booking button feedback
+      const ctaBtn = document.getElementById('btn-continue-booking');
+      if (ctaBtn) {
+        ctaBtn.addEventListener('click', () => {
+          ctaBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> Redirection...';
+          setTimeout(() => {
+            alert('Réservation initiée pour le ' + selectedDateStr + ' à ' + selectedTime + ' (' + selectedMotiveTitle + '). Prise en charge CNAM confirmée.');
+            ctaBtn.innerHTML = '<span>Continuer la réservation</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span>';
+          }, 800);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.03)]"><div class="w-full max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter-lg mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #0f6e6a
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WFStIlxB2FaXASVGdkaJT9w2n4VY5QxAxAh8r_fOmU7RX0IWiuD0tIAgrCx9c1m_Isox7BfjoMSz3wI97tRdACczgMRfHkMIIB0uI7Cr9i1MTMelwVUoo3WuySVu33kodMuAqMPWIVKQIt9nI_eGm4j3Ue7UpyOq15xMem6Yj6z3HevWEMGQhoV5MsP3E0FC1H5s4hPg2LVJQK2hxOMrdm_dnoFpidf75MfzLTx8abdjfcq1mKrC-7m6U"/><span class="font-headline-sm text-headline-sm text-primary font-bold">MediDesk</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Plateforme de prise de rendez-vous médical et de gestion de consultations cliniques en Tunisie. Simplifiez vos parcours de soins au quotidien.</p><div class="flex items-center gap-space-xs mt-space-sm bg-surface-container-low p-space-sm rounded-lg max-w-sm"><span class="material-symbols-outlined text-primary text-[20px]">verified_user</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Conformité INPDP &amp; RGPD</span><span class="font-label-sm text-label-sm text-on-surface-variant">Données de santé chiffrées &amp; hébergées en conformité légale.</span></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-surface font-bold">Patients</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="trouver-un-medecin" href="#">Trouver un praticien</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="prendre-rendez-vous" href="#">Prendre rendez-vous</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="tarifs" href="#">Honoraires &amp; Tarifs</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="faq-patients" href="#">Centre d'aide patient</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-surface font-bold">Praticiens &amp; Cliniques</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="pour-les-medecins" href="#">MediDesk Pro</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="solution-secretaires" href="#">Espace Secrétariat</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="tarifs" href="#">Abonnements cabinet</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="teleconsultation" href="#">Téléconsultation</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-surface font-bold">Légal &amp; Sécurité</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="politique-de-confidentialite" href="#">Protection des données (INPDP)</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="mentions-legales" href="#">Mentions légales</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="conditions-generales" href="#">Conditions Générales d'Utilisation</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="charte-ethique" href="#">Charte de déontologie médicale</a></div></div><div class="pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-md"><p class="font-label-sm text-label-sm text-on-surface-variant text-center sm:text-left">© 2024 MediDesk Tunisie. Tous droits réservés. Registre INPDP certifié.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant">Langue :</span><div class="inline-flex items-center bg-surface-container-low p-1 rounded-lg"><button class="px-space-xs py-0.5 font-label-sm text-label-sm rounded bg-surface-container-lowest text-primary font-semibold" type="button">Français</button><button class="px-space-xs py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">العربية</button><button class="px-space-xs py-0.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">English</button></div></div></div></div></footer></body></html>
