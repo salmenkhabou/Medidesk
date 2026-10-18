@@ -55,6 +55,10 @@ export function createApp({
   app.disable("x-powered-by");
   if (process.env.TRUST_PROXY === "1") app.set("trust proxy", 1);
   app.use(helmet());
+  app.use("/api", (req, res, next) => {
+    res.set("Cache-Control", "no-store");
+    next();
+  });
   const origins = (
     process.env.FRONTEND_URL || "http://localhost:5173,http://127.0.0.1:5173"
   )
@@ -742,6 +746,12 @@ export function createApp({
       return res.status(409).json({
         message: "Cet email, ce créneau ou cet enregistrement existe déjà.",
       });
+    if (err.type === "entity.parse.failed")
+      return res.status(400).json({ message: "JSON invalide." });
+    if (err.type === "entity.too.large")
+      return res
+        .status(413)
+        .json({ message: "La requête dépasse la taille autorisée." });
     const status = err.status || 500;
     if (status >= 500) console.error("API error:", err.code || err.name);
     res.status(status).json({

@@ -54,11 +54,13 @@ export async function decryptBackup(source, target) {
     throw Error("Invalid backup format.");
   const decipher = createDecipheriv("aes-256-gcm", key(), header.subarray(8));
   decipher.setAuthTag(tag);
+  // Acquire exclusive ownership before cleanup: EEXIST must preserve the original.
+  const targetFd = openSync(target, "wx", 0o600);
   try {
     await pipeline(
       createReadStream(source, { start: 20, end: size - 17 }),
       decipher,
-      createWriteStream(target, { mode: 0o600, flags: "wx" }),
+      createWriteStream(target, { fd: targetFd }),
     );
   } catch (error) {
     rmSync(target, { force: true });

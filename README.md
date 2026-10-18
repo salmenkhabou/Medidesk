@@ -111,3 +111,5 @@ First-party analytics is installed and operational without a third-party key or 
 Administrators can see the last 30 days at **Statistiques** (`/statistiques`); other roles receive no report access. Counts represent opted-in page views, not unique people or verified human visits. The application does not run GA4, advertising pixels, session replay, clinical-event tracking or cross-site analytics.
 
 Run `npm test` in the frontend for route/metadata/crawler/asset checks, `npm test` in the backend for analytics consent/payload/access/retention checks, and `npm run test:e2e` in the frontend for direct URLs, history, 404 status, consent withdrawal, page titles, CTA visibility and delayed-request loading states alongside the existing workflows.
+
+Revue de sécurité et contrôles de production : [rapport du 19 octobre 2026](docs/security-review.md).

@@ -775,7 +775,7 @@ try {
     );
     await audit(`public phone ${width}px`);
     const box = await page
-      .getByRole("button", { name: "Créer mon compte patient", exact: true })
+      .getByRole("link", { name: "Trouver un praticien", exact: true })
       .boundingBox();
     assert.ok(
       box && box.y + box.height < 700,
