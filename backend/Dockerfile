@@ -1,28 +1,12 @@
-# ==========================================
-# MediDesk Backend Production Dockerfile
-# Node.js LTS (Alpine for minimal attack surface)
-# ==========================================
-FROM node:22-alpine AS production
-
-# Set security non-root user
-USER node
+FROM node:22.23.3-alpine
 WORKDIR /home/node/app
-
-# Install dependencies first for Docker layer caching
 COPY --chown=node:node package*.json ./
-RUN npm ci --only=production
-
-# Copy source code with non-root ownership
-COPY --chown=node:node . .
-
-# Set environment
-ENV NODE_ENV=production
-ENV PORT=5000
-
-# Health check container status
-HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:5000/api/health || exit 1
-
+# Optional CA trust for a managed build proxy; the certificate is not retained.
+RUN --mount=type=secret,id=npm_ca \
+    if [ -f /run/secrets/npm_ca ]; then export NODE_EXTRA_CA_CERTS=/run/secrets/npm_ca; fi; \
+    npm ci --omit=dev --no-audit --no-fund --fetch-retries=1 --fetch-timeout=30000 && mkdir data && chown node:node data
+COPY --chown=node:node src ./src
+USER node
+ENV NODE_ENV=production HOST=0.0.0.0 PORT=5000
 EXPOSE 5000
-
 CMD ["node", "src/server.js"]

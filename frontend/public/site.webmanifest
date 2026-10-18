@@ -1,0 +1,15 @@
+{
+  "id": "/",
+  "name": "MediDesk — Votre espace de santé",
+  "short_name": "MediDesk",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#f6f8f9",
+  "theme_color": "#126b60",
+  "icons": [
+    {"src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
+  ]
+}

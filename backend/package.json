@@ -7,8 +7,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "seed": "node src/db/seed.js",
-    "test": "node test_suite.js"
+    "admin:create": "node src/create-admin.js",
+    "test": "node --test test/*.test.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
@@ -18,5 +18,8 @@
     "express-rate-limit": "^8.7.1",
     "helmet": "^8.3.0",
     "jsonwebtoken": "^9.0.3"
+  },
+  "engines": {
+    "node": ">=22.13.0"
   }
 }

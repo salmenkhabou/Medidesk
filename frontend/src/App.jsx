@@ -1,449 +1,443 @@
-import React, { useState } from 'react';
-import { LanguageProvider } from './context/LanguageContext';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import Footer from './components/Footer';
-import BookingModal from './components/BookingModal';
-import PatientLogoutModal from './components/PatientLogoutModal';
+import React, { useEffect, useRef, useState } from "react";
+import {
+  ArrowDownLeft,
+  BarChart3,
+  ArrowRight,
+  CalendarDays,
+  Check,
+  ChevronRight,
+  ClipboardList,
+  CreditCard,
+  FileText,
+  Heart,
+  LayoutDashboard,
+  LogOut,
+  Menu,
+  MessageSquare,
+  Moon,
+  Plus,
+  Settings2,
+  ShieldCheck,
+  SlidersHorizontal,
+  Stethoscope,
+  Sun,
+  Users,
+  X,
+} from "lucide-react";
+import { api, saveToken } from "./ui/api";
+import { PreferencesProvider, usePreferences } from "./ui/preferences";
 
-import HomeView from './views/HomeView';
-import DoctorsView from './views/DoctorsView';
-import OnboardingView from './views/OnboardingView';
-import ConfirmationView from './views/ConfirmationView';
-import PricingView from './views/PricingView';
-import LiveQueueView from './views/LiveQueueView';
-import PrescriptionsView from './views/PrescriptionsView';
+import { roles } from "./ui/format";
+import { Icon, Modal, Comfort, ErrorMessage } from "./ui/components";
+import Access from "./pages/Access";
+import Directory from "./pages/Directory";
+import Booking from "./pages/Booking";
+import Dashboard from "./pages/Dashboard";
+import Appointments from "./pages/Appointments";
+import Records from "./pages/Records";
+import Payments from "./pages/Payments";
+import Suggestions from "./pages/Suggestions";
+import Team from "./pages/Team";
+import Applications from "./pages/Applications";
+import Audit from "./pages/Audit";
+import Settings from "./pages/Settings";
 
-import DoctorProfileView from './views/DoctorProfileView';
-import LoginView from './views/LoginView';
-import ForgotPasswordView from './views/ForgotPasswordView';
-import ResetLinkSentView from './views/ResetLinkSentView';
-import TwoFactorView from './views/TwoFactorView';
-import BookingWizardView from './views/BookingWizardView';
-import BookingSuccessView from './views/BookingSuccessView';
-import StyleGuideView from './views/StyleGuideView';
-
-import PatientDashboardView from './views/PatientDashboardView';
-import PatientRegisterView from './views/PatientRegisterView';
-import ExpressBookingView from './views/ExpressBookingView';
-import PatientQueueTrackerView from './views/PatientQueueTrackerView';
-import SuggestDoctorView from './views/SuggestDoctorView';
-import PatientMedicalRecordView from './views/PatientMedicalRecordView';
-import PatientDocumentUploadView from './views/PatientDocumentUploadView';
-import PatientAccountSettingsView from './views/PatientAccountSettingsView';
-import PatientNotificationCenterView from './views/PatientNotificationCenterView';
-
-// Medical Secretariat Views
-import SecretariatDashboardView from './views/SecretariatDashboardView';
-import SecretariatAdmissionView from './views/SecretariatAdmissionView';
-import SecretariatPatientFileView from './views/SecretariatPatientFileView';
-import SecretariatPlanningView from './views/SecretariatPlanningView';
-import SecretariatWaitingRoomView from './views/SecretariatWaitingRoomView';
-import SecretariatValidationQueueView from './views/SecretariatValidationQueueView';
-import SecretariatBillingView from './views/SecretariatBillingView';
-import SecretariatCashCloseoutView from './views/SecretariatCashCloseoutView';
-import SecretariatSecurityView from './views/SecretariatSecurityView';
-
-// Doctor / Practitioner Persona Views
-import DoctorDashboardView from './views/DoctorDashboardView';
-import DoctorConsultationEntryView from './views/DoctorConsultationEntryView';
-import DoctorPatientRecordView from './views/DoctorPatientRecordView';
-import DoctorPrescriptionWriterView from './views/DoctorPrescriptionWriterView';
-import DoctorMedicalCertificatesView from './views/DoctorMedicalCertificatesView';
-import DoctorOcrImportView from './views/DoctorOcrImportView';
-import DoctorPatientDirectoryView from './views/DoctorPatientDirectoryView';
-import DoctorPlanningView from './views/DoctorPlanningView';
-import DoctorDelayDeclarationView from './views/DoctorDelayDeclarationView';
-import DoctorAnalyticsView from './views/DoctorAnalyticsView';
-import DoctorDelayTrackerView from './views/DoctorDelayTrackerView';
-import DoctorSubscriptionView from './views/DoctorSubscriptionView';
-import SubscriptionExpiredView from './views/SubscriptionExpiredView';
-
-// SuperAdmin Tower Views
-import SuperAdminDashboardView from './views/SuperAdminDashboardView';
-import SuperAdminApplicationsView from './views/SuperAdminApplicationsView';
-import SuperAdminPractitionersView from './views/SuperAdminPractitionersView';
-import SuperAdminPractitionerDetailView from './views/SuperAdminPractitionerDetailView';
-import SuperAdminBillingSupervisionView from './views/SuperAdminBillingSupervisionView';
-import SuperAdminPricingSettingsView from './views/SuperAdminPricingSettingsView';
-import SuperAdminAnalyticsView from './views/SuperAdminAnalyticsView';
-import SuperAdminSuggestionsView from './views/SuperAdminSuggestionsView';
-import SuperAdminTeamPermissionsView from './views/SuperAdminTeamPermissionsView';
-import SuperAdminSecurityView from './views/SuperAdminSecurityView';
-
-// Doctor Team & Security Views
-import DoctorTeamManagementView from './views/DoctorTeamManagementView';
-import DoctorAccountSecurityView from './views/DoctorAccountSecurityView';
-
-
-export default function App() {
-  const [currentUser, setCurrentUser] = useState(() => {
-    try {
-      const saved = localStorage.getItem('medidesk_current_user');
-      return saved ? JSON.parse(saved) : null;
-    } catch {
-      return null;
-    }
-  });
-
-  const [currentView, setCurrentView] = useState(() => {
-    try {
-      const saved = localStorage.getItem('medidesk_current_user');
-      if (saved) {
-        const u = JSON.parse(saved);
-        if (u.role === 'superadmin') return 'superadmin';
-        if (u.role === 'doctor') return 'tableau-de-bord-medecin';
-        if (u.role === 'secretariat') return 'tableau-de-bord';
-        if (u.role === 'patient') return 'patient-dashboard';
-      }
-    } catch {}
-    return 'home';
-  });
-
-  const [viewParams, setViewParams] = useState({});
-  const [bookingDoctor, setBookingDoctor] = useState(null);
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [isLogoutOpen, setIsLogoutOpen] = useState(false);
-  const [toastMessage, setToastMessage] = useState(null);
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
-
-  const navigateTo = (view, params = {}) => {
-    setCurrentView(view);
-    setViewParams(params);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+import Privacy from "./pages/Privacy";
+import NotFound from "./pages/NotFound";
+import Analytics from "./pages/Analytics";
+import { pages, resolvePage, canView } from "./site";
+import { usePageMetadata } from "./ui/metadata";
+import { AnalyticsProvider, usePageAnalytics } from "./ui/analytics";
+const navigation = (user) =>
+  user
+    ? [
+        ["dashboard", "Vue d’ensemble", LayoutDashboard],
+        ["appointments", "Rendez-vous", CalendarDays],
+        ...(["patient", "doctor"].includes(user.role)
+          ? [
+              [
+                "records",
+                user.role === "patient"
+                  ? "Mon dossier médical"
+                  : "Consultations",
+                FileText,
+              ],
+            ]
+          : []),
+        ...(user.role !== "patient"
+          ? [["payments", "Règlements", CreditCard]]
+          : [["directory", "Trouver un praticien", Stethoscope]]),
+        ...(["superadmin", "doctor"].includes(user.role)
+          ? [["team", "Équipe", Users]]
+          : []),
+        ...(user.role === "superadmin"
+          ? [["applications", "Demandes de praticiens", ClipboardList]]
+          : []),
+        ["suggestions", "Suggestions & retours", MessageSquare],
+        ...(user.role === "superadmin"
+          ? [
+              ["audit", "Journal d’activité", ShieldCheck],
+              ["analytics", "Statistiques", BarChart3],
+            ]
+          : []),
+        ["settings", "Paramètres", Settings2],
+      ]
+    : [
+        ["directory", "Nos praticiens", Stethoscope],
+        ["login", "Connexion", ArrowDownLeft],
+        ["application", "Rejoindre le réseau", Users],
+        ["settings", "Affichage & confort", Settings2],
+      ];
+function Workspace() {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [sessionError, setSessionError] = useState("");
+  const [view, setView] = useState(() => resolvePage(location.pathname));
+  const [mobile, setMobile] = useState(false);
+  const [comfort, setComfort] = useState(false);
+  const [booking, setBooking] = useState(null);
+  const [revision, setRevision] = useState(0);
+  const [toast, setToast] = useState("");
+  const timer = useRef();
+  const main = useRef();
+  const { effectiveTheme, set } = usePreferences();
+  usePageMetadata(view);
+  usePageAnalytics(view);
+  const changePage = (key, replace = false) => {
+    const target = pages[key] ? key : "notFound";
+    if (location.pathname !== pages[target].path)
+      history[replace ? "replaceState" : "pushState"](
+        {},
+        "",
+        pages[target].path,
+      );
+    setView(target);
   };
-
-  const handleOpenBooking = (doctor = null) => {
-    setBookingDoctor(doctor);
-    setIsBookingOpen(true);
+  const logout = () => {
+    if (sessionStorage.getItem("medidesk_session"))
+      api("/auth/logout", { method: "POST", body: {} }).catch(() => {});
+    saveToken(null);
+    setUser(null);
+    setBooking(null);
+    changePage("login", true);
+    setMobile(false);
   };
-
-  const handleBookingSuccess = (msg) => {
-    setIsBookingOpen(false);
-    showToast(msg);
+  useEffect(() => {
+    // Retire prototype sessions; the server validates the current account on every request.
+    localStorage.removeItem("medidesk_jwt_token");
+    localStorage.removeItem("medidesk_current_user");
+    (sessionStorage.getItem("medidesk_session")
+      ? api("/auth/me")
+      : Promise.reject(new Error(""))
+    )
+      .then(({ user }) => {
+        setUser(user);
+        if (
+          ["directory", "login", "register"].includes(
+            resolvePage(location.pathname),
+          )
+        )
+          changePage("dashboard", true);
+      })
+      .catch((err) => {
+        if (sessionStorage.getItem("medidesk_session"))
+          setSessionError(err.message);
+        saveToken(null);
+      })
+      .finally(() => setLoading(false));
+    const expired = () => {
+      logout();
+      setSessionError("Votre session a expiré. Veuillez vous reconnecter.");
+    };
+    window.addEventListener("medidesk:unauthorized", expired);
+    return () => {
+      window.removeEventListener("medidesk:unauthorized", expired);
+      clearTimeout(timer.current);
+    };
+  }, []);
+  useEffect(() => {
+    const onPop = () => {
+      setView(resolvePage(location.pathname));
+      setMobile(false);
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
+  const navigate = (next) => {
+    changePage(next);
+    setMobile(false);
+    setSessionError("");
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() => main.current?.focus());
   };
-
-  const handleLoginSuccess = (user) => {
-    setCurrentUser(user);
-    showToast(`Bienvenue, ${user.name} (${user.role.toUpperCase()}) !`);
+  const notify = (message) => {
+    clearTimeout(timer.current);
+    setToast(message);
+    timer.current = setTimeout(() => setToast(""), 6000);
   };
-
-  const handleConfirmLogout = () => {
-    localStorage.removeItem('medidesk_jwt_token');
-    localStorage.removeItem('medidesk_current_user');
-    setCurrentUser(null);
-    setIsLogoutOpen(false);
-    showToast('Vous avez été déconnecté avec succès.');
-    navigateTo('home');
-  };
-
-  const showToast = (msg) => {
-    setToastMessage(msg);
-    setTimeout(() => setToastMessage(null), 5000);
-  };
-
+  const refresh = () => setRevision((n) => n + 1);
+  const nav = navigation(user);
+  const access = ["login", "register", "application"].includes(view);
   return (
-    <LanguageProvider>
-      <div className="min-h-screen flex flex-col bg-surface text-on-surface">
-        
-        {/* Navigation Header */}
-        <Header 
-          currentView={currentView} 
-          setView={navigateTo} 
-          currentUser={currentUser}
-          onOpenBooking={handleOpenBooking}
-          onOpenLogoutModal={() => setIsLogoutOpen(true)}
-          onToggleMobileSidebar={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
+    <>
+      <a className="skip-link" href="#main">
+        Aller au contenu
+      </a>
+      <header className="topbar">
+        <div className="brand-group">
+          <button
+            className="icon-button mobile-toggle"
+            aria-label="Ouvrir la navigation"
+            aria-expanded={mobile}
+            onClick={() => setMobile(!mobile)}
+          >
+            <Menu size={22} />
+          </button>
+          <button
+            className="brand"
+            onClick={() => navigate(user ? "dashboard" : "directory")}
+            aria-label="MediDesk · accueil"
+          >
+            <span className="brand-mark">
+              <Plus size={25} strokeWidth={2.5} />
+            </span>
+            <span>
+              Medi<span className="brand-light">Desk</span>
+              <small>LE SOIN, MIEUX ORGANISÉ</small>
+            </span>
+          </button>
+        </div>
+        <div className="topbar-actions">
+          <button
+            className="icon-button"
+            aria-label={
+              effectiveTheme === "dark"
+                ? "Activer le thème clair"
+                : "Activer le thème sombre"
+            }
+            onClick={() =>
+              set("theme", effectiveTheme === "dark" ? "light" : "dark")
+            }
+          >
+            <Icon icon={effectiveTheme === "dark" ? Sun : Moon} />
+          </button>
+          <button
+            className="icon-button"
+            aria-label="Préférences de confort"
+            onClick={() => setComfort(true)}
+          >
+            <Icon icon={SlidersHorizontal} />
+          </button>
+          <span className="topbar-divider" />
+          {user ? (
+            <>
+              <span className="avatar small">
+                {user.name
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")
+                  .slice(0, 2)}
+              </span>
+              <div className="header-user">
+                <strong>{user.name}</strong>
+                <small>{roles[user.role]}</small>
+              </div>
+            </>
+          ) : (
+            <button
+              className="button small primary"
+              onClick={() => navigate("register")}
+            >
+              Créer un compte
+              <ArrowRight size={15} />
+            </button>
+          )}
+        </div>
+      </header>
+      {mobile && (
+        <button
+          className="sidebar-scrim"
+          aria-label="Fermer la navigation"
+          onClick={() => setMobile(false)}
         />
-
-        {/* Main Navigation Sidebar */}
-        <Sidebar
-          currentView={currentView}
-          setView={navigateTo}
-          currentUser={currentUser}
-          isCollapsed={isSidebarCollapsed}
-          setIsCollapsed={setIsSidebarCollapsed}
-          isMobileOpen={isMobileSidebarOpen}
-          setIsMobileOpen={setIsMobileSidebarOpen}
-          onOpenLogoutModal={() => setIsLogoutOpen(true)}
-        />
-
-        {/* Global Toast Notification */}
-        {toastMessage && (
-          <div className="fixed top-24 right-4 z-50 p-4 rounded-xl bg-primary-container text-on-primary shadow-2xl flex items-center gap-3 border border-on-primary-container animate-bounce max-w-md">
-            <span className="material-symbols-outlined text-[24px]">check_circle</span>
-            <span className="font-label-lg text-label-lg font-bold">{toastMessage}</span>
+      )}
+      <aside className={`sidebar ${mobile ? "is-open" : ""}`}>
+        <div className="workspace-label">
+          {user ? roles[user.role] : "BIENVENUE"}
+          <span>{user ? "Espace personnel" : "Votre parcours de santé"}</span>
+        </div>
+        <span className="nav-label">{user ? "MON ESPACE" : "DÉCOUVRIR"}</span>
+        <nav aria-label="Navigation principale">
+          {nav.map(([key, label, icon]) => (
+            <button
+              key={key}
+              onClick={() => navigate(key)}
+              aria-current={view === key ? "page" : undefined}
+              className={view === key ? "active" : ""}
+            >
+              <Icon icon={icon} />
+              <span>{label}</span>
+              {view === key && <span className="nav-dot" />}
+            </button>
+          ))}
+        </nav>
+        <div className="sidebar-bottom">
+          <div className="sidebar-note">
+            <Heart size={20} />
+            <strong>Votre confort compte</strong>
+            <p>Adaptez l’affichage à votre façon de travailler.</p>
+            <button onClick={() => setComfort(true)}>
+              Personnaliser
+              <ArrowRight size={14} />
+            </button>
           </div>
-        )}
-
-        {/* Main View Router */}
-        <main className={`flex-1 w-full pt-16 transition-all duration-300 ${
-          isSidebarCollapsed ? 'md:pl-20' : 'md:pl-64'
-        }`}>
-          {currentView === 'home' && (
-            <HomeView setView={navigateTo} onOpenBooking={handleOpenBooking} />
+          {user && (
+            <button className="logout" onClick={logout}>
+              <LogOut size={18} />
+              Se déconnecter
+            </button>
           )}
-
-          {currentView === 'doctors' && (
-            <DoctorsView initialParams={viewParams} onOpenBooking={handleOpenBooking} setView={navigateTo} />
-          )}
-
-          {currentView === 'doctor-profile' && (
-            <DoctorProfileView setView={navigateTo} onOpenBooking={handleOpenBooking} />
-          )}
-
-          {currentView === 'login' && (
-            <LoginView setView={navigateTo} onLoginSuccess={handleLoginSuccess} />
-          )}
-
-
-          {currentView === 'forgot-password' && (
-            <ForgotPasswordView setView={navigateTo} />
-          )}
-
-          {currentView === 'reset-link-sent' && (
-            <ResetLinkSentView email={viewParams.email} setView={navigateTo} />
-          )}
-
-          {currentView === '2fa-verify' && (
-            <TwoFactorView email={viewParams.email} setView={navigateTo} />
-          )}
-
-          {currentView === 'booking-wizard' && (
-            <BookingWizardView initialDoctor={viewParams} setView={navigateTo} />
-          )}
-
-          {currentView === 'booking-confirmation' && (
-            <BookingSuccessView trackingCode={viewParams.trackingCode} booking={viewParams.booking} setView={navigateTo} />
-          )}
-
-          {currentView === 'style-guide' && (
-            <StyleGuideView />
-          )}
-
-          {currentView === 'patient-dashboard' && (
-            <PatientDashboardView setView={navigateTo} />
-          )}
-
-          {currentView === 'patient-medical-record' && (
-            <PatientMedicalRecordView setView={navigateTo} />
-          )}
-
-          {currentView === 'patient-document-upload' && (
-            <PatientDocumentUploadView setView={navigateTo} />
-          )}
-
-          {currentView === 'patient-account-settings' && (
-            <PatientAccountSettingsView setView={navigateTo} />
-          )}
-
-          {currentView === 'patient-notifications' && (
-            <PatientNotificationCenterView setView={navigateTo} />
-          )}
-
-          {currentView === 'patient-register' && (
-            <PatientRegisterView setView={navigateTo} />
-          )}
-
-          {currentView === 'express-booking' && (
-            <ExpressBookingView setView={navigateTo} />
-          )}
-
-          {currentView === 'patient-queue-tracker' && (
-            <PatientQueueTrackerView setView={navigateTo} />
-          )}
-
-          {currentView === 'suggest-doctor' && (
-            <SuggestDoctorView setView={navigateTo} />
-          )}
-
-          {currentView === 'onboarding' && (
-            <OnboardingView setView={navigateTo} />
-          )}
-
-          {currentView === 'confirmation' && (
-            <ConfirmationView 
-              trackingCode={viewParams.trackingCode} 
-              record={viewParams.record} 
-              setView={navigateTo} 
+          <div className="sidebar-signature">
+            MediDesk<span>Gestion & suivi médical</span>
+          </div>
+        </div>
+      </aside>
+      <div className="workspace">
+        <main id="main" ref={main} tabIndex={-1}>
+          <div className="breadcrumb">
+            MediDesk
+            <ChevronRight size={13} />
+            <span>
+              {nav.find((n) => n[0] === view)?.[1] || pages[view]?.title}
+            </span>
+          </div>
+          <ErrorMessage message={sessionError} />
+          {loading ? (
+            <div className="loading" role="status">
+              Ouverture de votre espace…
+            </div>
+          ) : view === "notFound" ? (
+            <NotFound navigate={navigate} user={user} />
+          ) : view === "privacy" ? (
+            <Privacy />
+          ) : user && !canView(view, user) ? (
+            <NotFound navigate={navigate} user={user} denied />
+          ) : view === "settings" ? (
+            <Settings user={user} onUser={setUser} notify={notify} />
+          ) : (access || !pages[view]?.public) && !user ? (
+            <Access
+              mode={access ? view : "login"}
+              onMode={navigate}
+              onLogin={(u) => {
+                setUser(u);
+                navigate("dashboard");
+              }}
+              notify={notify}
             />
-          )}
-
-          {currentView === 'pricing' && (
-            <PricingView setView={navigateTo} />
-          )}
-
-          {currentView === 'queue' && (
-            <LiveQueueView doctorId={viewParams.doctorId || 1} onOpenBooking={handleOpenBooking} />
-          )}
-
-          {currentView === 'prescriptions' && (
-            <PrescriptionsView />
-          )}
-
-          {/* Medical Secretariat Views */}
-          {currentView === 'tableau-de-bord' && (
-            <SecretariatDashboardView setView={navigateTo} />
-          )}
-
-          {currentView === 'admission-patient' && (
-            <SecretariatAdmissionView setView={navigateTo} />
-          )}
-
-          {currentView === 'dossier-patient-sec' && (
-            <SecretariatPatientFileView setView={navigateTo} />
-          )}
-
-          {currentView === 'planning-rendez-vous' && (
-            <SecretariatPlanningView setView={navigateTo} />
-          )}
-
-          {currentView === 'salle-attente' && (
-            <SecretariatWaitingRoomView setView={navigateTo} />
-          )}
-
-          {currentView === 'validation-reservations' && (
-            <SecretariatValidationQueueView setView={navigateTo} />
-          )}
-
-          {currentView === 'encaissement-facturation' && (
-            <SecretariatBillingView setView={navigateTo} />
-          )}
-
-          {currentView === 'cloture-caisse' && (
-            <SecretariatCashCloseoutView setView={navigateTo} />
-          )}
-
-          {currentView === 'parametres-secretariat' && (
-            <SecretariatSecurityView setView={navigateTo} />
-          )}
-
-          {/* Doctor / Practitioner Persona Views */}
-          {currentView === 'tableau-de-bord-medecin' && (
-            <DoctorDashboardView setView={navigateTo} />
-          )}
-
-          {currentView === 'consultation-examen' && (
-            <DoctorConsultationEntryView setView={navigateTo} />
-          )}
-
-          {currentView === 'dossier-medical-complet' && (
-            <DoctorPatientRecordView setView={navigateTo} />
-          )}
-
-          {currentView === 'redaction-ordonnance' && (
-            <DoctorPrescriptionWriterView setView={navigateTo} />
-          )}
-
-          {currentView === 'generateur-certificats' && (
-            <DoctorMedicalCertificatesView setView={navigateTo} />
-          )}
-
-          {currentView === 'ocr-import-medical' && (
-            <DoctorOcrImportView setView={navigateTo} />
-          )}
-
-          {currentView === 'annuaire-patients-medecin' && (
-            <DoctorPatientDirectoryView setView={navigateTo} />
-          )}
-
-          {currentView === 'agenda-consultations-medecin' && (
-            <DoctorPlanningView setView={navigateTo} />
-          )}
-
-          {currentView === 'declaration-retard' && (
-            <DoctorDelayDeclarationView setView={navigateTo} />
-          )}
-
-          {currentView === 'statistiques-honoraires-medecin' && (
-            <DoctorAnalyticsView setView={navigateTo} />
-          )}
-
-          {currentView === 'suivi-fenetre-priorite' && (
-            <DoctorDelayTrackerView setView={navigateTo} />
-          )}
-
-          {currentView === 'abonnement-facturation-medecin' && (
-            <DoctorSubscriptionView setView={navigateTo} />
-          )}
-
-          {currentView === 'acces-suspendu' && (
-            <SubscriptionExpiredView setView={navigateTo} />
-          )}
-
-          {/* SuperAdmin Platform Tower Views */}
-          {(currentView === 'superadmin' || currentView === 'tour-de-controle-superadmin') && (
-            <SuperAdminDashboardView setView={navigateTo} />
-          )}
-
-          {currentView === 'candidatures-superadmin' && (
-            <SuperAdminApplicationsView setView={navigateTo} />
-          )}
-
-          {currentView === 'annuaire-medecins-superadmin' && (
-            <SuperAdminPractitionersView setView={navigateTo} />
-          )}
-
-          {currentView === 'fiche-praticien-detail' && (
-            <SuperAdminPractitionerDetailView setView={navigateTo} />
-          )}
-
-          {currentView === 'supervision-facturation-superadmin' && (
-            <SuperAdminBillingSupervisionView setView={navigateTo} />
-          )}
-
-          {currentView === 'tarification-forfaits-superadmin' && (
-            <SuperAdminPricingSettingsView setView={navigateTo} />
-          )}
-
-          {currentView === 'analytique-performance-superadmin' && (
-            <SuperAdminAnalyticsView setView={navigateTo} />
-          )}
-
-          {currentView === 'suggestions-praticiens-superadmin' && (
-            <SuperAdminSuggestionsView setView={navigateTo} />
-          )}
-
-          {currentView === 'equipe-admin-superadmin' && (
-            <SuperAdminTeamPermissionsView setView={navigateTo} />
-          )}
-
-          {currentView === 'securite-superadmin' && (
-            <SuperAdminSecurityView setView={navigateTo} />
-          )}
-
-          {/* Doctor Team & Security Views */}
-          {currentView === 'gestion-equipe-secretariat-medecin' && (
-            <DoctorTeamManagementView setView={navigateTo} />
-          )}
-
-          {currentView === 'securite-compte-medecin' && (
-            <DoctorAccountSecurityView setView={navigateTo} />
+          ) : view === "directory" || !user ? (
+            <Directory user={user} book={setBooking} navigate={navigate} />
+          ) : view === "dashboard" ? (
+            <Dashboard user={user} revision={revision} navigate={navigate} />
+          ) : view === "appointments" ? (
+            <Appointments
+              user={user}
+              revision={revision}
+              refresh={refresh}
+              notify={notify}
+            />
+          ) : view === "records" ? (
+            <Records revision={revision} user={user} />
+          ) : view === "payments" ? (
+            <Payments revision={revision} />
+          ) : view === "suggestions" ? (
+            <Suggestions
+              user={user}
+              revision={revision}
+              refresh={refresh}
+              notify={notify}
+            />
+          ) : view === "team" ? (
+            <Team
+              user={user}
+              revision={revision}
+              refresh={refresh}
+              notify={notify}
+            />
+          ) : view === "applications" ? (
+            <Applications
+              revision={revision}
+              refresh={refresh}
+              notify={notify}
+            />
+          ) : view === "analytics" ? (
+            <Analytics revision={revision} />
+          ) : view === "audit" ? (
+            <Audit revision={revision} />
+          ) : (
+            <Dashboard user={user} revision={revision} navigate={navigate} />
           )}
         </main>
-
-
-        {/* Appointment Booking Modal */}
-        {isBookingOpen && (
-          <BookingModal
-            doctor={bookingDoctor}
-            onClose={() => setIsBookingOpen(false)}
-            onSuccess={handleBookingSuccess}
-          />
-        )}
-
-        {/* Patient Logout Modal */}
-        <PatientLogoutModal
-          isOpen={isLogoutOpen}
-          onClose={() => setIsLogoutOpen(false)}
-          onConfirm={handleConfirmLogout}
-        />
-
-        {/* Footer */}
-        <Footer setView={navigateTo} className={isSidebarCollapsed ? 'md:pl-20' : 'md:pl-64'} />
-
+        <footer className="site-footer">
+          <span>© {new Date().getFullYear()} MediDesk</span>
+          <a
+            href="/confidentialite"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("privacy");
+            }}
+          >
+            Confidentialité & mesure d’audience
+          </a>
+          <button
+            onClick={() => {
+              navigate("settings");
+            }}
+          >
+            Affichage & accessibilité
+          </button>
+        </footer>
       </div>
-    </LanguageProvider>
+      {comfort && (
+        <Modal
+          title="Votre confort de lecture"
+          onClose={() => setComfort(false)}
+        >
+          <Comfort />
+        </Modal>
+      )}
+      {booking && (
+        <Booking
+          doctor={booking}
+          close={() => setBooking(null)}
+          done={() => {
+            setBooking(null);
+            refresh();
+            notify("Rendez-vous confirmé. Retrouvez-le dans votre agenda.");
+            navigate("appointments");
+          }}
+        />
+      )}
+      {toast && (
+        <div className="toast" role="status">
+          <Check size={19} />
+          <span>{toast}</span>
+          <button
+            aria-label="Fermer la notification"
+            onClick={() => setToast("")}
+          >
+            <X size={17} />
+          </button>
+        </div>
+      )}
+    </>
+  );
+}
+export default function App() {
+  return (
+    <PreferencesProvider>
+      <AnalyticsProvider>
+        <Workspace />
+      </AnalyticsProvider>
+    </PreferencesProvider>
   );
 }

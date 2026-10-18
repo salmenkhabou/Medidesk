@@ -1,0 +1,13 @@
+# First manual release only; CI releases use immutable registry digests instead.
+services:
+  backend:
+    build:
+      context: ../backend
+  frontend:
+    build:
+      context: ../frontend
+      args:
+        SITE_URL: ${SITE_URL:?Set the public HTTPS origin}
+        PRIVACY_OPERATOR: ${PRIVACY_OPERATOR:-}
+        PRIVACY_EMAIL: ${PRIVACY_EMAIL:-}
+        PRIVACY_POLICY_REVIEWED: ${PRIVACY_POLICY_REVIEWED:-false}
