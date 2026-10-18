@@ -1,3 +1,4 @@
+import PasswordField from "../ui/PasswordField";
 import React, { useState } from "react";
 import { Plus, Users } from "lucide-react";
 import { api } from "../ui/api";
@@ -99,15 +100,7 @@ export default function Team({ user, revision, refresh, notify }) {
                     maxLength={120}
                   />
                   <Field label="Email" type="email" name="email" required />
-                  <Field
-                    label="Mot de passe initial · 12 caractères minimum"
-                    type="password"
-                    name="password"
-                    required
-                    minLength={12}
-                    maxLength={72}
-                    autoComplete="new-password"
-                  />
+                  <PasswordField label="Mot de passe initial" />
                   {user.role === "superadmin" && (
                     <Field label="Rôle">
                       <select

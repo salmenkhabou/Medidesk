@@ -1,3 +1,4 @@
+import { validPassword, passwordHelp } from "./password-policy.js";
 import "dotenv/config";
 import { openDatabase } from "./db/database.js";
 import bcrypt from "bcryptjs";
@@ -23,12 +24,10 @@ try {
   if (
     name.length < 2 ||
     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
-    !password ||
-    password.length < 12 ||
-    Buffer.byteLength(password) > 72
+    !validPassword(password)
   )
     throw Error(
-      "Provide a valid name/email and ADMIN_PASSWORD (12+ characters, at most 72 bytes).",
+      `Nom/email valides requis. ${passwordHelp}`,
     );
   db.prepare(
     "INSERT INTO users(name,email,password_hash,role) VALUES (?,?,?,'superadmin')",

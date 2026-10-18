@@ -1,3 +1,4 @@
+import { validPassword, passwordHelp } from "./password-policy.js";
 import { installPractice } from "./practice.js";
 import express from "express";
 import cors from "cors";
@@ -26,15 +27,7 @@ const emailAddress = (value) => {
   return email;
 };
 const passwordValue = (value) => {
-  if (
-    typeof value !== "string" ||
-    value.length < 12 ||
-    Buffer.byteLength(value) > 72
-  )
-    throw fail(
-      400,
-      "Le mot de passe doit contenir au moins 12 caractères et au maximum 72 octets.",
-    );
+  if (!validPassword(value)) throw fail(400, passwordHelp);
   return value;
 };
 const providedPassword = (value) => {

@@ -650,3 +650,17 @@ test("SQLite online backup can be reopened independently with committed data int
     copy.close();
   }
 });
+
+test('password policy is enforced by the API and accepts eight characters', async (t) => {
+  const f = await fixture(t);
+  for (const password of ['Aa1!abc', 'abcdefgh1!', 'ABCDEFGH1!', 'Abcdefg!', 'Abcdefg1', 'Aa1!' + 'é'.repeat(35)]) {
+    const r = await f.request('/auth/register', 'POST', {name:'Policy test', email:'policy@example.test', password});
+    assert.equal(r.status, 400);
+  }
+  const r = await f.request('/auth/register', 'POST', {name:'Policy test', email:'policy@example.test', password:'Abcdef1!'});
+  assert.equal(r.status, 201);
+  const login = await f.request('/auth/login', 'POST', {email:'policy@example.test', password:'Abcdef1!'});
+  assert.equal(login.status, 200);
+  const change = await f.request('/account/password', 'PUT', {current_password:'Abcdef1!', password:'abcdefgh'}, login.body.token);
+  assert.equal(change.status, 400);
+});

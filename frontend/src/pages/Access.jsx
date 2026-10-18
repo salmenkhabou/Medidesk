@@ -1,3 +1,4 @@
+import PasswordField from "../ui/PasswordField";
 import React from "react";
 import { CalendarDays, ChevronRight, FileText, Users } from "lucide-react";
 import { api, saveToken } from "../ui/api";
@@ -101,21 +102,7 @@ export default function Access({ mode, onMode, onLogin, notify }) {
             autoComplete="email"
             maxLength={254}
           />
-          {!application && (
-            <Field
-              label={
-                register
-                  ? "Mot de passe · 12 caractères minimum"
-                  : "Mot de passe"
-              }
-              type="password"
-              name="password"
-              required
-              minLength={register ? 12 : 1}
-              maxLength={72}
-              autoComplete={register ? "new-password" : "current-password"}
-            />
-          )}
+          {!application && (register ? <PasswordField /> : <Field label="Mot de passe" type="password" name="password" required maxLength={200} autoComplete="current-password" />)}
           {application && (
             <>
               <Field

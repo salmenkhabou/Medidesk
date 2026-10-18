@@ -1,3 +1,4 @@
+import PasswordField from "../ui/PasswordField";
 import React, { useState } from "react";
 import { ChevronRight, Eye, ShieldCheck, Users } from "lucide-react";
 import { api, saveToken } from "../ui/api";
@@ -100,15 +101,7 @@ export default function Settings({ user, onUser, notify }) {
                   required
                   autoComplete="current-password"
                 />
-                <Field
-                  label="Nouveau mot de passe · 12 caractères minimum"
-                  name="password"
-                  type="password"
-                  required
-                  minLength={12}
-                  maxLength={72}
-                  autoComplete="new-password"
-                />
+                <PasswordField label="Nouveau mot de passe" />
               </MutationForm>
               <div className="service-note">
                 <h3>Services non configurés</h3>

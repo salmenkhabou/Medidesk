@@ -30,7 +30,7 @@ There are no default passwords. Public registration always creates a patient; it
 
 ```sh
 # Enter your own password without echoing it or saving it in shell history.
-read -rsp 'Administrator password (12+ characters): ' ADMIN_PASSWORD; echo
+read -rsp 'Administrator password (8+ characters, uppercase, lowercase, digit, symbol): ' ADMIN_PASSWORD; echo
 export ADMIN_PASSWORD
 npm run admin:create
 unset ADMIN_PASSWORD
