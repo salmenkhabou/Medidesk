@@ -38,7 +38,7 @@ export default function Team({ user, revision, refresh, notify }) {
             <section className="panel">
               {data.length ? (
                 <div className="table-wrap">
-                  <table>
+                  <table className="responsive-table">
                     <thead>
                       <tr>
                         <th>Nom</th>
@@ -50,14 +50,14 @@ export default function Team({ user, revision, refresh, notify }) {
                     <tbody>
                       {data.map((u) => (
                         <tr key={u.id}>
-                          <td>
+                          <td data-label="Nom">
                             <strong>{u.name}</strong>
                           </td>
-                          <td>{u.email}</td>
-                          <td>
+                          <td data-label="Email">{u.email}</td>
+                          <td data-label="Rôle">
                             <span className="badge">{roles[u.role]}</span>
                           </td>
-                          <td>
+                          <td data-label="Cabinet / spécialité">
                             {[u.clinic, u.specialty]
                               .filter(Boolean)
                               .join(" · ") || "—"}

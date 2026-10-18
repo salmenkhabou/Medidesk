@@ -94,6 +94,11 @@ function Workspace() {
   const [sessionError, setSessionError] = useState("");
   const [view, setView] = useState(() => resolvePage(location.pathname));
   const [mobile, setMobile] = useState(false);
+  const [smallScreen, setSmallScreen] = useState(
+    () => matchMedia("(max-width: 800px)").matches,
+  );
+  const drawer = useRef();
+  const menuTrigger = useRef();
   const [comfort, setComfort] = useState(false);
   const [booking, setBooking] = useState(null);
   const [revision, setRevision] = useState(0);
@@ -163,6 +168,53 @@ function Workspace() {
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, []);
+  useEffect(() => {
+    const media = matchMedia("(max-width: 800px)");
+    const resize = () => {
+      setSmallScreen(media.matches);
+      setMobile(false);
+    };
+    media.addEventListener("change", resize);
+    return () => media.removeEventListener("change", resize);
+  }, []);
+  useEffect(() => {
+    if (!mobile || !smallScreen) return;
+    const panel = drawer.current;
+    const previous = document.activeElement;
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const controls = () =>
+      [
+        ...panel.querySelectorAll(
+          'button:not([disabled]), a[href], [tabindex="0"]',
+        ),
+      ].filter((element) => element.getClientRects().length);
+    controls()[0]?.focus();
+    const keyboard = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setMobile(false);
+      }
+      if (event.key !== "Tab") return;
+      const items = controls(),
+        first = items[0],
+        last = items.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+    panel.addEventListener("keydown", keyboard);
+    return () => {
+      panel.removeEventListener("keydown", keyboard);
+      document.body.style.overflow = overflow;
+      if (panel.contains(document.activeElement))
+        (previous?.isConnected ? previous : menuTrigger.current)?.focus();
+    };
+  }, [mobile, smallScreen]);
   const navigate = (next) => {
     changePage(next);
     setMobile(false);
@@ -178,15 +230,24 @@ function Workspace() {
   const refresh = () => setRevision((n) => n + 1);
   const nav = navigation(user);
   const access = ["login", "register", "application"].includes(view);
+  const quickNav = user
+    ? nav.slice(0, 3)
+    : [
+        ["directory", "Praticiens", Stethoscope],
+        ["login", "Connexion", ArrowDownLeft],
+        ["settings", "Réglages", Settings2],
+      ];
   return (
     <>
       <a className="skip-link" href="#main">
         Aller au contenu
       </a>
-      <header className="topbar">
+      <header className="topbar" inert={mobile && smallScreen ? "" : undefined}>
         <div className="brand-group">
           <button
+            ref={menuTrigger}
             className="icon-button mobile-toggle"
+            aria-controls="main-navigation"
             aria-label="Ouvrir la navigation"
             aria-expanded={mobile}
             onClick={() => setMobile(!mobile)}
@@ -222,7 +283,7 @@ function Workspace() {
             <Icon icon={effectiveTheme === "dark" ? Sun : Moon} />
           </button>
           <button
-            className="icon-button"
+            className="icon-button comfort-shortcut"
             aria-label="Préférences de confort"
             onClick={() => setComfort(true)}
           >
@@ -246,9 +307,9 @@ function Workspace() {
           ) : (
             <button
               className="button small primary"
-              onClick={() => navigate("register")}
+              onClick={() => navigate("login")}
             >
-              Créer un compte
+              Connexion
               <ArrowRight size={15} />
             </button>
           )}
@@ -261,7 +322,25 @@ function Workspace() {
           onClick={() => setMobile(false)}
         />
       )}
-      <aside className={`sidebar ${mobile ? "is-open" : ""}`}>
+      <aside
+        id="main-navigation"
+        ref={drawer}
+        className={`sidebar ${mobile ? "is-open" : ""}`}
+        role={smallScreen && mobile ? "dialog" : undefined}
+        aria-modal={smallScreen && mobile ? true : undefined}
+        aria-label={smallScreen && mobile ? "Menu de navigation" : undefined}
+        inert={smallScreen && !mobile ? "" : undefined}
+      >
+        <div className="drawer-heading">
+          <strong>Votre espace MediDesk</strong>
+          <button
+            className="icon-button"
+            aria-label="Fermer le menu"
+            onClick={() => setMobile(false)}
+          >
+            <X size={22} />
+          </button>
+        </div>
         <div className="workspace-label">
           {user ? roles[user.role] : "BIENVENUE"}
           <span>{user ? "Espace personnel" : "Votre parcours de santé"}</span>
@@ -302,7 +381,7 @@ function Workspace() {
           </div>
         </div>
       </aside>
-      <div className="workspace">
+      <div className="workspace" inert={mobile && smallScreen ? "" : undefined}>
         <main id="main" ref={main} tabIndex={-1}>
           <div className="breadcrumb">
             MediDesk
@@ -397,6 +476,31 @@ function Workspace() {
           </button>
         </footer>
       </div>
+      <nav
+        className="mobile-nav"
+        aria-label="Navigation rapide"
+        inert={mobile && smallScreen ? "" : undefined}
+      >
+        {quickNav.map(([key, label, icon]) => (
+          <button
+            key={key}
+            onClick={() => navigate(key)}
+            aria-current={view === key ? "page" : undefined}
+          >
+            <Icon icon={icon} size={21} />
+            <span>{label}</span>
+          </button>
+        ))}
+        <button
+          onClick={() => setMobile(true)}
+          aria-label="Ouvrir le menu complet"
+          aria-expanded={mobile}
+          aria-controls="main-navigation"
+        >
+          <Menu size={21} />
+          <span>Menu</span>
+        </button>
+      </nav>
       {comfort && (
         <Modal
           title="Votre confort de lecture"

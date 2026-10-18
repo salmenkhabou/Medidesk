@@ -14,7 +14,7 @@ export default function Audit({ revision }) {
           {({ data }) =>
             data.length ? (
               <div className="table-wrap">
-                <table>
+                <table className="responsive-table">
                   <thead>
                     <tr>
                       <th>Événement</th>
@@ -25,11 +25,11 @@ export default function Audit({ revision }) {
                   <tbody>
                     {data.map((e) => (
                       <tr key={e.id}>
-                        <td>
+                        <td data-label="Événement">
                           <code>{e.action}</code>
                         </td>
-                        <td>{e.actor || "Système"}</td>
-                        <td>{date(e.created_at)}</td>
+                        <td data-label="Compte">{e.actor || "Système"}</td>
+                        <td data-label="Date">{date(e.created_at)}</td>
                       </tr>
                     ))}
                   </tbody>

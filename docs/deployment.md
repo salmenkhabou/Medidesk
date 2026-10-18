@@ -80,6 +80,16 @@ immutable-digest release script. Before switching to CI deployment, explicitly
 record a compatible previous release and preserve the `medidesk_backend-data`
 volume; do not delete volumes to bypass the unmanaged-stack guard.
 
+## Frontend-only updates
+
+After a fast-forward pull of the deployment branch, run
+`bash /srv/medidesk/source/deploy/update-frontend.sh`. This helper is restricted to
+the first manual deployment. It retains the previous frontend image, builds the
+frontend, and recreates only the frontend container with `--no-deps`. Startup or
+public HTTPS API-health failures restore the previous frontend image. The backend,
+SQLite volume, dedicated gateway and other website containers are not recreated.
+The user must also confirm the updated interface from an external phone/browser.
+
 ## One-time server provisioning
 
 Using the server console or an independently verified SSH connection:

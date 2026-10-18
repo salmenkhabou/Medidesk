@@ -30,7 +30,7 @@ export default function Analytics({ revision }) {
             <section className="panel">
               {data.length ? (
                 <div className="table-wrap">
-                  <table>
+                  <table className="responsive-table">
                     <thead>
                       <tr>
                         <th>Jour · UTC</th>
@@ -41,9 +41,9 @@ export default function Analytics({ revision }) {
                     <tbody>
                       {data.map((row) => (
                         <tr key={`${row.day}-${row.page}`}>
-                          <td>{row.day}</td>
-                          <td>{names[row.page]}</td>
-                          <td>{row.views}</td>
+                          <td data-label="Jour · UTC">{row.day}</td>
+                          <td data-label="Page publique">{names[row.page]}</td>
+                          <td data-label="Vues">{row.views}</td>
                         </tr>
                       ))}
                     </tbody>

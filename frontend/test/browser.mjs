@@ -112,11 +112,17 @@ try {
     errors.push(err.message);
     console.log("BROWSER ERROR", err.message);
   });
-  const nav = (label) =>
-    page
+  const nav = async (label) => {
+    const sidebar = page.locator(".sidebar");
+    if (await sidebar.evaluate((el) => el.hasAttribute("inert")))
+      await page
+        .getByRole("button", { name: "Ouvrir la navigation", exact: true })
+        .click();
+    await page
       .getByRole("navigation", { name: "Navigation principale" })
       .getByRole("button", { name: label, exact: true })
       .click();
+  };
   const login = async (email) => {
     await nav("Connexion");
     await page.getByLabel("Adresse email", { exact: true }).fill(email);
@@ -268,7 +274,7 @@ try {
   await page.getByLabel("Heure · Tunis").fill("09:00");
   await page.getByLabel("Motif · facultatif").fill("Browser integration test");
   await page.getByRole("button", { name: "Confirmer le rendez-vous" }).click();
-  await page.getByRole("cell", { name: "Confirmé", exact: true }).waitFor();
+  await page.getByRole("cell", { name: /Confirmé/ }).waitFor();
   console.log("PASS booking through frontend and API");
   await nav("Suggestions & retours");
   await page
@@ -369,10 +375,50 @@ try {
     path: join(artifacts, "suggestions-mobile.png"),
     fullPage: true,
   });
-  await page.getByRole("button", { name: "Préférences de confort" }).click();
+  await nav("Paramètres");
   await page.getByLabel("Taille du texte").selectOption("larger");
-  await audit("mobile comfort dialog largest text");
+  await audit("mobile comfort largest text");
+  await page.getByRole("button", { name: "Rétablir les préférences" }).click();
+  for (const width of [320, 390, 768]) {
+    await page.setViewportSize({ width, height: 844 });
+    for (const label of [
+      "Vue d’ensemble",
+      "Rendez-vous",
+      "Règlements",
+      "Équipe",
+      "Journal d’activité",
+      "Statistiques",
+      "Paramètres",
+    ]) {
+      await nav(label);
+      await page.locator(".loading").waitFor({ state: "hidden" });
+      await audit(`mobile ${width}px ${label}`);
+    }
+  }
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.getByRole("button", { name: "Ouvrir le menu complet" }).click();
+  await page.getByRole("dialog", { name: "Menu de navigation" }).waitFor();
+  assert.equal(
+    await page.locator("body").evaluate((el) => el.style.overflow),
+    "hidden",
+  );
+  await page.getByRole("button", { name: "Fermer le menu" }).focus();
+  await page.keyboard.press("Shift+Tab");
+  assert.equal(
+    await page
+      .getByRole("button", { name: "Se déconnecter", exact: true })
+      .evaluate((el) => el === document.activeElement),
+    true,
+    "Drawer traps keyboard focus",
+  );
   await page.keyboard.press("Escape");
+  await page
+    .getByRole("dialog", { name: "Menu de navigation" })
+    .waitFor({ state: "hidden" });
+  assert.equal(
+    await page.locator("body").evaluate((el) => el.style.overflow),
+    "",
+  );
   await page.getByRole("button", { name: "Ouvrir la navigation" }).click();
   await page
     .getByRole("button", { name: "Se déconnecter", exact: true })
@@ -405,6 +451,92 @@ try {
   await page.locator(".loading").waitFor({ state: "hidden" });
   await page.unroute("**/api/doctors");
   console.log("PASS loading state under a delayed API response");
+  // Real mobile booking, including a short landscape viewport and readable controls.
+  await page.setViewportSize({ width: 390, height: 844 });
+  await nav("Trouver un praticien");
+  await page
+    .getByRole("button", { name: "Prendre rendez-vous", exact: true })
+    .click();
+  await audit("mobile booking dialog");
+  assert.ok(
+    await page
+      .getByLabel("Date", { exact: true })
+      .evaluate((el) => parseFloat(getComputedStyle(el).fontSize) >= 16),
+    "Form controls avoid iOS focus zoom",
+  );
+  await page.getByLabel("Date", { exact: true }).fill("2099-04-13");
+  await page.getByLabel("Heure · Tunis").fill("10:00");
+  await page.getByRole("button", { name: "Confirmer le rendez-vous" }).click();
+  await page.getByRole("cell", { name: /Confirmé/ }).waitFor();
+  await audit("mobile appointment cards");
+  await page.screenshot({
+    path: join(artifacts, "appointments-phone.png"),
+    fullPage: true,
+  });
+  await page.setViewportSize({ width: 740, height: 360 });
+  await nav("Paramètres");
+  await audit("phone landscape settings");
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page
+    .getByRole("button", { name: "Ouvrir la navigation", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Se déconnecter", exact: true })
+    .click();
+  for (const width of [320, 360, 390, 430, 768]) {
+    await page.setViewportSize({ width, height: 844 });
+    await nav("Nos praticiens");
+    await page.locator(".loading").waitFor({ state: "hidden" });
+    await audit(`public phone ${width}px`);
+    const box = await page
+      .getByRole("button", { name: "Créer mon compte patient", exact: true })
+      .boundingBox();
+    assert.ok(
+      box && box.y + box.height < 700,
+      "Mobile primary action is visible without scrolling",
+    );
+    for (const button of await page.locator(".mobile-nav button").all()) {
+      const rect = await button.boundingBox();
+      assert.ok(
+        rect.width >= 44 && rect.height >= 44,
+        "Thumb-friendly navigation targets",
+      );
+    }
+    if (width === 390)
+      await page.screenshot({
+        path: join(artifacts, "directory-phone.png"),
+        fullPage: true,
+      });
+    await page
+      .getByRole("navigation", { name: "Navigation rapide" })
+      .getByRole("button", { name: "Connexion", exact: true })
+      .click();
+    await audit(`login phone ${width}px`);
+    if (width === 390)
+      await page.screenshot({
+        path: join(artifacts, "login-phone.png"),
+        fullPage: true,
+      });
+    await page
+      .getByRole("button", { name: "Ouvrir la navigation", exact: true })
+      .click();
+    await page.getByRole("button", { name: "Fermer le menu" }).focus();
+    await page.keyboard.press("Shift+Tab");
+    const drawerFocus = await page
+      .getByRole("dialog", { name: "Menu de navigation" })
+      .evaluate((el) => el.contains(document.activeElement));
+    assert.equal(drawerFocus, true, "Public drawer traps focus");
+    await page.keyboard.press("Escape");
+  }
+  await page.setViewportSize({ width: 320, height: 844 });
+  await nav("Affichage & confort");
+  await page.getByLabel("Taille du texte").selectOption("larger");
+  await audit("320px largest-text preferences");
+  await nav("Nos praticiens");
+  await audit("320px largest-text directory");
+  console.log(
+    "PASS responsive layouts, mobile booking, drawer focus, landscape and touch targets",
+  );
   assert.deepEqual(errors, [], "No browser runtime errors");
   console.log("PASS all browser workflows; artifacts: " + artifacts);
 } finally {

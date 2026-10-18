@@ -25,7 +25,7 @@ export default function Payments({ revision }) {
             <section className="panel">
               {data.length ? (
                 <div className="table-wrap">
-                  <table>
+                  <table className="responsive-table">
                     <thead>
                       <tr>
                         <th>Référence</th>
@@ -38,13 +38,15 @@ export default function Payments({ revision }) {
                     <tbody>
                       {data.map((p) => (
                         <tr key={p.id}>
-                          <td>REG-{String(p.id).padStart(5, "0")}</td>
-                          <td>
+                          <td data-label="Référence">
+                            REG-{String(p.id).padStart(5, "0")}
+                          </td>
+                          <td data-label="Patient">
                             {p.patient_name}
                             <small>{p.doctor_name}</small>
                           </td>
-                          <td>{date(p.created_at)}</td>
-                          <td>
+                          <td data-label="Date">{date(p.created_at)}</td>
+                          <td data-label="Mode">
                             {
                               {
                                 cash: "Espèces",
@@ -53,7 +55,7 @@ export default function Payments({ revision }) {
                               }[p.method]
                             }
                           </td>
-                          <td>
+                          <td data-label="Montant">
                             <strong>{money(p.amount_millimes / 1000)}</strong>
                           </td>
                         </tr>

@@ -5,7 +5,7 @@ import { Badge } from "../ui/components";
 export default function AppointmentTable({ items, user, action }) {
   return (
     <div className="table-wrap">
-      <table>
+      <table className="responsive-table">
         <thead>
           <tr>
             <th>{user.role === "patient" ? "Praticien" : "Patient"}</th>
@@ -21,7 +21,9 @@ export default function AppointmentTable({ items, user, action }) {
         <tbody>
           {items.map((a) => (
             <tr key={a.id}>
-              <td>
+              <td
+                data-label={user.role === "patient" ? "Praticien" : "Patient"}
+              >
                 <strong>
                   {user.role === "patient" ? a.doctor_name : a.patient_name}
                 </strong>
@@ -29,14 +31,14 @@ export default function AppointmentTable({ items, user, action }) {
                   {user.role === "patient" ? a.specialty : a.doctor_name}
                 </small>
               </td>
-              <td>
+              <td data-label="Date & heure">
                 {date(a.appointment_date)}
                 <small>{a.appointment_time} · Tunis</small>
               </td>
-              <td>
+              <td data-label="Statut">
                 <Badge status={a.status} />
               </td>
-              {action && <td>{action(a)}</td>}
+              {action && <td data-label="Actions">{action(a)}</td>}
             </tr>
           ))}
         </tbody>
