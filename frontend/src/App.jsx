@@ -41,6 +41,16 @@ import Team from "./pages/Team";
 import Applications from "./pages/Applications";
 import Audit from "./pages/Audit";
 import Settings from "./pages/Settings";
+import Clinical from "./pages/Clinical";
+import Scheduling from "./pages/Scheduling";
+import Billing from "./pages/Billing";
+import Messaging from "./pages/Messaging";
+import PracticeReports from "./pages/PracticeReports";
+import {
+  PracticeTools,
+  Notifications,
+  SecurityStatus,
+} from "./pages/PracticeTools";
 
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
@@ -72,6 +82,38 @@ const navigation = (user) =>
           : []),
         ...(user.role === "superadmin"
           ? [["applications", "Demandes de praticiens", ClipboardList]]
+          : []),
+        ...(["doctor", "secretariat", "patient"].includes(user.role)
+          ? [
+              [
+                "clinical",
+                user.role === "patient"
+                  ? "Mon dossier de santé"
+                  : "Patients & dossiers",
+                FileText,
+              ],
+            ]
+          : []),
+        ...(["doctor", "secretariat", "patient"].includes(user.role)
+          ? [["scheduling", "Agenda & attente", CalendarDays]]
+          : []),
+        [
+          "billing",
+          user.role === "patient" ? "Mes factures" : "Factures & assurances",
+          CreditCard,
+        ],
+        ...(["doctor", "patient"].includes(user.role)
+          ? [["messaging", "Messagerie", MessageSquare]]
+          : []),
+        ...(["doctor", "secretariat", "superadmin"].includes(user.role)
+          ? [["reports", "Activité & comptabilité", BarChart3]]
+          : []),
+        ...(user.role === "doctor"
+          ? [["tools", "Modèles & médicaments", ClipboardList]]
+          : []),
+        ["notifications", "Notifications", CalendarDays],
+        ...(user.role === "superadmin"
+          ? [["security", "Sécurité & intégrations", ShieldCheck]]
           : []),
         ["suggestions", "Suggestions & retours", MessageSquare],
         ...(user.role === "superadmin"
@@ -415,6 +457,22 @@ function Workspace() {
             />
           ) : view === "directory" || !user ? (
             <Directory user={user} book={setBooking} navigate={navigate} />
+          ) : view === "clinical" ? (
+            <Clinical user={user} notify={notify} />
+          ) : view === "scheduling" ? (
+            <Scheduling user={user} notify={notify} />
+          ) : view === "billing" ? (
+            <Billing user={user} notify={notify} />
+          ) : view === "messaging" ? (
+            <Messaging user={user} notify={notify} />
+          ) : view === "reports" ? (
+            <PracticeReports user={user} />
+          ) : view === "tools" ? (
+            <PracticeTools notify={notify} />
+          ) : view === "notifications" ? (
+            <Notifications user={user} notify={notify} navigate={navigate} />
+          ) : view === "security" ? (
+            <SecurityStatus />
           ) : view === "dashboard" ? (
             <Dashboard user={user} revision={revision} navigate={navigate} />
           ) : view === "appointments" ? (

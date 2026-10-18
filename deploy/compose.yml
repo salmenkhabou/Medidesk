@@ -11,6 +11,13 @@ services:
       FRONTEND_URL: ${SITE_URL:?Set the public HTTPS origin}
       DB_PATH: /home/node/app/data/medidesk.sqlite
       TRUST_PROXY: 1
+      HEALTH_DATA_KEY: ${HEALTH_DATA_KEY:?Generate and retain the independent health-data encryption key}
+      SMTP_HOST: ${SMTP_HOST:-smtp.gmail.com}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+      VIDEO_BASE_URL: ${VIDEO_BASE_URL:-}
+      VIDEO_PRIVACY_APPROVED: ${VIDEO_PRIVACY_APPROVED:-false}
     volumes:
       - backend-data:/home/node/app/data
     expose: ["5000"]

@@ -26,3 +26,8 @@ backend/data/
 frontend/dist/
 playwright-report/
 test-results/
+
+# Local development health-data keys and encrypted backup artifacts
+*.sqlite.key
+*.sqlite.enc
+*.sqlite.pre-restore-*

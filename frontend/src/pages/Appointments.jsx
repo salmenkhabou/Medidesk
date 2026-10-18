@@ -22,8 +22,13 @@ export default function Appointments({ user, revision, refresh, notify }) {
   const [action, setAction] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const capabilities = useData("/capabilities");
+  const [video, setVideo] = useState(""),
+    [videoConsent, setVideoConsent] = useState(false);
   const close = () => {
     setSelected(null);
+    setVideo("");
+    setVideoConsent(false);
     setError("");
   };
   return (
@@ -96,6 +101,61 @@ export default function Appointments({ user, revision, refresh, notify }) {
               {selected.reason || "Aucun motif renseigné."}
             </p>
           </div>
+          {["doctor", "patient"].includes(user.role) &&
+            selected.status === "confirmed" &&
+            action === "details" && (
+              <section className="service-note">
+                <h3>Téléconsultation</h3>
+                {capabilities.data?.data?.video ? (
+                  <>
+                    <label className="toggle-row">
+                      <span>
+                        J’accepte d’utiliser le service vidéo configuré pour ce
+                        rendez-vous.
+                      </span>
+                      <input
+                        type="checkbox"
+                        checked={videoConsent}
+                        onChange={(e) => setVideoConsent(e.target.checked)}
+                      />
+                    </label>
+                    <button
+                      className="button secondary"
+                      disabled={!videoConsent}
+                      onClick={async () => {
+                        try {
+                          const { data } = await api(
+                            `/appointments/${selected.id}/video`,
+                            { method: "POST", body: { consent: true } },
+                          );
+                          setVideo(data.url);
+                        } catch (e) {
+                          setError(e.message);
+                        }
+                      }}
+                    >
+                      Rejoindre la téléconsultation
+                    </button>
+                    {video && (
+                      <iframe
+                        className="video-session"
+                        src={video}
+                        title="Salle de téléconsultation"
+                        allow="camera; microphone; fullscreen"
+                        referrerPolicy="no-referrer"
+                      />
+                    )}
+                  </>
+                ) : (
+                  <p>
+                    La téléconsultation vidéo n’est pas encore activée. Elle
+                    nécessite un prestataire adapté et une configuration
+                    validée.
+                  </p>
+                )}
+                <ErrorMessage message={error} />
+              </section>
+            )}
           {action === "consultation" ? (
             <MutationForm
               submit="Enregistrer et terminer"
@@ -111,18 +171,7 @@ export default function Appointments({ user, revision, refresh, notify }) {
                 notify("Consultation enregistrée.");
               }}
             >
-              <Field label="Compte rendu">
-                <textarea
-                  name="notes"
-                  required
-                  minLength={2}
-                  maxLength={10000}
-                  rows={5}
-                />
-              </Field>
-              <Field label="Ordonnance · facultative">
-                <textarea name="prescription" maxLength={10000} rows={4} />
-              </Field>
+              <ConsultationFields />
               <p className="fine-print">
                 Le patient pourra consulter ces informations dans son dossier.
                 L’enregistrement clôture ce rendez-vous.
@@ -232,6 +281,82 @@ export default function Appointments({ user, revision, refresh, notify }) {
           )}
         </Modal>
       )}
+    </>
+  );
+}
+
+function ConsultationFields() {
+  const state = useData("/templates"),
+    [values, setValues] = useState({}),
+    [template, setTemplate] = useState("");
+  const fields = [
+    ["reason", "Motif clinique"],
+    ["examination", "Examen clinique"],
+    ["diagnosis", "Diagnostic"],
+    ["notes", "Compte rendu"],
+    ["prescription", "Ordonnance · facultative"],
+    ["lab_orders", "Bilans prescrits"],
+    ["imaging_orders", "Imagerie prescrite"],
+    ["certificate", "Certificat médical"],
+  ];
+  return (
+    <>
+      <DataState state={state}>
+        {({ data }) =>
+          data.length ? (
+            <div className="template-picker">
+              <Field label="Modèle de rédaction">
+                <select
+                  value={template}
+                  onChange={(e) => setTemplate(e.target.value)}
+                >
+                  <option value="">Choisir un modèle</option>
+                  {data.map((t) => (
+                    <option key={t.id} value={t.id}>
+                      {t.title}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <button
+                type="button"
+                className="button secondary"
+                disabled={!template}
+                onClick={() => {
+                  const t = data.find((t) => String(t.id) === template);
+                  const key = {
+                    report: "notes",
+                    certificate: "certificate",
+                    prescription: "prescription",
+                    lab: "lab_orders",
+                    imaging: "imaging_orders",
+                  }[t.kind];
+                  setValues((v) => ({ ...v, [key]: t.body }));
+                }}
+              >
+                Appliquer le modèle au champ correspondant
+              </button>
+            </div>
+          ) : null
+        }
+      </DataState>
+      {fields.map(([key, label]) => (
+        <Field key={key} label={label}>
+          <textarea
+            name={key}
+            rows={key === "notes" ? 5 : 3}
+            required={key === "notes"}
+            minLength={key === "notes" ? 2 : undefined}
+            maxLength={
+              key === "notes" || key === "prescription" ? 10000 : 15000
+            }
+            value={values[key] || ""}
+            onChange={(e) =>
+              setValues((v) => ({ ...v, [key]: e.target.value }))
+            }
+          />
+        </Field>
+      ))}
     </>
   );
 }

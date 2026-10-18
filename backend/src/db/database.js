@@ -1,3 +1,4 @@
+import { migratePractice } from "./practice-schema.js";
 import { DatabaseSync } from "node:sqlite";
 import { mkdirSync, chmodSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -54,7 +55,7 @@ export function openDatabase(
       views INTEGER NOT NULL DEFAULT 0 CHECK(views >= 0),
       PRIMARY KEY(day,page)
     );
-    PRAGMA user_version = 1;
+
   `);
   if (
     !db
@@ -66,5 +67,6 @@ export function openDatabase(
       "ALTER TABLE users ADD COLUMN session_version INTEGER NOT NULL DEFAULT 0",
     );
   }
+  migratePractice(db);
   return db;
 }

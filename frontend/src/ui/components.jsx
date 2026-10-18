@@ -100,19 +100,30 @@ export function Modal({ title, onClose, children }) {
   );
 }
 export function useData(path, revision = 0) {
-  const [state, setState] = useState({ loading: true, data: null, error: "" });
+  const key = `${path}:${revision}`;
+  const [state, setState] = useState({
+    key,
+    loading: true,
+    data: null,
+    error: "",
+  });
   useEffect(() => {
     const controller = new AbortController();
-    setState({ loading: true, data: null, error: "" });
+    setState({ key, loading: true, data: null, error: "" });
     api(path, { signal: controller.signal })
-      .then((data) => setState({ loading: false, data, error: "" }))
+      .then((data) => {
+        if (!controller.signal.aborted)
+          setState({ key, loading: false, data, error: "" });
+      })
       .catch((err) => {
-        if (err.name !== "AbortError")
-          setState({ loading: false, data: null, error: err.message });
+        if (!controller.signal.aborted && err.name !== "AbortError")
+          setState({ key, loading: false, data: null, error: err.message });
       });
     return () => controller.abort();
   }, [path, revision]);
-  return state;
+  return state.key === key
+    ? state
+    : { key, loading: true, data: null, error: "" };
 }
 export function DataState({ state, children }) {
   if (state.loading)

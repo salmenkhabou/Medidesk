@@ -90,6 +90,23 @@ public HTTPS API-health failures restore the previous frontend image. The backen
 SQLite volume, dedicated gateway and other website containers are not recreated.
 The user must also confirm the updated interface from an external phone/browser.
 
+## Cabinet extension upgrade (schema and encryption)
+
+Use `bash /srv/medidesk/source/deploy/update-practice.sh` after pulling the reviewed
+branch. Do not use the old frontend-only helper for this upgrade. The script builds
+both images before maintenance, retains previous images, creates an independent
+HEALTH_DATA_KEY only if absent, and verifies its format without printing it. It
+stops only the MediDesk API and gateway, takes an offline coherent snapshot,
+encrypts it, starts the new schema and verifies HTTPS and database connectivity.
+Startup failures restore the snapshot and previous images. No `mtc_*` service or
+volume is addressed. A brief MediDesk interruption is expected during maintenance.
+
+On success it enables the project's daily encrypted backup timer. Copy backups and
+the encryption key to separate secure off-server locations; these destinations and
+retention are not inferred. See `restauration.md` and `fonctionnalites-cabinet.md`.
+Gmail SMTP requires app-password configuration after deployment; no secret is
+bundled or pushed, and no live delivery has been verified in cloud tests.
+
 ## One-time server provisioning
 
 Using the server console or an independently verified SSH connection:

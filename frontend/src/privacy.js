@@ -8,7 +8,7 @@ export function privacySections(config) {
     },
     {
       title: "Quelles informations sont utilisées ?",
-      text: "Le service enregistre les informations de compte fournies (nom, email, mot de passe sous forme de condensat, rôle et téléphone facultatif), les profils professionnels, les rendez-vous et leurs motifs, les consultations et ordonnances saisies par le médecin, les règlements enregistrés, les demandes de praticiens et les suggestions. N’inscrivez aucune information médicale dans une suggestion destinée à l’équipe produit.",
+      text: "Le service enregistre les informations de compte fournies (nom, email, mot de passe sous forme de condensat, rôle et téléphone facultatif), les profils professionnels, les rendez-vous et leurs motifs, les dossiers patients (identité, couverture, antécédents, allergies et traitements), les consultations et prescriptions saisies par le médecin, les constantes, les documents médicaux, les messages, les factures, les dossiers assurance et les règlements enregistrés, les demandes de praticiens et les suggestions. N’inscrivez aucune information médicale dans une suggestion destinée à l’équipe produit.",
     },
     {
       title: "À quoi servent ces informations ?",
@@ -16,7 +16,7 @@ export function privacySections(config) {
     },
     {
       title: "Qui peut y accéder ?",
-      text: "Un patient accède à ses propres rendez-vous et comptes rendus. Le médecin accède aux rendez-vous et aux consultations de ses patients dans ce service. Le secrétariat accède à l’agenda et aux règlements du médecin qui lui est assigné, sans accès aux notes cliniques. Les administrateurs gèrent les comptes professionnels, les demandes, les suggestions et le journal d’activité ; aucun accès aux comptes rendus cliniques ne leur est fourni par l’API.",
+      text: "Un patient accède à ses propres rendez-vous et comptes rendus. Le médecin accède aux rendez-vous et aux consultations de ses patients dans ce service. Le secrétariat accède aux informations administratives des patients, à l’agenda, aux factures et aux dossiers assurance du médecin qui lui est assigné, sans accès aux notes cliniques, aux constantes, aux documents médicaux ni à la messagerie. Les partages de documents à un confrère sont explicites et ne lui donnent pas accès à tout le dossier. Les administrateurs gèrent les comptes professionnels, les demandes, les suggestions et le journal d’activité ; aucun accès aux comptes rendus cliniques ne leur est fourni par l’API.",
     },
     {
       title: "Mesure d’audience : votre choix",
@@ -36,7 +36,7 @@ export function privacySections(config) {
     },
     {
       title: "Sécurité et services externes",
-      text: "L’application applique des contrôles d’accès selon le rôle et vérifie les sessions signées. L’exploitant reste responsable de la configuration du chiffrement réseau, de l’hébergement, des sauvegardes et de la revue des accès. Aucune certification de conformité ou d’hébergement de données de santé n’est revendiquée par cette page. Les intégrations d’emails, SMS, OCR, paiement et double authentification ne sont pas activées par défaut ; toute activation doit être accompagnée d’une mise à jour de cette information.",
+      text: "L’application applique des contrôles d’accès selon le rôle et le cabinet, vérifie les sessions signées et trace les accès sensibles. Les champs cliniques, documents et messages sont chiffrés côté application ; ceci ne constitue pas un chiffrement intégral du serveur. Les rappels email sont facultatifs, génériques et nécessitent votre accord : ils ne contiennent ni résultat médical ni pièce jointe clinique. Ils peuvent transiter par le compte Gmail configuré par l’exploitant. Les SMS et la visioconférence restent désactivés en l’absence de configuration validée. L’exploitant reste responsable de la configuration du chiffrement réseau, de l’hébergement, des sauvegardes et de la revue des accès. Aucune certification de conformité ou d’hébergement de données de santé n’est revendiquée par cette page. Les intégrations d’emails, SMS, OCR, paiement et double authentification ne sont pas activées par défaut ; toute activation doit être accompagnée d’une mise à jour de cette information.",
     },
   ];
 }

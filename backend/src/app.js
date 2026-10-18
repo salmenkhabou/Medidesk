@@ -1,3 +1,4 @@
+import { installPractice } from "./practice.js";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
@@ -78,7 +79,7 @@ export function createApp({
       },
     }),
   );
-  app.use(express.json({ limit: "128kb" }));
+  app.use(express.json({ limit: "5mb" }));
   app.use((req, res, next) => {
     if (
       ["POST", "PUT", "PATCH"].includes(req.method) &&
@@ -336,12 +337,23 @@ export function createApp({
       : user.role === "patient"
         ? ["a.patient_id=?", [user.id]]
         : ["a.doctor_id=?", [staffDoctorId(user) || -1]];
+  const practice = installPractice(app, {
+    db,
+    roles,
+    wrap,
+    fail,
+    text,
+    integer,
+    audit,
+    jwtSecret: secret,
+    production,
+  });
   const appointmentList = (user) => {
     const [where, args] = scope(user);
     return all(
       `SELECT a.*,p.name AS patient_name,d.name AS doctor_name,d.specialty,d.clinic FROM appointments a JOIN users p ON p.id=a.patient_id JOIN users d ON d.id=a.doctor_id WHERE ${where} ORDER BY a.appointment_date DESC,a.appointment_time DESC LIMIT 1000`,
       ...args,
-    );
+    ).map((a) => practice.revealAppointment(a, user));
   };
   app.get("/api/appointments", (req, res) =>
     res.json({ data: appointmentList(req.user) }),
@@ -364,19 +376,31 @@ export function createApp({
         throw fail(400, "Date ou heure invalide.");
       if (Date.parse(`${date}T${time}:00+01:00`) <= Date.now())
         throw fail(400, "Choisissez un créneau futur (heure de Tunis).");
+      const length =
+        one(
+          "SELECT duration FROM schedule_slots WHERE doctor_id=? AND slot_date=? AND slot_time=? AND kind='available'",
+          doctorId,
+          date,
+          time,
+        )?.duration || 30;
+      practice.ensureSlot(req.user, doctorId, date, time, length);
       const result = run(
-        "INSERT INTO appointments(patient_id,doctor_id,appointment_date,appointment_time,reason) VALUES (?,?,?,?,?)",
+        "INSERT INTO appointments(patient_id,doctor_id,appointment_date,appointment_time,reason,duration) VALUES (?,?,?,?,?,?)",
         req.user.id,
         doctorId,
         date,
         time,
-        text(req.body.reason || "", "Motif", 0, 1000),
+        practice.vault.seal(text(req.body.reason || "", "Motif", 0, 1000)),
+        length,
       );
       audit(req.user.id, "appointment.created");
+      practice.notify(req.user.id, `appointment:${result.lastInsertRowid}`, {
+        title: "Votre rendez-vous est confirmé.",
+        page: "appointments",
+      });
       res.status(201).json({
-        data: one(
-          "SELECT * FROM appointments WHERE id=?",
-          result.lastInsertRowid,
+        data: practice.revealAppointment(
+          one("SELECT * FROM appointments WHERE id=?", result.lastInsertRowid),
         ),
       });
     }),
@@ -395,7 +419,17 @@ export function createApp({
         throw fail(403, "Modification non autorisée.");
       run("UPDATE appointments SET status=? WHERE id=?", status, item.id);
       audit(req.user.id, `appointment.${status}`);
-      res.json({ data: one("SELECT * FROM appointments WHERE id=?", item.id) });
+      if (status === "cancelled")
+        practice.notify(item.patient_id, `cancelled:${item.id}`, {
+          title: "Un rendez-vous a été annulé.",
+          page: "appointments",
+        });
+      res.json({
+        data: practice.revealAppointment(
+          one("SELECT * FROM appointments WHERE id=?", item.id),
+          req.user,
+        ),
+      });
     }),
   );
   app.get("/api/consultations", roles("patient", "doctor"), (req, res) => {
@@ -404,8 +438,9 @@ export function createApp({
       data: all(
         `SELECT c.*,p.name AS patient_name,d.name AS doctor_name FROM consultations c JOIN users p ON p.id=c.patient_id JOIN users d ON d.id=c.doctor_id WHERE c.${key}=? ORDER BY c.created_at DESC LIMIT 1000`,
         req.user.id,
-      ),
+      ).map(practice.revealConsultation),
     });
+    audit(req.user.id, "consultations.read");
   });
   app.post(
     "/api/appointments/:id/consultation",
@@ -424,20 +459,34 @@ export function createApp({
       db.exec("BEGIN IMMEDIATE");
       try {
         const result = run(
-          "INSERT INTO consultations(appointment_id,doctor_id,patient_id,notes,prescription) VALUES (?,?,?,?,?)",
+          "INSERT INTO consultations(appointment_id,doctor_id,patient_id,notes,prescription,clinical_payload) VALUES (?,?,?,?,?,?)",
           item.id,
           req.user.id,
           item.patient_id,
-          notes,
-          prescription,
+          practice.vault.seal(notes),
+          practice.vault.seal(prescription),
+          practice.vault.pack(
+            Object.fromEntries(
+              [
+                "reason",
+                "examination",
+                "diagnosis",
+                "lab_orders",
+                "imaging_orders",
+                "certificate",
+              ].map((key) => [key, text(req.body[key] || "", key, 0, 15000)]),
+            ),
+          ),
         );
         run("UPDATE appointments SET status='completed' WHERE id=?", item.id);
         audit(req.user.id, "consultation.created");
         db.exec("COMMIT");
         res.status(201).json({
-          data: one(
-            "SELECT * FROM consultations WHERE id=?",
-            result.lastInsertRowid,
+          data: practice.revealConsultation(
+            one(
+              "SELECT * FROM consultations WHERE id=?",
+              result.lastInsertRowid,
+            ),
           ),
         });
       } catch (err) {
@@ -466,6 +515,11 @@ export function createApp({
       const item = appointment(req);
       if (item.status === "cancelled")
         throw fail(409, "Ce rendez-vous est annulé.");
+      if (one("SELECT id FROM invoices WHERE appointment_id=?", item.id))
+        throw fail(
+          409,
+          "Enregistrez le règlement depuis la facture liée à ce rendez-vous.",
+        );
       const amount = Number(req.body.amount);
       if (
         !Number.isFinite(amount) ||
@@ -704,5 +758,6 @@ export function createApp({
           : err.message,
     });
   });
+  app.locals.practice = practice;
   return app;
 }

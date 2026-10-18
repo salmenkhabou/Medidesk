@@ -22,7 +22,7 @@ npm run dev
 
 The frontend uses port 5173 and proxies `/api` to port 5000. `MEDIDESK_API_TARGET` can override that target. The API binds to loopback by default. API health is `GET /api/health`; it performs a database query.
 
-**This repository still contains historical tracked `node_modules`.** On Codex cloud, use the retained Linux dependencies and source copies in `/workspace/.medidesk-runtime/{backend,frontend}`. Edit source in `/workspace/Medidesk`, sync it to the runtime copy, and run commands there. See [cloud setup](docs/cloud-setup.md). A separate cleanup of historical dependency/vendor and design archives can reduce repository size.
+**Historical checkouts may contain tracked `node_modules`; the deployment snapshot excludes them.** On Codex cloud, use the retained Linux dependencies and source copies in `/workspace/.medidesk-runtime/{backend,frontend}`. Edit source in `/workspace/Medidesk`, sync it to the runtime copy, and run commands there. See [cloud setup](docs/cloud-setup.md). A separate cleanup of historical dependency/vendor and design archives can reduce repository size.
 
 ## Create the first administrator
 
@@ -48,15 +48,15 @@ The command prompts for the name and email. `ADMIN_NAME` and `ADMIN_EMAIL` may a
 - Profiles and passwords can be updated. Password changes and explicit logout revoke existing tokens for that account. Tokens otherwise expire after eight hours and are stored in browser session storage.
 - All active screens use the same theme tokens. Settings support light/dark/system appearance, larger text, higher contrast, reduced motion, and compact/comfortable spacing. System theme changes are observed live. Preferences persist on the device. Keyboard focus, skip navigation, dialog focus management, and responsive layouts are provided.
 
-No API silently pretends to send emails/SMS, verify 2FA, process OCR, certify hosting/compliance, create backups, charge a card, validate CNOM, or sign prescriptions. Legacy prototype pages and endpoints implementing those simulations have been removed. Payment entries are **records of money received**, not a payment gateway or a legally certified invoicing system. Prescriptions are plain practitioner-entered text, not certified electronic signatures. Plans, subscriptions, insurance automation, patient uploads, automated queues, clinical decision support, and analytics beyond actual stored activity require separate implementations/integrations.
+The cabinet extension adds patient records, document storage, structured clinical observations, vital-sign trends, scheduling and waiting lists, invoices and insurance tracking, secure messages, opt-in reminders, XLSX/CSV exports and encrypted backup/restore tools. See the [feature and role matrix](docs/fonctionnalites-cabinet.md) for exact behavior and remaining integrations.
 
-Appointment times use **Africa/Tunis (UTC+1)**. Booking currently accepts a future time supplied by the patient; it does not implement practitioner working hours, slot duration, or availability calendars. Exact duplicate active slots are rejected transactionally by a unique database index. Scheduling policy is a remaining product feature, not simulated availability.
+Gmail SMTP requires secure server configuration and patient consent. SMS and video remain disabled until configured and reviewed. The personal medicine catalogue is not a validated drug-interaction engine. CNAM transmissions, official forms, payment processing and certified electronic signatures are not simulated.
 
 ## Data and configuration
 
-`backend/.env.example` documents settings. Development defaults to `backend/data/medidesk.sqlite` relative to the backend working directory. `DB_PATH` is honored, data directories are created, and database files are restricted to the process owner. SQLite uses foreign keys, WAL, a busy timeout, constraints, and transactions for coupled clinical writes. Schema initialization is idempotent. The former tracked prototype JSON file is not imported.
+`backend/.env.example` documents settings. Development defaults to `backend/data/medidesk.sqlite` relative to the backend working directory. `DB_PATH` is honored, data directories are created, and database files are restricted to the process owner. SQLite uses foreign keys, WAL, a busy timeout, constraints, and transactions for coupled clinical writes. Schema initialization and the version-2 additive migration are idempotent. The former tracked prototype JSON file is not imported.
 
-Production requires a separately generated `JWT_SECRET` of at least 32 characters. Development generates an ephemeral key when none is provided, so restarting invalidates existing sessions. `FRONTEND_URL` specifies exact comma-separated allowed browser origins. Set `HOST=0.0.0.0` for containers; `TRUST_PROXY=1` is appropriate only behind the controlled reverse proxy. Do not expose the backend directly when enabling proxy trust.
+Production requires a separately generated `JWT_SECRET` of at least 32 characters and an independent retained `HEALTH_DATA_KEY` of 64 hexadecimal characters. Clinical fields use AES-256-GCM. Development keeps a private key file beside its database so restarting or changing the JWT key does not lose access to encrypted data. Development generates an ephemeral key when none is provided, so restarting invalidates existing sessions. `FRONTEND_URL` specifies exact comma-separated allowed browser origins. Set `HOST=0.0.0.0` for containers; `TRUST_PROXY=1` is appropriate only behind the controlled reverse proxy. Do not expose the backend directly when enabling proxy trust.
 
 Do not use real clinical data until hosting, HTTPS, encryption at rest, backups and restore testing, retention, professional identity verification, access review, and relevant healthcare requirements have been implemented and reviewed for the deployment. Local SQLite storage and application access control do not establish a compliance certification. No deployment or compliance claim is made by this change.
 
@@ -81,7 +81,7 @@ The browser runner starts isolated services on ports **5009 / 5180**, creates te
 
 ## Containers
 
-Set `JWT_SECRET` and `FRONTEND_URL` securely, then `docker compose up --build -d`. Nginx serves the frontend and proxies the API; the backend is not published directly. The persistent volume is mounted at `/home/node/app/data`, preserving application source. Create the first administrator inside the backend container using the same command and a securely supplied `ADMIN_PASSWORD`. Configure HTTPS at your ingress before external use. Publication/deployment is not performed by development setup.
+Set `JWT_SECRET`, `HEALTH_DATA_KEY` and `FRONTEND_URL` securely, then `docker compose up --build -d`. Nginx serves the frontend and proxies the API; the backend is not published directly. The persistent volume is mounted at `/home/node/app/data`, preserving application source. Create the first administrator inside the backend container using the same command and a securely supplied `ADMIN_PASSWORD`. Configure HTTPS at your ingress before external use. Publication/deployment is not performed by development setup.
 
 ## Public pages, SEO and privacy
 

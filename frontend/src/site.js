@@ -99,6 +99,54 @@ export const pages = {
     description:
       "Consultez les compteurs agrégés des pages publiques de MediDesk, recueillis avec consentement.",
   },
+  clinical: {
+    path: "/patients",
+    title: "Dossiers patients et suivi médical",
+    description:
+      "Consultez les dossiers autorisés, les constantes et les documents de votre parcours de soins.",
+  },
+  scheduling: {
+    path: "/agenda",
+    title: "Agenda et liste d’attente",
+    description:
+      "Organisez les créneaux, les rendez-vous et les demandes en attente de votre cabinet.",
+  },
+  billing: {
+    path: "/factures",
+    title: "Factures et assurances",
+    description:
+      "Retrouvez vos factures, les règlements enregistrés et les dossiers assurance autorisés.",
+  },
+  messaging: {
+    path: "/messagerie",
+    title: "Messagerie confidentielle",
+    description:
+      "Échangez dans votre espace personnel avec les professionnels de votre parcours.",
+  },
+  reports: {
+    path: "/rapports",
+    title: "Activité et comptabilité du cabinet",
+    description:
+      "Consultez les indicateurs autorisés et exportez les encaissements du cabinet.",
+  },
+  tools: {
+    path: "/outils-medecin",
+    title: "Modèles et catalogue du praticien",
+    description:
+      "Gérez vos modèles de documents et votre catalogue personnel de médicaments.",
+  },
+  notifications: {
+    path: "/notifications",
+    title: "Notifications et rappels",
+    description:
+      "Retrouvez vos notifications et gérez votre accord pour les rappels par email.",
+  },
+  security: {
+    path: "/securite",
+    title: "Sécurité et intégrations",
+    description:
+      "Consultez les paramètres techniques de protection et les intégrations de la plateforme.",
+  },
   notFound: {
     path: "/404",
     title: "Page introuvable",
@@ -120,6 +168,13 @@ export function resolvePage(pathname) {
 export function canView(key, user) {
   if (pages[key]?.public) return true;
   if (!user) return false;
+  if (key === "clinical" || key === "scheduling")
+    return ["doctor", "secretariat", "patient"].includes(user.role);
+  if (key === "messaging") return ["doctor", "patient"].includes(user.role);
+  if (key === "reports")
+    return ["doctor", "secretariat", "superadmin"].includes(user.role);
+  if (key === "tools") return user.role === "doctor";
+  if (key === "security") return user.role === "superadmin";
   if (["team"].includes(key))
     return ["doctor", "superadmin"].includes(user.role);
   if (["applications", "audit", "analytics"].includes(key))

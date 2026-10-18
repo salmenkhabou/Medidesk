@@ -42,6 +42,14 @@ insert.run(
   "TEST-ONLY",
 );
 insert.run("Test Patient", "patient@example.test", hash, "patient", "", "", "");
+db.prepare(
+  "INSERT INTO users(name,email,password_hash,role,doctor_id) VALUES (?,?,?,'secretariat',?)",
+).run(
+  "Test Secretary",
+  "secretary@example.test",
+  hash,
+  db.prepare("SELECT id FROM users WHERE role='doctor'").get().id,
+);
 db.close();
 const children = [];
 let logs = "";
@@ -114,10 +122,16 @@ try {
   });
   const nav = async (label) => {
     const sidebar = page.locator(".sidebar");
-    if (await sidebar.evaluate((el) => el.hasAttribute("inert")))
-      await page
-        .getByRole("button", { name: "Ouvrir la navigation", exact: true })
-        .click();
+    if (page.viewportSize().width <= 800) {
+      await page.waitForFunction(() => {
+        const el = document.querySelector(".sidebar");
+        return el.hasAttribute("inert") || el.classList.contains("is-open");
+      });
+      if (!(await sidebar.evaluate((el) => el.classList.contains("is-open"))))
+        await page
+          .getByRole("button", { name: "Ouvrir la navigation", exact: true })
+          .click();
+    }
     await page
       .getByRole("navigation", { name: "Navigation principale" })
       .getByRole("button", { name: label, exact: true })
@@ -314,6 +328,138 @@ try {
   await nav("Règlements");
   await page.getByRole("cell", { name: /65,125/ }).waitFor();
   console.log("PASS consultation and payment through frontend and API");
+  await nav("Patients & dossiers");
+  await page
+    .locator(".patient-choice")
+    .filter({ hasText: "Test Patient" })
+    .click();
+  await page
+    .getByRole("button", { name: "Dossier médical", exact: true })
+    .click();
+  await page
+    .getByLabel("Antécédents", { exact: true })
+    .fill("Antécédents du test navigateur");
+  await page
+    .getByLabel("Allergies", { exact: true })
+    .fill("Allergie renseignée pour le test");
+  await page
+    .getByRole("button", {
+      name: "Enregistrer le dossier médical",
+      exact: true,
+    })
+    .click();
+  await page.getByRole("button", { name: "Constantes", exact: true }).click();
+  await page.getByLabel("Poids · kg", { exact: true }).fill("72.5");
+  await page
+    .getByRole("button", { name: "Ajouter les constantes", exact: true })
+    .click();
+  await page.getByRole("cell", { name: /72,?\.?5/ }).waitFor();
+  await page.getByRole("button", { name: "Documents", exact: true }).click();
+  await page
+    .getByLabel("Document · PDF, PNG, JPEG · 3 Mo maximum", { exact: true })
+    .setInputFiles({
+      name: "resultat-test.pdf",
+      mimeType: "application/pdf",
+      buffer: Buffer.from("%PDF-1.4\nTemporary browser fixture"),
+    });
+  await page
+    .getByRole("button", { name: "Ajouter le document", exact: true })
+    .click();
+  await page
+    .getByRole("heading", { name: "resultat-test.pdf", exact: true })
+    .waitFor();
+  await audit("doctor patient file with protected documents");
+  await nav("Factures & assurances");
+  await page
+    .getByRole("button", { name: "Nouvelle facture", exact: true })
+    .click();
+  await page
+    .getByLabel("Adresse du cabinet", { exact: true })
+    .fill("Adresse de test uniquement");
+  await page
+    .getByLabel("Identifiant fiscal du cabinet", { exact: true })
+    .fill("TEST-ONLY");
+  await page
+    .getByLabel("Désignation 1", { exact: true })
+    .fill("Prestation du test navigateur");
+  await page
+    .getByLabel("Prix unitaire 1 · TND", { exact: true })
+    .fill("20.125");
+  await page
+    .getByRole("button", { name: "Émettre la facture", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Enregistrer un règlement", exact: true })
+    .click();
+  await page.getByLabel("Montant reçu · TND", { exact: true }).fill("10.125");
+  await page
+    .getByLabel("Mode de règlement", { exact: true })
+    .selectOption("cheque");
+  await page
+    .getByRole("button", { name: "Enregistrer le règlement reçu", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Dossier assurance", exact: true })
+    .click();
+  await page
+    .getByLabel("CNAM / mutuelle / assurance", { exact: true })
+    .fill("CNAM");
+  await page
+    .getByLabel("État du dossier", { exact: true })
+    .selectOption("submitted");
+  await page
+    .getByRole("button", {
+      name: "Enregistrer le dossier assurance",
+      exact: true,
+    })
+    .click();
+  await page.getByText("Assurance : CNAM · Déposé", { exact: true }).waitFor();
+  await audit("doctor invoicing and insurance");
+  await nav("Messagerie");
+  await page
+    .getByLabel("Destinataire", { exact: true })
+    .selectOption({ label: "Test Patient · Patient" });
+  await page
+    .getByLabel("Dossier concerné · pour un adressage à un confrère", {
+      exact: true,
+    })
+    .selectOption({ label: "Test Patient" });
+  await page
+    .getByLabel("Document à partager", { exact: true })
+    .selectOption({ label: "resultat-test.pdf" });
+  await page.getByLabel("Objet", { exact: true }).fill("Résultat disponible");
+  await page
+    .getByLabel("Votre message", { exact: true })
+    .fill("Votre document de test est disponible dans votre espace.");
+  await page
+    .getByRole("button", { name: "Envoyer le message", exact: true })
+    .click();
+  await page
+    .getByRole("heading", { name: "Résultat disponible", exact: true })
+    .waitFor();
+  await audit("doctor encrypted messaging");
+  await nav("Modèles & médicaments");
+  await page
+    .getByLabel("Titre du modèle", { exact: true })
+    .fill("Modèle de suivi du test");
+  await page
+    .getByLabel("Texte du modèle", { exact: true })
+    .fill("Observation du praticien, à adapter.");
+  await page
+    .getByRole("button", { name: "Enregistrer le modèle", exact: true })
+    .click();
+  await page
+    .getByText("Modèle de suivi du test · Compte rendu", { exact: true })
+    .waitFor();
+  await audit("doctor templates and catalogue");
+  await nav("Agenda & attente");
+  await audit("doctor scheduling");
+  await nav("Activité & comptabilité");
+  await audit("doctor financial reports");
+  console.log(
+    "PASS patient file, vitals, document upload, partial invoice, insurance, secure attachment and template workflows",
+  );
+
   await page
     .getByRole("button", { name: "Se déconnecter", exact: true })
     .click();
@@ -361,10 +507,16 @@ try {
     "Suggestions & retours",
     "Journal d’activité",
     "Statistiques",
+    "Factures & assurances",
+    "Activité & comptabilité",
+    "Sécurité & intégrations",
+    "Notifications",
     "Paramètres",
   ]) {
     await nav(label);
-    await page.locator(".loading").waitFor({ state: "hidden" });
+    await page.waitForFunction(
+      () => document.querySelectorAll(".loading").length === 0,
+    );
     await audit(`admin ${label}`);
   }
   await page.setViewportSize({ width: 390, height: 844 });
@@ -391,7 +543,9 @@ try {
       "Paramètres",
     ]) {
       await nav(label);
-      await page.locator(".loading").waitFor({ state: "hidden" });
+      await page.waitForFunction(
+        () => document.querySelectorAll(".loading").length === 0,
+      );
       await audit(`mobile ${width}px ${label}`);
     }
   }
@@ -430,6 +584,38 @@ try {
     .getByText("Compte rendu du test de bout en bout.", { exact: true })
     .waitFor();
   await audit("patient medical record");
+  await page
+    .getByRole("button", { name: "Documents à imprimer / PDF", exact: true })
+    .click();
+  await page
+    .getByLabel("Document à imprimer", { exact: true })
+    .selectOption("prescription");
+  await page.emulateMedia({ media: "print" });
+  assert.equal(
+    await page.locator(".record-list").first().isVisible(),
+    false,
+    "Other consultation records are excluded from the selected PDF",
+  );
+  assert.equal(await page.locator(".print-document").isVisible(), true);
+  assert.ok(
+    (await page.locator(".print-document").innerText()).includes(
+      "Ordonnance de test uniquement.",
+    ),
+  );
+  assert.equal(
+    await page
+      .locator(".print-document")
+      .evaluate((el) => getComputedStyle(el).color),
+    "rgb(0, 0, 0)",
+    "PDF text remains readable in dark mode",
+  );
+  await page.pdf({
+    path: join(artifacts, "prescription-test.pdf"),
+    format: "A4",
+  });
+  await page.emulateMedia({ media: "screen" });
+  await page.getByRole("button", { name: "Fermer", exact: true }).click();
+
   assert.equal(
     await page.locator('meta[name="robots"]').getAttribute("content"),
     "noindex, nofollow",
@@ -448,7 +634,9 @@ try {
     .getByRole("status")
     .filter({ hasText: "Chargement des données" })
     .waitFor();
-  await page.locator(".loading").waitFor({ state: "hidden" });
+  await page.waitForFunction(
+    () => document.querySelectorAll(".loading").length === 0,
+  );
   await page.unroute("**/api/doctors");
   console.log("PASS loading state under a delayed API response");
   // Real mobile booking, including a short landscape viewport and readable controls.
@@ -469,6 +657,66 @@ try {
   await page.getByRole("button", { name: "Confirmer le rendez-vous" }).click();
   await page.getByRole("cell", { name: /Confirmé/ }).waitFor();
   await audit("mobile appointment cards");
+  await nav("Mon dossier de santé");
+  await page
+    .locator(".patient-choice")
+    .filter({ hasText: "Test Practitioner" })
+    .click();
+  await page
+    .getByRole("button", { name: "Dossier médical", exact: true })
+    .click();
+  await page
+    .getByText("Antécédents du test navigateur", { exact: true })
+    .waitFor();
+  assert.equal(
+    await page
+      .getByRole("button", {
+        name: "Enregistrer le dossier médical",
+        exact: true,
+      })
+      .count(),
+    0,
+    "Patient medical file is read-only",
+  );
+  await audit("patient mobile medical portal");
+  await nav("Mes factures");
+  await page
+    .getByRole("button", { name: "Facture & reçus", exact: true })
+    .click();
+  await page.locator(".print-document").waitFor();
+  await audit("patient mobile invoice");
+  await page.emulateMedia({ media: "print" });
+  assert.equal(
+    await page.locator(".print-document").isVisible(),
+    true,
+    "Invoice remains visible for PDF printing",
+  );
+  const invoicePdf = await page.pdf({
+    path: join(artifacts, "invoice-test.pdf"),
+    format: "A4",
+    margin: { top: "12mm", bottom: "12mm", left: "12mm", right: "12mm" },
+  });
+  assert.equal(
+    invoicePdf.subarray(0, 5).toString(),
+    "%PDF-",
+    "PDF output is a real document",
+  );
+  await page.emulateMedia({ media: "screen" });
+  await page.getByRole("button", { name: "Fermer", exact: true }).click();
+  await nav("Messagerie");
+  await page
+    .getByRole("heading", { name: "Résultat disponible", exact: true })
+    .waitFor();
+  await audit("patient mobile confidential message");
+  await nav("Notifications");
+  await page
+    .getByLabel("Recevoir des rappels génériques par email", { exact: true })
+    .selectOption("yes");
+  await page
+    .getByRole("button", { name: "Enregistrer mon choix", exact: true })
+    .click();
+  await audit("patient mobile reminder consent");
+
   await page.screenshot({
     path: join(artifacts, "appointments-phone.png"),
     fullPage: true,
@@ -483,10 +731,48 @@ try {
   await page
     .getByRole("button", { name: "Se déconnecter", exact: true })
     .click();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await login("secretary@example.test");
+  await nav("Patients & dossiers");
+  await page
+    .locator(".patient-choice")
+    .filter({ hasText: "Test Patient" })
+    .click();
+  await page
+    .getByRole("button", { name: "Enregistrer les coordonnées", exact: true })
+    .waitFor();
+  assert.equal(
+    await page
+      .getByRole("button", { name: "Dossier médical", exact: true })
+      .count(),
+    0,
+    "Secretary never sees medical tabs",
+  );
+  await audit("secretary mobile administrative patient file");
+  for (const label of [
+    "Agenda & attente",
+    "Factures & assurances",
+    "Activité & comptabilité",
+    "Notifications",
+  ]) {
+    await nav(label);
+    await page.waitForFunction(
+      () => document.querySelectorAll(".loading").length === 0,
+    );
+    await audit("secretary mobile " + label);
+  }
+  await page
+    .getByRole("button", { name: "Ouvrir la navigation", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Se déconnecter", exact: true })
+    .click();
   for (const width of [320, 360, 390, 430, 768]) {
     await page.setViewportSize({ width, height: 844 });
     await nav("Nos praticiens");
-    await page.locator(".loading").waitFor({ state: "hidden" });
+    await page.waitForFunction(
+      () => document.querySelectorAll(".loading").length === 0,
+    );
     await audit(`public phone ${width}px`);
     const box = await page
       .getByRole("button", { name: "Créer mon compte patient", exact: true })

@@ -1,6 +1,7 @@
+import { encryptBackup } from "./backup-codec.js";
 import "dotenv/config";
 import { DatabaseSync, backup } from "node:sqlite";
-import { mkdirSync, chmodSync } from "node:fs";
+import { mkdirSync, chmodSync, rmSync } from "node:fs";
 import { dirname, resolve, join } from "node:path";
 import { pathToFileURL } from "node:url";
 export async function backupDatabase(
@@ -30,6 +31,17 @@ if (
   process.argv[1] &&
   import.meta.url === pathToFileURL(resolve(process.argv[1])).href
 ) {
-  await backupDatabase();
-  console.log("Private SQLite online backup completed in the data volume.");
+  const file = await backupDatabase();
+  if (process.env.HEALTH_DATA_KEY) {
+    try {
+      await encryptBackup(file, file + ".enc");
+    } finally {
+      rmSync(file, { force: true });
+    }
+    console.log("Authenticated encrypted database backup completed.");
+  } else if (process.env.NODE_ENV === "production") {
+    rmSync(file);
+    throw Error("HEALTH_DATA_KEY is required for production backups.");
+  } else
+    console.log("Private SQLite online backup completed in the data volume.");
 }

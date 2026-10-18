@@ -11,7 +11,7 @@ sudo install -o root -g root -m 0750 "$source_dir/deploy/renew-certificate.sh" /
 sudo env RENEWED_LINEAGE=/etc/letsencrypt/live/medidesk.57.131.145.168.sslip.io /etc/letsencrypt/renewal-hooks/deploy/medidesk
 if [[ ! -e "$root/.env" ]]; then
     secret=$(openssl rand -hex 48)
-    (set -o noclobber; printf 'JWT_SECRET=%s\nSITE_URL=https://medidesk.57.131.145.168.sslip.io:8443\nSITE_HOST=medidesk.57.131.145.168.sslip.io\nBACKEND_IMAGE=medidesk-backend:first-version\nFRONTEND_IMAGE=medidesk-frontend:first-version\nPRIVACY_POLICY_REVIEWED=false\n' "$secret" > "$root/.env")
+    (set -o noclobber; printf 'JWT_SECRET=%s\nHEALTH_DATA_KEY=%s\nSITE_URL=https://medidesk.57.131.145.168.sslip.io:8443\nSITE_HOST=medidesk.57.131.145.168.sslip.io\nBACKEND_IMAGE=medidesk-backend:first-version\nFRONTEND_IMAGE=medidesk-frontend:first-version\nPRIVACY_POLICY_REVIEWED=false\n' "$secret" "$(openssl rand -hex 32)" > "$root/.env")
     unset secret
 fi
 chmod 0600 "$root/.env"

@@ -1927,3 +1927,262 @@ input[type="checkbox"] {
     display: none !important;
   }
 }
+
+/* Cabinet workflows retain the same semantic theme and mobile controls. */
+.practice-section {
+  padding: clamp(20px, 3vw, 32px);
+  margin-bottom: 22px;
+  min-width: 0;
+}
+.practice-section > h2 {
+  margin-bottom: 16px;
+}
+.practice-section > p {
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+.patient-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.patient-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.patient-choice.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.patient-choice span {
+  font-size: 0.86rem;
+}
+.patient-file .panel-heading {
+  padding: 0 0 20px;
+}
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.data-grid dt {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.data-grid dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+.document-row,
+.agenda-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+.document-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+.slot {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: var(--subtle);
+  border-radius: 10px;
+}
+.vital-chart {
+  margin: 22px 0;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.vital-chart figcaption {
+  font-size: 0.9rem;
+}
+.vital-chart svg {
+  width: 100%;
+  display: block;
+}
+.billing-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 20px 0;
+}
+.billing-summary span {
+  display: flex;
+  flex-direction: column;
+}
+.invoice-line {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.invoice-line legend {
+  font-size: 0.85rem;
+  padding: 0 6px;
+}
+.message-body {
+  margin: 20px 0;
+}
+.template-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+.template-item summary,
+.practice-section > summary {
+  min-height: 44px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.template-item .pre-wrap {
+  margin: 12px 0;
+}
+.print-document > p,
+.print-document > h3 {
+  margin: 12px 0;
+}
+.practice-section .record-list section {
+  margin: 16px 0;
+}
+.practice-section code {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 800px) {
+  .filter-tabs {
+    flex-wrap: wrap;
+    overflow: visible;
+    gap: 8px;
+  }
+  .filter-tabs button {
+    min-height: 44px;
+    font-size: 0.85rem;
+  }
+  .data-grid {
+    grid-template-columns: 1fr;
+  }
+  .document-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .practice-section .panel-heading {
+    align-items: flex-start;
+  }
+  .practice-section .panel-heading .button {
+    width: 100%;
+  }
+  .billing-summary {
+    gap: 16px;
+  }
+  .practice-section .metrics {
+    grid-template-columns: 1fr;
+  }
+  .vital-chart {
+    padding: 8px;
+  }
+}
+@media print {
+  .filter-tabs,
+  .patient-list,
+  .search-bar,
+  .form,
+  .template-picker {
+    display: none !important;
+  }
+  dialog[open] {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    border: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  body:has(dialog[open]) main > :not(dialog):not(:has(dialog[open])) {
+    display: none !important;
+  }
+  .print-document,
+  .record,
+  .patient-file {
+    break-inside: avoid;
+  }
+}
+.video-session {
+  width: 100%;
+  height: min(65dvh, 600px);
+  min-height: 280px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-top: 16px;
+}
+@media print {
+  .responsive-table {
+    display: table;
+  }
+  .responsive-table thead {
+    display: table-header-group;
+    position: static;
+    width: auto;
+    height: auto;
+    clip-path: none;
+    overflow: visible;
+  }
+  .responsive-table tbody {
+    display: table-row-group;
+  }
+  .responsive-table tr {
+    display: table-row;
+  }
+  .responsive-table td {
+    display: table-cell;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  .responsive-table td::before {
+    display: none;
+  }
+  .workspace {
+    min-height: 0;
+  }
+}
+@media print {
+  .toast,
+  .sidebar-scrim,
+  .loading {
+    display: none !important;
+  }
+}
+@media print {
+  :root,
+  :root[data-theme],
+  :root[data-theme][data-contrast] {
+    --canvas: #fff;
+    --panel: #fff;
+    --text: #000;
+    --muted: #333;
+    --border: #ccc;
+    --accent: #135b50;
+    background: #fff;
+    color: #000;
+    color-scheme: light;
+  }
+  .modal-heading,
+  .modal > .field {
+    display: none !important;
+  }
+}
