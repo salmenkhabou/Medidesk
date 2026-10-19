@@ -1,3 +1,4 @@
+import { accountSecurity } from "./account-security.js";
 import { validPassword, passwordHelp } from "./password-policy.js";
 import { installPractice } from "./practice.js";
 import express from "express";
@@ -47,6 +48,7 @@ export function createApp({
   jwtSecret = process.env.JWT_SECRET,
   production = process.env.NODE_ENV === "production",
   rateLimits = true,
+  securityMailTransport,
 } = {}) {
   if (production && (!jwtSecret || jwtSecret.length < 32))
     throw Error("JWT_SECRET (32 caractères minimum) est requis en production.");
@@ -154,6 +156,25 @@ export function createApp({
       throw fail(404, "Rendez-vous introuvable.");
     return item;
   };
+  const issueSession = (user) => ({
+    token: jwt.sign({ version: user.session_version }, secret, {
+      subject: String(user.id),
+      issuer: "medidesk",
+      expiresIn: "8h",
+      algorithm: "HS256",
+    }),
+    user: publicUser(user),
+  });
+  const security = accountSecurity({
+    db,
+    vault: () => app.locals.practice.vault,
+    fail,
+    wrap,
+    audit,
+    issueSession,
+    transport: securityMailTransport,
+  });
+  security.publicRoutes(app);
   app.get("/api/health", (req, res) => {
     one("SELECT 1");
     res.json({
@@ -193,25 +214,12 @@ export function createApp({
         "$2b$12$LOKfyTj83Q7dRzRrjHPmPuXXGRH2RPW/ED99nnOHvWz2.BjWG6Ifq";
       if (!(await bcrypt.compare(password, hash)) || !user)
         throw fail(401, "Email ou mot de passe incorrect.");
-      audit(user.id, "session.login");
-      const token = jwt.sign({ version: user.session_version }, secret, {
-        subject: String(user.id),
-        issuer: "medidesk",
-        expiresIn: "8h",
-        algorithm: "HS256",
-      });
-      res.json({ token, user: publicUser(user) });
-    }),
-  );
-  app.post("/api/auth/forgot-password", (req, res) =>
-    res.status(503).json({
-      message:
-        "La récupération par email n’est pas configurée. Contactez l’administrateur.",
-    }),
-  );
-  app.post("/api/auth/verify-2fa", (req, res) =>
-    res.status(503).json({
-      message: "L’authentification à deux facteurs n’est pas configurée.",
+      const session = security.login(user);
+      audit(
+        user.id,
+        session.requires_mfa ? "session.mfa_requested" : "session.login",
+      );
+      res.json(session);
     }),
   );
   app.get("/api/doctors", (req, res) => {
@@ -345,6 +353,23 @@ export function createApp({
     jwtSecret: secret,
     production,
   });
+  security.privateRoutes(
+    app,
+    rateLimits
+      ? rateLimit({
+          windowMs: 15 * 60 * 1000,
+          limit: 20,
+          keyGenerator: (req) => String(req.user.id),
+          standardHeaders: "draft-8",
+          legacyHeaders: false,
+          message: {
+            message:
+              "Trop de tentatives de sécurité. Réessayez dans 15 minutes.",
+          },
+        })
+      : (req, res, next) => next(),
+  );
+  app.locals.accountSecurity = security;
   const appointmentList = (user) => {
     const [where, args] = scope(user);
     return all(

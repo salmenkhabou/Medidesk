@@ -113,3 +113,5 @@ Administrators can see the last 30 days at **Statistiques** (`/statistiques`); o
 Run `npm test` in the frontend for route/metadata/crawler/asset checks, `npm test` in the backend for analytics consent/payload/access/retention checks, and `npm run test:e2e` in the frontend for direct URLs, history, 404 status, consent withdrawal, page titles, CTA visibility and delayed-request loading states alongside the existing workflows.
 
 Revue de sécurité et contrôles de production : [rapport du 19 octobre 2026](docs/security-review.md).
+
+Activation du second facteur, Gmail et sauvegardes distantes : [guide opérationnel](docs/securiser-comptes-et-sauvegardes.md).

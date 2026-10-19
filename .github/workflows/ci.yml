@@ -36,6 +36,7 @@ jobs:
           npm test --prefix backend
           npm test --prefix frontend
           node --test deploy/test/*.test.mjs
+          python3 deploy/test/offsite-backup.test.py
           bash -n deploy/release.sh deploy/ssh-release.sh
       - name: Build frontend
         run: npm run build --prefix frontend
@@ -46,7 +47,9 @@ jobs:
         working-directory: frontend
         env:
           E2E_ARTIFACTS: ${{ runner.temp }}/medidesk-browser-results
-        run: npm run test:e2e
+        run: |
+          npm run test:e2e
+          npm run test:accounts
       - name: Retain browser screenshots
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

@@ -147,7 +147,7 @@ test("authentication rejects wrong passwords, prototype bypasses and unauthorize
   );
   assert.equal(
     (await f.request("/auth/verify-2fa", "POST", { code: "123456" })).status,
-    503,
+    401,
   );
 });
 test("booking, consultation, record access, payments and persistence form a complete workflow", async (t) => {

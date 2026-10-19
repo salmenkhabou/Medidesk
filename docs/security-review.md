@@ -68,3 +68,7 @@ npm audit --prefix frontend
 ```
 
 Les essais navigateur nécessitent Chromium/Playwright et utilisent leurs propres comptes et fichiers temporaires. Les résultats d'audit des dépendances évoluent avec les avis publiés.
+
+## Évolution après cette revue
+
+La double authentification TOTP, les codes de secours, la vérification email et la récupération par email sont maintenant implémentés. Ils restent à déployer et à configurer selon le [guide opérationnel](securiser-comptes-et-sauvegardes.md). Le transfert de sauvegardes SSH est préparé ; aucun stockage distant ni envoi Gmail réel n’a été activé dans le cloud. Les limites de la revue ci-dessus restent applicables.

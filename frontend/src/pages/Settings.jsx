@@ -1,3 +1,4 @@
+import AccountSecurity from "./AccountSecurity";
 import PasswordField from "../ui/PasswordField";
 import React, { useState } from "react";
 import { ChevronRight, Eye, ShieldCheck, Users } from "lucide-react";
@@ -103,14 +104,7 @@ export default function Settings({ user, onUser, notify }) {
                 />
                 <PasswordField label="Nouveau mot de passe" />
               </MutationForm>
-              <div className="service-note">
-                <h3>Services non configurés</h3>
-                <p>
-                  La double authentification et la récupération du mot de passe
-                  par email ne sont pas activées. Contactez votre administrateur
-                  en cas de difficulté d’accès.
-                </p>
-              </div>
+              <AccountSecurity notify={notify} />
             </>
           )}
         </section>

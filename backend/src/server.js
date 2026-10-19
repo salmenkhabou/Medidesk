@@ -9,6 +9,9 @@ const server = app.listen(
 const jobs = setInterval(() => {
   try {
     app.locals.practice.reminders();
+    void app.locals.accountSecurity
+      .sendEmail()
+      .catch(() => console.error("Account email worker failed."));
     void app.locals.practice
       .sendEmail()
       .catch(() => console.error("Email worker failed."));

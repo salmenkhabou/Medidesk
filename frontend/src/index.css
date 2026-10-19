@@ -2228,3 +2228,9 @@ input[type="checkbox"] {
 .password-rules li { display: flex; align-items: center; gap: .5rem; }
 .password-rules svg { flex-shrink: 0; }
 .password-rules li[data-passed="true"] { color: var(--accent); }
+
+.account-protection { border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1.5rem; }
+.account-protection h3 { margin-top: 1.5rem; }
+.account-protection .form { margin-bottom: 1.5rem; }
+.security-secret { display: block; padding: 1rem; background: var(--subtle); border: 1px solid var(--border); border-radius: 10px; overflow-wrap: anywhere; white-space: pre-wrap; user-select: all; font-size: .9rem; }
+@media print { .security-secret { display: none !important; } }

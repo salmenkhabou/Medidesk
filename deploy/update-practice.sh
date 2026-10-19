@@ -78,6 +78,7 @@ curl --noproxy '*' --fail --silent --show-error --retry 10 --retry-delay 2 --ret
 successful=1
 # Retain the independent encryption key in a secure off-server recovery location.
 sudo install -o root -g root -m 0750 "$source_dir/deploy/backup-on-host.sh" /usr/local/sbin/medidesk-backup
+sudo install -o root -g root -m 0750 "$source_dir/deploy/backup-offsite.py" /usr/local/sbin/medidesk-backup-offsite
 sudo install -o root -g root -m 0644 "$source_dir/deploy/medidesk-backup.service" /etc/systemd/system/medidesk-backup.service
 sudo install -o root -g root -m 0644 "$source_dir/deploy/medidesk-backup.timer" /etc/systemd/system/medidesk-backup.timer
 sudo systemctl daemon-reload

@@ -168,3 +168,7 @@ Compose update may briefly interrupt service; this is not a zero-downtime setup.
 failed public health checks, failed pulls, unmanaged stacks and mutable-tag rejection.
 `bash -n deploy/release.sh deploy/ssh-release.sh` checks shell syntax.
 Run application checks through the cloud setup runtime described in `cloud-setup.md`.
+
+## Account security and off-site backups
+
+See [the French operational guide](securiser-comptes-et-sauvegardes.md) for optional authenticator enrollment, Gmail setup and the pending SSH backup destination. The updater installs the off-site helper, but a remote copy is not active until a private destination is provisioned.

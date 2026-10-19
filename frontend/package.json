@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:e2e": "node test/browser.mjs",
+    "test:accounts": "node test/account-security-browser.mjs",
     "assets:generate": "node scripts/generate-assets.mjs",
     "test": "node --test test/site.test.js"
   },
