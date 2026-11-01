@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS practitioners (
 
 CREATE TABLE IF NOT EXISTS appointments (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  patient_id INTEGER,
   practitioner_id INTEGER NOT NULL,
   patient_name TEXT NOT NULL,
   patient_phone TEXT NOT NULL,
@@ -68,6 +69,8 @@ CREATE TABLE IF NOT EXISTS onboarding_requests (
 
 CREATE TABLE IF NOT EXISTS prescriptions (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  patient_id INTEGER,
+  practitioner_id INTEGER,
   reference_code TEXT UNIQUE NOT NULL,
   patient_name TEXT NOT NULL,
   patient_cin TEXT NOT NULL,

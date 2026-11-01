@@ -1,4 +1,7 @@
 import { db } from './index.js';
+import { demoEnabled } from '../config.js';
+
+if (!demoEnabled) throw new Error('Seeding requires ENABLE_DEMO_DATA=true outside production.');
 
 console.log('🌱 Seeding MediDesk Database...');
 

@@ -19,7 +19,17 @@ import {
   addDoctorSecretary
 } from '../controllers/superadminController.js';
 
+import { requireRole } from '../middleware/authMiddleware.js';
+import { demoOnly } from '../config.js';
+
 const router = express.Router();
+
+router.use(['/doctor-team', '/doctor-security'], requireRole(['doctor']));
+router.use((req, res, next) => {
+  if (['/doctor-team', '/doctor-security'].includes(req.path)) return next();
+  return requireRole(['superadmin'])(req, res, next);
+});
+router.use(demoOnly);
 
 router.get('/dashboard', getSuperAdminDashboardSummary);
 router.get('/applications', getSuperAdminApplications);

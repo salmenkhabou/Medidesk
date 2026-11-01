@@ -1,3 +1,4 @@
+import { apiFetch } from '../services/api';
 import React, { useState } from 'react';
 
 export default function BookingWizardView({ initialDoctor, setView }) {
@@ -18,6 +19,7 @@ export default function BookingWizardView({ initialDoctor, setView }) {
     notes: ''
   });
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleNextStep = (e) => {
     e.preventDefault();
@@ -30,10 +32,11 @@ export default function BookingWizardView({ initialDoctor, setView }) {
 
   const handleSubmitBooking = async () => {
     setLoading(true);
+    setError(null);
     const trackingCode = `MDK-${Math.floor(1000 + Math.random() * 9000)}-TN`;
 
     try {
-      await fetch('http://localhost:5000/api/appointments', {
+      const response = await apiFetch('/api/appointments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -51,8 +54,12 @@ export default function BookingWizardView({ initialDoctor, setView }) {
           notes: formData.notes
         })
       });
+      const result = await response.json();
+      if (!response.ok || !result.success) throw new Error(result.message || 'Service indisponible.');
     } catch (err) {
-      // Fallback
+      setError(err.message || 'Service indisponible.');
+      setLoading(false);
+      return;
     }
 
     setTimeout(() => {
@@ -67,6 +74,7 @@ export default function BookingWizardView({ initialDoctor, setView }) {
     <div className="w-full min-h-screen bg-background py-8 pb-16">
       <div className="max-w-3xl mx-auto px-4 md:px-6">
         
+        {error && <p role="alert" className="text-red-700 mb-4">{error}</p>}
         {/* Step Progress Bar Header */}
         <div className="bg-surface-container-lowest rounded-xl p-4 md:p-6 shadow-sm mb-6 border border-surface-container-high">
           <div className="flex items-center justify-between mb-4">

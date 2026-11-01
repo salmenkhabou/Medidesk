@@ -1,3 +1,4 @@
+import { apiFetch } from '../services/api';
 import React, { useState, useEffect } from 'react';
 
 export default function PatientNotificationCenterView({ setView }) {
@@ -8,7 +9,7 @@ export default function PatientNotificationCenterView({ setView }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/patient/notifications')
+    apiFetch('/api/patient/notifications')
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
@@ -24,7 +25,7 @@ export default function PatientNotificationCenterView({ setView }) {
   }, []);
 
   const handleMarkAllRead = () => {
-    fetch('/api/patient/notifications/read-all', { method: 'POST' })
+    apiFetch('/api/patient/notifications/read-all', { method: 'POST' })
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

@@ -1,3 +1,4 @@
+import { apiFetch } from '../services/api';
 import React, { useState, useEffect } from 'react';
 
 export default function PatientMedicalRecordView({ setView }) {
@@ -8,7 +9,7 @@ export default function PatientMedicalRecordView({ setView }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/patient/medical-record')
+    apiFetch('/api/patient/medical-record')
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

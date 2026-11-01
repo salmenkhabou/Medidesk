@@ -1,3 +1,4 @@
+import { apiFetch } from '../services/api';
 import React, { useState, useRef } from 'react';
 
 export default function TwoFactorView({ email = 'dr.benali@clinique.tn', setView }) {
@@ -39,7 +40,7 @@ export default function TwoFactorView({ email = 'dr.benali@clinique.tn', setView
     setError(null);
 
     try {
-      const res = await fetch('http://localhost:5000/api/auth/verify-2fa', {
+      const res = await apiFetch('/api/auth/verify-2fa', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code: fullCode })
@@ -55,9 +56,8 @@ export default function TwoFactorView({ email = 'dr.benali@clinique.tn', setView
         setLoading(false);
       }
     } catch (err) {
-      setTimeout(() => {
-        setView('home');
-      }, 600);
+      setError('Vérification indisponible. Veuillez réessayer.');
+      setLoading(false);
     }
   };
 

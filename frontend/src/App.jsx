@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { apiFetch } from './services/api';
+import React, { useEffect, useState } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
@@ -77,28 +78,19 @@ import DoctorAccountSecurityView from './views/DoctorAccountSecurityView';
 
 
 export default function App() {
-  const [currentUser, setCurrentUser] = useState(() => {
-    try {
-      const saved = localStorage.getItem('medidesk_current_user');
-      return saved ? JSON.parse(saved) : null;
-    } catch {
-      return null;
-    }
-  });
-
-  const [currentView, setCurrentView] = useState(() => {
-    try {
-      const saved = localStorage.getItem('medidesk_current_user');
-      if (saved) {
-        const u = JSON.parse(saved);
-        if (u.role === 'superadmin') return 'superadmin';
-        if (u.role === 'doctor') return 'tableau-de-bord-medecin';
-        if (u.role === 'secretariat') return 'tableau-de-bord';
-        if (u.role === 'patient') return 'patient-dashboard';
+  const [currentUser, setCurrentUser] = useState(null);
+  const [currentView, setCurrentView] = useState('home');
+  useEffect(() => {
+    localStorage.removeItem('medidesk_jwt_token');
+    localStorage.removeItem('medidesk_current_user');
+    apiFetch('/api/auth/me').then(res => res.ok ? res.json() : null).then(data => {
+      if (data?.user) {
+        setCurrentUser(data.user);
+        const homes = { superadmin: 'superadmin', doctor: 'tableau-de-bord-medecin', secretariat: 'tableau-de-bord', patient: 'patient-dashboard' };
+        setCurrentView(homes[data.user.role] || 'home');
       }
-    } catch {}
-    return 'home';
-  });
+    }).catch(() => {});
+  }, []);
 
   const [viewParams, setViewParams] = useState({});
   const [bookingDoctor, setBookingDoctor] = useState(null);
@@ -129,7 +121,14 @@ export default function App() {
     showToast(`Bienvenue, ${user.name} (${user.role.toUpperCase()}) !`);
   };
 
-  const handleConfirmLogout = () => {
+  const handleConfirmLogout = async () => {
+    try {
+      const res = await apiFetch('/api/auth/logout', { method: 'POST' });
+      if (!res.ok && res.status !== 401) throw new Error('Logout failed');
+    } catch {
+      showToast('Déconnexion impossible. Veuillez réessayer.');
+      return;
+    }
     localStorage.removeItem('medidesk_jwt_token');
     localStorage.removeItem('medidesk_current_user');
     setCurrentUser(null);
@@ -147,6 +146,7 @@ export default function App() {
     <LanguageProvider>
       <div className="min-h-screen flex flex-col bg-surface text-on-surface">
         
+        <div className="bg-amber-100 text-amber-900 text-center p-2 text-sm">Version de démonstration : les écrans cliniques contiennent des données fictives.</div>
         {/* Navigation Header */}
         <Header 
           currentView={currentView} 

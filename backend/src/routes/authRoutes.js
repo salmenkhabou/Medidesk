@@ -1,119 +1,36 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import { verifyToken } from '../middleware/authMiddleware.js';
-import { findUserByEmail, usersStore } from '../db/userStore.js';
+import { jwtSecret, jwtOptions } from '../config.js';
+import { verifyToken, setSessionCookie, clearSessionCookie } from '../middleware/authMiddleware.js';
+import { findUserByEmail, persistUsers } from '../db/userStore.js';
 
 const router = express.Router();
-const JWT_SECRET = process.env.JWT_SECRET || 'medidesk_hds_secure_jwt_token_key_2026_super_secret_tn';
-const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '24h';
-
-// POST /api/auth/login - Unified Authentication Endpoint
-// No role selection needed! The database identifies the user's role.
-router.post('/login', async (req, res) => {
+const dummyHash = bcrypt.hashSync('unused-timing-equalization-password', 12);
+export const publicUser = u => ({ id: u.id, name: u.name, email: u.email, role: u.role });
+router.post('/login', async (req, res, next) => {
   try {
     const { email, password } = req.body;
-
-    if (!email || !password) {
-      return res.status(400).json({
-        success: false,
-        error: 'MISSING_CREDENTIALS',
-        message: 'L\'adresse email et le mot de passe sont obligatoires.'
-      });
+    if (typeof email !== 'string' || email.length > 254 || typeof password !== 'string' || Buffer.byteLength(password) > 72) {
+      return res.status(400).json({ success: false, error: 'INVALID_CREDENTIALS' });
     }
-
     const user = findUserByEmail(email);
-
-    if (!user) {
-      return res.status(401).json({
-        success: false,
-        error: 'INVALID_CREDENTIALS',
-        message: 'Aucun compte trouvé avec cet identifiant. Vérifiez votre adresse email.'
-      });
-    }
-
-    const isMatch = await bcrypt.compare(password, user.passwordHash);
-    if (!isMatch && password !== 'Password123!') {
-      return res.status(401).json({
-        success: false,
-        error: 'INVALID_CREDENTIALS',
-        message: 'Mot de passe incorrect. Veuillez vérifier votre saisie.'
-      });
-    }
-
-    // Generate Cryptographically Signed JWT Token with user's verified role
-    const payload = {
-      id: user.id,
-      email: user.email,
-      name: user.name,
-      role: user.role
-    };
-
-    const token = jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
-
-    return res.json({
-      success: true,
-      message: `Connexion réussie en tant que ${user.role}.`,
-      token,
-      user: {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        role: user.role
-      }
-    });
-  } catch (error) {
-    console.error('Login error:', error);
-    return res.status(500).json({
-      success: false,
-      error: 'SERVER_ERROR',
-      message: 'Une erreur interne est survenue lors de l\'authentification.'
-    });
-  }
+    const matches = await bcrypt.compare(password, user?.passwordHash || dummyHash);
+    if (!user || !matches || user.disabled) return res.status(401).json({ success: false, error: 'INVALID_CREDENTIALS', message: 'Identifiants invalides.' });
+    const token = jwt.sign({ id: user.id, version: user.sessionVersion || 0 }, jwtSecret, jwtOptions);
+    setSessionCookie(res, token);
+    res.json({ success: true, user: publicUser(user) });
+  } catch (err) { next(err); }
 });
-
-// GET /api/auth/me - Verify current session token
-router.get('/me', verifyToken, (req, res) => {
-  return res.json({
-    success: true,
-    user: req.user
-  });
+router.get('/me', verifyToken, (req, res) => res.json({ success: true, user: publicUser(req.user) }));
+router.post('/logout', verifyToken, (req, res) => {
+  req.user.sessionVersion = (req.user.sessionVersion || 0) + 1;
+  persistUsers();
+  clearSessionCookie(res);
+  res.json({ success: true });
 });
-
-// POST /api/auth/forgot-password
-router.post('/forgot-password', (req, res) => {
-  const { email } = req.body;
-  if (!email || !email.includes('@')) {
-    return res.status(400).json({
-      success: false,
-      error: 'INVALID_EMAIL',
-      message: 'Adresse email valide requise.'
-    });
-  }
-
-  return res.json({
-    success: true,
-    message: `Un lien sécurisé de réinitialisation avec jeton temporaire a été envoyé à ${email}.`,
-    email
-  });
-});
-
-// POST /api/auth/verify-2fa
-router.post('/verify-2fa', (req, res) => {
-  const { code } = req.body;
-  if (!code || code.toString().length !== 6) {
-    return res.status(400).json({
-      success: false,
-      error: 'INVALID_2FA_CODE',
-      message: 'Le code à 6 chiffres est invalide.'
-    });
-  }
-
-  return res.json({
-    success: true,
-    message: 'Authentification 2FA TOTP validée avec succès.',
-    verified: true
-  });
-});
-
+// Fail closed until delivery, expiry, replay protection and TOTP enrollment exist.
+for (const endpoint of ['/forgot-password', '/verify-2fa']) {
+  router.post(endpoint, (req, res) => res.status(503).json({ success: false, error: 'FEATURE_NOT_IMPLEMENTED', message: 'Service indisponible. Contactez votre administrateur.' }));
+}
 export default router;

@@ -20,7 +20,11 @@ export const getAppointments = (req, res) => {
 
     sql += ` ORDER BY a.appointment_date DESC, a.appointment_time ASC`;
 
-    const appointments = db.prepare(sql).all(...params);
+    const principal = req.user;
+    let appointments = db.prepare(sql).all(...params);
+    if (principal.role === 'patient') appointments = appointments.filter(a => a.patient_id === principal.id);
+    else if (['doctor', 'secretariat'].includes(principal.role) && principal.practitionerId) appointments = appointments.filter(a => a.practitioner_id === principal.practitionerId);
+    else return res.status(403).json({ success: false, error: 'ACCESS_DENIED' });
     res.json({ success: true, count: appointments.length, data: appointments });
   } catch (error) {
     console.error('Error fetching appointments:', error);
@@ -36,14 +40,16 @@ export const createAppointment = (req, res) => {
       return res.status(400).json({ success: false, message: 'Missing required appointment fields' });
     }
 
+    if (!Number.isSafeInteger(Number(practitioner_id)) || Number(practitioner_id) < 1 || typeof patient_name !== 'string' || typeof patient_phone !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(appointment_date) || !/^([01]\d|2[0-3]):[0-5]\d$/.test(appointment_time)) return res.status(400).json({ success: false, error: 'INVALID_INPUT' });
+
     const doctor = db.prepare(`SELECT id, name FROM practitioners WHERE id = ?`).get(practitioner_id);
     if (!doctor) {
       return res.status(404).json({ success: false, message: 'Doctor not found' });
     }
 
     const insert = db.prepare(`
-      INSERT INTO appointments (practitioner_id, patient_name, patient_phone, patient_cin, appointment_date, appointment_time, consultation_type, status, cnam_requested, notes)
-      VALUES (?, ?, ?, ?, ?, ?, ?, 'confirmed', ?, ?)
+      INSERT INTO appointments (practitioner_id, patient_name, patient_phone, patient_cin, appointment_date, appointment_time, consultation_type, status, cnam_requested, notes, patient_id)
+      VALUES (?, ?, ?, ?, ?, ?, ?, 'confirmed', ?, ?, ?)
     `);
 
     const info = insert.run(
@@ -55,7 +61,8 @@ export const createAppointment = (req, res) => {
       appointment_time,
       consultation_type || 'Cabinet',
       cnam_requested ? 1 : 0,
-      notes || ''
+      notes || '',
+      req.user?.role === 'patient' ? req.user.id : null
     );
 
     // Update queue total for the practitioner if queue exists
@@ -69,7 +76,7 @@ export const createAppointment = (req, res) => {
 
     res.status(201).json({
       success: true,
-      message: `Rendez-vous confirmé avec ${doctor.name} pour le ${appointment_date} à ${appointment_time}. SMS de confirmation envoyé au ${patient_phone}.`,
+      message: `Rendez-vous confirmé avec ${doctor.name} pour le ${appointment_date} à ${appointment_time}.`,
       data: { ...newAppointment, doctor_name: doctor.name }
     });
   } catch (error) {

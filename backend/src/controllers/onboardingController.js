@@ -1,3 +1,4 @@
+import { randomBytes } from 'node:crypto';
 import { db } from '../db/index.js';
 
 export const submitOnboarding = (req, res) => {
@@ -8,7 +9,7 @@ export const submitOnboarding = (req, res) => {
       return res.status(400).json({ success: false, message: 'Les champs obligatoires du dossier médical doivent être remplis.' });
     }
 
-    const tracking_code = `MD-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
+    const tracking_code = `MD-${randomBytes(24).toString("hex")}`;
 
     const insert = db.prepare(`
       INSERT INTO onboarding_requests (
@@ -49,13 +50,14 @@ export const submitOnboarding = (req, res) => {
 export const getOnboardingByCode = (req, res) => {
   try {
     const { code } = req.params;
-    const record = db.prepare(`SELECT * FROM onboarding_requests WHERE tracking_code = ? OR cnom_number LIKE ?`).get(code, `%${code}%`);
+    if (!/^MD-[a-f0-9]{48}$/.test(code)) return res.status(404).json({ success: false, message: 'Référence introuvable.' });
+    const record = db.prepare(`SELECT * FROM onboarding_requests WHERE tracking_code = ?`).get(code);
 
     if (!record) {
       return res.status(404).json({ success: false, message: 'Aucun dossier d\'adhésion trouvé pour cette référence.' });
     }
 
-    res.json({ success: true, data: record });
+    res.json({ success: true, data: { tracking_code: record.tracking_code, status: record.status } });
   } catch (error) {
     console.error('Error fetching onboarding request:', error);
     res.status(500).json({ success: false, message: 'Server error' });

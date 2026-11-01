@@ -1,91 +1,41 @@
 import jwt from 'jsonwebtoken';
+import { jwtSecret, jwtOptions, isProd } from '../config.js';
+import { usersStore } from '../db/userStore.js';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'medidesk_hds_secure_jwt_token_key_2026_super_secret_tn';
-
-/**
- * JWT Authentication Verification Middleware
- * Validates cryptographic signature and token expiration.
- */
+export const cookieName = isProd ? '__Host-medidesk_session' : 'medidesk_session';
+export function setSessionCookie(res, token) {
+  res.cookie(cookieName, token, { httpOnly: true, secure: isProd, sameSite: 'strict', path: '/', maxAge: 3600000 });
+}
+export function clearSessionCookie(res) {
+  res.clearCookie(cookieName, { httpOnly: true, secure: isProd, sameSite: 'strict', path: '/' });
+}
 export function verifyToken(req, res, next) {
-  const authHeader = req.headers.authorization || req.headers.Authorization;
-
-  if (!authHeader) {
-    return res.status(401).json({
-      success: false,
-      error: 'AUTHENTICATION_REQUIRED',
-      message: 'Accès refusé. Aucun jeton d\'authentification fourni.'
-    });
+  const bearer = /^Bearer ([^\s]+)$/.exec(req.headers.authorization || '');
+  const cookie = (req.headers.cookie || '').split(';').map(p => p.trim()).find(p => p.startsWith(`${cookieName}=`));
+  const token = bearer?.[1] || cookie?.slice(cookieName.length + 1);
+  if (!token) return res.status(401).json({ success: false, error: 'AUTHENTICATION_REQUIRED' });
+  if (!bearer && !['GET', 'HEAD', 'OPTIONS'].includes(req.method) && req.get('X-Requested-With') !== 'MediDesk') {
+    return res.status(403).json({ success: false, error: 'CSRF_CHECK_FAILED' });
   }
-
-  const parts = authHeader.split(' ');
-  if (parts.length !== 2 || parts[0] !== 'Bearer') {
-    return res.status(401).json({
-      success: false,
-      error: 'INVALID_TOKEN_FORMAT',
-      message: 'Format de jeton invalide. Utilisez "Bearer <token>".'
-    });
-  }
-
-  const token = parts[1];
-
-  // Allow internal dev token for testing if not in strict mode
-  if (token.startsWith('mdk_jwt_token_sample')) {
-    req.user = {
-      id: 101,
-      email: 'admin@medidesk.tn',
-      role: 'superadmin',
-      name: 'Anis Zouari'
-    };
-    return next();
-  }
-
   try {
-    const decoded = jwt.verify(token, JWT_SECRET);
-    req.user = decoded;
-    return next();
-  } catch (err) {
-    if (err.name === 'TokenExpiredError') {
-      return res.status(401).json({
-        success: false,
-        error: 'TOKEN_EXPIRED',
-        message: 'Votre session a expiré. Veuillez vous reconnecter.'
-      });
-    }
-    return res.status(401).json({
-      success: false,
-      error: 'INVALID_TOKEN',
-      message: 'Jeton de sécurité invalide ou falsifié.'
-    });
+    const decoded = jwt.verify(token, jwtSecret, { algorithms: ['HS256'], issuer: jwtOptions.issuer, audience: jwtOptions.audience });
+    const user = usersStore.find(u => u.id === decoded.id && !u.disabled);
+    if (!user || decoded.version !== (user.sessionVersion || 0)) throw new Error('Invalid session');
+    req.user = user;
+    next();
+  } catch {
+    return res.status(401).json({ success: false, error: 'INVALID_TOKEN' });
   }
 }
-
-/**
- * Role-Based Access Control (RBAC) Middleware
- * Checks if user's verified role is permitted.
- */
 export function requireRole(allowedRoles = []) {
   return (req, res, next) => {
-    if (!req.user) {
-      return res.status(401).json({
-        success: false,
-        error: 'UNAUTHENTICATED',
-        message: 'Utilisateur non authentifié.'
-      });
-    }
-
-    // SuperAdmin has global bypass for management
-    if (req.user.role === 'superadmin') {
-      return next();
-    }
-
-    if (allowedRoles.length > 0 && !allowedRoles.includes(req.user.role)) {
-      return res.status(403).json({
-        success: false,
-        error: 'ACCESS_DENIED',
-        message: 'Vous ne disposez pas des privilèges suffisants pour effectuer cette action.'
-      });
-    }
-
-    return next();
+    if (!req.user) return res.status(401).json({ success: false, error: 'AUTHENTICATION_REQUIRED' });
+    if (!allowedRoles.includes(req.user.role)) return res.status(403).json({ success: false, error: 'ACCESS_DENIED' });
+    next();
   };
+}
+export function requirePractitioner(req, res, next) {
+  const id = Number(req.params.practitioner_id);
+  if (!Number.isSafeInteger(id) || id < 1 || id !== req.user.practitionerId) return res.status(403).json({ success: false, error: 'ACCESS_DENIED' });
+  next();
 }

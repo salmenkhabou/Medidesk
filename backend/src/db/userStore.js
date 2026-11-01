@@ -1,77 +1,39 @@
 import bcrypt from 'bcryptjs';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import '../config.js';
 
-const DEMO_HASH = bcrypt.hashSync('Password123!', 10);
-
-export let usersStore = [
-  {
-    id: 1,
-    name: 'Anis Zouari',
-    email: 'admin@medidesk.tn',
-    passwordHash: DEMO_HASH,
-    role: 'superadmin',
-    department: 'Tour de Contrôle MediDesk'
-  },
-  {
-    id: 2,
-    name: 'Dr. Karim Ben Mahmoud',
-    email: 'dr.benmahmoud@medidesk.tn',
-    passwordHash: DEMO_HASH,
-    role: 'doctor',
-    specialty: 'Cardiologie',
-    cnom: '18452/CNOM',
-    clinic: 'Clinique Alyssa',
-    city: 'Tunis',
-    plan: 'Cloud Secure Pro',
-    phone: '+216 98 420 811'
-  },
-  {
-    id: 3,
-    name: 'Amel Trabelsi',
-    email: 'amel.trabelsi@medidesk.tn',
-    passwordHash: DEMO_HASH,
-    role: 'secretariat',
-    doctorId: 2,
-    clinic: 'Clinique Alyssa',
-    phone: '+216 98 123 456',
-    permissions: 'Accueil, Encaissement, RDV'
-  },
-  {
-    id: 4,
-    name: 'Yasmine Ben Amor',
-    email: 'patient@medidesk.tn',
-    passwordHash: DEMO_HASH,
-    role: 'patient',
-    cin: '08765432',
-    phone: '+216 98 000 000'
-  }
-];
-
-export function findUserByEmail(email) {
-  if (!email) return null;
-  const clean = email.trim().toLowerCase();
-  return usersStore.find(u => u.email.toLowerCase() === clean) || null;
+const usersPath = path.resolve(process.env.USERS_PATH || fileURLToPath(new URL('../../data/users.json', import.meta.url)));
+// Corrupt stores must stop startup; never reset credentials silently.
+export const usersStore = fs.existsSync(usersPath) ? JSON.parse(fs.readFileSync(usersPath, 'utf8')) : [];
+if (!Array.isArray(usersStore)) throw new Error('Invalid user store');
+export function persistUsers() {
+  fs.mkdirSync(path.dirname(usersPath), { recursive: true, mode: 0o700 });
+  fs.writeFileSync(`${usersPath}.tmp`, JSON.stringify(usersStore, null, 2), { mode: 0o600 });
+  fs.renameSync(`${usersPath}.tmp`, usersPath);
 }
-
-export function createUser({ name, email, password, role, ...metadata }) {
-  const cleanEmail = email.trim().toLowerCase();
-  const existing = findUserByEmail(cleanEmail);
-  if (existing) {
-    throw new Error(`Un compte avec l'adresse email ${cleanEmail} existe déjà.`);
+export function findUserByEmail(email) {
+  if (typeof email !== 'string') return null;
+  return usersStore.find(u => u.email === email.trim().toLowerCase()) || null;
+}
+export function validatePassword(password) {
+  if (typeof password !== 'string' || password.length < 12 || Buffer.byteLength(password) > 72) {
+    throw new Error('Le mot de passe doit contenir au moins 12 caractères et au plus 72 octets.');
   }
-
-  const newId = usersStore.length ? Math.max(...usersStore.map(u => u.id)) + 1 : 1;
-  const passwordHash = password ? bcrypt.hashSync(password, 10) : DEMO_HASH;
-
-  const newUser = {
-    id: newId,
-    name,
-    email: cleanEmail,
-    passwordHash,
-    role: role || 'patient',
-    created_at: new Date().toISOString(),
-    ...metadata
-  };
-
-  usersStore.push(newUser);
-  return newUser;
+}
+export function createUser({ name, email, password, role = 'patient', ...metadata }) {
+  if (typeof name !== 'string' || !name.trim() || name.length > 150 || typeof email !== 'string' || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) throw new Error('Nom ou email invalide.');
+  validatePassword(password);
+  if (!['patient', 'doctor', 'secretariat', 'superadmin'].includes(role)) throw new Error('Rôle invalide.');
+  const cleanEmail = email.trim().toLowerCase();
+  if (findUserByEmail(cleanEmail)) throw new Error('Impossible de créer ce compte.');
+  const safeMetadata = {};
+  for (const key of ['cin', 'phone', 'cnamCode', 'specialty', 'cnom', 'city', 'clinic', 'plan', 'permissions', 'doctorId', 'practitionerId']) {
+    if (metadata[key] !== undefined) safeMetadata[key] = metadata[key];
+  }
+  const user = { ...safeMetadata, id: Math.max(0, ...usersStore.map(u => u.id)) + 1, name: name.trim(), email: cleanEmail, passwordHash: bcrypt.hashSync(password, 12), role, sessionVersion: 0, created_at: new Date().toISOString() };
+  usersStore.push(user);
+  try { persistUsers(); } catch (err) { usersStore.pop(); throw err; }
+  return user;
 }

@@ -1,3 +1,4 @@
+import { apiFetch } from '../services/api';
 import React, { useState } from 'react';
 
 export default function ExpressBookingView({ setView }) {
@@ -51,7 +52,7 @@ export default function ExpressBookingView({ setView }) {
 
   const handleConfirmExpressBooking = () => {
     setLoading(true);
-    fetch('/api/patient/express-booking', {
+    apiFetch('/api/patient/express-booking', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

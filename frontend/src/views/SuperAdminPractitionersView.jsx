@@ -19,7 +19,7 @@ export default function SuperAdminPractitionersView({ setView }) {
     email: '',
     phone: '',
     plan: 'Cloud Secure Pro',
-    password: 'Password123!'
+    password: ''
   });
   const [submittingDoctor, setSubmittingDoctor] = useState(false);
 
@@ -66,7 +66,7 @@ export default function SuperAdminPractitionersView({ setView }) {
         email: '',
         phone: '',
         plan: 'Cloud Secure Pro',
-        password: 'Password123!'
+        password: ''
       });
       loadPractitioners();
     } catch (err) {
@@ -320,7 +320,7 @@ export default function SuperAdminPractitionersView({ setView }) {
                     <label className="text-slate-300 block mb-1 font-semibold">Mot de passe provisoire</label>
                     <input
                       type="password"
-                      placeholder="Password123!"
+                      placeholder="12 caractères minimum"
                       value={newDoctor.password}
                       onChange={(e) => setNewDoctor({ ...newDoctor, password: e.target.value })}
                       className="w-full p-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-teal-500"

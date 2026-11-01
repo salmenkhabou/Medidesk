@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-dotenv.config();
+import { isProd, demoOnly } from './config.js';
+import { verifyToken, requireRole } from './middleware/authMiddleware.js';
 
 import express from 'express';
 import cors from 'cors';
@@ -20,16 +20,17 @@ import superadminRoutes from './routes/superadminRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const isProd = process.env.NODE_ENV === 'production';
+
 
 // 1. Trust Reverse Proxy (mandatory when deployed behind Nginx / Cloudflare)
-app.set('trust proxy', 1);
+app.set('trust proxy', process.env.TRUST_PROXY === '1' ? 1 : false);
+app.disable('x-powered-by');
 
 // 2. HTTP Security Headers with Helmet
 app.use(helmet({
-  contentSecurityPolicy: false, // Managed via reverse proxy/frontend
+  contentSecurityPolicy: true,
   crossOriginEmbedderPolicy: false,
-  crossOriginResourcePolicy: { policy: "cross-origin" }
+  crossOriginResourcePolicy: { policy: "same-origin" }
 }));
 
 // 3. Strict CORS Whitelist Configuration
@@ -43,7 +44,7 @@ app.use(cors({
     if (!origin || allowedOrigins.includes(origin)) {
       return callback(null, true);
     }
-    return callback(new Error('CORS Policy: Origin not allowed by MediDesk Security Gateway.'));
+    return callback(Object.assign(new Error('Origin not allowed'), { status: 403 }));
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -51,8 +52,11 @@ app.use(cors({
 }));
 
 // 4. Request Body Parsers with payload limits
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+app.use('/api', (req, res, next) => {
+  res.set('Cache-Control', 'no-store');
+  if (['POST', 'PUT', 'PATCH'].includes(req.method) && req.headers['content-length'] !== '0' && !req.is('application/json')) return res.status(415).json({ success: false, error: 'JSON_REQUIRED' });
+  next();
+});
 
 // 5. Global Rate Limiter (Protects against DDoS / Scrapers)
 const globalLimiter = rateLimit({
@@ -81,6 +85,16 @@ const authLimiter = rateLimit({
   }
 });
 app.use('/api/auth', authLimiter);
+app.use('/api/patient/register', authLimiter);
+app.use(express.json({ limit: '256kb', inflate: false }));
+// Reject nested/non-string input on public write endpoints before business logic.
+app.use('/api', (req, res, next) => {
+  req.body ??= {};
+  if (['/patient/register', '/onboarding', '/appointments'].includes(req.path) && req.method === 'POST') {
+    if (Array.isArray(req.body) || Object.values(req.body).some(v => v !== null && !['string', 'number', 'boolean'].includes(typeof v)) || Object.values(req.body).some(v => typeof v === 'string' && v.length > 2000)) return res.status(400).json({ success: false, error: 'INVALID_INPUT' });
+  }
+  next();
+});
 
 // 7. REST API Route Registry
 app.use('/api/auth', authRoutes);
@@ -91,39 +105,34 @@ app.use('/api/queue', queueRoutes);
 app.use('/api/prescriptions', prescriptionsRoutes);
 app.use('/api/pricing', pricingRoutes);
 app.use('/api/patient', patientRoutes);
-app.use('/api/secretariat', secretariatRoutes);
-app.use('/api/doctor', doctorRoutes);
-app.use('/api/superadmin', superadminRoutes);
+app.use('/api/secretariat', verifyToken, requireRole(['secretariat']), demoOnly, secretariatRoutes);
+app.use('/api/doctor', verifyToken, requireRole(['doctor']), demoOnly, doctorRoutes);
+app.use('/api/superadmin', verifyToken, superadminRoutes);
 
 // 8. Health Check Endpoint
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'online',
     service: 'MediDesk REST API',
-    security_perimeter: {
-      tls_ready: true,
-      hds_audit: 'compliant',
-      jwt_auth: 'active',
-      rate_limiting: 'active',
-      helmet_headers: 'enforced'
-    },
     timestamp: new Date().toISOString()
   });
 });
 
 // 9. Centralized Error Handler (Prevents stack-trace leaks in production)
 app.use((err, req, res, next) => {
-  console.error('Unhandled Security/Application Error:', err.message);
+  if (!err.status || err.status >= 500) console.error('Application error:', err.name);
   const status = err.status || 500;
   res.status(status).json({
     success: false,
-    error: err.name || 'INTERNAL_SERVER_ERROR',
+    error: status < 500 ? 'INVALID_REQUEST' : 'INTERNAL_SERVER_ERROR',
     message: isProd 
       ? 'Une erreur interne est survenue sur le serveur de santé sécurisé.' 
       : err.message
   });
 });
 
-app.listen(PORT, () => {
+export { app };
+
+if (process.env.NODE_ENV !== 'test') app.listen(PORT, () => {
   console.log(`🛡️  MediDesk Secure Server listening on http://localhost:${PORT} [${isProd ? 'PRODUCTION' : 'DEVELOPMENT'}]`);
 });

@@ -1,7 +1,18 @@
 import express from 'express';
-import { createUser } from '../db/userStore.js';
+import bcrypt from 'bcryptjs';
+import { verifyToken, requireRole, clearSessionCookie } from '../middleware/authMiddleware.js';
+import { demoOnly } from '../config.js';
+import { createUser, validatePassword, persistUsers } from '../db/userStore.js';
 
 const router = express.Router();
+
+router.use((req, res, next) => {
+  if (req.method === 'POST' && req.path === '/register') return next();
+  verifyToken(req, res, () => requireRole(['patient'])(req, res, () => {
+    if (req.path.startsWith('/security-settings')) return next();
+    return demoOnly(req, res, next);
+  }));
+});
 
 // Patient Dashboard Data
 router.get('/dashboard', (req, res) => {
@@ -237,26 +248,24 @@ router.post('/documents/upload', (req, res) => {
 
 // Security & Account Settings
 router.get('/security-settings', (req, res) => {
-  res.json({
-    success: true,
-    securityScore: 85,
-    twoFactorEnabled: true,
-    twoFactorStatus: 'En cours de configuration',
-    activeSessions: [
-      { id: 1, device: 'MacBook Pro • Safari', location: 'Tunis, Tunisie', current: true, ip: '197.0.24.112' },
-      { id: 2, device: 'iPhone 14 Pro • App MediDesk', location: 'Tunis, Berges du Lac', current: false, ip: '197.0.24.89' }
-    ]
-  });
+  res.json({ success: true, twoFactorEnabled: false, twoFactorStatus: 'Indisponible', activeSessions: [] });
 });
-
-router.post('/security-settings/update-password', (req, res) => {
-  res.json({ success: true, message: 'Mot de passe mis à jour avec succès.' });
+router.post('/security-settings/update-password', async (req, res, next) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+    validatePassword(newPassword);
+    if (typeof currentPassword !== 'string' || Buffer.byteLength(currentPassword) > 72 || !await bcrypt.compare(currentPassword, req.user.passwordHash)) return res.status(400).json({ success: false, message: 'Mot de passe actuel incorrect.' });
+    req.user.passwordHash = await bcrypt.hash(newPassword, 12);
+    req.user.sessionVersion = (req.user.sessionVersion || 0) + 1;
+    persistUsers();
+    clearSessionCookie(res);
+    return res.json({ success: true, message: 'Mot de passe mis à jour. Veuillez vous reconnecter.' });
+  } catch (err) {
+    if (err.message.startsWith('Le mot de passe')) return res.status(400).json({ success: false, message: err.message });
+    next(err);
+  }
 });
-
-router.post('/security-settings/toggle-2fa', (req, res) => {
-  const { enabled } = req.body;
-  res.json({ success: true, enabled, message: enabled ? 'Double authentification activée !' : 'Double authentification désactivée.' });
-});
+router.post('/security-settings/toggle-2fa', (req, res) => res.status(503).json({ success: false, enabled: false, message: 'La double authentification est indisponible.' }));
 
 // Express Booking
 router.post('/express-booking', (req, res) => {
@@ -306,7 +315,7 @@ router.get('/queue-status', (req, res) => {
 
 router.post('/register', (req, res) => {
   let { firstName, lastName, name, cin, phone, email, password, cnamCode } = req.body;
-  if (name && (!firstName || !lastName)) {
+  if (typeof name === 'string' && (!firstName || !lastName)) {
     const parts = name.trim().split(' ');
     firstName = firstName || parts[0];
     lastName = lastName || parts.slice(1).join(' ') || parts[0];
@@ -319,9 +328,9 @@ router.post('/register', (req, res) => {
     const newUser = createUser({
       name: `${firstName} ${lastName}`,
       email,
-      password: password || 'Password123!',
+      password,
       role: 'patient',
-      cin: cin || '00000000',
+      cin: cin || '',
       phone,
       cnamCode: cnamCode || ''
     });

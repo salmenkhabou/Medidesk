@@ -1,10 +1,12 @@
+import '../config.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const dbFilePath = path.join(__dirname, '../../medidesk-db.json');
+const dbFilePath = path.resolve(process.env.DB_PATH || path.join(__dirname, '../../medidesk-db.json'));
+fs.mkdirSync(path.dirname(dbFilePath), { recursive: true, mode: 0o700 });
 
 const initialData = {
   practitioners: [],
@@ -21,20 +23,20 @@ function loadData() {
       const raw = fs.readFileSync(dbFilePath, 'utf8');
       return JSON.parse(raw);
     } catch (e) {
-      console.error('Error loading DB file, resetting:', e);
+      throw new Error('Database is corrupt; restore from a verified backup.', { cause: e });
     }
   }
-  fs.writeFileSync(dbFilePath, JSON.stringify(initialData, null, 2));
+  fs.writeFileSync(dbFilePath, JSON.stringify(initialData, null, 2), { mode: 0o600 });
   return { ...initialData };
 }
 
 function saveData(data) {
   try {
     const tmpPath = `${dbFilePath}.tmp`;
-    fs.writeFileSync(tmpPath, JSON.stringify(data, null, 2), 'utf8');
+    fs.writeFileSync(tmpPath, JSON.stringify(data, null, 2), { encoding: 'utf8', mode: 0o600 });
     fs.renameSync(tmpPath, dbFilePath);
   } catch (err) {
-    console.error('Critical database write error:', err);
+    throw err;
   }
 }
 
@@ -130,12 +132,12 @@ export const db = {
 
         if (sql.includes('FROM onboarding_requests')) {
           const code = params[0];
-          return store.onboarding_requests.find(r => r.tracking_code === code || r.cnom_number.includes(code)) || null;
+          return store.onboarding_requests.find(r => r.tracking_code === code) || null;
         }
 
         if (sql.includes('FROM prescriptions')) {
           const ref = params[0];
-          return store.prescriptions.find(p => p.reference_code === ref || p.patient_cin === ref) || null;
+          return store.prescriptions.find(p => p.reference_code === ref) || null;
         }
 
         return null;
@@ -187,6 +189,7 @@ export const db = {
           const item = {
             id: newId,
             practitioner_id: parseInt(params[0]),
+            patient_id: params[9] ?? null,
             patient_name: params[1],
             patient_phone: params[2],
             patient_cin: params[3],
@@ -258,6 +261,7 @@ export const db = {
           const item = {
             id: newId,
             reference_code: params[0],
+            patient_id: params[9] ?? null,
             patient_name: params[1],
             patient_cin: params[2],
             doctor_name: params[3],

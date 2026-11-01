@@ -1,3 +1,4 @@
+import { apiFetch } from '../services/api';
 import React, { useState, useEffect } from 'react';
 
 export default function PatientDashboardView({ setView }) {
@@ -5,7 +6,7 @@ export default function PatientDashboardView({ setView }) {
   const [showPrepModal, setShowPrepModal] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/patient/dashboard')
+    apiFetch('/api/patient/dashboard')
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

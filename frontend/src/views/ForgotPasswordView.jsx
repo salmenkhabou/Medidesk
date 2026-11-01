@@ -1,26 +1,27 @@
+import { apiFetch } from '../services/api';
 import React, { useState } from 'react';
 
 export default function ForgotPasswordView({ setView }) {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
+    setError(null);
     try {
-      await fetch('http://localhost:5000/api/auth/forgot-password', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
+      const res = await apiFetch('/api/auth/forgot-password', {
+        method: 'POST', body: JSON.stringify({ email })
       });
-    } catch (err) {
-      // Fallback
-    }
-
-    setTimeout(() => {
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message || 'Service indisponible.');
       setView('reset-link-sent', { email });
-    }, 600);
+    } catch (err) {
+      setError(err.message || 'Service indisponible.');
+    } finally { setLoading(false); }
+
   };
 
   return (
@@ -40,6 +41,7 @@ export default function ForgotPasswordView({ setView }) {
           </p>
         </div>
 
+        {error && <p role="alert" className="text-red-700 mb-4">{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-1 text-left">
             <label className="font-label-md text-label-md text-on-surface font-semibold" htmlFor="reset-email">

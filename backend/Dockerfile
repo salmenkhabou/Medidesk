@@ -10,10 +10,11 @@ WORKDIR /home/node/app
 
 # Install dependencies first for Docker layer caching
 COPY --chown=node:node package*.json ./
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # Copy source code with non-root ownership
-COPY --chown=node:node . .
+COPY --chown=node:node src ./src
+RUN mkdir -p /home/node/app/data
 
 # Set environment
 ENV NODE_ENV=production

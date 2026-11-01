@@ -17,3 +17,8 @@ node_modules/
 Thumbs.db
 .vscode/
 .idea/
+
+# Runtime credentials, local data and generated builds
+backend/data/
+frontend/dist/
+backend/security-test-*/

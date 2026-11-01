@@ -1,10 +1,11 @@
+import { apiFetch } from '../services/api';
 import React, { useState } from 'react';
 
 export default function PatientAccountSettingsView({ setView }) {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [twoFactorEnabled, setTwoFactorEnabled] = useState(true);
+  const [twoFactorEnabled, setTwoFactorEnabled] = useState(false);
   const [pinCode, setPinCode] = useState(['5', '8', '2', '', '', '']);
   const [statusMessage, setStatusMessage] = useState(null);
 
@@ -14,32 +15,34 @@ export default function PatientAccountSettingsView({ setView }) {
       showToast('Les mots de passe ne correspondent pas.');
       return;
     }
-    fetch('/api/patient/security-settings/update-password', {
+    apiFetch('/api/patient/security-settings/update-password', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ currentPassword, newPassword })
     })
       .then((res) => res.json())
       .then((data) => {
-        showToast(data.message || 'Mot de passe mis à jour !');
+        showToast(data.message || 'Service indisponible.');
+        if (!data.success) return;
         setCurrentPassword('');
         setNewPassword('');
         setConfirmPassword('');
-      });
+      }).catch(() => showToast('Service indisponible. Veuillez réessayer.'));
   };
 
   const handleToggle2FA = () => {
     const nextState = !twoFactorEnabled;
-    setTwoFactorEnabled(nextState);
-    fetch('/api/patient/security-settings/toggle-2fa', {
+
+    apiFetch('/api/patient/security-settings/toggle-2fa', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ enabled: nextState })
     })
       .then((res) => res.json())
       .then((data) => {
-        showToast(data.message);
-      });
+        if (data.success) setTwoFactorEnabled(data.enabled);
+        showToast(data.message || 'Service indisponible.');
+      }).catch(() => showToast('Service indisponible. Veuillez réessayer.'));
   };
 
   const showToast = (msg) => {

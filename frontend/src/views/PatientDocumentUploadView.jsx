@@ -1,3 +1,4 @@
+import { apiFetch } from '../services/api';
 import React, { useState } from 'react';
 
 export default function PatientDocumentUploadView({ setView }) {
@@ -50,7 +51,7 @@ export default function PatientDocumentUploadView({ setView }) {
 
   const handleUploadFile = (fileName = 'Document_Patient_Scanne.pdf') => {
     setUploading(true);
-    fetch('/api/patient/documents/upload', {
+    apiFetch('/api/patient/documents/upload', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ category, doctorId: doctorAssociation, note, fileName })

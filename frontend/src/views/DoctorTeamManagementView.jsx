@@ -14,7 +14,7 @@ export default function DoctorTeamManagementView({ setView }) {
     email: '',
     phone: '',
     permissions: 'Accueil, Prise de RDV, Encaissement',
-    password: 'Password123!'
+    password: ''
   });
   const [submittingSecretary, setSubmittingSecretary] = useState(false);
 
@@ -47,7 +47,7 @@ export default function DoctorTeamManagementView({ setView }) {
         email: '',
         phone: '',
         permissions: 'Accueil, Prise de RDV, Encaissement',
-        password: 'Password123!'
+        password: ''
       });
       loadDoctorTeam();
     } catch (err) {
@@ -215,7 +215,7 @@ export default function DoctorTeamManagementView({ setView }) {
                   <label className="text-slate-300 block mb-1 font-semibold">Mot de passe provisoire</label>
                   <input
                     type="password"
-                    placeholder="Password123!"
+                    placeholder="12 caractères minimum"
                     value={newSecretary.password}
                     onChange={(e) => setNewSecretary({ ...newSecretary, password: e.target.value })}
                     className="w-full p-2.5 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-teal-500"

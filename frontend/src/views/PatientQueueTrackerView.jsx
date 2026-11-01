@@ -1,3 +1,4 @@
+import { apiFetch } from '../services/api';
 import React, { useState, useEffect } from 'react';
 
 export default function PatientQueueTrackerView({ setView }) {
@@ -28,7 +29,7 @@ export default function PatientQueueTrackerView({ setView }) {
   const [delayNotified, setDelayNotified] = useState(false);
 
   useEffect(() => {
-    fetch('/api/patient/queue-status')
+    apiFetch('/api/patient/queue-status')
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

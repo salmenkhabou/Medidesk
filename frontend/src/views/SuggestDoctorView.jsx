@@ -1,3 +1,4 @@
+import { apiFetch } from '../services/api';
 import React, { useState } from 'react';
 
 export default function SuggestDoctorView({ setView }) {
@@ -13,19 +14,25 @@ export default function SuggestDoctorView({ setView }) {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
     try {
-      await fetch('http://localhost:5000/api/patient/suggest-doctor', {
+      const response = await apiFetch('/api/patient/suggest-doctor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
+      const result = await response.json();
+      if (!response.ok || !result.success) throw new Error(result.message || 'Service indisponible.');
     } catch (err) {
-      // Fallback
+      setError(err.message || 'Service indisponible.');
+      setLoading(false);
+      return;
     }
 
     setTimeout(() => {
@@ -38,6 +45,7 @@ export default function SuggestDoctorView({ setView }) {
     <div className="w-full min-h-screen bg-background py-8 pb-16">
       <div className="max-w-2xl mx-auto px-4 md:px-6">
         
+        {error && <p role="alert" className="text-red-700 mb-4">{error}</p>}
         {/* Header Card */}
         <div className="bg-surface-container-lowest rounded-xl p-6 sm:p-8 shadow-xl border border-surface-container-high relative overflow-hidden text-center mb-6">
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-primary-container to-secondary-container"></div>

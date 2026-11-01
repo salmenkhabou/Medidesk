@@ -19,7 +19,7 @@ graph LR
 | Étape | Description | Déclenchement |
 | :--- | :--- | :--- |
 | **`security_audit`** | Audit automatisé des vulnérabilités des dépendances (`npm audit`). | Chaque commit & Merge Request |
-| **`test`** | Compilation du bundle Vite React (`npm run build`) + Exécution de la suite de 35 tests d'intégration backend (`npm test`). | Chaque commit & Merge Request |
+| **`test`** | Compilation du bundle Vite React (`npm run build`) + Exécution de la suite de 17 groupes de tests de sécurité isolés d'intégration backend (`npm test`). | Chaque commit & Merge Request |
 | **`docker_build`** | Construction des conteneurs Docker Backend & Frontend, tag avec SHA et push sur le **GitLab Container Registry**. | Branches `main` et `develop` |
 | **`deploy_staging`** | Déploiement SSH automatique sur le serveur de staging. | Branche `develop` |
 | **`deploy_production`** | Déploiement sécurisé sur le serveur de production (avec confirmation manuelle). | Branche `main` (clic bouton requis) |
@@ -77,3 +77,6 @@ Sur votre serveur public (Ubuntu/Debian) :
 1. **Zero-Downtime Rollout** : Les conteneurs précédents restent actifs jusqu'à ce que les nouvelles versions soient téléchargées et initialisées.
 2. **Nettoyage automatique** : `docker image prune -af` libère automatiquement l'espace disque après chaque mise à jour.
 3. **Approbation Manuelle en Production** : Empêche tout déploiement accidentel sans validation d'un administrateur.
+
+
+Les prérequis de sécurité, les changements de configuration et les limites de production sont décrits dans [SECURITY_AUDIT.md](SECURITY_AUDIT.md). Les audits de dépendances bloquent désormais la CI dès le niveau modéré. Ces vérifications ne constituent pas une certification HDS ou INPDP.

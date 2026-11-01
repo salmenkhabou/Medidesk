@@ -17,10 +17,10 @@ export default function LoginView({ setView, onLoginSuccess }) {
     try {
       const data = await loginUser({ email: identifier, password });
 
-      if (data.success && data.token && data.user) {
-        // Save token and user in localStorage
-        localStorage.setItem('medidesk_jwt_token', data.token);
-        localStorage.setItem('medidesk_current_user', JSON.stringify(data.user));
+      if (data.success && data.user) {
+        // Clear legacy browser-stored credentials.
+        localStorage.removeItem('medidesk_jwt_token');
+        localStorage.removeItem('medidesk_current_user');
 
         if (onLoginSuccess) {
           onLoginSuccess(data.user);

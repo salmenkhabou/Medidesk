@@ -198,7 +198,7 @@ export const getDoctorTeam = (req, res) => {
   res.json({
     doctor: "Dr. Karim Ben Mahmoud",
     clinic: "Clinique Alyssa",
-    members: doctorTeamMembersStore
+    members: doctorTeamMembersStore.filter(m => m.doctorId === req.user.id)
   });
 };
 
@@ -220,17 +220,20 @@ export const addDoctorSecretary = (req, res) => {
       status: "Actif"
     };
 
-    doctorTeamMembersStore.push(newSec);
+
 
     createUser({
       name,
       email,
-      password: password || 'Password123!',
+      password,
       role: 'secretariat',
       phone: newSec.phone,
-      permissions: newSec.permissions
+      permissions: newSec.permissions,
+      doctorId: req.user.id,
+      practitionerId: req.user.practitionerId
     });
 
+    doctorTeamMembersStore.push({ ...newSec, doctorId: req.user.id });
     return res.status(201).json({
       success: true,
       message: `Secrétaire ${name} ajoutée et compte créé avec succès !`,
@@ -263,12 +266,12 @@ export const createPractitioner = (req, res) => {
       secretary: 'Non assignée'
     };
 
-    superadminPractitionersStore.unshift(newDoc);
+
 
     createUser({
       name,
       email,
-      password: password || 'Password123!',
+      password,
       role: 'doctor',
       specialty,
       cnom: newDoc.cnom,
@@ -277,6 +280,7 @@ export const createPractitioner = (req, res) => {
       phone: phone || '+216 71 000 000'
     });
 
+    superadminPractitionersStore.unshift(newDoc);
     return res.status(201).json({
       success: true,
       message: `Compte médecin pour ${name} créé avec succès ! Identifiants d'accès activés.`,
